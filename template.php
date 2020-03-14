@@ -17,10 +17,10 @@
 				<div class="col-6">
 					<ul class="list-group">
 						<li class="list-group-item">
-							<a href="phpfile.php">Exercise 1: Hello World</a>
+							<a href="hello-world.php">Exercise 1: Hello World</a>
 						</li>
 						<li class="list-group-item">
-							<a href="order-form.php">Exercise 2: Bob's Auto Parts - Ordering System</a>
+							<a href="bobs-autoparts/order-form.php">Exercise 2: Bob's Auto Parts - Ordering System</a>
 						</li>
 					</ul>
 				</div>
