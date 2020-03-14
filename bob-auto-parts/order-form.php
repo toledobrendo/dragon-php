@@ -34,13 +34,13 @@
                   <tr class="row">
                     <td class="col-5">Oil</td>
                     <td class="col-4">
-                      <input type="number" name="tireQty" maxlength="3" min="0" max="10" class="form-control" />
+                      <input type="number" name="oilQty" maxlength="3" min="0" max="10" class="form-control" />
                     </td>
                   </tr>
                   <tr class="row">
                     <td class="col-5">Spark Plugs</td>
                     <td class="col-4">
-                      <input type="number" name="tireQty" maxlength="3" min="0" max="10" class="form-control" />
+                      <input type="number" name="sparkQty" maxlength="3" min="0" max="10" class="form-control" />
                     </td>
                   </tr>
                   <tr class="row">
