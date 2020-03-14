@@ -10,17 +10,30 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h1 class="card-title">PHP Exercises</h1>
-				<div class="col-6">
-					<ul class="list-group">
-						<li class="list-group-item">
-							<a href="hello-world.php">Hello World</a>
-						</li>
-						<li class="list-group-item">
-							<a href="bobs-auto-parts/order-form.php">Bob's</a>
-						</li>
-					</ul>
-				</div>
+				<h3 class="card-title">Order Results</h3>
+				<?php 
+					echo '<p>Order Processed at ';
+					echo date('H:i, jS F Y');
+					echo '</p>';
+
+					//PHP Comments
+					/** Multiline comments
+						Wow**/
+
+					//declaring the variables
+					// gets the data from the form submitted
+					$tireQty = $_POST['tireQty'];
+					$oilQty = $_POST['oilQty'];
+					$sparkQty = $_POST['sparkQty'];
+
+					echo '<p>Your order is as follows</p>';
+					echo "$tireQty tires<br/>";
+					echo "$oilQty oil<br/>";
+					echo "$sparkQty sparks<br/>";
+					//different way of display
+					//echo $tireQty.' $tireQty tires<br/>'; 
+				?>
+				<a class="btn btn-primary float-right" href="order-form.php">Back to Order Form</a>
 			</div>
 		</div>
 	</div>
