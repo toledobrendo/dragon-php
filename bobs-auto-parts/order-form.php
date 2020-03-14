@@ -13,9 +13,10 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <?php
-            echo 'Hello World wow';
-          ?>
+          <h3 class="card-title">Order Form</h3>
+          <form action="process-order.php" method="post">
+
+          </form>
         </div>
       </div>
     </div>
@@ -30,4 +31,3 @@
       crossorigin="anonymous"></script>
   </body>
 </html>
-© 2020 GitHub, Inc.
