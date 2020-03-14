@@ -11,19 +11,42 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-body">
-					<h1 class="card-title">PHP Exercises</h1>
-					<div class="col-6">
-						<ul class="list-group">
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="hello-world.php">Hello World</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Bobs Auto Parts</a>
-							</li>
-						</ul>
-					</div>
+					<h3 class="card-title">Order Form</h3>
+					<form action="process-order.php" method="POST">
+						<table class="table">
+							<thead>
+								<tr class="row">
+									<th class="col-5">Item</th>
+									<th class="col-4">Quantity</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="row">
+									<td class="col-5">Tires</td>
+									<td class="col-4">
+										<input type="number" name="tireQty" value="0" maxlength="3" min="0" class="form-control">
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="col-5">Oil</td>
+									<td class="col-4">
+										<input type="number" name="oilQty" value="0" maxlength="3" min="0" class="form-control">
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="col-5">Spark Plug</td>
+									<td class="col-4">
+										<input type="number" name="sparkQty" value="0" maxlength="3" min="0" class="form-control">
+									</td>
+								</tr>
+								<tr class="row">
+									<td colspan="2" class="col-9">
+										<button type="submit" class="btn btn-primary float-right">Submit</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
 				</div>
 			</div>
 		</div>
