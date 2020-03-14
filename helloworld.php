@@ -9,8 +9,14 @@
     <title></title>
   </head>
   <body>
-    <?php
-      echo "Hello World";
-    ?>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <?php
+          echo "Hello World";
+          ?>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
