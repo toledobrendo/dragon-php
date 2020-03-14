@@ -9,19 +9,17 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-body">
-					<h1 class="card-title">PHP Exercises</h1>
+					<h3 class="card-title">Order Result</h3>
 
-					<div class="col-6">
-						<ul class="list-group">
-							<li class="list-group-item">
-								<a href="hello-world.php">Hello World</a>
-							</li>
+					<?php 
+						echo '<p>Order Processed at ';
+						echo date('H:i, jS F Y');
+						echo '</p>'
 
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Ordering</a>
-							</li>
-						</ul>
-					</div>
+						//comment 
+						/**multiline comment
+						**/
+					?>
 				</div>
 			</div>
 		</div>
