@@ -8,18 +8,20 @@
 	<div class="container">
 		<div class="card"> 
 			<div class="card-body"> 
-				<h1 class="card-title">PHP Exercises</h1>
-				<div class="col-6">
-					<ul class="list-group">
-						<li class="list-group-item">
-							<a href="hello-world.php">Hello World</a>
-						</li>
-						<li class="list-group-item">
-							<a href="bobs-auto-parts/order-form.php">Bob's Auto Parts Ordering</a>
-						</li>
-					</ul>
-				</div>
-
+				<h1>Bob's Auto Parts</h1>
+				<h3 class="class-title">Order Process</h3>
+				<?php
+					echo "<p>Ordered Proccess at ";
+					echo date('G:i, jS F Y');
+					echo "</p>";
+					$tireQty = $_POST['tireQty'];
+					$oilQty = $_POST['oilQty'];
+					$sparkQty = $_POST['sparkQty'];
+					echo "<p> Your order is as follows</p>";
+					echo "$tireQty tires.<br>";
+					echo "$oilQty bottles of oil.<br>";
+					echo "$sparkQty spark plugs<br>";
+				?>
 			</div>
 		</div>
 	</div>
