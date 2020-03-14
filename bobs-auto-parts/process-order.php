@@ -11,15 +11,26 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-body">
+					<h2 class="card-title">Bob's Auto Parts</h2>
+					<h3 class="card-title">Order Result</h3>
 					<?php 
-						echo 'Hello World';
+						echo '<p>Order Processed at ';
+						echo date('H:i, jS F Y');
+						echo '</p>';
 
-						// line comment
-						
-						/**
-							multi-line comment
-						**/
-					 ?>	
+						$tireQty = $_POST['tireQty'];
+						$oilQty = $_POST['oilQty'];
+						$sparkQty = $_POST['sparkQty'];
+
+						echo '<p>Order List:</p>';
+						// single quote: variables must be outside
+						echo $tireQty.' tires<br/>';
+						// double quote: variables can be inside
+						echo "$oilQty bottles of oil<br/>";
+						echo "$sparkQty spark plugs<br/>";
+					 ?>
+					<hr>
+					<a href="order-form.php" class="btn btn-danger">Go back</a>
 				</div>
 			</div>
 		</div>
