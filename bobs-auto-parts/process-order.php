@@ -13,9 +13,22 @@
             <div class="card-body">
                 <h3 class="card-title">Order Result</h3>
                     <?php
+                        $tireQty = $_POST['tireQty'];
+                        $oilQty = $_POST['oilQty'];
+                        $sparkQty = $_POST['sparkQty'];
+                        
                         echo '<p> Order processed at ';
                         echo date('H:i, jS F Y');
+                        echo '<br>Your order is as follows: <br>';
+                        echo $tireQty. ' tires.<br>';
+                        echo $oilQty . ' bottles of oil.<br>';
+                        echo $sparkQty . ' spark plugs.<br>';
                         echo '</p>'
+
+                        // PHP Comments
+                        /**
+                            Multiline comment wow
+                         */
                     ?>
             </div>
         </div>
