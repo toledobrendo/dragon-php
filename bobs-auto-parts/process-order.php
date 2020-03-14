@@ -14,11 +14,21 @@
 					<?php 
 						echo '<p>Order Processed at ';
 						echo date('H:i, jS F Y');
-						echo '</p>'
+						echo '</p>';
 
 						//comment 
 						/**multiline comment
 						**/
+
+						$tireQty = $_POST['tireQty'];
+						$oilQty = $_POST['oilQty'];
+						$sparkQty = $_POST['sparkQty'];
+
+						echo '<p>Your order is as follows</p>';
+						//echo $tireQty. ' tires <br/>';
+						echo "$tireQty tires<br/>";
+						echo "$oilQty oil<br/>";
+						echo "$sparkQty spark plugs<br/>";
 					?>
 				</div>
 			</div>
