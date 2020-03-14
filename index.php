@@ -12,9 +12,17 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <?php
-                    echo '<p>Hello World wow</p>';
-                ?>
+                <h1 class="card-title">PHP Exercises</h1>
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="hello-world.php">Hello World</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="template.php">Template</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
