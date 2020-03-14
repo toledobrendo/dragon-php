@@ -11,9 +11,15 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-body">
-					<?php 
-						echo 'Hello World';
-					 ?>	
+					<h1 class="card-title">PHP Exercises</h1>
+					<div class="col-6">
+						<ul class="list-group">
+							<!-- item -->
+							<li class="list-group-item">
+								<a href="hello-world.php">Hello World</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
