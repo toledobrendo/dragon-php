@@ -3,22 +3,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-  
+
     <div class="container">
         <div class="card">
-           <div class="card-body">
-                <h1 class="card-title">PHP Exercises</h1>
-                <div class="col-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="helloworld.php">Hello World</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="bobs-autoparts/order-form.php">Bobs Auto parts - ordering</a>
-                        </li>
-                    </ul>
-                </div>
-           </div>
+            <div class="card-body">
+              <h3 class="card-title">Order Result</h3>
+              <?php
+                echo '<p>Order Processed at ';
+                echo date('H:i, jS F Y');
+              echo '</p>';
+
+              //comment in php
+                /**Multiline comment
+                ad **/
+              $tireQty = $_POST['tireQty'];
+              $oilQty = $_POST['oilQty'];
+              $sparkQty = $_POST['sparkQty'];
+
+              echo '<p>Your order is as folows</p>';
+              echo $tireQty.' tires.<br/>';
+              //concatination in php is dot
+              echo "$oilQty bottles of oil.<br/>";
+              echo "$sparkQty spark plugs.<br/>";
+              ?>
+            </div>
         </div>
     </div>
 
