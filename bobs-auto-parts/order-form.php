@@ -26,8 +26,25 @@
                 <tr class="row">
                   <td class="col-5">Tires</td>
                   <td class="col-4">
-                    <input type="number" name="tire_quantity" min="0">
+                    <input class="form control" type="number" name="tire_quantity" min="0">
                   </td>
+                </tr>
+                <tr class="row">
+                  <td class="col-5">Oil</td>
+                  <td class="col-4">
+                    <input class="form control" type="number" name="oil_quantity" min="0">
+                  </td>
+                </tr>
+                <tr class="row">
+                  <td class="col-5">Spark Plugs</td>
+                  <td class="col-4">
+                    <input class="form control" type="number" name="spark_plugs_quantity" min="0">
+                  </td>
+                </tr>
+                <tr class="row">
+                  <td colspan="2" class="col-9">
+                  <button type="submit" class="btn btn-primary submit float-right" name="button">Submit</button>
+                </td>
                 </tr>
               </tbody>
             </table>
