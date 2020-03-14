@@ -19,7 +19,7 @@
                 <a href="./helloworld.php">Hello World</a>
               </li>
               <li class="list-group-item">
-                <a href="./bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering"</a>
+                <a href="./bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering</a>
               </li>
             </ul>
 
