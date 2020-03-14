@@ -15,7 +15,22 @@
         <div class="card-body">
           <h3 class="card-title">Order Form</h3>
           <form action="process-order.php" method="post">
-
+            <table class="table">
+              <thead>
+                <tr class="row">
+                  <td class="col-5">Item</td>
+                  <td class="col-4">Quantity</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row">
+                  <td class="col-5">Tires</td>
+                  <td class="col-4">
+                    <input type="number" name="tire_quantity" min="0">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </form>
         </div>
       </div>
