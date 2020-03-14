@@ -13,17 +13,46 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h1 class="card-title">PHP Exercises (Irineo 201801360)</h1>
-				<div class="col-6">
-					<ul class="list-group">
-						<li class="list-group-item">
-							<a href="phpfile.php">Exercise 1: Hello World</a>
-						</li>
-						<li class="list-group-item">
-							<a href="order-form.php">Exercise 2: Bob's Auto Parts - Ordering System</a>
-						</li>
-					</ul>
-				</div>
+				<h3 class="card-title"></h3>
+				<form class="container "action="process-order.php" method="POST">
+					<h1>Bob's Auto Parts - Ordering System</h1>
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th>Item</th>
+								<th>Quantity</th>
+							</tr>
+							
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Tires</td>
+								<td>
+									<input class="form-control" type="number" name="tireQty">
+								</td>
+							</tr>
+
+							<tr>
+								<td>Oil</td>
+								<td>
+									<input class="form-control" type="number" name="oilQty">
+								</td>
+							</tr>
+
+							<tr>
+								<td>Sparkplug</td>
+								<td>
+									<input class="form-control" type="number" name="sparkplugQty">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<button class="btn btn-info" type="submit">Submit</button>
+				</form>
+
+				
 			</div>
 		</div>
 	</div>
