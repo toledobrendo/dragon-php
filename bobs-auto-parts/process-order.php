@@ -16,7 +16,16 @@
           <?php
             echo '<p>Order processed at ';
             echo date('H:i, jS F Y');
-            echo '.</p>'
+            echo '.</p>';
+
+            $tireQty = $_POST['tire_quantity'];
+            $oilQty = $_POST['oil_quantity'];
+            $sparkPlugQty = $_POST['spark_plug_quantity'];
+
+            echo "<p>Your order is as follows:</p>";
+            echo "$tireQty tires<br>";
+            echo "$oilQty oil<br>";
+            echo "$sparkPlugQty spark plugs<br>";
           ?>
         </div>
       </div>

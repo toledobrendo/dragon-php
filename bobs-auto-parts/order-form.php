@@ -37,7 +37,7 @@
                 <tr class="row">
                   <td class="col-5">Spark Plugs</td>
                   <td class="col-4">
-                    <input class="form control" type="number" name="spark_plugs_quantity" min="0">
+                    <input class="form control" type="number" name="spark_plug_quantity" min="0">
                   </td>
                 </tr>
                 <tr class="row">
