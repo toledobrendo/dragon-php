@@ -14,8 +14,36 @@
             echo '<p>Order Processed at ';
             echo date('H:i, jS F Y');
             echo '</p>';
-           ?>
+           
 
+           //php comments
+           /** MULTILINE COMMENTS HERE MWAHAHAHAHAHAH 
+           ps: sorry i just got way too much fun in comments in every program i make
+           **/
+
+
+           $tireQty = $_POST['tireQty'];
+
+           echo '<p>Your order is as follows</p>';
+           echo $tireQty.' tires <br/>';
+
+
+           $oilQty = $_POST['oilQty'];
+
+           echo '<p>Your order is as follows</p>';
+           echo $oilQty.' oils <br/>';
+
+
+
+           $sparkeQty= $_POST['sparkeQty'];
+
+           echo '<p>Your order is as follows</p>';
+           echo $sparkeQty.' sparks <br/>';
+
+
+
+
+           ?>
         </div>
       </div>
     </div>
