@@ -24,20 +24,17 @@
 
            $tireQty = $_POST['tireQty'];
 
-           echo '<p>Your order is as follows</p>';
-           echo $tireQty.' tires <br/>';
-
-
            $oilQty = $_POST['oilQty'];
-
-           echo '<p>Your order is as follows</p>';
-           echo $oilQty.' oils <br/>';
-
-
 
            $sparkeQty= $_POST['sparkeQty'];
 
+
            echo '<p>Your order is as follows</p>';
+           
+           echo $tireQty.' tires <br/>';
+
+           echo $oilQty.' oils <br/>';
+
            echo $sparkeQty.' sparks <br/>';
 
 
