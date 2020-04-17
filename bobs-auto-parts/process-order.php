@@ -28,6 +28,7 @@
           echo $TireQty.' Tires<br/>';
           echo "$TireQty tires<br/>";
 
+          // remove redundant statements
           $OilQty = $_POST['OilQty'];
           echo '<p>Your order is as follows</p>';
           echo $OilQty.' Oil<br/>';
