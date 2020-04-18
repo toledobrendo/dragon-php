@@ -55,6 +55,7 @@
 
 							<tr class="row">
 								<td colspan="2" class="col-9">
+									<a href="../index.php" class="btn btn-danger float-right">Go Back</a>
 									<a href="freight-cost.php" class="btn btn-secondary float-right">Freight Cost</a>
 									<button type="submit" class="btn btn-primary float-right">Submit</button>
 								</td>

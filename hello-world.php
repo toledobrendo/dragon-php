@@ -13,6 +13,9 @@
 				<?php 
 					echo 'Hello World wow'
 				?>
+				<div class="card-footer">
+					<a class="btn btn-info float-right" href="index.php">Go Back</a>
+				</div>	
 			</div>
 		</div>
 	</div>
