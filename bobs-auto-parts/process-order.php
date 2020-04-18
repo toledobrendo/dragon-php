@@ -47,18 +47,19 @@
 						$sparkAmount = @($sparkQty * SPARK_PRICE);
 
 						//type casting
-						$totalAmount = (float) $tireAmount;
-						$totalAmount += $sparkAmount;
-						
-						//reference operator & (pass by reference)
-						$otherTotalAmount = &$totalAmount; //gives reference to another variable
-						$otherTotalAmount += $oilAmount;
+						$totalAmount = (float) $tireAmount + $oilAmount + $sparkAmount;
+                        $vatable = $totalAmount/1.12;
+                        $vat = 0.12 * $vatable;
 
-						echo 'Other Total Amount: ' . $otherTotalAmount. '<br/>';						
+                        $total = $vat + $vatable ;
+					
 						echo 'Total Quantity: '. $totalQty. '<br/><br/>';
-						echo 'Total Amount: '. $totalAmount. '<br/>';
 
-						echo 'Amount exceeded 500: '. ($totalAmount > 500 ? 'Yes':'No'). '<br/>';
+						echo '<br>VATable Amount: Php ' . $vatable . '</p>';
+                        echo 'VAT Amount (12%): Php ' . $vat . '</p>';
+                        echo 'Total: Php '. $total.'</p>';
+
+						echo 'Amount exceeded 500 but less than 1000? '. @($totalAmount > 500 && totalAmount < 1000 ? 'Yes':'No'). '<br/>';
 
 					?>
 				</div>
