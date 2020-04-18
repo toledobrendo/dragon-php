@@ -1,7 +1,7 @@
 <?php
   define('TIRE_PRICE',100);
-  define('OIL_PRICE',50);
-  define('SPARK_PRICE',30);
+  define('OIL_PRICE',100);
+  define('SPARK_PRICE',100);
  ?>
 
 <html>
@@ -34,7 +34,7 @@
         echo "<p>Your order is as follows</p>";
         echo "$tireQty tires<br/>";
         echo "$oilQty Oils<br/>";
-        echo "$spQty Sparkplug<br/>";
+        echo "$spQty Sparkplug<br/><br/>";
 
         // echo '<p>Prices<br/>';
         // echo 'Tires: '.TIRE_PRICE.'<br/>';
@@ -48,14 +48,14 @@
         $oilAmount = @($oilQty * OIL_PRICE);
         $sparkAmount= @( $spQty * SPARK_PRICE);
 
-        $totalAmount = (float) $tireAmount;
+        $totalAmount = $tireAmount + $oilAmount + $sparkAmount;
 
-        $otherTotalAmount = &$totalAmount;
-        $otherTotalAmount += $oilAmount;
-        $totalAmount += $sparkAmount;
+        // $otherTotalAmount = &$totalAmount;
+        // $otherTotalAmount += $oilAmount;
+        // $totalAmount += $sparkAmount;
 
-        $VatAmount = $totalAmount * .12;
-        $VATableAmount = $totalAmount - $VatAmount;
+        $VATableAmount = $totalAmount / 1.12;
+        $VatAmount = .12 * $VATableAmount;
         // echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
         $TotalAmount = $VatAmount + $VATableAmount;
 
@@ -63,7 +63,7 @@
         echo 'VAT Amount(12%): '.$VatAmount.'<br/>';
          echo 'Total Amount: '.$TotalAmount.'<br/>';
 
-         echo 'Amount exceeded 500? '.($TotalAmount > 500 ? 'Yes' : 'No').'<br/>';
+         echo 'Amount exceeded 500? '.($TotalAmount > 500 ? 'Yes' : 'No').'<br/><br/>';
          ?>
          <button type="submit" class="btn btn-primary" onclick="window.location.href = 'OrderForm.php';"><i class="fas fa-arrow-left"></i> Go Back</button>
       </div>
