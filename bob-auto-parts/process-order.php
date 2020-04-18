@@ -30,15 +30,25 @@
             $tireQty= $_POST['tireQty']? $_POST['tireQty'] : 0;
             $oilQty= $_POST['oilQty']? $_POST['oilQty'] : 0;
             $sparkQty= $_POST['sparkQty']? $_POST['sparkQty'] : 0;
+            $find= $_POST['find'];
 
-            echo '<p> Your order is as follows</p>';
-            echo $tireQty.'tires<br/>';
-
-            
-            echo $oilQty.'bottles of oil<br/>';
-
-            
-            echo $sparkQty.'Spark Plugs<br/><br/>';
+            switch($find){
+              case 'regular':
+                echo 'Regular Customer';
+                break;
+              case 'tv':
+                echo 'From TV Advertising';
+                break;
+              case 'phone':
+                echo 'From Phone Directory';
+                break;
+              case 'mouth':
+                echo ' From Word of Mouth';
+                break;
+              default:
+                echo 'Unknown Customer';
+                break;
+            }
 
             echo '<p>Prices<br/>';
             echo 'Tires:'.TIRE_PRICE.'<br/>';
@@ -46,6 +56,24 @@
             echo 'Spark Plugs: '.SPARK_PRICE.'<br/><br/>';
 
             $totalQty=@($tireQty+$oilQty+$sparkQty);
+
+            if($totalQty == 0){
+              echo 'You didnt order anything. <br/> <br/>';
+            }
+            else{
+              echo '<p> Your order is as follows:</p>';
+              echo $tireQty.'tires<br/>';
+              echo $oilQty.'bottles of oil<br/>';
+              echo $sparkQty.'Spark Plugs<br/><br/>';
+
+              if($tireQty>0)
+                echo"$tireQty tires <br/>";
+              if($tireQty>0)
+                echo"$oilQty oil <br/>";
+              if($tireQty>0)
+                echo"$sparkQty spark plugs <br/>";
+
+            }
             echo 'Total Quantity: '.$totalQty.'<br/>';
 
             $tireAmount = @($tireQty * TIRE_PRICE);
@@ -68,6 +96,16 @@
             echo 'Amount exceeded 500?  '.($totalAmount > 500 ? 'Yes' :'No').'<br/>';
             echo 'VATable Amount: '.($Total).'<br/>';
             echo 'VAT Amount: '.($VATAmount).'<br/>';
+
+
+            echo 'is $totalAmount string? ' .(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
+            unset($totalAmount);
+            echo 'is $totalAmount set?' .(isset($totalAmount)? 'Yes' : 'No').'<br/>';
+            
+            $totalAmountTwo = 0;
+            echo 'IS $totalAmountTwo set? '.(isset($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
+            echo 'IS $totalAmountTwo empty? '.(empty($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
+
           ?>
   			</div>
         <div class="card-footer">
