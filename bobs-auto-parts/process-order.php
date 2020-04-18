@@ -1,3 +1,9 @@
+<?php
+  define('TIRE_PRICE',100);
+  define('OIL_PRICE',50);
+  define('SPARK_PRICE',30);
+ ?>
+
 <html>
 <head>
     <!-- Required meta tags -->
@@ -29,6 +35,35 @@
         echo "$tireQty tires<br/>";
         echo "$oilQty Oils<br/>";
         echo "$spQty Sparkplug<br/>";
+
+        // echo '<p>Prices<br/>';
+        // echo 'Tires: '.TIRE_PRICE.'<br/>';
+        // echo 'Oil: '.OIL_PRICE.'<br/>';
+        // echo "Spark Plugs: ".SPARK_PRICE.'<br/><br/>';
+
+        $totalQty = @($tireQty +$oilQty + $spQty);
+        // echo 'Total Quantity: '.$totalQty.'<br/><br/>';
+
+        $tireAmount = @($tireQty * TIRE_PRICE);
+        $oilAmount = @($oilQty * OIL_PRICE);
+        $sparkAmount= @( $spQty * SPARK_PRICE);
+
+        $totalAmount = (float) $tireAmount;
+
+        $otherTotalAmount = &$totalAmount;
+        $otherTotalAmount += $oilAmount;
+        $totalAmount += $sparkAmount;
+
+        $VatAmount = $totalAmount * .12;
+        $VATableAmount = $totalAmount - $VatAmount;
+        // echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
+        $TotalAmount = $VatAmount + $VATableAmount;
+
+        echo 'VaTable Amount: '.$VATableAmount.'<br/>';
+        echo 'VAT Amount(12%): '.$VatAmount.'<br/>';
+         echo 'Total Amount: '.$TotalAmount.'<br/>';
+
+         echo 'Amount exceeded 500? '.($TotalAmount > 500 ? 'Yes' : 'No').'<br/>';
          ?>
          <button type="submit" class="btn btn-primary" onclick="window.location.href = 'OrderForm.php';"><i class="fas fa-arrow-left"></i> Go Back</button>
       </div>
