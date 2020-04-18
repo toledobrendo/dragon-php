@@ -3,7 +3,7 @@
 	// constant variables
 	define('TIRE_PRICE', 100);
 	define('OIL_PRICE', 50);
-	define('SPARK_PRICE', 20);
+	define('SPARK_PRICE', 30);
  ?>
 <html>
 	<head>

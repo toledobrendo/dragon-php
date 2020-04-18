@@ -3,7 +3,7 @@
 	// constant variables
 	define('TIRE_PRICE', 100);
 	define('OIL_PRICE', 50);
-	define('SPARK_PRICE', 20);
+	define('SPARK_PRICE', 30);
  ?>
 <html>
 	<head>
@@ -46,7 +46,7 @@
 
 						// quantity
 						$totalQty = $tireQty + $oilQty + $sparkQty;
-						echo '<br/><br/>Total Quantity: '.$totalQty;
+						echo '<br/><br/><b>Total Quantity</b>: '.$totalQty;
 
 						// prices
 						$tireAmt = TIRE_PRICE * $tireQty;
@@ -56,10 +56,17 @@
 						// summary
 						echo '<br/><b><p>Summary:</b>';
 						$totalPrice = $tireAmt + $oilAmt + $sparkAmt;
-						echo '<br/>Total Price: '.$totalPrice;
+
+						// VAT
+						$VATamt = 0.12 * $totalPrice;
+						$VATableAmt = $totalPrice - $VATamt;
+						echo '<br/>VATable Amount: '.$VATableAmt;
+						echo '<br/>VAT Amount: '.$VATamt;
+
+						echo '<br/><br/><b>Total amount</b>: '.$totalPrice;
 
 						// ternary operation
-						echo '<br/><br/>Amount Exceeded 500? '.($totalPrice > 500 ? 'Yes' : 'No');
+						echo '<br/><br/>Amount Exceeded 500? but less than 1000? '.(($totalPrice > 500 && $totalPrice < 1000) ? 'Yes' : 'No');
 					 ?>
 					<hr>
 					<a href="order-form.php" class="btn btn-danger">Go back</a>
