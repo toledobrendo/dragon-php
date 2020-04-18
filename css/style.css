@@ -1,0 +1,23 @@
+/* Navigation */
+.nav-home-title {
+    font-size: 4em;
+}
+.nav-home-subtitle {
+    margin-top: -.5%;
+    font-size: 1em;
+}
+nav a:link {
+    text-decoration: none;
+}
+
+nav a:visited {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+nav a:active {
+    text-decoration: none;
+}

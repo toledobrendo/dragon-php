@@ -20,7 +20,7 @@
                             <a href="hello.php">Hello World</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="bobs-auto-parts/order-form.php">Hello World</a>
+                            <a href="bobs-auto-parts/order-form.php">Bobs-Auto-Parts</a>
                         </li>
                     </ul>
                 </div>
