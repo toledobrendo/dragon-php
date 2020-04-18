@@ -27,13 +27,10 @@
                         $oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
                         $sparkQty = $_POST['sparkQty'] ? $_POST['sparkQty'] : 0;
                         
-                        echo '<p> Order processed at ';
+                        echo 'Order processed at ';
                         echo date('H:i, jS F Y');
-                        echo '<br>Your order is as follows: <br><br>';
-                        echo $tireQty. ' tires.<br>';
-                        echo $oilQty . ' bottles of oil.<br>';
-                        echo $sparkQty . ' spark plugs.<br>';
-                        echo '</p>';
+                        
+                        
 
                         
                         echo '<p>Prices<br/>'; 
@@ -47,6 +44,21 @@
                         }
                         else{
                             echo '<br/>Total Quantity: '.$totalQty.'<br/>';
+                            
+                            echo '<br>Your order is as follows: <br><br>';
+                            
+                            if($tireQty>0){
+                                echo $tireQty. ' tires.<br>';
+                            }
+                            
+                            if($oilQty>0){
+                                echo $oilQty . ' bottles of oil.<br>';
+                            }
+                            
+                            if($sparkQty>0){
+                                echo $sparkQty . ' spark plugs.<br>';
+                            }
+                            
                         }
                         
                         

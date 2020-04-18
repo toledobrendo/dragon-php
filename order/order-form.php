@@ -42,6 +42,19 @@
                     <input type="number" name="sparkQty" maxlength="3" min="0" max="10" class="form-control"/>
                   </td>
                 </tr>
+                  
+                <tr class="row">
+                  <td class="col-5">How do you find our shop?</td>
+                  <td class="col-4">
+                    <select name="find" class="custom-select">
+                        <option value="regular">I'm a regular customer.</option>
+                        <option value="tv">TV advertising.</option>
+                        <option value="phone">Phone directory.</option>
+                        <option value="mouth">Word of Mouth.</option>
+                    </select>
+                  </td>
+                </tr>
+                  
                 <tr class="row">
                   <td colspan="2" class="col-9">
                     <button type="submit" class="btn btn-primary float-right">Submit</button>
