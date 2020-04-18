@@ -12,7 +12,6 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-
           <h1 class="card-title">PHP Exercises</h1>
           <div class="col-6">
             <ul class="list-group">
