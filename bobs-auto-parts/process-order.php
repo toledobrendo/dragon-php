@@ -17,18 +17,35 @@
 				<h3 class="card-title"> Order Results </h3>
 
 				<?php
-					echo '<p>Product Order Proccessed at ';
-					echo date('H:i, jS F Y');
-					echo '</p>';
-				
-					$tireQty = $_POST['tireQty'];
-					$oilQty = $_POST['oilQty'];
-					$sparkQty = $_POST['sparkQty'];
+				define('TIRE_PRICE', 100);
+				define('OIL_PRICE', 100);
+				define('SPARK_PRICE', 100);
 
-					echo '<br><p> Your order is as follows: </p>';
-					echo $tireQty. ' tires<br/>';
-					echo $oilQty. ' cans of oil<br/>';
-					echo $sparkQty. ' spark plugs<br/>';
+                echo '<p>Order Processed at ';
+                echo date('H:i, jS F Y');
+				echo '</p>';
+
+				//comment in php
+				/**Multiline comment
+				ad **/
+				$tireQty = $_POST['tireQty'];
+				$oilQty = $_POST['oilQty'];
+				$sparkQty = $_POST['sparkQty'];
+
+				echo '<p>Your order is as folows</p>';
+				echo $tireQty.' tires.<br/>';
+				//concatination in php is dot
+				echo "$oilQty bottles of oil.<br/>";
+				echo "$sparkQty spark plugs.<br/></br>";
+
+				$total = (TIRE_PRICE * $tireQty) + (OIL_PRICE * $oilQty) + (SPARK_PRICE * $sparkQty);
+				$vatable = $total / 1.12;
+				$vat = $total - $vatable;
+
+				echo "VATable Amount: $vatable <br/>";
+				echo "VAT Amount (12%): $vat <br/>";
+				echo "Total Amount: $total <br/>";
+
 				?>
 
 				<br>
