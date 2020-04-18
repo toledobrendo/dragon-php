@@ -55,12 +55,12 @@
                         $totalAmount += $sparkAmount;
                         
                         $vatAmount = @((float)($totalAmount * .12)); 
-                        $vatableAmount = @((float)($totalAmount - $vatAmount)); 
+                        $totalAmountWithTax = @((float)($totalAmount + $vatAmount)); 
                 
                         //echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
-                        echo 'VATable Amount: '.$vatableAmount.'<br/>'; 
+                        echo 'VATable Amount: '.$totalAmount.'<br/>'; 
                         echo 'VAT Amount (12%): '.$vatAmount.'<br/>'; 
-                        echo 'Total Amount: '.$totalAmount.'<br/>';
+                        echo 'Total Amount: '.$totalAmountWithTax.'<br/>';
 
                         echo '<br/>Amount exceeded 500 but less than 1000? '.($totalAmount > 500 && $totalAmount <1000 ? 'Yes' : 'No').'<br/>';
                     
