@@ -53,8 +53,9 @@
 					$otherTotalAmount = &$totalAmount;
 					$otherTotalAmount += $oilAmount;
 
-					$vatAmount = @((float)($totalAmount * 0.12));
-					$vatableAmount = @((float)($totalAmount - $vatAmount));
+					$vatableAmount = @((float)($totalAmount / 1.12));
+					$vatAmount = @((float)($vatableAmount * 0.12));
+					
 
 					echo '<br/>';
 					echo 'Total Quantity: '.$totalQty.'<br/>';
@@ -62,7 +63,7 @@
 					echo 'VAT Amount(12%): '.$vatAmount.'<br/>';
 					echo 'Total Amount: '.$totalAmount.'<br/>';
 					echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
-					echo 'Amount Exceeded 500? '.($totalAmount > 500 ? 'Yes' : 'No').'<br/>';
+					echo 'Amount Exceeded 500 but less than 1000? '.($totalAmount > 500 && $totalAmount < 1000 ? 'Yes' : 'No').'<br/>';
 				?>
 				<div class="card-footer">
 					<a class="btn btn-info float-right" href="order-form.php">Go Back</a>
