@@ -16,15 +16,27 @@
                         $tireQty = $_POST['tireQty'];
                         $oilQty = $_POST['oilQty'];
                         $sparkQty = $_POST['sparkQty'];
-                        
+                        $totalQty = $tireQty + $oilQty + $sparkQty;
+
+                        define('TIRE_PRICE', 100);
+                        define('OIL_PRICE', 70);
+                        define('SPARK_PRICE', 130);
+
+                        $tire_price = (float) $tireQty * TIRE_PRICE;
+                        $oil_price = (float) $oilQty * OIL_PRICE;
+                        $spark_price = (float) $sparkQty * SPARK_PRICE;
+                        $total_price = (float) $tire_price + $oil_price + $spark_price;
+
                         echo '<p> Order processed at ';
                         echo date('H:i, jS F Y');
-                        echo '<br>Your order is as follows: <br>';
-                        echo $tireQty. ' tires.<br>';
-                        echo $oilQty . ' bottles of oil.<br>';
-                        echo $sparkQty . ' spark plugs.<br>';
-                        echo '</p>'
-
+                        echo '<br>Tire Price: Php ' .TIRE_PRICE;
+                        echo '<br>Oil Price: Php ' .OIL_PRICE;
+                        echo '<br>Spark Plug Price: Php ' .SPARK_PRICE;
+                        echo '<br><br>Your order is as follows(' .$totalQty. ' items): <br>';
+                        echo $tireQty. ' tires. (Php ' . $tire_price . ') <br>';
+                        echo $oilQty . ' bottles of oil. (Php ' . $oil_price. ') <br>';
+                        echo $sparkQty . ' spark plugs. (Php ' . $spark_price.') <br>';
+                        echo '<br>Total: Php '.$total_price.'</p>';
                         // PHP Comments
                         /**
                             Multiline comment wow

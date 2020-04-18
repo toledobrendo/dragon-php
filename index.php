@@ -19,7 +19,7 @@
                             <a href="hello-world.php">Hello World</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="template.php">Template</a>
+                            <a href="bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering</a>
                         </li>
                     </ul>
                 </div>
