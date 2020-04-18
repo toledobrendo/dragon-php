@@ -53,8 +53,13 @@
 					$otherTotalAmount = &$totalAmount;
 					$otherTotalAmount += $oilAmount;
 
+					$vatAmount = @((float)($totalAmount * 0.12));
+					$vatableAmount = @((float)($totalAmount - $vatAmount));
+
 					echo '<br/>';
 					echo 'Total Quantity: '.$totalQty.'<br/>';
+					echo 'VATABLE Amount: '.$vatableAmount.'<br/>';
+					echo 'VAT Amount: '.$vatAmount.'<br/>';
 					echo 'Total Amount: '.$totalAmount.'<br/>';
 					echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
 					echo 'Amount Exceeded 500? '.($totalAmount > 500 ? 'Yes' : 'No').'<br/>';
