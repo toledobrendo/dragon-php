@@ -18,9 +18,9 @@
                         $sparkQty = $_POST['sparkQty']?$_POST['sparkQty'] :0;
                         $totalQty = $tireQty + $oilQty + $sparkQty;
 
-                        define('TIRE_PRICE', 100.75);
-                        define('OIL_PRICE', 70.25);
-                        define('SPARK_PRICE', 130.50);
+                        define('TIRE_PRICE', 100);
+                        define('OIL_PRICE', 50);
+                        define('SPARK_PRICE', 30);
 
                         $tire_price = @((float) $tireQty * TIRE_PRICE);
                         $oil_price = @((float) $oilQty * OIL_PRICE);
