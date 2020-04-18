@@ -18,9 +18,9 @@
                         $sparkQty = $_POST['sparkQty']?$_POST['sparkQty'] :0;
                         $totalQty = $tireQty + $oilQty + $sparkQty;
 
-                        define('TIRE_PRICE', 100);
-                        define('OIL_PRICE', 70);
-                        define('SPARK_PRICE', 130);
+                        define('TIRE_PRICE', 100.75);
+                        define('OIL_PRICE', 70.25);
+                        define('SPARK_PRICE', 130.50);
 
                         $tire_price = @((float) $tireQty * TIRE_PRICE);
                         $oil_price = @((float) $oilQty * OIL_PRICE);
@@ -28,7 +28,8 @@
                         // $total_price = (float) $tire_price;
                         $total_price = (float) $tire_price + $oil_price + $spark_price;
                         $vat = 0.12 * $total_price;
-                        $vat_total_price = $vat + $total_price;
+                        $vat_total_price = $total_price/1.12;
+                        $sales_total = $vat + $vat_total_price;
 
                         //pass by reference sample
                         // $other_total_amount = &$total_price;
@@ -52,6 +53,7 @@
 
                         echo '<br>VATable Amount: Php ' . $vat_total_price . '</p>';
                         echo 'VAT Amount (12%): Php ' . $vat . '</p>';
+                        echo 'Total: Php '. $sales_total.'</p>';
                         // echo '<br>Total: Php '.$total_price.'</p>';
 
                         echo 'Amount exceeded 500 but less than 1000?'.($vat_total_price>500 && $vat_total_price<1000?' Yes':' No').'<br>';
