@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php 
+	// constant variables
+	define('TIRE_PRICE', 100);
+	define('OIL_PRICE', 50);
+	define('SPARK_PRICE', 20);
+ ?>
 <html>
 	<head>
 		<title></title>
@@ -28,6 +34,32 @@
 						// double quote: variables can be inside
 						echo "$oilQty bottles of oil<br/>";
 						echo "$sparkQty spark plugs<br/>";
+
+						echo '<br/><b><p>Prices:</b>';
+						echo '<br/>Tires: '.TIRE_PRICE;
+						echo '<br/>Oil: '.OIL_PRICE;
+						echo '<br/>Spark Plug: '.SPARK_PRICE;
+
+						// NOTE: arithmetic operations expect a numerical value, but php attempts to do the operation regardless (expect a warning message in your webpage though)
+
+						// to hide warnings, do @(operationHere)
+
+						// quantity
+						$totalQty = $tireQty + $oilQty + $sparkQty;
+						echo '<br/><br/>Total Quantity: '.$totalQty;
+
+						// prices
+						$tireAmt = TIRE_PRICE * $tireQty;
+						$oilAmt = OIL_PRICE * $oilQty;
+						$sparkAmt = SPARK_PRICE * $sparkQty;
+
+						// summary
+						echo '<br/><b><p>Summary:</b>';
+						$totalPrice = $tireAmt + $oilAmt + $sparkAmt;
+						echo '<br/>Total Price: '.$totalPrice;
+
+						// ternary operation
+						echo '<br/><br/>Amount Exceeded 500? '.($totalPrice > 500 ? 'Yes' : 'No');
 					 ?>
 					<hr>
 					<a href="order-form.php" class="btn btn-danger">Go back</a>

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php 
+	// constant variables
+	define('TIRE_PRICE', 100);
+	define('OIL_PRICE', 50);
+	define('SPARK_PRICE', 20);
+ ?>
 <html>
 	<head>
 		<title></title>
