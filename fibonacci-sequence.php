@@ -41,7 +41,7 @@
 
 				    while ($counter < $num){ 
 
-				        echo '  <b>'.$num1.'</b>'; 
+				        echo '<b>'.$num1.'</b>&nbsp; &nbsp; &nbsp;'; 
 
 				        $num3 = $num2 + $num1; 
 				        $num1 = $num2; 
