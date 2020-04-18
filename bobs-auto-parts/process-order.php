@@ -1,3 +1,9 @@
+<?php
+ //defining constant variables.
+ define('TIRE_PRICE', 100);
+ define('OIL_PRICE', 50);
+ define('SPARK_PRICE', 30);
+ ?>
 <html>
 
   <head>
@@ -26,8 +32,34 @@
             echo "<p>Your order is as follows</p>";
             echo $tireQty." tires<br/>";
             echo "$oilQty bottle/s of oil<br/>";
-            echo "$sparkPlugsQty number of spark plug/s<br/>";
+            echo "$sparkPlugsQty number of spark plug/s<br/><br/>";
+
+            echo "<p>Prices<br/>";
+            echo "Tires: ".TIRE_PRICE."<br/>";
+            echo "Oil: ".OIL_PRICE."<br/>";
+            echo "Spark Plugs: ".SPARK_PRICE."<br/><br/>";
+
+            $totalQty = $tireQty + $oilQty + $sparkPlugsQty;
+            echo "Total number of items: $totalQty<br/>";
+
+            $tireAmount = $tireQty * TIRE_PRICE;
+            $oilAmount = $oilQty * OIL_PRICE;
+            $sparkPlugsAmount = $sparkPlugsQty * SPARK_PRICE;
+
+            //'@' suppresses the warnings that may be created from a command.
+            $totalAmount = (float) @($tireAmount + $oilAmount + $sparkPlugsAmount);
+            $otherTotalAmount = &$totalAmount;
+            $otherTotalAmount += $tireAmount;
+
+            echo "Total Amount: Php $totalAmount<br/>";
+            echo "Other Total Amount: Php $otherTotalAmount<br/>";
+
+            echo "Amount exceed 500? ".($totalAmount > 500 ? "Yes" : "No")
           ?>
+        </div>
+
+        <div class="card-footer">
+          <a class="btn btn-info" href="order-form.php">Go Back</a>
         </div>
       </div>
     </div>
