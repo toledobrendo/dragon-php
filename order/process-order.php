@@ -26,13 +26,32 @@
                         $tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
                         $oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
                         $sparkQty = $_POST['sparkQty'] ? $_POST['sparkQty'] : 0;
+                        $find = $_POST['find']; 
                         
                         echo 'Order processed at ';
                         echo date('H:i, jS F Y');
+                        echo '<br><br>';
                         
+                        switch($find){
+                            case 'regular';
+                                echo 'Regular Customer';
+                                break; 
+                            case 'tv';
+                                echo 'From TV advertisement';
+                                break; 
+                            case 'phone';
+                                echo 'From phone referral';
+                                break; 
+                            case 'mouth';
+                                echo 'From the word of mouth';
+                                break; 
+                            default:
+                                echo 'Unknown'; 
+                                break; 
+                        }
                         
 
-                        
+                        echo '<br><br>'; 
                         echo '<p>Prices<br/>'; 
                         echo 'Tires: '.TIRE_PRICE.'<br/>'; 
                         echo 'Oil: '.OIL_PRICE.'<br/>'; 
@@ -40,12 +59,12 @@
                 
                         $totalQty = @($tireQty + $oilQty + $sparkQty);
                         if($totalQty < 1){
-                            echo'You didn\'t order anything!<br/>'; 
+                            echo'<br/>You didn\'t order anything!<br/>'; 
                         }
                         else{
                             echo '<br/>Total Quantity: '.$totalQty.'<br/>';
                             
-                            echo '<br>Your order is as follows: <br><br>';
+                            echo '<br>Your order is as follows: <br>';
                             
                             if($tireQty>0){
                                 echo $tireQty. ' tires.<br>';
@@ -62,7 +81,7 @@
                         }
                         
                         
-                        
+                        echo '<br><br>';
                         $tireAmount = @($tireQty * TIRE_PRICE);
                         $oilAmount = @($oilQty * OIL_PRICE);
                         $sparkAmount = @($sparkQty * SPARK_PRICE);
@@ -83,7 +102,17 @@
                         echo 'Total Amount: '.$totalAmount.'<br/>';
 
                         echo '<br/>Amount exceeded 500 but less than 1000? '.($totalAmount > 500 && $totalAmount <1000 ? 'Yes' : 'No').'<br/>';
-                    
+                
+                        echo 'Is $totalAmount string? '.(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
+
+                        unset($totalAmount);
+
+                        echo 'Is $totalAmount set? '.(isset($totalAmount) ? 'Yes' : 'No').'<br/>';
+
+                        $totalAmountTwo = 0;
+                        echo 'Is $totalAmountTwo set? '.(isset($totalAmountTwo) ? 'Yes' : 'No').'<br/>';
+                        echo 'Is $totalAmountTwo empty? '.(empty($totalAmountTwo) ? 'Yes' : 'No').'<br/>';
+
                 ?>
             </div>
             

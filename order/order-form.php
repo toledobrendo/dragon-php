@@ -57,6 +57,7 @@
                   
                 <tr class="row">
                   <td colspan="2" class="col-9">
+                    <a href="freight-cost.php" class="btn btn-secondary float right">Freight Cost</a>
                     <button type="submit" class="btn btn-primary float-right">Submit</button>
                   </td>
                 </tr>
