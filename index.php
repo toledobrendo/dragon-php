@@ -19,7 +19,16 @@
 							<a href="hello-world.php"> Hello World </a>
 						</li>
 						<li class="list-group-item"> 
-							<a href="bobs-auto-parts\order-form.php"> Order Form </a>
+							<a href="bobs-auto-parts\order-form.php"> Bob's Auto Parts - Order Form </a>
+						</li>
+						<li class="list-group-item"> 
+							<a href="bobs-auto-parts\process-order.php"> Bob's Auto Parts - Process Order </a>
+						</li>
+						<li class="list-group-item"> 
+							<a href="bobs-auto-parts\freight-cost.php"> Bob's Auto Parts - Freight Cost </a>
+						</li>
+						<li class="list-group-item"> 
+							<a href="fibonacci-sequence.php"> Fibonacci Sequence </a>
 						</li>
 					</ul>
 				</div>

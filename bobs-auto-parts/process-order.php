@@ -30,19 +30,43 @@
 					$tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
 					$oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
 					$sparkQty = $_POST['sparkQty'] ? $_POST['sparkQty'] : 0;
+					$totalQty = $tireQty + $oilQty + $sparkQty;
 
+					switch($_POST['find']) {
+						case'regular':
+							echo 'Regular Customer <br/>';
+							break;
+						case'tv':
+							echo 'From TV advertising <br/>';
+							break;
+						case'phone':
+							echo 'From Phone Directory <br/>';
+							break;
+						case'word':
+							echo 'From Word of Mouth <br/>';
+							break;
+					}
+
+					if($totalQty == 0) {
+						echo '<i>You did not order anything </i><br/><br/>';
+					} else {
 					echo '<br><p><b><i>Your order is as follows:</i></b></p>';
-					echo $tireQty. ' <i>tires</i><br/>';
-					echo $oilQty. ' <i>cans of oil</i><br/>';
-					echo $sparkQty. ' <i>spark plugs</i><br/><br/>';
+					if ($tireQty > 0) {
+						echo $tireQty. ' <i>tires</i><br/>';}
+
+					if ($oilQty > 0) {
+						echo $oilQty. ' <i>cans of oil</i><br/>';}
+
+					if ($sparkQty > 0) {
+						echo $sparkQty. ' <i>spark plugs</i><br/>';} }
 
 					// echo '<i>Prices Per Item</i><br/>';
 					// echo 'Tires: PHP '.TIRE_PRICE.'<br/>';
 					// echo 'Oil: PHP '.OIL_PRICE.'<br/>';
 					// echo 'Spark Plugs: PHP '.SPARK_PRICE.'<br/><br/>';
 
-					$totalQty = $tireQty + $oilQty + $sparkQty;
-					echo '<b>Total Quantity:</b> '.$totalQty.'<br/><br/>';
+					
+					echo '<br/><b>Total Quantity:</b> '.$totalQty.'<br/><br/>';
 
 					$tireAmount = $tireQty * TIRE_PRICE;
 					$oilAmount = $oilQty * OIL_PRICE;
@@ -63,8 +87,23 @@
 					
 					echo '<b>Total Amount:</b> PHP '.$total.'<br/><br/>';
 
-					echo 'Amount exceeded 500 & less than 1000? '.($totalAmount > 500 && $totalAmount < 1000?'<i>Yes</i>' : '<i>No</i>').'<br/>';
+					echo '<i>Amount exceeded 500 & less than 1000? </i>'.($totalAmount > 500 && $totalAmount < 1000?'<i>Yes</i>' : '<i>No</i>').'<br/>';
 
+					// echo '<i>Is $totalAmount a string? </i>';
+					// echo is_string($totalAmount) ? '<i>Yes</i><br/>' : '<i>No</i><br/>';
+
+					// echo '<i>Is $totalAmount set? </i>';
+					// echo isset($totalAmount) ? '<i>Yes</i><br/>' : '<i>No</i><br/>';
+
+					// // unset($totalAmount);
+
+					// $totalAmountTwo;
+
+					// echo '<i>Is $totalAmountTwo set? </i>';
+					// echo isset($totalAmount) ? '<i>Yes</i><br/>' : '<i>No</i><br/>';
+
+					// echo '<i>Is $totalAmountTwo empty? </i>';
+					// echo empty($totalAmount) ? '<i>Yes</i><br/>' : '<i>No</i><br/>';
 
 				?>
 
