@@ -55,10 +55,10 @@
 
             echo "Amount exceed 500? ".($totalAmount > 500 ? "Yes" : "No")."<br/><br/>";
 
-            $valueAddedTax = $totalAmount * 0.12;
-            $totalAmount += $valueAddedTax;
+            $vatableAmount = $totalAmount / 1.12;
+            $valueAddedTax = $totalAmount - $vatableAmount;
             echo "VAT: Php $valueAddedTax<br/>";
-            echo "Final Total Amount: Php $totalAmount<br/>";
+            echo "VATable Amount: Php $vatableAmount<br/>";
           ?>
         </div>
 
