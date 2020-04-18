@@ -1,8 +1,7 @@
 <?php
   define('TIRE_PRICE', 100);
-  define('OIL_PRICE', 50);
-  define('SPARK_PRICE', 30);
-  define('PERCENT' .12);
+  define('OIL_PRICE', 100);
+  define('SPARK_PRICE', 100);
 ?>
 <html>
   <head>
@@ -62,7 +61,7 @@
             echo 'Amount exceeded 500? '.($totalAmount > 500 ? 'Yes' : 'No').'<br/>';
 
             $VATable  = $totalAmount / 1.12;
-            $VAT = $VATable * PERCENT;
+            $VAT = $VATable * 0.12;
             $totalAmountVatComputation = $VAT + $VATable;
 
             echo 'VATable Amount: '.$VATable.'<br/>';
