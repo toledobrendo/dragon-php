@@ -20,20 +20,49 @@
 					<h2 class="card-title">Bob's Auto Parts</h2>
 					<h3 class="card-title">Order Result</h3>
 					<?php 
-						echo '<p>Order Processed at ';
+						echo '<p>Order Processed on ';
 						echo date('H:i, jS F Y');
 						echo '</p>';
 
+						// from html
 						$tireQty = $_POST['tireQty'];
 						$oilQty = $_POST['oilQty'];
 						$sparkQty = $_POST['sparkQty'];
+						$find = $_POST['find'];
 
-						echo '<p>Order List:</p>';
-						// single quote: variables must be outside
-						echo $tireQty.' tires<br/>';
-						// double quote: variables can be inside
-						echo "$oilQty bottles of oil<br/>";
-						echo "$sparkQty spark plugs<br/>";
+						switch($find) {
+							case 'regular':
+								echo 'Regular customer<br/>';
+								break;
+							case 'tv':
+								echo 'From TV advertising<br/>';
+								break;
+							case 'phone':
+								echo 'Phone directory<br/>';
+								break;
+							case 'mouth':
+								echo 'Word of the mouth<br/>';
+								break;
+						}
+
+						$totalQty = $tireQty + $oilQty + $sparkQty;
+
+						echo '<br/><b>Order List</b>:<br/>';
+						if($totalQty != 0) {
+							if($tireQty > 0) {
+								// single quote: variables must be outside
+								echo $tireQty.' tires<br/>';
+							}
+							if($oilQty > 0) {
+								// double quote: variables can be inside
+								echo "$oilQty bottles of oil<br/>";
+							}
+							if($sparkQty > 0) {
+								echo "$sparkQty spark plugs<br/>";
+							}
+						} else {
+							echo 'You did not order anything.<br/>';
+						}
 
 						echo '<br/><b><p>Prices:</b>';
 						echo '<br/>Tires: '.TIRE_PRICE;
@@ -44,9 +73,11 @@
 
 						// to hide warnings, do @(operationHere)
 
+
 						// quantity
-						$totalQty = $tireQty + $oilQty + $sparkQty;
 						echo '<br/><br/><b>Total Quantity</b>: '.$totalQty;
+
+						
 
 						// prices
 						$tireAmt = TIRE_PRICE * $tireQty;
@@ -55,19 +86,29 @@
 
 						// summary
 						echo '<br/><b><p>Summary:</b>';
-						$totalPrice = $tireAmt + $oilAmt + $sparkAmt;
+						$subtotalPrice = $tireAmt + $oilAmt + $sparkAmt;
 
 						// VAT
-						$VATamt = 0.12 * $totalPrice;
-						$VATableAmt = $totalPrice - $VATamt;
+						$VATableAmt = $subtotalPrice / 1.12;
+						$VAT = 0.12 * $VATableAmt;
+						$totalPrice = $VATableAmt + $VAT;
 
 						echo '<br/>VATable Amount: '.$VATableAmt;
-						echo '<br/>VAT Amount: '.$VATamt;
+						echo '<br/>VAT Amount: '.$VAT;
 
 						echo '<br/><br/><b>Total amount</b>: '.$totalPrice;
 
 						// ternary operation
 						echo '<br/><br/>Amount Exceeded 500? but less than 1000? '.(($totalPrice > 500 && $totalPrice < 1000) ? 'Yes' : 'No');
+
+						// ternary functions
+
+						// unset($totalPrice);
+
+						echo '<br/>Is $totalPrice string? '.(is_string($totalPrice) ? 'Yes' : 'No');
+						echo '<br/>Is %totalPrice set? '.(isset($totalPrice) ? 'Yes' : 'No');
+						// a value of 0 is still empty
+						echo '<br/>Is %totalPrice empty? '.(empty($totalPrice) ? 'Yes' : 'No');
 					 ?>
 					<hr>
 					<a href="order-form.php" class="btn btn-danger">Go back</a>

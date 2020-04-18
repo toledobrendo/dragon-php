@@ -11,23 +11,55 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-body">
-					<h1 class="card-title">PHP Exercises</h1>
-					<div class="col-6">
-						<ul class="list-group">
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="hello-world.php">Hello World</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Bobs Auto Parts</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="fibonacci-sequence/fibonacci-sequence.php">Fibonacci Sequence</a>
-							</li>
-						</ul>
-					</div>
+					 <h1>Freight Cost</h1>
+					 <table class="table">
+					 	<thead>
+					 		<tr class="row">
+					 			<th class="col-3">Distance</th>
+					 			<th class="col-3">Cost</th>
+					 		</tr>
+					 	</thead>
+
+					 	<tbody>
+					 		<?php 
+					 			$distance = 50;
+
+					 			// up to 250
+					 			while($distance <= 250) {
+					 				echo 
+					 					'<tr class="row">
+					 						<td class="col-3">'.$distance.'</td>
+					 						<td class="col-3">'.($distance / 10).'</td>
+					 					</tr>';
+					 				$distance += 50;
+					 			}
+
+					 			// 300 to 500
+					 			for($distance = 300; $distance <= 500; $distance += 50) {
+					 				echo 
+					 					'<tr class="row">
+					 						<td class="col-3">'.$distance.'</td>
+					 						<td class="col-3">'.($distance / 10).'</td>
+					 					</tr>';
+					 					$distance += 50;
+					 			}
+
+					 			// past 500
+					 			$distance = 550;
+					 			do {
+					 				echo 
+					 					'<tr class="row">
+					 						<td class="col-3">'.$distance.'</td>
+					 						<td class="col-3">'.($distance / 10).'</td>
+					 					</tr>';
+					 					$distance += 50;
+					 			} while($distance <= 750)
+					 		 ?>
+					 		 <tr class="col-3">
+					 		 	<a href="order-form.php" class="btn btn-danger">Back</a>
+					 		 </tr>
+					 	</tbody>
+					 </table>
 				</div>
 			</div>
 		</div>
