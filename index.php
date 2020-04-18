@@ -24,6 +24,9 @@
               <li class="list-group-item">
                 <a href="bob-auto-parts/order-form.php">bob's auto parts</a>
               </li>
+              <li class="list-group-item">
+                <a href="fibonacci-sequence/fibonaccisequence.php">Fibonacci Sequence</a>
+              </li>
             </ul>
           </div>
   			</div>
