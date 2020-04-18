@@ -42,8 +42,15 @@
                         echo 'Spark Plugs: '.SPARK_PRICE.'<br/>'; 
                 
                         $totalQty = @($tireQty + $oilQty + $sparkQty);
-                        echo '<br/>Total Quantity: '.$totalQty.'<br/>';
-                
+                        if($totalQty < 1){
+                            echo'You didn\'t order anything!<br/>'; 
+                        }
+                        else{
+                            echo '<br/>Total Quantity: '.$totalQty.'<br/>';
+                        }
+                        
+                        
+                        
                         $tireAmount = @($tireQty * TIRE_PRICE);
                         $oilAmount = @($oilQty * OIL_PRICE);
                         $sparkAmount = @($sparkQty * SPARK_PRICE);
@@ -54,13 +61,14 @@
                         $otherTotalAmount += $oilAmount;
                         $totalAmount += $sparkAmount;
                         
-                        $vatAmount = @((float)($totalAmount * .12)); 
-                        $totalAmountWithTax = @((float)($totalAmount + $vatAmount)); 
+                        $vatableAmount = $totalAmount / 1.12; 
+                        $vatAmount = @((float)($vatableAmount * .12)); 
+                        $totalAmount = @((float)($vatableAmount + $vatAmount)); 
                 
                         //echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
-                        echo 'VATable Amount: '.$totalAmount.'<br/>'; 
+                        echo 'VATable Amount: '.$vatableAmount.'<br/>'; 
                         echo 'VAT Amount (12%): '.$vatAmount.'<br/>'; 
-                        echo 'Total Amount: '.$totalAmountWithTax.'<br/>';
+                        echo 'Total Amount: '.$totalAmount.'<br/>';
 
                         echo '<br/>Amount exceeded 500 but less than 1000? '.($totalAmount > 500 && $totalAmount <1000 ? 'Yes' : 'No').'<br/>';
                     
