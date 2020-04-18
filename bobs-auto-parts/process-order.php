@@ -28,9 +28,9 @@
                     $oilQty = $_POST['oilQty'];
                     $sparkQty = $_POST['sparkQty'];
                     /* Process Data */
-                    $totalPrice = (float)($tireQty*TIRE_PRICE)+($oilQty*OIL_PRICE)+($sparkQty*SPARK_PRICE);
-                    $vatAble = (float)$totalPrice / VATABLE_RATE;
-                    $vatAmnt = (float)VAT_RATE*($totalPrice/VATABLE_RATE);
+                    $totalPrice = @(float)($tireQty*TIRE_PRICE)+($oilQty*OIL_PRICE)+($sparkQty*SPARK_PRICE);
+                    $vatAble = @(float)$totalPrice / VATABLE_RATE;
+                    $vatAmnt = @(float)VAT_RATE*($totalPrice/VATABLE_RATE);
                     /* Print */
                     echo "<p>Order Processed at ";
                     echo date("H:i, jS F Y");
