@@ -49,12 +49,16 @@
             //'@' suppresses the warnings that may be created from a command.
             $totalAmount = (float) @($tireAmount + $oilAmount + $sparkPlugsAmount);
             $otherTotalAmount = &$totalAmount;
-            $otherTotalAmount += $tireAmount;
-
+            //$otherTotalAmount += $tireAmount;
             echo "Total Amount: Php $totalAmount<br/>";
-            echo "Other Total Amount: Php $otherTotalAmount<br/>";
+            //echo "Other Total Amount: Php $otherTotalAmount<br/>";
 
-            echo "Amount exceed 500? ".($totalAmount > 500 ? "Yes" : "No")
+            echo "Amount exceed 500? ".($totalAmount > 500 ? "Yes" : "No")."<br/><br/>";
+
+            $valueAddedTax = $totalAmount * 0.12;
+            $totalAmount += $valueAddedTax;
+            echo "VAT: Php $valueAddedTax<br/>";
+            echo "Final Total Amount: Php $totalAmount<br/>";
           ?>
         </div>
 
