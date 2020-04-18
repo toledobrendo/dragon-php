@@ -21,9 +21,9 @@
                         <li class="list-group-item">
                             <a href="bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering</a>
                         </li>
-                        <li class="list-group-item">
+                        <!-- <li class="list-group-item">
                             <a href="bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
