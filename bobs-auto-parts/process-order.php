@@ -54,13 +54,14 @@
 					// echo 'Oil: PHP '.$oilAmount.'<br/>';
 					// echo 'Spark Plugs: PHP '.$sparkAmount.'<br/><br/>';
 
-					$vat = $totalAmount * 0.12;
-					$vatable = $totalAmount - $vat;
+					$vatable = $totalAmount / 1.12;
+					$vat = $vatable * 0.12;
+					$total = $vat + $vatable;
 
 					echo '<i>VATable Amount:</i> PHP '.$vatable.'<br/>';
 					echo '<i>VAT Amount (12%):</i> PHP '.$vat.'<br/>';
 					
-					echo '<b>Total Amount:</b> PHP '.$totalAmount.'<br/><br/>';
+					echo '<b>Total Amount:</b> PHP '.$total.'<br/><br/>';
 
 					echo 'Amount exceeded 500 & less than 1000? '.($totalAmount > 500 && $totalAmount < 1000?'<i>Yes</i>' : '<i>No</i>').'<br/>';
 
