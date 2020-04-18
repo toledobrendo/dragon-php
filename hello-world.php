@@ -1,14 +1,10 @@
 <html>
+  <head></head>
+  <body>
+    <!-- hello-world.php or hello_world.php -->
 
-<head>
-	<title> Hello World </title>
-</head>
-
-<body>
-	<?php 
-		echo 'Hello World';
-	?>
-
-</body>
-
+    <?php
+      echo 'Hello World wow';
+    ?>
+  </body>
 </html>
