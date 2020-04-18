@@ -9,6 +9,12 @@
 
 <body>
 
+	<?php
+		define('TIRE_PRICE', 100);
+		define('OIL_PRICE', 300);
+		define('SPARK_PRICE', 50);
+	?>
+
 	<div class="container">
 		<div class ="card">
 			<div class="card-body">
@@ -21,14 +27,44 @@
 					echo date('H:i, jS F Y');
 					echo '</p>';
 				
-					$tireQty = $_POST['tireQty'];
-					$oilQty = $_POST['oilQty'];
-					$sparkQty = $_POST['sparkQty'];
+					$tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
+					$oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
+					$sparkQty = $_POST['sparkQty'] ? $_POST['sparkQty'] : 0;
 
-					echo '<br><p> Your order is as follows: </p>';
-					echo $tireQty. ' tires<br/>';
-					echo $oilQty. ' cans of oil<br/>';
-					echo $sparkQty. ' spark plugs<br/>';
+					echo '<br><p><b><i>Your order is as follows:</i></b></p>';
+					echo $tireQty. ' <i>tires</i><br/>';
+					echo $oilQty. ' <i>cans of oil</i><br/>';
+					echo $sparkQty. ' <i>spark plugs</i><br/><br/>';
+
+					// echo '<i>Prices Per Item</i><br/>';
+					// echo 'Tires: PHP '.TIRE_PRICE.'<br/>';
+					// echo 'Oil: PHP '.OIL_PRICE.'<br/>';
+					// echo 'Spark Plugs: PHP '.SPARK_PRICE.'<br/><br/>';
+
+					$totalQty = $tireQty + $oilQty + $sparkQty;
+					echo '<b>Total Quantity:</b> '.$totalQty.'<br/><br/>';
+
+					$tireAmount = $tireQty * TIRE_PRICE;
+					$oilAmount = $oilQty * OIL_PRICE;
+					$sparkAmount = $sparkQty * SPARK_PRICE;
+
+					$totalAmount = $tireAmount + $oilAmount + $sparkAmount;
+					// echo '<i>Cost Breakdown</i><br/>';
+					// echo 'Tires: PHP '.$tireAmount.'<br/>';
+					// echo 'Oil: PHP '.$oilAmount.'<br/>';
+					// echo 'Spark Plugs: PHP '.$sparkAmount.'<br/><br/>';
+
+					$vat = $totalAmount * 0.12;
+					$vatable = $totalAmount - $vat;
+
+					echo '<i>VATable Amount:</i> PHP '.$vatable.'<br/>';
+					echo '<i>VAT Amount (12%):</i> PHP '.$vat.'<br/>';
+					
+					echo '<b>Total Amount:</b> PHP '.$totalAmount.'<br/><br/>';
+
+					echo 'Amount exceeded 500 & less than 1000? '.($totalAmount > 500 && $totalAmount < 1000?'<i>Yes</i>' : '<i>No</i>').'<br/>';
+
+
 				?>
 
 				<br>
