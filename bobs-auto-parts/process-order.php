@@ -55,11 +55,13 @@
 
 						// summary
 						echo '<br/><b><p>Summary:</b>';
-						$totalPrice = $tireAmt + $oilAmt + $sparkAmt;
+						$subtotalPrice = $tireAmt + $oilAmt + $sparkAmt;
 
 						// VAT
-						$VATamt = 0.12 * $totalPrice;
-						$VATableAmt = $totalPrice - $VATamt;
+						$VATableAmt = $subtotalPrice;
+						$VATamt = 0.12 * $VATableAmt;
+						$totalPrice = $VATableAmt + $VATamt;
+
 						echo '<br/>VATable Amount: '.$VATableAmt;
 						echo '<br/>VAT Amount: '.$VATamt;
 
