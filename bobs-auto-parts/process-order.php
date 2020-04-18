@@ -1,3 +1,9 @@
+<?php
+
+
+>
+
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -17,8 +23,8 @@
            
 
            //php comments
-           /** MULTILINE COMMENTS HERE MWAHAHAHAHAHAH 
-           ps: sorry i just got way too much fun in comments in every program i make
+           /** MULTILINE COMMENTS HERE
+           ps: deeeeeeen den den dereeen den den DEREN DEREN DEEEEEEEEEEN tutu (avengers theme)
            **/
 
 
@@ -35,7 +41,33 @@
 
            echo $oilQty.' oils <br/>';
 
-           echo $sparkeQty.' sparks <br/>';
+           echo $sparkeQty.' sparks <br/><br/>';
+
+           echo '<p>Prices<br/>';
+           echo 'tires:'.TIRE_PRICE'<br/>';
+           echo 'tires:'.OIL_PRICE'<br/>';
+           echo 'tires:'.SPARK_PRICE'<br/>';
+
+
+           $totalQty = $tireQty +$oilQty + $sparkQty;
+           echo 'Total Quantity: '.$totalQty.'<br/><br/>';
+;
+           $tireAmount = $tireQty * TIRE_PRICE
+           $oilAmount = $oilQty * OIL_PRICE;
+           $sparkAmount = $sparkeQty * SPARK_PRICE;
+
+           $totalAmount = (float) ($tireAmount + $oilAmount + $sparkAmount);
+
+           $otherTotalAmount = $totalAmount;
+           $otherTotalAmount += $oilAmount;
+
+           echo 'Other Total AMount: '.$otherTotalAmount'<br/><br/>';
+
+
+           echo 'total Amount:'.$totalAmount;
+
+
+
 
 
 
