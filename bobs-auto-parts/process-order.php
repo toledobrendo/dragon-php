@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Template</title>
+    <title>Process Order</title>
 </head>
 
 <body>
@@ -74,11 +74,11 @@
                         } else {
                             echo '<br><br>Your order is as follows(' . $totalQty . ' items): <br>';
                             if ($tireQty > 0)
-                            echo $tireQty . ' tires. (Php ' . $tire_price . ') <br>';
+                                echo $tireQty . ' tires. (Php ' . $tire_price . ') <br>';
                             if ($oilQty > 0)
-                            echo $oilQty . ' bottles of oil. (Php ' . $oil_price . ') <br>';
+                                echo $oilQty . ' bottles of oil. (Php ' . $oil_price . ') <br>';
                             if ($sparkQty > 0)
-                            echo $sparkQty . ' spark plugs. (Php ' . $spark_price . ') <br>';
+                                echo $sparkQty . ' spark plugs. (Php ' . $spark_price . ') <br>';
                         }
 
                         echo '<br>VATable Amount: Php ' . $vat_total_price . '</p>';
