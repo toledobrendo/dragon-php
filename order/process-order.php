@@ -1,3 +1,8 @@
+<?php
+    define('TIRE_PRICE', 100); 
+    define('OIL_PRICE', 50); 
+    define('SPARK_PRICE', 30); 
+?>
 <html>
 
 <head>
@@ -18,23 +23,52 @@
             <div class="card-body">
                 <h3 class="card-title">Order Result</h3>
                     <?php
-                        $tireQty = $_POST['tireQty'];
-                        $oilQty = $_POST['oilQty'];
-                        $sparkQty = $_POST['sparkQty'];
+                        $tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
+                        $oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
+                        $sparkQty = $_POST['sparkQty'] ? $_POST['sparkQty'] : 0;
                         
                         echo '<p> Order processed at ';
                         echo date('H:i, jS F Y');
-                        echo '<br>Your order is as follows: <br>';
+                        echo '<br>Your order is as follows: <br><br>';
                         echo $tireQty. ' tires.<br>';
                         echo $oilQty . ' bottles of oil.<br>';
                         echo $sparkQty . ' spark plugs.<br>';
-                        echo '</p>'
+                        echo '</p>';
 
-                        // PHP Comments
-                        /**
-                            Multiline comment wow
-                        */
-                    ?>
+                        
+                        echo '<p>Prices<br/>'; 
+                        echo 'Tires: '.TIRE_PRICE.'<br/>'; 
+                        echo 'Oil: '.OIL_PRICE.'<br/>'; 
+                        echo 'Spark Plugs: '.SPARK_PRICE.'<br/>'; 
+                
+                        $totalQty = @($tireQty + $oilQty + $sparkQty);
+                        echo '<br/>Total Quantity: '.$totalQty.'<br/>';
+                
+                        $tireAmount = @($tireQty * TIRE_PRICE);
+                        $oilAmount = @($oilQty * OIL_PRICE);
+                        $sparkAmount = @($sparkQty * SPARK_PRICE);
+
+                        $totalAmount = (float) $tireAmount;
+
+                        $otherTotalAmount = &$totalAmount;
+                        $otherTotalAmount += $oilAmount;
+                        $totalAmount += $sparkAmount;
+                        
+                        $vatAmount = @((float)($totalAmount * .12)); 
+                        $vatableAmount = @((float)($totalAmount - $vatAmount)); 
+                
+                        //echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
+                        echo 'VATable Amount: '.$vatableAmount.'<br/>'; 
+                        echo 'VAT Amount (12%): '.$vatAmount.'<br/>'; 
+                        echo 'Total Amount: '.$totalAmount.'<br/>';
+
+                        echo '<br/>Amount exceeded 500 but less than 1000? '.($totalAmount > 500 && $totalAmount <1000 ? 'Yes' : 'No').'<br/>';
+                    
+                ?>
+            </div>
+            
+            <div class="card-footer">
+                <a class="btn btn-info" href="order-form.php">Go Back</a>
             </div>
         </div>
     </div>
