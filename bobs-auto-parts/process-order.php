@@ -59,7 +59,7 @@
 					echo '<br/>';
 					echo 'Total Quantity: '.$totalQty.'<br/>';
 					echo 'VATABLE Amount: '.$vatableAmount.'<br/>';
-					echo 'VAT Amount: '.$vatAmount.'<br/>';
+					echo 'VAT Amount(12%): '.$vatAmount.'<br/>';
 					echo 'Total Amount: '.$totalAmount.'<br/>';
 					echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
 					echo 'Amount Exceeded 500? '.($totalAmount > 500 ? 'Yes' : 'No').'<br/>';
