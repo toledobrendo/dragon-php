@@ -27,8 +27,9 @@
                         $spark_price = @((float) $sparkQty * SPARK_PRICE);
                         // $total_price = (float) $tire_price;
                         $total_price = (float) $tire_price + $oil_price + $spark_price;
-                        $vat = 0.12 * $total_price;
                         $vat_total_price = $total_price/1.12;
+                        $vat = 0.12 * $vat_total_price;
+
                         $sales_total = $vat + $vat_total_price;
 
                         //pass by reference sample
