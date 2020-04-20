@@ -15,9 +15,17 @@
           <h1 class="card-title">PHP Exercises</h1>
           <div class="col-6">
             <ul class="list-group">
-              <li class="list-group-item">
-                <a href="hello-world.php">Hello World</a>
-              </li>
+                <li class="list-group-item">
+                    <a href="hello-world.php">Hello World</a>
+                </li>
+            
+                <li class="list-group-item">
+                    <a href="order/order-form.php">Bob's Auto Parts</a>
+                </li>
+                
+                <li class="list-group-item">
+                    <a href="HW1-FibonacciSequence/Pages/fibonacci.php">Fibonacci Sequence</a>
+                </li>
             </ul>
           </div>
         </div>
