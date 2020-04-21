@@ -27,13 +27,13 @@
             echo '<p> Series length: '.$length;
             $fibo1 = 0;
             $fibo2 = 1;
-            echo "<table class=\"table\">";
-            echo "<tr class=\"row\">";
-            for($ite = 0; $ite < $length; $ite+=1)
+            echo "<table width=1000px>";
+            echo "<tr>";
+            for($ite = 1; $ite <= $length; $ite+=1)
             {
-              if($ite == 0) {
+              if($ite == 1) {
                 echo "<td>".$fibo1."</td>";
-              } else if ($ite == 1) {
+              } else if ($ite == 2) {
                 echo "<td>".$fibo2."</td>";
               } else {
                 $fibo3 = $fibo1 + $fibo2;
@@ -41,9 +41,9 @@
                 $fibo1 = $fibo2;
                 $fibo2 = $fibo3;
               }
-              if($ite != 0 && ($ite%10) == 0) {
+              if(($ite%10) == 0) {
                 echo '</tr>';
-                echo "<tr class=\"row\">";
+                echo "<tr >";
               }
             }
             echo '</tr>';
