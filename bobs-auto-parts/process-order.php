@@ -51,13 +51,13 @@
                         $vatable = $totalAmount/1.12;
                         $vat = 0.12 * $vatable;
 
-                        $total = $vat + $vatable ;
+                        $totalAmount = $vat + $vatable ;
 					
 						echo 'Total Quantity: '. $totalQty. '<br/><br/>';
 
 						echo '<br>VATable Amount: Php ' . $vatable . '</p>';
                         echo 'VAT Amount (12%): Php ' . $vat . '</p>';
-                        echo 'Total: Php '. $total.'</p>';
+                        echo 'Total: Php '. $totalAmount.'</p>';
 
 						echo 'Amount exceeded 500 but less than 1000? '. @($totalAmount > 500 && totalAmount < 1000 ? 'Yes':'No'). '<br/>';
 
