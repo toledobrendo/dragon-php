@@ -45,6 +45,15 @@
                 </tr>
 
                 <tr class="row">
+                  <td class="col-5">How did you find Bob's</td>
+                  <td class="col-4">
+                    <select name="find" class="custom-select">
+                      <option value="regular">I'm a regular customer.</option>
+                      <option value="tv">TV advertisment.</option>
+                  </td>
+                </tr>
+
+                <tr class="row">
                   <td colspan="2" class="col-9">
                     <button type="submit" class="btn btn-primary float-right">Submit</button>
                   </td>

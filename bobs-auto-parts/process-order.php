@@ -28,6 +28,19 @@
             $tireQty = $_POST['tireQty'];
             $oilQty = $_POST['oilQty'];
             $sparkPlugsQty = $_POST['sparkPlugsQty'];
+            $find = $_POST['find'];
+
+            switch($find) {
+              case 'regular':
+                echo "Regular Customer<br/><br/>";
+                break;
+              case 'tv':
+                echo "From TV Advertising.<br/><br/>";
+                break;
+              default:
+                echo "unknown Customer";
+                break;
+            }
 
             echo "<p>Your order is as follows</p>";
             echo $tireQty." tires<br/>";
@@ -41,24 +54,33 @@
 
             $totalQty = $tireQty + $oilQty + $sparkPlugsQty;
             echo "Total number of items: $totalQty<br/>";
+            if ($totalQty == 0) {
+              echo "You did not order anything.<br/><br/>";
+            } else {
+              $tireAmount = $tireQty * TIRE_PRICE;
+              $oilAmount = $oilQty * OIL_PRICE;
+              $sparkPlugsAmount = $sparkPlugsQty * SPARK_PRICE;
 
-            $tireAmount = $tireQty * TIRE_PRICE;
-            $oilAmount = $oilQty * OIL_PRICE;
-            $sparkPlugsAmount = $sparkPlugsQty * SPARK_PRICE;
+              //'@' suppresses the warnings that may be created from a command.
+              $totalAmount = (float) @($tireAmount + $oilAmount + $sparkPlugsAmount);
+              $otherTotalAmount = &$totalAmount;
+              //$otherTotalAmount += $tireAmount;
+              echo "Total Amount: Php $totalAmount<br/>";
+              //echo "Other Total Amount: Php $otherTotalAmount<br/>";
 
-            //'@' suppresses the warnings that may be created from a command.
-            $totalAmount = (float) @($tireAmount + $oilAmount + $sparkPlugsAmount);
-            $otherTotalAmount = &$totalAmount;
-            //$otherTotalAmount += $tireAmount;
-            echo "Total Amount: Php $totalAmount<br/>";
-            //echo "Other Total Amount: Php $otherTotalAmount<br/>";
+              echo "Amount exceed 500? ".($totalAmount > 500 ? "Yes" : "No")."<br/><br/>";
 
-            echo "Amount exceed 500? ".($totalAmount > 500 ? "Yes" : "No")."<br/><br/>";
+              $vatableAmount = $totalAmount / 1.12;
+              $valueAddedTax = $totalAmount - $vatableAmount;
+              echo "VAT: Php $valueAddedTax<br/>";
+              echo "VATable Amount: Php $vatableAmount<br/>";
 
-            $vatableAmount = $totalAmount / 1.12;
-            $valueAddedTax = $totalAmount - $vatableAmount;
-            echo "VAT: Php $valueAddedTax<br/>";
-            echo "VATable Amount: Php $vatableAmount<br/>";
+              echo 'Is $totalAmount string?'.(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
+              echo 'Is $totalAmount set?'.(isset($totalAmount) ? 'Yes' : 'No').'<br/>';
+              unset($totalAmount);
+              echo 'Is $totalAmount set?'.(isset($totalAmount) ? 'Yes' : 'No').'<br/>';
+            }
+
           ?>
         </div>
 
