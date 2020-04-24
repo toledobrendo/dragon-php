@@ -18,34 +18,35 @@
           		<hr>
           		<h5 class="card-title">Sequence Length: </h5>
           		<hr>
-          		<form action="listSequence()" method="post">
+          		<form method="post">
 	                <input  type="number" name="seqLength" min="0" class="form-control"/>
 	                <br>
 	                <button type="submit" class="btn btn-primary ">Submit</button>
           		</form>
 
           		<?php  
-          			function listSequence(){
-          				$seqLength = @($_POST['seqLength']);
+	          		$seqLength = @($_POST['seqLength']);
 
-	          			if(!empty($seqLength)){
-	          				$prev = 0;
-	          				$next = 1;
-	          				$temp = 0;
-	          				$sum = 0;
+	          		function listSequence($n){ 
+					    
+					    if ($n == 0) 
+					        return 0;     
+					    else if ($n == 1) 
+					        return 1;     
 
-	          				echo $prev."<p>&#09; </p>";
-	          				echo $prev."<p>&#09; </p>";
-	          				// for($i = 0; $i <$seqLength; $i++){
-	          				// 	$sum = $prev + $next;
+					    else
+					        return (listSequence($n-1) + listSequence($n-2)); 
+					} 
 
-	          				// }
-	          			}
-          			}
-          			
-
-
+					echo "<h7> Series Length: </h7>".$seqLength."<hr>";
+					echo "<table width=80%>";
+            		echo "<tr>";
+				    for($i = 0 ; $i < $seqLength ; $i++){
+				    	echo "<td>".listSequence($i)."<td>";
+				    }
+				    echo "</tr></table>";
           		?>
+
         	</div>
         </div>
     </div>
