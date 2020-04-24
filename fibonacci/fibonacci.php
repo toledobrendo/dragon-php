@@ -18,11 +18,34 @@
           		<hr>
           		<h5 class="card-title">Sequence Length: </h5>
           		<hr>
-          		<form action="process-order.php" method="post">
+          		<form action="listSequence()" method="post">
 	                <input  type="number" name="seqLength" min="0" class="form-control"/>
 	                <br>
 	                <button type="submit" class="btn btn-primary ">Submit</button>
           		</form>
+
+          		<?php  
+          			function listSequence(){
+          				$seqLength = @($_POST['seqLength']);
+
+	          			if(!empty($seqLength)){
+	          				$prev = 0;
+	          				$next = 1;
+	          				$temp = 0;
+	          				$sum = 0;
+
+	          				echo $prev."<p>&#09; </p>";
+	          				echo $prev."<p>&#09; </p>";
+	          				// for($i = 0; $i <$seqLength; $i++){
+	          				// 	$sum = $prev + $next;
+
+	          				// }
+	          			}
+          			}
+          			
+
+
+          		?>
         	</div>
         </div>
     </div>
