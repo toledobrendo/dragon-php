@@ -1,7 +1,8 @@
+
 <html>
 
 <head>
-	<title> Index </title>
+	<title> Hello World </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet"
@@ -10,28 +11,42 @@
 		crossorigin="anonymous">
 </head>
 <body>
+
 	<div class = "container">
 		<div class = "card">
 			<div class = "card-body">
 
+				<!--start-->
+        <h3 class = "card title">Fibonacci Results</h3>
 
-        <h1 class = "card-title">PHP Exercises</h1>
+        <?php
 
-        <div class = "col-6">
-          <ul class = "list-group">
-            <li class = "list-group-item">
-              <a href = "hello-world.php">"Hello World"</a>
-            </li>
-            <li class = "list-group-item">
-              <a href = "bobs-auto-parts/order-form.php">"Bob's Auto Parts - Ordering"</a>
-            </li>
-          </ul>
-        </div>
-				
+					//for every total do this and the following
+					$fibNum = $_POST['fibNum'];
+
+          function fib($fibNum){
+            if($fibNum==0){
+              return 0;
+            }else if($fibNum==1){
+              return 1;
+            }else{
+              return(fib($fibNum-1)+fib($fibNum-2));
+            }
+          }
+
+          for($i=0; $i<$fibNum; $i++){
+            echo fib($i);
+            echo "\n";
+          }
+
+
+        ?>
+				<!--end-->
 
 			</div>
 		</div>
 	</div>
+
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 		crossorigin="anonymous"></script>

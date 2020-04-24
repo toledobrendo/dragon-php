@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title> Order Form </title>
+	<title> Assignment h1 </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet"
@@ -15,52 +15,28 @@
 			<div class = "card-body">
 
 
-        <h3 class = "card-title">Order Form</h3>
+        <h3 class = "card-title">Fibonnacci Sequence</h3>
 
-        <form action = "process-order.php" method = "post">
+        <form action = "fib.php" method = "post">
           <table class = "table">
-            <thead>
 
-              <tr class = "row">
-                <th class = "col-5">Item</th>
-                <th class = "col-4">Quantity</th>
-              </tr>
-
-            </thead>
             <tbody>
 
               <tr class = "row">
-                <td class = "col-5">Tires</td>
+                <td class = "col-5">Sequence Length</td>
                 <td class = "col-4">
-                  <input type = "number" name = tireQty maxlength="3" min="0" max="10" class = "form-control"/>
+                  <input type = "number" name = fibNum maxlength="2" min="0" max="100" class = "form-control"/>
                 </td>
-              </tr>
-
-              <tr class = "row">
-                <td class = "col-5">Oil</td>
-                <td class = "col-4">
-                  <input type = "number" name = oilQty maxlength="3" min="0" max="10" class = "form-control"/>
-                </td>
-              </tr>
-
-              <tr class = "row">
-                <td class = "col-5">Spark Plugs</td>
-                <td class = "col-4">
-                  <input type = "number" name = sparkQty maxlength="3" min="0" max="10" class = "form-control"/>
-                </td>
-              </tr class = "row">
-
-              <tr class = "row">
-								<td colspan = "2" class = "col-9">
-									<button type = "submit" class = "btn btn-primary float-right">Submit</button>
+                <td class = "col-2">
+									<button type = "submit" class = "btn btn-primary">Submit</button>
 								</td>
-							</tr>
+              </tr>
 
             </tbody>
           </table>
         </form>
 
-				
+
 			</div>
 		</div>
 	</div>

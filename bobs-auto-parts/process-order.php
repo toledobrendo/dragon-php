@@ -1,7 +1,13 @@
+<!-- above html define constants -->
+<?php
+	define('TIRE_PRICE',	100);
+	define('OIL_PRICE',		 50);
+	define('SPARK_PRICE',	 30);
+?>
 <html>
 
 <head>
-	<title> Hello World </title>
+	<title> Process Order</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet"
@@ -13,7 +19,10 @@
 	<div class = "container">
 		<div class = "card">
 			<div class = "card-body">
+
+				<!--start-->
 				<h3 class = "card title">Order Results</h3>
+
         <?php
           echo '<p>Order Processed at ';
           echo date('H:i, jS F Y');
@@ -26,13 +35,26 @@
 
           echo '<p>Your order is as follows</p>';
 					echo $tireQty.' tires<br/>';
-					//echo "$tiresQty tires<br/>";
+					//echo "$tireQty tires<br/>";
 					echo $oilQty.' bottles of oil<br/>';
-					echo $sparkQty.' spark plugs<br/>';
-        ?>
-			</div>
-		</div>
+					echo $sparkQty.' spark plugs<br/><br/>';
 
+					echo '<p>Prices<br/>';
+					echo 'Tires: '.TIRE_PRICE.'<br/>';
+					echo 'Oil: '.OIL_PRICE.'<br/>';
+					echo 'Spark Plugs: '.SPARK_PRICE.'<br/><br/>';
+
+					// total
+					$totalQty = $tireQty + $oilQty + $sparkQty;
+					echo 'Total Quantity: '.$totalQty.'<br/';
+        ?>
+
+				<!--end-->
+			</div>
+			<div class = "card-footer">
+				<a class = " btn btn-info" href = "order-form.php">Go Back</a>
+			</div> <!-- under card-body -->
+		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
