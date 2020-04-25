@@ -25,7 +25,7 @@
                       <thead>
                         <tr>
                           <th>Item</th>
-                          <th>Price<th>
+                          <th>Price</th>
                           <th>Quantity</th>
                       </thead>';
 
