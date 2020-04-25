@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title> Index </title>
+	<title> Caesar Shift </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -12,26 +12,9 @@
 	<div class="container">
 		<div class ="card">
 			<div class="card-body">
-				<h1 class="card-title"> PHP Excercises </h1>
-				<div class="col-6">
-					<ul class="list-group">
-						<li class="list-group-item">
-							<a href="hello-world.php"> Hello World </a>
-						</li>
-						<li class="list-group-item">
-							<a href="bobs-auto-parts\order-form.php"> Order Form </a>
-						</li>
-						<li class="list-group-item">
-							<a href="bobs-auto-parts\freight-cost.php"> Freight Cost </a>
-						</li>
-						<li class="list-group-item">
-							<a href="fibonacci\fibonacci.php"> Fibonacci </a>
-						</li>
-						<li class="list-group-item">
-							<a href="caesar-shift\caesar-shift.php"> Caesar Shift </a>
-						</li>
-					</ul>
-				</div>
+				<?php
+					echo 'Hello World';
+				?>
 			</div>
 		</div>
 	</div>
