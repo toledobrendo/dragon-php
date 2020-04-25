@@ -22,24 +22,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="row">
-                  <td class="col-5">Tires</td>
-                  <td class="col-4">
-                    <input class="form control" type="number" name="tire_quantity" min="0">
-                  </td>
-                </tr>
-                <tr class="row">
-                  <td class="col-5">Oil</td>
-                  <td class="col-4">
-                    <input class="form control" type="number" name="oil_quantity" min="0">
-                  </td>
-                </tr>
-                <tr class="row">
-                  <td class="col-5">Spark Plugs</td>
-                  <td class="col-4">
-                    <input class="form control" type="number" name="spark_plug_quantity" min="0">
-                  </td>
-                </tr>
+                <?php
+                  $products = array('Tires' => 0, 'Oil' => 0, 'Spark Plugs' => 0, 'Test' => 2);
+
+                  foreach ($products as $name => $quantity) {
+                    echo '<tr class="row">';
+                    echo '<td class="col-4">'.$name.'</td>';
+                    echo '<td class="col-5">';
+                    echo '<input class="form control" type="number" name="'.$name.'" min="0" value="'.$quantity.'" required>';
+                    echo "</td></tr>";
+                  }
+                ?>
                 <tr class="row">
                   <td colspan="2" class="col-9">
                   <button type="submit" class="btn btn-primary submit float-right" name="button">Submit</button>

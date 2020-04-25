@@ -18,9 +18,9 @@
             echo date('H:i, jS F Y');
             echo '.</p>';
 
-            $tireQty = $_POST['tire_quantity'];
-            $oilQty = $_POST['oil_quantity'];
-            $sparkPlugQty = $_POST['spark_plug_quantity'];
+            $tireQty = $_POST['Tires'];
+            $oilQty = $_POST['Oil'];
+            $sparkPlugQty = $_POST['Spark Plugs'];
 
             echo "<p>Your order is as follows:</p>";
             echo "$tireQty tires<br>";
