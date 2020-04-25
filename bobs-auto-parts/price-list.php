@@ -21,7 +21,58 @@
             echo '</p>Product 0: '.$products[0];
 
             echo '<ul>';
+            for ($ctr = 0; $ctr < count($products); $ctr++) {
+              echo '<li>'.$products[$ctr].'</li>';
+            }
             echo '</ul>';
+
+            echo '<ul>';
+            $ctr = 0;
+            foreach ($products as &$product) {
+              $product = $product.' - 1';
+              echo '<li>'.$ctr.' - '.$product.'</li>';
+              $ctr++;
+            }
+            echo '</ul>';
+
+            echo '<ul>';
+            for ($ctr = 0; $ctr < count($products); $ctr++) {
+              echo '<li>'.$products[$ctr].'</li>';
+            }
+            echo '</ul>';
+
+            $numbers = range(1, 10, 2);
+            echo '<br/>range(1, 10): ';
+            foreach ($numbers as $number) {
+              echo $number.', ';
+            }
+            echo '<br/>';
+
+            $letters = range('a', 'z');
+            echo '<br/>letters: ';
+            foreach ($letters as $letter) {
+              echo $letter.' ';
+            }
+            echo '<br/>';
+
+            $prices = array('Tires' => 100, 'Oil' => 20, 'Spark Plugs' => 5, 1000);
+
+            $prices['Tires'] = 120;
+            echo 'Tire price: '.$prices['Tires'];
+
+            echo '<br/>Fourth price: '.$prices[0];
+
+            $prices['Clutch Disk'] = 250;
+
+            echo '<br/>Clutch Disk: '.$prices['Clutch Disk'];
+
+            echo '<ul>';
+            foreach($prices as $itemDesc => $price) {
+              echo '<li>'.$itemDesc.' - '.$price.'</li>';
+            }
+            echo '</ul>';
+
+            $empty = array();
           ?>
         </div>
       </div>
