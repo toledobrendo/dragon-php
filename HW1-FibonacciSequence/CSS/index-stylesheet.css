@@ -1,0 +1,107 @@
+@font-face
+{
+    font-family: shoreline; 
+    src: url("../Fonts/Shorelines.otf");
+}
+
+@font-face
+{
+    font-family: montserrat; 
+    src: url("../Fonts/Montserrat-Regular.ttf");
+}
+
+body{
+    background-color: black; 
+}
+
+.container{
+    margin-top: 5%; 
+    margin-bottom: 5%; 
+    padding-bottom: 3%; 
+    width: 90%;
+
+    border: 1px solid white; 
+}
+
+.text-header{
+    font-family: shoreline; 
+    font-size: 50px; 
+    color: white; 
+    text-align: center; 
+    margin: 3%; 
+}
+
+.dataSection{
+    text-align: center; 
+}
+
+.inputSection{
+    margin-bottom: 3%; 
+}
+
+.txtLabel{
+    font-family: montserrat; 
+    font-size: 100%; 
+    text-align: center; 
+    margin: 0; 
+    color: white; 
+    margin-right: 2%; 
+}
+
+input{
+    font-family: montserrat; 
+    color: black;
+
+    padding-left: 1%; 
+    margin-right: 2%; 
+}
+
+.string{   
+    width: 50%; 
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid white;
+
+    color: white; 
+}
+
+.button{
+    border: solid white;
+    box-sizing: border-box;
+
+    margin-top: 1%;
+    padding-left: 2%; 
+    padding-right: 2%; 
+
+    background-color: transparent; 
+    color: white; 
+    font-family: montserrat; 
+    font-size: 90%; 
+
+    text-align:center;
+}
+
+.button:hover{
+    color:black;
+    background-color: white; 
+}
+
+.button:active{
+    color:gray;
+    background-color: white; 
+    border-color:#BBBBBB;
+}
+
+.submitArea{
+    margin-left: 35%; 
+}  
+
+.txtOutput{
+    font-family: shoreline; 
+    font-size: 100%; 
+    text-align: center; 
+    margin: 0; 
+    color: white; 
+    margin-right: 2%; 
+}
