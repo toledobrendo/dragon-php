@@ -24,21 +24,20 @@
 						</thead>
 
 						<tbody>
-							<tr class="row">
-								<th class="col-6"> Tires </th>
-								<th class="col-6"> <input type="number" name="tireQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
+							<?php
+								$list = array(
+									array('item name' => 'Tires', 'input name' => 'tireQty'),
+									array('item name' => 'Oil', 'input name' => 'oilQty'),
+									array('item name' => 'Spark Plugs', 'input name' => 'sparkQty')
+								);
 
-							<tr class="row">
-								<th class="col-6"> Oil </th>
-								<th class="col-6"> <input type="number" name="oilQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
-
-							<tr class="row">
-								<th class="col-6"> Spark Plugs </th>
-								<th class="col-6"> <input type="number" name="sparkQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
-
+								foreach ($list as $item) {
+									echo '<tr class="row">';
+									echo '<td class="col-6">'.$item['item name'].'</td>';
+									echo '<td class="col-6"> <input type="number" name="'.$item['input name'].'" max="10" min="0" maxLength="3" class="form-control"> </td>';
+									echo '</tr>';
+								}
+							 ?>
 							<tr class="row">
 								<td colspan="2" class="col-12"> <button type="submit" class="btn btn-primary float-right" > SUBMIT </button> </td>
 							</tr>

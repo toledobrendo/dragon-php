@@ -46,7 +46,7 @@
 				echo "VAT Amount (12%): $vat <br/>";
 				echo "Total Amount: $total <br/>";
 
-				echo "<br>Amount exceeded 500 but less than 1000? ".(500 < $total && $total < 1000 ? 'yes' : 'no').'<br><br>';
+				echo "<br>Amount exceeded 500 but less than 1000? ".(500 < $total ? ($total < 1000 ? 'yes': 'no') : 'no').'<br><br>';
 
 				?>
 
