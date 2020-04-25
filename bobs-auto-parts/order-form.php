@@ -11,7 +11,9 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title"><h1>Order Form</h1></h3>
+                <h3 class="card-title">
+                    <h1>Order Form</h1>
+                </h3>
                 <form action="process-order.php" method="POST">
                     <table class="table">
                         <thead>
@@ -23,22 +25,22 @@
                         </thead>
                         <tbody>
                             <?php
-                                //Array Activity
-                                $items = array(
-                                    array('Code' => 'OIL', 'Description' => 'Oil', 'Price' => 50),
-                                    array('Code' => 'TIR', 'Description' => 'Tires', 'Price' => 100),
-                                    array('Code' => 'SPK', 'Description' => 'Spark Plugs', 'Price' => 30)
-                                );
-                                echo '<tr class="row">';
+                            //Array Activity
+                            $items = array(
+                                array('Code' => 'OIL', 'Description' => 'Oil', 'Price' => 50),
+                                array('Code' => 'TIR', 'Description' => 'Tires', 'Price' => 100),
+                                array('Code' => 'SPK', 'Description' => 'Spark Plugs', 'Price' => 30)
+                            );
+                            echo '<tr class="row">';
 
-                                foreach ($items as $item) {
-                                    echo '<td class="col-5">' . $item['Description'] . '</td>';
-                                    echo '<td class="col-3">' . $item['Price'] . '</td>';
-                                    echo '<td class="col-4">';
-                                    echo '<input type="number" class="form-control" name="' . $item['Code'] . '" maxlength="3" min="0" max="10" />';
-                                    echo '</td>';
-                                }
-                                echo '</tr>';
+                            foreach ($items as $item) {
+                                echo '<td class="col-5">' . $item['Description'] . '</td>';
+                                echo '<td class="col-3">' . $item['Price'] . '</td>';
+                                echo '<td class="col-4">';
+                                echo '<input type="number" class="form-control" name="' . $item['Code'] . '" maxlength="3" min="0" max="10" />';
+                                echo '</td>';
+                            }
+                            echo '</tr>';
                             ?>
                             <!-- <tr class="row">
                                 <td class="col-5">Tires</td>
@@ -78,6 +80,9 @@
                         </tbody>
                     </table>
                 </form>
+                <div class="card-footer">
+                    <a class="btn btn-info" href="../index.php">Go Back</a>
+                </div>
             </div>
         </div>
     </div>

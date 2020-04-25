@@ -38,8 +38,8 @@
                                 </td>
                             </tr>
                             <tr class="row">
-                                <td class="col-1">
-                                    <button name="submit" type="submit" class="btn btn-primary float-right">SUBMIT</button>
+                                <td class="col-12">
+                                    <button name="submit" type="submit" class="btn btn-primary float-left">SUBMIT</button>
                                 </td>
                             </tr>
                             <tr class="row">
@@ -52,22 +52,22 @@
                                     $key = $_POST['key'] ? $_POST['key'] : 0;
 
                                     //start of cipher block
-                                    echo '<td class="row">RESULT: ';
-                                        for ($i = 0; $i < count($message); $i++) {
-                                            for($j = 0; $j < $key; $j++){
-                                                //if needle is found
-                                                if(array_search('Z',$message)){
-                                                    $message[$i]='A';
-                                                } else {
-                                                    $message[$i]++;
-                                                }
+                                    echo '<td class="col-12">RESULT: ';
+                                    for ($i = 0; $i < count($message); $i++) {
+                                        for ($j = 0; $j < $key; $j++) {
+                                            //if needle is found
+                                            if (array_search('Z', $message)) {
+                                                $message[$i] = 'A';
+                                            } else {
+                                                $message[$i]++;
                                             }
                                         }
+                                    }
 
-                                        //output
-                                        foreach($message as $encrypted){
-                                            echo $encrypted;
-                                        }
+                                    //output
+                                    foreach ($message as $encrypted) {
+                                        echo $encrypted;
+                                    }
                                     echo '</td>';
                                     //end of cipher block
                                 }
@@ -76,6 +76,9 @@
                         </form>
                     </tbody>
                 </table>
+                <div class="card-footer">
+                    <a class="btn btn-info" href="../index.php">Go Back</a>
+                </div>
             </div>
         </div>
     </div>
