@@ -28,6 +28,9 @@
 							<a href="bobs-auto-parts\freight-cost.php"> Bob's Auto Parts - Freight Cost </a>
 						</li>
 						<li class="list-group-item"> 
+							<a href="bobs-auto-parts\price-list.php"> Bob's Auto Parts - Price List </a>
+						</li>
+						<li class="list-group-item"> 
 							<a href="fibonacci-sequence.php"> Fibonacci Sequence </a>
 						</li>
 					</ul>

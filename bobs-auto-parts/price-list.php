@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title> Fibonnaci Sequence </title>
+	<title> Price List </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -13,46 +13,28 @@
 		<div class ="card">
 			<div class="card-body">
 
-				<h3 class="card-title"> Fibonacci Sequence </h3>
+				<h1> Price List </h1>
 
-				<br>
-				<br>
+				<?php 
+					echo '<p>Available Products</p>';
+					$products = array('Tires', 'Oil', 'Spark Plugs');
 
-				<p> Sequence Length </p>
-				<form action="fibonacci-sequence.php" method="POST">
-				<table class="table">
-					<tr class="row">
-						<td class="col-9"> <input type="number" name="num" min="0" maxLength="5" class="form-control" 
-							value = <?php echo $_POST['num'] ?> >  </td>
-						<td class="col-1"> <button type="submit" class="btn btn-info float-right"> SUBMIT </button> </td>
-					</tr>
-				</table>
+					echo '<ul>';
 
-				<?php
+						// for loop
 
-					$num = $_POST['num'];
+						for($ctr = 0; $ctr < count($products); $ctr++) {
+							echo '<li>'.$products[$ctr].'</li>';
+						}
 
-					echo '<p> Sequence Length: '.$num.'<br/>';
-				  	
-				  	$num1 = 0; 
-    				$num2 = 1; 
-				    $counter = 0; 
+						// for each loop
 
-				    echo '<br/>';
+						// foreach($products as $product) {
+						// 	echo '<li>'.$product.'</li>';
+						// }
 
-				    while ($counter < $num){ 
-
-				        echo '<b>'.$num1.'</b>&nbsp; &nbsp; &nbsp;'; 
-
-				        $num3 = $num2 + $num1; 
-				        $num1 = $num2; 
-				        $num2 = $num3; 
-				        $counter = $counter + 1; 
-				    } 
-					
-
+					echo '</ul>';
 				?>
-
 			</div>
 		</div>
 	</div>
