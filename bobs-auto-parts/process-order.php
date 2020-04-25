@@ -17,9 +17,9 @@
                         define('OIL_PRICE', 50);
                         define('SPARK_PRICE', 30);
 
-                        $tireQty = $_POST['TIRQty'] ?$_POST['TIRQty'] : 0;
-                        $oilQty = $_POST['OILQty']?$_POST['OILQty'] :0;
-                        $sparkQty = $_POST['SPKQty']?$_POST['SPKQty'] :0;
+                        $tireQty = $_POST['TIR'] ?$_POST['TIR'] : 0;
+                        $oilQty = $_POST['OIL']?$_POST['OIL'] :0;
+                        $sparkQty = $_POST['SPK']?$_POST['SPK'] :0;
                         $totalQty = $tireQty + $oilQty + $sparkQty;
 
                         $find = $_POST['find'];
