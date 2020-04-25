@@ -20,14 +20,15 @@
 
             echo '</p>Product 0: '.$products[0];
 
-            sort($products);
-            rsort($products);
+            sort($products);//ascending
+            rsort($products);//descending
 
             echo '<ul>';
             for ($ctr = 0; $ctr < count($products); $ctr++) {
               echo '<li>'.$products[$ctr].'</li>';
             }
             echo '</ul>';
+
 
             echo '<ul>';
             $ctr = 0;
@@ -38,11 +39,13 @@
             }
             echo '</ul>';
 
+
             echo '<ul>';
             for ($ctr = 0; $ctr < count($products); $ctr++) {
               echo '<li>'.$products[$ctr].'</li>';
             }
             echo '</ul>';
+
 
             $numbers = range(1, 10, 2);
             echo '<br/>range(1, 10): ';

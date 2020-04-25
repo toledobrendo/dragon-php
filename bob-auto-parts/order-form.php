@@ -41,11 +41,11 @@
                             </tr>
                             </thead>';
                     foreach ($items as $item) {
-                        echo '<tr>';
+                        echo '<tr class="row">';
                           echo '<td class="col-2">'.$item['itemName'].'</td>';
                           echo '<td class="col-5">
-                            <input type="number" name="'.$item['name'].'" maxlength="3" min="0" max="10" class="form-control" />
-                          </td>';
+                                   <input type="number" name="'.$item['name'].'" maxlength="3" min="0" max="10" class="form-control" /> 
+                                </td>';
                           echo '<td class="col-2">'.$item['price'].'</td>';
                         echo '</tr>';
                     }
