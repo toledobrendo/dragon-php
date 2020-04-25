@@ -6,26 +6,23 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous">
-    <title>PHP Template</title>
   </head>
   <body>
+    <!-- hello-world.php or hello_world.php -->
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <h1 class="card-title">PHP Exercises</h1>
-          <div class="col-6">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a href="hello-world.php">Hello World</a>
-              </li>
-              <li class="list-group-item">
-                <a href="bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering</a>
-              </li>
-              <li class="list-group-item">
-                <a href="bobs-auto-parts/price-list.php">Bob's Auto Parts - Price List</a>
-              </li>
-            </ul>
-          </div>
+          <h1>Price List</h1>
+          <?php
+            echo '</p>Products</p>';
+
+            $products = array('Tires', 'Oil', 'Spark Plugs');
+
+            echo '</p>Product 0: '.$products[0];
+
+            echo '<ul>';
+            echo '</ul>';
+          ?>
         </div>
       </div>
     </div>
