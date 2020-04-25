@@ -19,8 +19,9 @@
 					<table class="table">
 						<thead>
 							<tr class="row">
-								<th class="col-6"> Item </th>
-								<th class="col-6"> Quantity </th>
+								<th class="col-4"> Item </th>
+								<th class="col-3"> Price </th>
+								<th class="col-5"> Quantity </th>
 							</tr>
 						</thead>
 
@@ -29,15 +30,16 @@
 							<?php 
 
 								$items = array(
-									array('Item' => 'Oil', 'Name' => 'oilQty'),
-									array('Item' => 'Tires', 'Name' => 'tireQty'),
-									array('Item' => 'Spark Plugs', 'Name' => 'sparkQty')
+									array('Item' => 'Oil', 'Name' => 'oilQty', 'Price' => 10),
+									array('Item' => 'Tires', 'Name' => 'tireQty', 'Price' => 100),
+									array('Item' => 'Spark Plugs', 'Name' => 'sparkQty', 'Price' => 4)
 								);
 
 								foreach($items as $item) {
 									echo '<tr class="row">';
-									echo '<th class="col-6">'.$item['Item'].'</td>';
-									echo '<th class="col-6"> <input type="number" name="'.$item['Name'].'" max="10" min="0" maxLength="3" class="form-control"> </th>';
+									echo '<td class="col-4">'.$item['Item'].'</td>';
+									echo '<td class="col-3">'.$item['Price'].'</td>';
+									echo '<td class="col-5"> <input type="number" name="'.$item['Name'].'" max="10" min="0" maxLength="3" class="form-control"> </th>';
 									echo '</tr>';
 								}
 
@@ -45,7 +47,7 @@
 			
 							<tr class="row">
 								<th class="col-6"> How did you find Bob's </th>
-								<th class="col-4"> 
+								<th class="col-6"> 
 									<select name="find" class="custom-select">
 										<option value="regular"> I am a regular customer </option>
 										<option value="tv"> TV advertising </option>
