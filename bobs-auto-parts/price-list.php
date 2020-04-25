@@ -20,73 +20,118 @@
   <body>
     <!-- hello-world.php or hello_world.php -->
     <div class="container">
-      <div class="card">
-        <div class="card-body">
-            <h1>Price List</h1>
-          <?php
-            echo '</p>Products</p>';
+        <div class="card">
+            <div class="card-body">
+				<h1>Price List</h1>
+					<?php 
+						echo '<p>Products</p>';
 
-            $products = array('Tires', 'Oil', 'Spark Plugs');
+						$products = array('Tires', 'Oil', 'Spark Plugs');
 
-            echo '</p>Product 0: '.$products[0];
+						echo '<p>Product 0: '.$products[0].'</p>';
 
-            echo '<ul>';
-            for ($ctr = 0; $ctr < count($products); $ctr++) {
-              echo '<li>'.$products[$ctr].'</li>';
-            }
-            echo '</ul>';
+						// sorting
+						sort($products);  // ascending
+						rsort($products); // descending
 
-            echo '<ul>';
-            $ctr = 0;
-            foreach ($products as &$product) {
-              $product = $product.' - 1';
-              echo '<li>'.$ctr.' - '.$product.'</li>';
-              $ctr++;
-            }
-            echo '</ul>';
+						// for loop
+						echo '<ul>';
+						for($ctr = 0; $ctr < count($products); $ctr++) {
+							echo '<li>'.$products[$ctr].'</li>';
+						}
+						echo '</ul>';
 
-            echo '<ul>';
-            for ($ctr = 0; $ctr < count($products); $ctr++) {
-              echo '<li>'.$products[$ctr].'</li>';
-            }
-            echo '</ul>';
+						// for each
+						echo '<ul>';
+						foreach($products as $product) {
+							echo '<li>'.$product.'</li>';
+						}
+						echo '</ul>';
 
-            $numbers = range(1, 10, 2);
-            echo '<br/>range(1, 10): ';
-            foreach ($numbers as $number) {
-              echo $number.', ';
-            }
-            echo '<br/>';
+						// range(start, max, step)
+						$numbers = range(1, 10, 0.8);
+						echo '<br/>range (1, 10, 0.8):';
+						foreach($numbers as $number) {
+							echo ' '.$number;
+						}
 
-            $letters = range('a', 'z');
-            echo '<br/>letters: ';
-            foreach ($letters as $letter) {
-              echo $letter.' ';
-            }
-            echo '<br/>';
+						$letters = range('a', 'z');
+						echo '<br/>range (\'a\', \'z\'):';
+						foreach($letters as $letter) {
+							echo ' '.$letter;
+						}
+						
+						// -----------------------------------
 
-            $prices = array('Tires' => 100, 'Oil' => 20, 'Spark Plugs' => 5, 1000);
+						// prices
+						$prices = array('Tires' => 100, 'Oil' => 50, 'Spark Plugs' => 30,);
 
-            $prices['Tires'] = 120;
-            echo 'Tire price: '.$prices['Tires'];
+						// sort by key
+						ksort($prices);  // ascending
+						krsort($prices); // descending
+						// sort by value
+						asort($prices);  // ascending
+						arsort($prices); // descending
 
-            echo '<br/>Fourth price: '.$prices[0];
+						$prices['Tires'] = 120;	// assign new value
+						echo '<br/>Tire price: '.$prices['Tires'];
+						echo '<br/>Oil price: '.$prices['Oil'];
+						echo '<br/>Spark Plugs price: '.$prices['Spark Plugs'];
 
-            $prices['Clutch Disk'] = 250;
+						$prices['Clutch Disk'] = 250; // add an element: arrays in php dont have limits unlike conventional arrays
 
-            echo '<br/>Clutch Disk: '.$prices['Clutch Disk'];
+						echo '<ul>';
+						foreach($prices as $itemDesc => $price) { // foreach the key-value array
+							echo '<li>'.$itemDesc.' - '.$price.'</li>';
+						}
+						echo '</ul>';
 
-            echo '<ul>';
-            foreach($prices as $itemDesc => $price) {
-              echo '<li>'.$itemDesc.' - '.$price.'</li>';
-            }
-            echo '</ul>';
+						// empty array
+						$empty = array();
 
-            $empty = array();
-            ?>
-          
+						// -----------------------------------
+
+						$items = array(
+							array('Code' => 'TIR', 'Description' => 'Tires', 'Price' => 100),
+							array('Code' => 'OIL', 'Description' => 'Oil', 'Price' => 50),
+							array('Code' => 'SPK', 'Description' => 'Spark Plugs', 'Price' => 30)
+						);
+
+						// custom sorting function (ascending)
+						function compareItems($first, $second) {
+							if($first['Price'] == $second['Price']) {
+								return 0;
+							} else if($first['Price'] > $second['Price']) {
+								return 1;
+							} else {
+								return -1;
+							}
+						}
+
+						// method called to utilize custom sorting functions
+						usort($items, 'compareItems');
+
+						echo '<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th>Code</th>
+										<th><Description</th>
+										<th>Price</th>
+									</tr>
+
+								</thead>';
+                
+						foreach($items as $item) {
+							echo '<tr>';
+							foreach($item as $field => $value) {
+								echo '<td>'.$value.'</td>';
+							}
+							echo '</tr>';
+						}
+						echo '</table>';
+					 ?>	
+            </div>
         </div>
-      </div>
     </div>
     
   </body>
