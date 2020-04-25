@@ -18,7 +18,15 @@
 							</li>
 
 							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Ordering</a>
+								<a href="bobs-auto-parts/order-form.php">Bobs Auto Parts - Ordering</a>
+							</li>
+
+							<li class="list-group-item">
+								<a href="bobs-auto-parts/freight-cost.php">Bobs Auto Parts - Freight Cost</a>
+							</li>
+
+							<li class="list-group-item">
+								<a href="bobs-auto-parts/price-list.php">Bobs Auto Parts - Price List</a>
 							</li>
 
 							<li class="list-group-item">
