@@ -16,56 +16,67 @@
 		<div class="card">
 			<div class="card-body">
 				<h3 class="card-title">Order Form</h3>
-				<form action="process-order.php" method="post">
-					<table class="table">
-						<thread>
-							<tr class="row">
-								<th class="col-5">Item</th>
-								<th class="col-4">Quantity</th>
-							</tr>
-						</thread>
+				
+				<?php
+					 $items = array(
+           						 array('Description'=> 'Oil', 'Price' => '<input type="number" name="tireQty" maxlength="3" min="0" max="10" class="form-control"/>'),
+            					array('Description'=> 'Tires', 'Price' =>'<input type="number" name="oilQty" maxlength="3" min="0" max="10" class="form-control"/>'),
+            					array('Description'=> 'Spark Plugs', 'Price' =>'<input type="number" name="sparkQty" maxlength="3" min="0" max="10" class="form-control"/>')
+          					);
 
-						<tbody>
-							<tr class="row">
-								<td class="col-5">Tires</td>
-								<td class="col-4">
-									<input type="number" name="tireQty" maxlength="3" max="10" min="0" class="form-control"/>	
-								</td>
-							</tr>
+					function compareItems($fir,$sec){
+            			if($fir['Price'] == $sec['Price']){
+              				return 0;
+            			} else if ($fir['Price'] > $sec['Price']){
+             				return 1;
+            			} else{
+              				return -1;
+            			}
+         			}
 
-							<tr class="row">
-								<td class="col-5">Oil</td>
-								<td class="col-4">
-									<input type="number" name="oilQty" maxlength="3" max="10" min="0" class="form-control"/>	
-								</td>
-							</tr>
+         			usort($items,'compareItems');
 
-							<tr class="row">
-								<td class="col-5">Spark Plugs</td>
-								<td class="col-4">
-									<input type="number" name="sparkQty" maxlength="3" max="10" min="0" class="form-control"/>	
-								</td>
-							</tr>
-							<tr class="row">
-								<td class="col-5">How did you find Bob's</td>
-								<td class="col-4">
-									<select name="find" class="custom-select">
-										<option value="regular">I'm a regular customer</option>
-										<option value="tv">TV advertising</option>
-										<option value="phone">Phone Directory</option>
-										<option value="mouth">Word of mouth</option>
-									</select>
-								</td>
-							</tr>
-							<tr class="row">
-								<td colspan="2" class="col-9">
-									<a href="freight-cost.php" class="btn btn-secondary float-right">Freight Cost</a>
-									<button type="submit" class="btn-primary float-right">Submit</button>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</form>
+         			echo 
+         			'<form action="process-order.php" method="post">
+              		<table class="table table-condensed">
+              				<thead>
+              					<tr>
+                					<th colspan="2">Item</th>
+                					<th colspan="2">Quantity</th>
+              					</tr>
+              				</thead>';
+
+        			foreach ($items as $item) {
+          				echo '<tr>';
+          			foreach ($item as $field => $value) {
+            			echo '<td colspan="2">'.$value.'</td>';
+          			}
+
+          			echo '</tr>';
+
+        			}
+
+        			echo 
+        			'<tr>
+              			<td colspan="2">How did you find Bobs</td>
+              			<td>
+                			<select name="find" class="custom-select">
+                  				<option value="regular">Im a regular customer</option>
+                  				<option value="tv">TV advertising</option>
+                  				<option value="phone">Phone Directory</option>
+                  				<option value="mouth">Word of mouth</option>
+                			</select>
+             			</td>
+              		</tr>
+
+              		<tr>
+                		<td colspan="4">
+                  		<a href="freight-cost.php" class="btn btn-secondary float-right" style="margin-left:50px;">Freight Cost</a>
+                  		<button type="submit" class="btn btn-primary float-right">Submit</button>
+               	 	</td>
+              		</tr>
+              		</table>';				
+				?>
 			</div>
 		</div>
 	</div>
