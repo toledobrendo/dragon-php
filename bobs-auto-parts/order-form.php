@@ -19,21 +19,23 @@
               <thead>
                 <tr class="row">
                   <th class="col-5">Item</th>
-                  <th class="col-4">Quantity</th>
+                  <th class="col-4">Price</th>
+                  <th class="col-3">Quantity</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
                   $products = array(
-                    array('itemName' => 'Tires', 'qtyCode' => 'tireQty'),
-                    array('itemName' => 'Oil', 'qtyCode' => 'oilQty'),
-                    array('itemName' => 'Spark Plugs', 'qtyCode' => 'sparkPlugsQty')
+                    array('itemName' => 'Tires', 'itemPrice' => 100, 'qtyCode' => 'tireQty'),
+                    array('itemName' => 'Oil', 'itemPrice' => 50, 'qtyCode' => 'oilQty'),
+                    array('itemName' => 'Spark Plugs', 'itemPrice' => 30, 'qtyCode' => 'sparkPlugsQty')
                   );
 
                   foreach ($products as $product) {
                     echo '<tr class="row">';
                     echo '  <td class="col-5">'.$product['itemName'].'</td>';
-                    echo '  <td class="col-4">';
+                    echo '  <td class="col-4">Php '.$product['itemPrice'].'</td>';
+                    echo '  <td class="col-3">';
                     echo '    <input type="number" name="'.$product['qtyCode'].'" maxlength="3" min="0" max="10" class="form-control">';
                     echo '  </td>';
                     echo '</tr>';
@@ -42,7 +44,8 @@
 
                 <tr class="row">
                   <td class="col-5">How did you find Bob's</td>
-                  <td class="col-4">
+                  <td class="col-4"></td>
+                  <td class="col-3">
                     <select name="find" class="custom-select">
                       <option value="regular">I'm a regular customer.</option>
                       <option value="tv">TV advertisment.</option>
@@ -50,7 +53,7 @@
                 </tr>
 
                 <tr class="row">
-                  <td colspan="2" class="col-9">
+                  <td class="col-12">
                     <button type="submit" class="btn btn-primary float-right">Submit</button>
                   </td>
                 </tr>
