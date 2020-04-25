@@ -17,11 +17,30 @@
                         <thead>
                             <tr class="row">
                                 <th class="col-5">Item Name</th>
+                                <th class="col-3">Price</th>
                                 <th class="col-4">Quantity</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="row">
+                            <?php
+                                //Array Activity
+                                $items = array(
+                                    array('Code' => 'OIL', 'Description' => 'Oil', 'Price' => 50),
+                                    array('Code' => 'TIR', 'Description' => 'Tires', 'Price' => 100),
+                                    array('Code' => 'SPK', 'Description' => 'Spark Plugs', 'Price' => 30)
+                                );
+                                echo '<tr class="row">';
+
+                                foreach ($items as $item) {
+                                    echo '<td class="col-5">' . $item['Description'] . '</td>';
+                                    echo '<td class="col-3">' . $item['Price'] . '</td>';
+                                    echo '<td class="col-4">';
+                                    echo '<input type="number" class="form-control" name="' . $item['Code'] . 'Qty" maxlength="3" min="0" max="10" />';
+                                    echo '</td>';
+                                }
+                                echo '</tr>';
+                            ?>
+                            <!-- <tr class="row">
                                 <td class="col-5">Tires</td>
                                 <td class="col-4">
                                     <input type="number" class="form-control" name="tireQty" maxlength="3" min="0" max="10" />
@@ -38,7 +57,7 @@
                                 <td class="col-4">
                                     <input type="number" class="form-control" name="sparkQty" maxlength="3" min="0" max="10" />
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr class="row">
                                 <td class="col-5">How did you find Bob's?</td>
                                 <td class="col-4">
