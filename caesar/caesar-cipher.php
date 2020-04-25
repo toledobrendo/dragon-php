@@ -44,33 +44,32 @@
                             </tr>
                             <tr class="row">
                                 <?php
-                                //decided to set this condition because it gives a warning onLoad()
-                                if (isset($_POST['submit'])) {
-                                    $message = $_POST['message'] ? $_POST['message'] : 0;
-                                    //make message an array
-                                    $message = str_split(strtoupper($message));
-                                    $key = $_POST['key'] ? $_POST['key'] : 0;
+                                    if (isset($_POST['submit'])) {
+                                        $message = $_POST['message'] ? $_POST['message'] : 0;
+                                        //make message an array
+                                        $message = str_split(strtoupper($message));
+                                        $key = $_POST['key'] ? $_POST['key'] : 0;
 
-                                    //start of cipher block
-                                    echo '<td class="col-12">RESULT: ';
-                                    for ($i = 0; $i < count($message); $i++) {
-                                        for ($j = 0; $j < $key; $j++) {
-                                            //if needle is found
-                                            if (array_search('Z', $message)) {
-                                                $message[$i] = 'A';
-                                            } else {
-                                                $message[$i]++;
+                                        //start of cipher block
+                                        echo '<td class="col-12">RESULT: ';
+                                        for ($i = 0; $i < count($message); $i++) {
+                                            for ($j = 0; $j < $key; $j++) {
+                                                //if needle is found
+                                                if (array_search('Z', $message)) {
+                                                    $message[$i] = 'A';
+                                                } else {
+                                                    $message[$i]++;
+                                                }
                                             }
                                         }
-                                    }
 
-                                    //output
-                                    foreach ($message as $encrypted) {
-                                        echo $encrypted;
+                                        //result is echoed here
+                                        foreach ($message as $encrypted) {
+                                            echo $encrypted;
+                                        }
+                                        echo '</td>';
+                                        //end of cipher block
                                     }
-                                    echo '</td>';
-                                    //end of cipher block
-                                }
                                 ?>
                             </tr>
                         </form>
