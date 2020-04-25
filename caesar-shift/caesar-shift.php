@@ -42,10 +42,10 @@
 							for($letterIndex = 0; $letterIndex < $arraySize; $letterIndex++) {
 								// increment up to [key] times
 								for($stepCount = 0; $stepCount < $key; $stepCount++) {
-									if($splitMessage[$letterIndex] === "Z") {
-										$splitMessage[$letterIndex] = "A";
-									} else {
+									if($splitMessage[$letterIndex] != "Z") {
 										$splitMessage[$letterIndex]++;
+									} else {
+										$splitMessage[$letterIndex] = "A";
 									}
 								}
 							}
