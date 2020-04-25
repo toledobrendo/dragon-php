@@ -16,11 +16,11 @@
           <?php
             echo '<p>Products</p>';
 
-            $products = array('Tires','Oil','Spark Plugs');
+            $products = array('Tires' => 150,'Oil' => 20,'Spark Plugs' => 5);
 
             echo '<ul>';
-            for ($i=0; $i < sizeof($products); $i++) {
-              echo '<li> Product '.($i+ 1).': '.$products[$i].'</li>';
+            foreach ($products as $key => $value) {
+              echo '<li>'.$key.': $'.$value.'</li>';
             }
             echo '</ul>';
           ?>
