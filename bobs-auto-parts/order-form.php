@@ -23,26 +23,22 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="row">
-                  <td class="col-5">Tires</td>
-                  <td class="col-4">
-                    <input type="number" name="tireQty" maxlength="3" min="0" max="10" class="form-control">
-                  </td>
-                </tr>
+                <?php
+                  $products = array(
+                    array('itemName' => 'Tires', 'qtyCode' => 'tireQty'),
+                    array('itemName' => 'Oil', 'qtyCode' => 'oilQty'),
+                    array('itemName' => 'Spark Plugs', 'qtyCode' => 'sparkPlugsQty')
+                  );
 
-                <tr class="row">
-                  <td class="col-5">Oil</td>
-                  <td class="col-4">
-                    <input type="number" name="oilQty" maxlength="3" min="0" max="10" class="form-control">
-                  </td>
-                </tr>
-
-                <tr class="row">
-                  <td class="col-5">Spark Plugs</td>
-                  <td class="col-4">
-                    <input type="number" name="sparkPlugsQty" maxlength="3" min="0" max="10" class="form-control">
-                  </td>
-                </tr>
+                  foreach ($products as $product) {
+                    echo '<tr class="row">';
+                    echo '  <td class="col-5">'.$product['itemName'].'</td>';
+                    echo '  <td class="col-4">';
+                    echo '    <input type="number" name="'.$product['qtyCode'].'" maxlength="3" min="0" max="10" class="form-control">';
+                    echo '  </td>';
+                    echo '</tr>';
+                  }
+                ?>
 
                 <tr class="row">
                   <td class="col-5">How did you find Bob's</td>
