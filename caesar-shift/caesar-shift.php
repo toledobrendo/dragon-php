@@ -12,8 +12,42 @@
 	<div class="container">
 		<div class ="card">
 			<div class="card-body">
+        <h3 class="card-title"> Caesar Shift </h3>
+        <br>
+        <form action="caesar-shift.php" method="POST" id="caesar">
+          <label class="label top-label" for="message"> Message </label><br>
+          <textarea class="textarea" name="message" wrap="soft" rows="3" cols="100"></textarea>
+          <br>
+          <br>
+          <label class="label top-label" for="key"> Key </label>
+          <input type="number" name="key" min="0" maxLength="3" class="form-control">
+          <br>
+          <button type="submit" class="btn btn-primary" > Submit </button>
+        </form>
 				<?php
-					echo 'Hello World';
+          $message = @($_POST['message']);
+          $key = @($_POST['key']);
+
+          if(!empty($message)) {
+            $message = strtoupper($message); //to make all alphabet char to upper
+            $choppedMessage = str_split($message); //split the message to array
+            $key = $key % 25;
+
+            echo '<p>Result: ';
+            foreach($choppedMessage as $ltr) {
+              //65 to 90 A-Z ASCII
+              if(ord($ltr) > 64 && ord($ltr) < 91) {
+                if((ord($ltr)+$key) > 90) {
+                  $ltr = chr(((ord($ltr) + $key) - 90) + 64);
+                } else {
+                  $ltr = chr(ord($ltr) + $key);
+                }
+              }
+              echo $ltr;
+            }
+            echo '</p>';
+          }
+
 				?>
 			</div>
 		</div>
