@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php 
 	// constant variables
-	define('TIRE_PRICE', 100);
-	define('OIL_PRICE', 50);
-	define('SPARK_PRICE', 30);
+	// define('TIRE_PRICE', 100);
+	// define('OIL_PRICE', 50);
+	// define('SPARK_PRICE', 30);
  ?>
 <html>
 	<head>
@@ -27,24 +27,26 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="row">
-									<td class="col-5">Tires</td>
-									<td class="col-4">
-										<input type="number" name="tireQty" value="0" maxlength="3" min="0" class="form-control">
-									</td>
-								</tr>
-								<tr class="row">
-									<td class="col-5">Oil</td>
-									<td class="col-4">
-										<input type="number" name="oilQty" value="0" maxlength="3" min="0" class="form-control">
-									</td>
-								</tr>
-								<tr class="row">
-									<td class="col-5">Spark Plug</td>
-									<td class="col-4">
-										<input type="number" name="sparkQty" value="0" maxlength="3" min="0" class="form-control">
-									</td>
-								</tr>
+								<?php 
+									$items = array(
+										array('Description' => 'Tires', 'Price' => 100, 'QtyID' => 'tireQty'),
+										array('Description' => 'Oil', 'Price' => 50, 'QtyID' => 'oilQty'),
+										array('Description' => 'Spark Plugs', 'Price' => 30, 'QtyID' => 'sparkQty')
+									);
+
+									foreach($items as $item) {
+										echo '<tr class="row">';
+										echo '<td class="col-5">'.$item['Description'].'</td>';
+										echo '<td class="col-2">
+												<input type="number" name="'.$item['QtyID'].'" value="0" maxlength="3" min="0" class="form-control">
+											</td>';
+										echo '<td class="col-2">'
+												.$item['Price'].
+											'</td>';
+										echo '</tr>';
+									}
+								 ?>
+
 								<tr class="row">
 									<td class="col-5">How did you find Bob's?</td>
 									<td class="col-4">
