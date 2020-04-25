@@ -11,31 +11,53 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-body">
-					<h1 class="card-title">PHP Exercises</h1>
-					<div class="col-6">
-						<ul class="list-group">
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="hello-world.php">Hello World</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Bobs Auto Parts</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/price-list.php">Bobs Auto Parts - Price List</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="fibonacci-sequence/fibonacci-sequence.php">Fibonacci Sequence</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="caesar-shift/caesar-shift.php">Caesar Shift</a>
-							</li>
-						</ul>
-					</div>
+					<h1>Caesar Shift</h1>
+					<form method="POST">
+						<table class="table">
+							<thead>
+								<tr class="row">
+									<td class="col-2"><p>Message</p></td>
+									<td class="col-6"><input type="text" class="form-control" name="message" required></td>
+								</tr>
+								<tr class="row">
+									<td class="col-2"><p>Key</p></td>
+									<td class="col-6"><input type="number" class="form-control" min="0" name="key" required></td>
+								</tr>
+								<tr class="row">
+									<td class="col-8"><button type="submit" class="btn btn-primary">Submit</button></td>
+								</tr>
+							</thead>
+						</table>
+					</form>
+					<?php 
+						if(isset($_POST['message']) && isset($_POST['key'])) {
+							$message = $_POST['message'];
+							$key = $_POST['key'];
+
+							$message = strtoupper($message); // uppercase
+							$splitMessage = str_split($message); // split string into 1 character each
+							$arraySize = count($splitMessage);
+
+							// go through each item in array
+							for($letterIndex = 0; $letterIndex < $arraySize; $letterIndex++) {
+								// increment up to [key] times
+								for($stepCount = 0; $stepCount < $key; $stepCount++) {
+									if($splitMessage[$letterIndex] === "Z") {
+										$splitMessage[$letterIndex] = "A";
+									} else {
+										$splitMessage[$letterIndex]++;
+									}
+								}
+							}
+
+							// display encrypted message
+							foreach($splitMessage as $encryptedMessage) {
+								echo $encryptedMessage;
+							}
+
+							$splitMessage = array();
+						}
+					 ?>	
 				</div>
 			</div>
 		</div>
