@@ -46,15 +46,16 @@
 							?>
 			
 							<tr class="row">
-								<th class="col-6"> How did you find Bob's </th>
-								<th class="col-6"> 
+								<th class="col-4"> How did you find Bob's </th>
+								<td class="col-3"> </td>
+								<td class="col-5"> 
 									<select name="find" class="custom-select">
 										<option value="regular"> I am a regular customer </option>
 										<option value="tv"> TV advertising </option>
 										<option value="phone"> Phone Directory </option>
 										<option value="word"> Word of Mouth </option>
 									</select>
-								</th>
+								</td>
 							</tr>	
 
 							<tr class="row">
