@@ -22,7 +22,7 @@
                 <a href="bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering</a>
               </li>
               <li class="list-group-item">
-                <a href="bobs-auto-parts/price-list.php">Bob's Auto Parts - Price List Example</a>
+                <a href="bobs-auto-parts/price-list.php">Bob's Auto Parts - Price List Example Merged</a>
               </li>
             </ul>
           </div>
