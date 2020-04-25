@@ -6,23 +6,35 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous">
-    <title>Price List</title>
   </head>
   <body>
+    <!-- hello-world.php or hello_world.php -->
     <div class="container">
       <div class="card">
         <div class="card-body">
           <h1>Price List</h1>
           <?php
-            echo '<p>Products</p>';
-
-            $products = array('Tires' => 150,'Oil' => 20,'Spark Plugs' => 5);
-
-            echo '<ul>';
-            foreach ($products as $key => $value) {
-              echo '<li>'.$key.': $'.$value.'</li>';
+            $items = array(
+                            array('Code' => 'OIL', 'Description' => 'Oil', 'Price' => 10),
+                            array('Code' => 'TIR', 'Description' => 'Tires', 'Price' => 150),
+                            array('Code' => 'SPK', 'Description' => 'Spark Plugs', 'Price' => 5)
+                          );
+            echo '<table class="table table-condensed">
+                    <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Description</th>
+                      <th>Price</th>
+                    </tr>
+                    </thead>';
+            foreach ($items as $item) {
+              echo '<tr>';
+              foreach ($item as $value) {
+                echo '<td>'.$value.'</td>';
+              }
+              echo '</tr>';
             }
-            echo '</ul>';
+            echo '</table>';
           ?>
         </div>
       </div>
