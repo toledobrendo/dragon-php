@@ -1,3 +1,8 @@
+<?php 
+	$message = @($_POST['message']);
+	$key = @($_POST['key']);
+?>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -16,10 +21,10 @@
           		<hr>
           		<form method="post">
           			<h6 class="card-title">Message: </h65>
-	                <input  type="text" name="message" class="form-control" require/d>
+	                <input  value= "<?php echo $message ?>" placeholder="MESSAGE" type="text" name="message" class="form-control" required />
 	                <br>
 	                <h6 class="card-title">Key: </h6>
-	                <input  type="number" name="key" min="0" class="form-control" require/d>
+	                <input  value= "<?php echo $key ?>" placeholder="0" type="number" name="key" min="0" class="form-control" required />
 	                <br>
 	                <button type="submit" class="btn btn-primary ">Submit</button>
           		</form>
@@ -46,9 +51,6 @@
 
 				return $output;
 			}
-
-			$message = @(_POST['message']);
-			$key = @(_POST['key']);
 
 			echo caesarCipher($message,$key);
           ?>
