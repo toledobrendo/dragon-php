@@ -1,7 +1,7 @@
 <?php
-  define('TIRE_PRICE',100);
+  define('TIRE_PRICE',10);
   define('OIL_PRICE',100);
-  define('SPARK_PRICE',100);
+  define('SPARK_PRICE',1000);
  ?>
 
 <html>
