@@ -16,7 +16,7 @@
                 <table class="table">
                     <thead>
                         <tr class="row">
-                            <th class="col-12">FIBONACCI SEQUENCE</th>
+                            <th class="col-12"><h1>FIBONACCI SEQUENCE</h1></th>
                         </tr>
                     </thead>
                     <tbody>

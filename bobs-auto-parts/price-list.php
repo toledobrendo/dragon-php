@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Template</title>
+    <title>Price List</title>
 </head>
 
 <body>
-    <!-- hello-world.php or hello_world.php -->
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -69,10 +68,10 @@
 
                     //sort product array
                     sort($products);
-                    
+
                     //reverse sort
                     //rsort($items)
-                    
+
                     //foreach -> arrayName as foreachVar
                     foreach ($products as &$product) {
                         $product .= '-1';
@@ -94,7 +93,7 @@
 
                     //call function here to compare prices - usort can be used to utilize custom sorting
                     usort(($items), 'compareItems');
-                    
+
                     echo '<table class="table table-condensed">
                             <thead>
                                 <tr>
@@ -103,7 +102,7 @@
                                     <th>Price</th>
                                 </tr>
                             </thead>';
-                    
+
                     //foreach multidimensional array
                     foreach ($items as $item) {
                         echo '<tr>';

@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <!-- hello-world.php or hello_world.php -->
     <div class="container">
         <div class="card">
             <div class="card-body">

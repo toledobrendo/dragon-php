@@ -11,7 +11,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Order Form</h3>
+                <h3 class="card-title"><h1>Order Form</h1></h3>
                 <form action="process-order.php" method="POST">
                     <table class="table">
                         <thead>
