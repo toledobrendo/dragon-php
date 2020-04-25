@@ -19,7 +19,7 @@
           		<h5 class="card-title">Sequence Length: </h5>
           		<hr>
           		<form method="post">
-	                <input  type="number" name="seqLength" min="0" class="form-control" required/>
+	                <input  type="number" name="seqLength" min="0" class="form-control" require/d>
 	                <br>
 	                <button type="submit" class="btn btn-primary ">Submit</button>
           		</form>
