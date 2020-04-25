@@ -16,7 +16,7 @@
 						<table class="table">
 							<thead>
 								<tr class="row">
-									<td><input type="number" name="sequence-length" min="1"></td>
+									<td><input type="number" name="sequence-length" min="1" required></td>
 									<td><button type="submit" class="btn btn-primary">Submit</button></td>
 								</tr>
 							</thead>
@@ -29,28 +29,17 @@
 								<?php 
 									if(isset($_POST['sequence-length'])) {
 										$current = 0;
-										$prev = -1;
-										$temp = 0;
+										$prev = 0;
+										$next = 1;
 										$length = $_POST['sequence-length'];
 
 										echo 'Sequence length: '.$length;
 
 										for($counter = 0; $counter < $length; $counter++) {
-											if($current == 0) {
-												if($prev != 0) {
-													echo '<td class="col-1">'.$current.'</td>';
-													$prev += 1;
-												} else {
-													echo '<td class="col-1">'.$current.'</td>';
-													$current += 1;
-												}
-												
-											} else {
-												$temp = $current;
-												echo '<td class="col-1">'.($current += $prev).'</td>';
-												$prev = $temp;
-											}
-											
+											echo '<td class="col-1">'.$current.'</td>';
+											$prev = $current;
+											$current = $next;
+											$next = $prev + $current;
 										}
 									}
 								 ?>
