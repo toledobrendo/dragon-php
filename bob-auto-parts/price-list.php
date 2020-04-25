@@ -21,7 +21,38 @@
             echo '</p>Product 0: '.$products[0];
 
             echo '<ul>';
+            for($ctr = 0; $ctr < count($products); $ctr++){
+              echo '<li>'.$products[$ctr].'</li>';
+            }
             echo '</ul>';
+
+            echo '<ul>';
+            int $ctr = 0;
+              foreach ($products as &$product) {
+                $product = $product.' -1 ';
+                echo '<li>'.ctr. ' - '.product.'</li>';
+                $ctr++;
+              }
+            echo '</ul>';
+
+            echo '<ul>';
+            for($ctr = 0; $ctr < count($products); $ctr++){
+              echo '<li>'.$products[$ctr].'</li>';
+            }
+            echo '</ul>';
+
+            $numbers = range(1, 10, 2);
+            echo '<br/> range (1,10): ';
+            foreach ($numbers as $number) {
+              echo $number.' ';
+            }
+            echo '<br/>';
+
+            $letters = range('a','z');
+            echo '<br/> letters: ';
+            foreach ($letters as $letter) {
+              echo $letter.' ';
+            }
           ?>
         </div>
       </div>
