@@ -25,21 +25,24 @@
 						</thead>
 
 						<tbody>
-							<tr class="row">
-								<th class="col-6"> Tires </th>
-								<th class="col-6"> <input type="number" name="tireQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
 
-							<tr class="row">
-								<th class="col-6"> Oil </th>
-								<th class="col-6"> <input type="number" name="oilQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
+							<?php 
 
-							<tr class="row">
-								<th class="col-6"> Spark Plugs </th>
-								<th class="col-6"> <input type="number" name="sparkQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
+								$items = array(
+									array('Item' => 'Oil', 'Name' => 'oilQty'),
+									array('Item' => 'Tires', 'Name' => 'tireQty'),
+									array('Item' => 'Spark Plugs', 'Name' => 'sparkQty')
+								);
 
+								foreach($items as $item) {
+									echo '<tr class="row">';
+									echo '<th class="col-6">'.$item['Item'].'</td>';
+									echo '<th class="col-6"> <input type="number" name="'.$item['Name'].'" max="10" min="0" maxLength="3" class="form-control"> </th>';
+									echo '</tr>';
+								}
+
+							?>
+			
 							<tr class="row">
 								<th class="col-6"> How did you find Bob's </th>
 								<th class="col-4"> 
