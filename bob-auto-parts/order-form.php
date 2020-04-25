@@ -35,15 +35,15 @@
                      echo '<table class="table table-condensed">
                             <thead>
                             <tr>
-                              <th>Item</th>
-                              <th>Quantity</th>
-                              <th>Price</th>
+                              <th class="col-5">Item</th>
+                              <th class="col-4">Quantity</th>
+                              <th class="col-2">Price</th>
                             </tr>
                             </thead>';
                     foreach ($items as $item) {
                         echo '<tr class="row">';
-                          echo '<td class="col-2">'.$item['itemName'].'</td>';
-                          echo '<td class="col-5">
+                          echo '<td class="col-5">'.$item['itemName'].'</td>';
+                          echo '<td class="col-4">
                                    <input type="number" name="'.$item['name'].'" maxlength="3" min="0" max="10" class="form-control" /> 
                                 </td>';
                           echo '<td class="col-2">'.$item['price'].'</td>';
@@ -83,7 +83,7 @@
                       </td>
                   </tr>
                   <tr class="row">
-                    <td colspan="2" class="col-9">
+                    <td colspan="2" class="col-6">
                       <a href="freight-cost.php" class="btn btn-secondary float-right"> Freight Cost</a>
                       <button type="submit" class="btn btn-success float-right">Submit</button>
                     </td>

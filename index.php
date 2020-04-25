@@ -22,13 +22,16 @@
                 <a href="hello-world.php">Hello World</a>
               </li>
               <li class="list-group-item">
-                <a href="bob-auto-parts/order-form.php">bob's auto parts</a>
+                <a href="bob-auto-parts/order-form.php">Bob's Auto Parts</a>
               </li>
               <li class="list-group-item">
                 <a href="fibonacci-sequence/fibonaccisequence.php">Fibonacci Sequence</a>
               </li>
               <li class="list-group-item">
-                <a href="bob-auto-parts/price-list.php">bob's auto parts - Price List</a>
+                <a href="bob-auto-parts/price-list.php">Bob's Auto Parts - Price List</a>
+              </li>
+              <li class="list-group-item">
+                <a href="caesar-shift/caesar-shift.php">Caesar Shift</a>
               </li>
             </ul>
           </div>
