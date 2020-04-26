@@ -30,6 +30,10 @@
                 <li class="list-group-item">
                     <a href="HW1-FibonacciSequence/Pages/fibonacci.php">Fibonacci Sequence</a>
                 </li>
+                
+                <li class="list-group-item">
+                    <a href="HW2-CaesarShift/Pages/caesar-cipher.php">Caesar Shift</a>
+                </li>
             </ul>
           </div>
         </div>
