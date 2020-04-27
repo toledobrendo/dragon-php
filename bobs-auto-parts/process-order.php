@@ -1,7 +1,9 @@
 <?php
+  define('TIRE_PRICE', 100);
+  define('OIL_PRICE',50);
+  define('SPARK_PRICE',30);
 
-
->
+?>
 
 
 <html lang="en" dir="ltr">
@@ -37,16 +39,23 @@
 
            echo '<p>Your order is as follows</p>';
            
-           echo $tireQty.' tires <br/>';
+          //echo $tireQty.' tires <br/>';
+          //echo $oilQty.' oils <br/>';
+          //echo $sparkeQty.' sparks <br/><br/>';
 
-           echo $oilQty.' oils <br/>';
+          echo "$tireQty tires<br/>";
+          echo $oilQty.' oils <br/>';
+          echo $sparkeQty.' sparks <br/><br/>';
 
-           echo $sparkeQty.' sparks <br/><br/>';
 
+
+
+
+           //NEW LINES OF CODE
            echo '<p>Prices<br/>';
-           echo 'tires:'.TIRE_PRICE'<br/>';
-           echo 'tires:'.OIL_PRICE'<br/>';
-           echo 'tires:'.SPARK_PRICE'<br/>';
+           echo 'Tires:'.TIRE_PRICE'<br/>';
+           echo 'Oil:'.OIL_PRICE'<br/>';
+           echo 'Spark Plugs:'.SPARK_PRICE'<br/>';
 
 
            $totalQty = $tireQty +$oilQty + $sparkQty;
