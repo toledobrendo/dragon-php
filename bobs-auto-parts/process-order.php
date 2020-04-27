@@ -59,19 +59,20 @@
            $totalQty = $tireQty +$oilQty + $sparkQty;
            echo 'Total Quantity: '.$totalQty.'<br/><br/>';
 ;
-           $tireAmount = $tireQty * TIRE_PRICE
+           $tireAmount = $tireQty * TIRE_PRICE;
            $oilAmount = $oilQty * OIL_PRICE;
            $sparkAmount = $sparkeQty * SPARK_PRICE;
 
-           $totalAmount = (float) ($tireAmount + $oilAmount + $sparkAmount);
+           $totalAmount = (float)$tireAmount;
+
 
            $otherTotalAmount = $totalAmount;
            $otherTotalAmount += $oilAmount;
 
            echo 'Other Total AMount: '.$otherTotalAmount'<br/><br/>';
 
-
-           echo 'total Amount:'.$totalAmount;
+           $totalAmount += $sparkAmount;
+           echo 'Total Amount: ' .$totalAmount.'<br/>';
 
 
 
