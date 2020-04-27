@@ -51,9 +51,9 @@
 
            //NEW LINES OF CODE
            echo '<p>Prices<br/>';
-           echo 'Tires:'.TIRE_PRICE'<br/>';
-           echo 'Oil:'.OIL_PRICE'<br/>';
-           echo 'Spark Plugs:'.SPARK_PRICE'<br/><br/>';
+           echo 'Tires: '.TIRE_PRICE.'<br/>';
+           echo 'Oil: '.OIL_PRICE.'<br/>';
+           echo 'Spark Plugs: '.SPARK_PRICE.'<br/><br/>';
 
 
            $totalQty = $tireQty +$oilQty + $sparkQty;
