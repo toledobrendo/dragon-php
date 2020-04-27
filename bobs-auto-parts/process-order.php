@@ -56,7 +56,7 @@
            echo 'Spark Plugs: '.SPARK_PRICE.'<br/><br/>';
 
 
-           $totalQty = $tireQty +$oilQty + $sparkQty;
+           $totalQty = $tireQty +$oilQty + $sparkeQty;
            echo 'Total Quantity: '.$totalQty.'<br/><br/>';
 ;
            $tireAmount = $tireQty * TIRE_PRICE;
@@ -69,7 +69,7 @@
            $otherTotalAmount = $totalAmount;
            $otherTotalAmount += $oilAmount;
 
-           echo 'Other Total AMount: '.$otherTotalAmount'<br/><br/>';
+           echo 'Other Total AMount: '.$otherTotalAmount.'<br/><br/>';
 
            $totalAmount += $sparkAmount;
            echo 'Total Amount: ' .$totalAmount.'<br/>';
