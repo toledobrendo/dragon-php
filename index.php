@@ -33,6 +33,9 @@
 						<li class="list-group-item"> 
 							<a href="fibonacci-sequence.php"> Fibonacci Sequence </a>
 						</li>
+						<li class="list-group-item"> 
+							<a href="caesar-shift.php"> Caesar Shift </a>
+						</li>
 					</ul>
 				</div>
 			</div>
