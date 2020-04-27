@@ -25,9 +25,7 @@
            
 
            //php comments
-           /** MULTILINE COMMENTS HERE
-           ps: deeeeeeen den den dereeen den den DEREN DEREN DEEEEEEEEEEN tutu (avengers theme)
-           **/
+           /**We play hard, we study harder**/
 
 
            $tireQty = $_POST['tireQty'];
@@ -55,7 +53,7 @@
            echo '<p>Prices<br/>';
            echo 'Tires:'.TIRE_PRICE'<br/>';
            echo 'Oil:'.OIL_PRICE'<br/>';
-           echo 'Spark Plugs:'.SPARK_PRICE'<br/>';
+           echo 'Spark Plugs:'.SPARK_PRICE'<br/><br/>';
 
 
            $totalQty = $tireQty +$oilQty + $sparkQty;
