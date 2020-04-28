@@ -25,38 +25,37 @@
 				<p> <b> Key </b>
 				<input type="number" name="key" min="0" class="form-control col-10" value = <?php echo $_POST['key'] ?> > </p> <br/>
 
-				<button type="submit" class="btn btn-primary float-left"> ENCRYPT MESSAGE </button> <br/> <br/> <br/> <br/>
+				<button type="submit" class="btn btn-primary float-left"> ENCRYPT MESSAGE </button> <br/> <br/> <br/>
 
 				<?php
 
 					$key = $_POST['key'];
+
 					$message = strtoupper($_POST['message']);
 
-
 					$letters = str_split($message); 
-					$length=strlen($message);
+					$length = strlen($message);
 
 					function encryptMessage($letters, $length, $key){
+
 						for ($i = 0; $i < $length; $i++) 
 						{
-							if(ord($letters[$i]) >= 65 && ord($letters[$i]) <= 90) {
-								$new[$i] = chr(ord($letters[$i]) + $key);
+							if(ord($letters[$i]) >=65 && ord($letters[$i]) <= 90) {
+								$result = chr((ord($letters[$i]) + $key - 65) % 26 + 65);
+								echo $result;
 							}
 
 							else {
-								$new[$i] = $letters[$i];
+								echo $letters[$i];
 							}
 						}
 
-						return $new;
 					}
 
-					$encrypted = encryptMessage($letters, $length, $key);
-
-					echo '<i>Encrypted Message: </i>';
-					foreach ($encrypted as $new){
-						echo $new;
-					}
+					echo '<i>Message: </i>'.$message.'<br/>';
+					echo '<i>Chosen Key: </i>'.$key.'<br/>';
+					echo '<i>Encypted Message: </i>';
+					encryptMessage($letters, $length, $key);
 
 				?>
 
