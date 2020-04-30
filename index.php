@@ -27,11 +27,15 @@
 						</li>
 
 						<li class="list-group-item">
-							<a href="bobs-auto-parts/fibonacci-sequence.php">Fibonacci Sequence</a>
+							<a href="fibonacci/fibonacci-sequence.php">Fibonacci Sequence</a>
 						</li>
 
 						<li class="list-group-item">
 							<a href="bobs-auto-parts/price-list.php">Price List</a>
+						</li>
+
+						<li class="list-group-item">
+							<a href="caesar-cipher/caesar-cipher.php">Caesar Cipher</a>
 						</li>
 					</ul>
 				</div>
