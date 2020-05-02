@@ -2,7 +2,12 @@
 	// include('message.php');
 	// require('message.php');
 	require_once('message.php');
+
+	function isActive($page) {
+		return strpos($_SERVER['REQUEST_URI'], $page);
+	}
 ?>
+
 
 <html>
 
