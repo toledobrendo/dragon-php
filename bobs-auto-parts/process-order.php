@@ -8,9 +8,6 @@
 		define('SPARK_PRICE', 50);
 	?>
 
-	<div class="container">
-		<div class ="card">
-			<div class="card-body">
 				<h1 class="card-title"> Bob's Auto Parts </h1>
 				<br>
 				<h3 class="card-title"> Order Results </h3>
@@ -20,10 +17,10 @@
 					echo date('H:i, jS F Y');
 					echo '</p>';
 				
-					$tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
-					$oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
-					$sparkQty = $_POST['sparkQty'] ? $_POST['sparkQty'] : 0;
-					$totalQty = $tireQty + $oilQty + $sparkQty;
+					$_POST['tireQty'] ? $tires->__set('quantity', $_POST['tireQty']) : $tires->__set('quantity', 0);
+					$_POST['oilQty'] ? $oil->__set('quantity', $_POST['oilQty']) : $oil->__set('quantity', 0);
+					$_POST['sparkQty'] ? $sparkplugs->__set('quantity', $_POST['sparkQty']) : $sparkplugs->__set('quantity', 0);
+					$totalQty = $tires->__get('quantity') + $oil->__get('quantity') + $sparkplugs->__get('quantity');
 
 					switch($_POST['find']) {
 						case'regular':
@@ -43,16 +40,17 @@
 					if($totalQty == 0) {
 						echo '<i>You did not order anything </i><br/><br/>';
 					} else {
-					echo '<br><p><b><i>Your order is as follows:</i></b></p>';
-					if ($tireQty > 0) {
-						echo $tireQty. ' <i>tires</i><br/>';}
+						echo '<br><p><b><i>Your order is as follows:</i></b></p>';
 
-					if ($oilQty > 0) {
-						echo $oilQty. ' <i>cans of oil</i><br/>';}
+						if ($oil->__get('quantity') > 0) {
+							echo $oil->__get('quantity'). ' <i>'.$oil->__get('description').'</i><br/>';}
+							
+						if ($tires->__get('quantity') > 0) {
+							echo $tires->__get('quantity'). ' <i>'.$tires->__get('description').'</i><br/>';}
 
-					if ($sparkQty > 0) {
-						echo $sparkQty. ' <i>spark plugs</i><br/>';} }
-
+						if ($sparkplugs->__get('quantity') > 0) {
+							echo $sparkplugs->__get('quantity'). ' <i>'.$sparkplugs->__get('description').'</i><br/>';} 
+					}
 					// echo '<i>Prices Per Item</i><br/>';
 					// echo 'Tires: PHP '.TIRE_PRICE.'<br/>';
 					// echo 'Oil: PHP '.OIL_PRICE.'<br/>';
@@ -61,11 +59,11 @@
 					
 					echo '<br/><b>Total Quantity:</b> '.$totalQty.'<br/><br/>';
 
-					$tireAmount = $tireQty * TIRE_PRICE;
-					$oilAmount = $oilQty * OIL_PRICE;
-					$sparkAmount = $sparkQty * SPARK_PRICE;
+					$tires->computeCost();
+					$oil->computeCost();
+					$sparkplugs->computeCost();
 
-					$totalAmount = $tireAmount + $oilAmount + $sparkAmount;
+					$totalAmount = $tires->__get('cost') + $oil->__get('cost') + $sparkplugs->__get('cost');
 					// echo '<i>Cost Breakdown</i><br/>';
 					// echo 'Tires: PHP '.$tireAmount.'<br/>';
 					// echo 'Oil: PHP '.$oilAmount.'<br/>';

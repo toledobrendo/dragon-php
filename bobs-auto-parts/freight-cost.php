@@ -3,50 +3,45 @@
 ?>
 
 
-	<div class="container">
-		<div class ="card">
+	<h3 class="card-title"> Freight Cost </h3>
+		<table class="table">
+			<thead>
+				<tr class="row">
+					<th class="col-3"> Distance </th>
+					<th class="col-3"> Cost </th>
+				</tr>
+			</thead>
 
-			<div class="card-body">
+			<tbody>
+				<?php
+					$distance = 50;
 
-				<h3 class="card-title"> Freight Cost </h3>
-				<table class="table">
-					<thead>
-						<tr class="row">
-							<th class="col-3"> Distance </th>
-							<th class="col-3"> Cost </th>
-						</tr>
-					</thead>
+					while ($distance <= 250) {
+						echo '<tr class="row">
+							<td class="col-3">'.$distance.' Meters</td>
+							<td class="col-3">'.($distance / 10).'</td>
+							</tr>';
 
-					<tbody>
-						<?php
-							$distance = 50;
+							$distance += 50;
+						}
 
-							while ($distance <= 250) {
-								echo '<tr class="row">
-										<td class="col-3">'.$distance.' Meters</td>
-										<td class="col-3">'.($distance / 10).'</td>
-									</tr>';
+						for($distance = 300; $distance <= 500; $distance += 50) {
+							echo '<tr class="row">
+								<td class="col-3">'.$distance.' Meters</td>
+								<td class="col-3">'.($distance / 10).'</td>
+								</tr>';
+						}
 
-								$distance += 50;
-							}
+						$distance = 550;
 
-							for($distance = 300; $distance <= 500; $distance += 50) {
-								echo '<tr class="row">
-										<td class="col-3">'.$distance.' Meters</td>
-										<td class="col-3">'.($distance / 10).'</td>
-									</tr>';
-							}
-
-							$distance = 550;
-
-							do {
-								echo '<tr class="row">
-										<td class="col-3">'.$distance.' Meters</td>
-										<td class="col-3">'.($distance / 10).'</td>
-									</tr>';
+						do {
+							echo '<tr class="row">
+								<td class="col-3">'.$distance.' Meters</td>
+								<td class="col-3">'.($distance / 10).'</td>
+								</tr>';
 
 								$distance += 50;
-							} while ($distance <= 750);
+						} while ($distance <= 750);
 						?>
 					</tbody>
 				</table>

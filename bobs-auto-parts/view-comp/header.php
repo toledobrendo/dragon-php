@@ -1,3 +1,7 @@
+<?php
+	require_once('model/product.php');
+?>
+
 <html>
 
 <head>
@@ -8,3 +12,30 @@
 </head>
 
 <body>
+
+	<div class="container">
+		<div class ="card">
+
+			<div class="card-body">
+
+			<?php
+
+				$oil = new Product();
+				$oil->__set('item', "Oil");
+				$oil->__set('name', "oilQty");
+				$oil->__set('price', 10);
+				$oil->__set('description', 'cans of oil');
+
+				$tires = new Product();
+				$tires->__set('item', "Tires");
+				$tires->__set('name', "tireQty");
+				$tires->__set('price', 100);
+				$tires->__set('description', 'tires');
+
+				$sparkplugs = new Product();
+				$sparkplugs->__set('item', "Spark Plugs");
+				$sparkplugs->__set('name', "sparkQty");
+				$sparkplugs->__set('price', 4);
+				$sparkplugs->__set('description', 'spark plugs');
+
+			?>
