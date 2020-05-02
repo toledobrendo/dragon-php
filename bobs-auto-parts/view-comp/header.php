@@ -1,7 +1,5 @@
 <?php
-    function isActive($page){
-        return strpos($_SERVER['REQUEST_URI'],$page);
-    }
+    require_once 'service/tracker-service.php';
 ?>
 
 <html>
