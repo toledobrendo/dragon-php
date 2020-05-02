@@ -41,8 +41,8 @@
 						$temp = ord(ctype_upper($char) ? 'A' : 'a');
 						return chr(fmod(((ord($char) + $key) - $temp), 26) + $temp);
 					}else{
-						$temp = ord(ctype_upper($char) ? 'z' : 'Z');
-						return chr(fmod(((ord($char) + $key) - $temp), 26) + $temp);
+						$temp = ord(ctype_upper($char) ? 'Z' : 'z');
+						return strtoupper(chr(fmod(((ord($char) + $key) - $temp), 26) + $temp));
 					}
 				}
 			}
