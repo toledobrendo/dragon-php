@@ -1,20 +1,29 @@
 <?php
     require_once 'view-comp/header.php';
+    require_once 'model/product.php';
 ?>
                 <h1>Price List</h1>
                 <?php
-                //array declaration in php
                 $products = array('Tires', 'Oil', 'Spark Plugs');
 
-                //array with key-value pair
                 $prices = array('Tires' => 100, 'Oil' => 10, 'Spark Plugs' => 4);
 
-                //multidimensional array
-                $items = array(
-                    array('Code' => 'OIL', 'Description' => 'Oil', 'Price' => 10),
-                    array('Code' => 'TIR', 'Description' => 'Tires', 'Price' => 100),
-                    array('Code' => 'SPK', 'Description' => 'Spark Plugs', 'Price' => 5)
-                );
+                $productOil = new Product();
+                $productOil->Code = "OIL";
+                $productOil->Description = "Oil";
+                $productOil->Price = 50;
+
+                $productTire = new Product();
+                $productTire->Code = "TIR";
+                $productTire->Description = "Tires";
+                $productTire->Price = 100;
+
+                $productSpark = new Product();
+                $productSpark->Code = "SPK";
+                $productSpark->Description = "Spark Plugs";
+                $productSpark->Price = 30;
+
+                $items = array($productOil, $productTire, $productSpark);
 
                 $numbers = range(1, 10);
 

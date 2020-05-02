@@ -16,35 +16,33 @@
                         </thead>
                         <tbody>
                             <?php
-                            //object creation
-                            $productOil = new Product();
-                            $productOil->Code = "OIL";
-                            $productOil->Description = "Oil";
-                            $productOil->Price = 50;
+                                $productOil = new Product();
+                                $productOil->Code = "OIL";
+                                $productOil->Description = "Oil";
+                                $productOil->Price = 50;
 
-                            $productTire = new Product();
-                            $productTire->Code = "TIR";
-                            $productTire->Description = "Tires";
-                            $productTire->Price = 100;
+                                $productTire = new Product();
+                                $productTire->Code = "TIR";
+                                $productTire->Description = "Tires";
+                                $productTire->Price = 100;
 
-                            $productSpark = new Product();
-                            $productSpark->Code = "SPK";
-                            $productSpark->Description = "Spark Plugs";
-                            $productSpark->Price = 30;
+                                $productSpark = new Product();
+                                $productSpark->Code = "SPK";
+                                $productSpark->Description = "Spark Plugs";
+                                $productSpark->Price = 30;
 
-                            //array of objects
-                            $items = array($productOil, $productTire, $productSpark);
+                                $items = array($productOil, $productTire, $productSpark);
 
-                            echo '<tr class="row">';
+                                echo '<tr class="row">';
 
-                            foreach ($items as $item) {
-                                echo '<td class="col-5">' . $item->Description . '</td>';
-                                echo '<td class="col-3">' . $item->Price . '</td>';
-                                echo '<td class="col-4">';
-                                echo '<input type="number" class="form-control" name="' . $item->Code . '" maxlength="3" min="0" />';
-                                echo '</td>';
-                            }
-                            echo '</tr>';
+                                foreach ($items as $item) {
+                                    echo '<td class="col-5">' . $item->Description . '</td>';
+                                    echo '<td class="col-3">' . $item->Price . '</td>';
+                                    echo '<td class="col-4">';
+                                    echo '<input type="number" class="form-control" name="' . $item->Code . '" maxlength="3" min="0" />';
+                                    echo '</td>';
+                                }
+                                echo '</tr>';
                             ?>
 
                             <tr class="row">
