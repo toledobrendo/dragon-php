@@ -1,4 +1,8 @@
-<?php require_once 'view-comp/header.php'; ?>
+<?php
+  require_once 'view-comp/title.php';
+  $title = 'Price List';
+  require_once 'view-comp/header.php';
+?>
 
 <h1>Price List</h1>
 <?php

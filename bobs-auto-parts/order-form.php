@@ -1,4 +1,5 @@
 <?php
+  require_once 'view-comp/title.php';
   $title = 'Order Form';
   require_once 'view-comp/header.php';
 ?>

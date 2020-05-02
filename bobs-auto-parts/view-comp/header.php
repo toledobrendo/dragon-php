@@ -1,4 +1,4 @@
-<?php $title = "" ?>
+<?php require_once 'title.php'; ?>
 <html>
   <head>
     <meta charset="utf-8">

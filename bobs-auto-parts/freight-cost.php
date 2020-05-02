@@ -1,4 +1,8 @@
-<?php require_once 'view-comp/header.php'; ?>
+<?php
+  require_once 'view-comp/title.php';
+  $title = 'Freight Cost';
+  require_once 'view-comp/header.php';
+?>
 
 <h1>Freight Cost</h1>
 <table class="table">

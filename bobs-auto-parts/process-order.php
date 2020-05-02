@@ -1,5 +1,8 @@
 <?php
+  require_once 'view-comp/title.php';
+  $title = 'Checkout';
   require_once 'view-comp/header.php';
+
   define('TIRE_PRICE', 150);
   define('OIL_PRICE', 10);
   define('SPARK_PRICE', 5);
