@@ -1,5 +1,5 @@
 <?php
-	require_once('header.php');
+	require_once('view-comp/header.php');
 ?>
 
 	<div class="container">
@@ -13,5 +13,5 @@
 	</div>
 
 <?php
-	require_once('footer.php');
+	require_once('view-comp/footer.php');
 ?>
