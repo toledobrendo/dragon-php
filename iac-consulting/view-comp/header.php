@@ -12,10 +12,10 @@
       <div href="index.php" class="navbar-brand">iAC Consulting</div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item <?php if(strpos($_SERVER['REQUEST_URI'], 'index.php')) echo 'active'; ?>">
             <a class="nav-link" href="index.php">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php if(strpos($_SERVER['REQUEST_URI'], 'contact.php')) echo 'active'; ?>">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
         </ul>

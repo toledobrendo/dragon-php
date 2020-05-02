@@ -6,7 +6,12 @@
 ?>
 <?php
   echo @ $message;
+  echo $_SERVER['REQUEST_URI'];
+  $isValid = false;
 ?>
+<?php if($isValid) { ?>
+  <strong>This is valid.</strong>
+<?php } ?>
 <?php
   require_once('view-comp/footer.php');
 ?>
