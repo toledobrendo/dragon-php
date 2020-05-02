@@ -1,5 +1,6 @@
 <?php
     require_once 'view-comp/header.php';
+    require_once 'model/product.php';
 ?>
                 <h3 class="card-title">
                     <h1>Order Form</h1>
@@ -15,41 +16,37 @@
                         </thead>
                         <tbody>
                             <?php
-                            //Array Activity
-                            $items = array(
-                                array('Code' => 'OIL', 'Description' => 'Oil', 'Price' => 50),
-                                array('Code' => 'TIR', 'Description' => 'Tires', 'Price' => 100),
-                                array('Code' => 'SPK', 'Description' => 'Spark Plugs', 'Price' => 30)
-                            );
+                            //object creation
+                            $productOil = new Product();
+                            $productOil->Code = "OIL";
+                            $productOil->Description = "Oil";
+                            $productOil->Price = 50;
+
+                            $productTire = new Product();
+                            $productTire->Code = "TIR";
+                            $productTire->Description = "Tires";
+                            $productTire->Price = 100;
+
+                            $productSpark = new Product();
+                            $productSpark->Code = "SPK";
+                            $productSpark->Description = "Spark Plugs";
+                            $productSpark->Price = 30;
+
+                            //array of objects
+                            $items = array($productOil, $productTire, $productSpark);
+
                             echo '<tr class="row">';
 
                             foreach ($items as $item) {
-                                echo '<td class="col-5">' . $item['Description'] . '</td>';
-                                echo '<td class="col-3">' . $item['Price'] . '</td>';
+                                echo '<td class="col-5">' . $item->Description . '</td>';
+                                echo '<td class="col-3">' . $item->Price . '</td>';
                                 echo '<td class="col-4">';
-                                echo '<input type="number" class="form-control" name="' . $item['Code'] . '" maxlength="3" min="0" />';
+                                echo '<input type="number" class="form-control" name="' . $item->Code . '" maxlength="3" min="0" />';
                                 echo '</td>';
                             }
                             echo '</tr>';
                             ?>
-                            <!-- <tr class="row">
-                                <td class="col-5">Tires</td>
-                                <td class="col-4">
-                                    <input type="number" class="form-control" name="tireQty" maxlength="3" min="0" max="10" />
-                                </td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-5">Oil</td>
-                                <td class="col-4">
-                                    <input type="number" class="form-control" name="oilQty" maxlength="3" min="0" max="10" />
-                                </td>
-                            </tr>
-                            <tr class="row">
-                                <td class="col-5">Spark Plugs</td>
-                                <td class="col-4">
-                                    <input type="number" class="form-control" name="sparkQty" maxlength="3" min="0" max="10" />
-                                </td>
-                            </tr> -->
+
                             <tr class="row">
                                 <td class="col-5">How did you find Bob's?</td>
                                 <td class="col-7">
