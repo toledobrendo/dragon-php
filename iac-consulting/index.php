@@ -18,7 +18,7 @@
 
 <?php 
 	echo @ $message;
-	echo $_SERVER['REQUEST_URI'];
+	echo '<br/>URI: '. $_SERVER['REQUEST_URI'];
 	$isValid = false;
 
 	$baseNumber = 5;

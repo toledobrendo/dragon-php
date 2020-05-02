@@ -29,7 +29,6 @@
 		}
 
 		public function __set($fieldName, $fieldValue){
-
 			$this->$fieldName = $fieldValue;
 		}
 

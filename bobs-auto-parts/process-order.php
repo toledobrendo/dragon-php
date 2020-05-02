@@ -27,10 +27,10 @@
 						echo "$oilQty oil<br/>";
 						echo "$sparkQty spark plugs<br/><br/>";
 
-						echo '<p>Prices<br/>';
-						echo 'Tires: '.TIRE_PRICE. '<br/>';
-						echo 'Oil: '.OIL_PRICE. '<br/>';
-						echo 'Spark Plugs: '.SPARK_PRICE. '<br/><br/>';
+						// echo '<p>Prices<br/>';
+						// echo 'Tires: '.TIRE_PRICE. '<br/>';
+						// echo 'Oil: '.OIL_PRICE. '<br/>';
+						// echo 'Spark Plugs: '.SPARK_PRICE. '<br/><br/>';
 
 
 						$totalQty = @($tireQty + $oilQty + $sparkQty);  //@(surpress warning)

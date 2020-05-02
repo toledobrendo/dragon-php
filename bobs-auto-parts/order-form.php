@@ -1,15 +1,34 @@
 <?php
   require_once('view-comp/header.php');
+  require_once('model/product.php');
 ?>
 
 <h3 class="card-title">Order Form</h3>
 <form action="process-order.php" method="post">
-  <?php
-  $items = array(
-    array('Item' => 'Tires', 'Price' => 100, 'Name' => 'tireQty'),
-    array('Item' => 'Oil', 'Price' => 50, 'Name' => 'oilQty'),
-    array('Item' => 'Spark Plugs', 'Price' => 30, 'Name' => 'sparkQty')
-  );
+
+<?php
+  $tires = new Product();
+  $tires->name = 'Tires';
+  $tires->price = 100;
+  $tires->code = 'tireQty';
+
+  $oil = new Product();
+  $oil->name = 'Oil';
+  $oil->price = 50;
+  $oil->code = 'oilQty';
+
+  $sparkPlugs = new Product();
+  $sparkPlugs->name = 'Spark Plugs';
+  $sparkPlugs->price = 30;
+  $sparkPlugs->code = 'sparkQty';
+
+  // $items = array(
+  //   array('Item' => 'Tires', 'Price' => 100, 'Name' => 'tireQty'),
+  //   array('Item' => 'Oil', 'Price' => 50, 'Name' => 'oilQty'),
+  //   array('Item' => 'Spark Plugs', 'Price' => 30, 'Name' => 'sparkQty')
+  // );
+
+  $items = array($tires, $oil, $sparkPlugs);
 
   echo '<table class="table table-condensed">
   <thead>
@@ -22,9 +41,9 @@
 
   foreach ($items as $item) {
     echo '<tr>';
-    echo '<td>' . $item['Item'] . '</td>';
-    echo '<td>' . $item['Price'] . '</td>';
-    echo '<td><input type="number" name="' . $item['Name'] . '" maxlength="3" min="0" max="10" class="form-control"/></td>';
+    echo '<td>' . $item->name. '</td>';
+    echo '<td>' . $item->price. '</td>';
+    echo '<td><input type="number" name="' . $item->code. '" maxlength="3" min="0" max="10" class="form-control"/></td>';
     echo '</tr>';
   }
 
