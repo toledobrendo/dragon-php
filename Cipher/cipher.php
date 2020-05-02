@@ -24,7 +24,7 @@
 	                <input  value= "<?php echo $message ?>" placeholder="MESSAGE" type="text" name="message" class="form-control" required />
 	                <br>
 	                <h6 class="card-title">Key: </h6>
-	                <input  value= "<?php echo $key ?>" placeholder="0" type="number" name="key" min="0" class="form-control" required />
+	                <input  value= "<?php echo $key ?>" placeholder="0" type="number" name="key" class="form-control" required />
 	                <br>
 	                <button type="submit" class="btn btn-primary ">Submit</button>
           		</form>
@@ -34,11 +34,17 @@
           <?php
             function formula($char, $key)
 			{
-				if (!ctype_alpha($char))
+				if (!ctype_alpha($char)){
 					return $char;
-
-				$temp = ord(ctype_upper($char) ? 'A' : 'a');
-				return chr(fmod(((ord($char) + $key) - $temp), 26) + $temp);
+				}else{
+					if($key>0){
+						$temp = ord(ctype_upper($char) ? 'A' : 'a');
+						return chr(fmod(((ord($char) + $key) - $temp), 26) + $temp);
+					}else{
+						$temp = ord(ctype_upper($char) ? 'z' : 'Z');
+						return chr(fmod(((ord($char) + $key) - $temp), 26) + $temp);
+					}
+				}
 			}
 
 			function caesarCipher($message, $key)
