@@ -1,5 +1,4 @@
 <html>
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,37 +7,20 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </head>
-
   <body>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="navbar-brand">Bob's Auto-parts</div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="order-form.php">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="freight-cost.php">Freight Cost</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <h1 class="card-title">PHP Exercises</h1>
-          <div class="col-6">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a href="hello-world.php">Hello World</a>
-              </li>
-              <li class="list-group-item">
-                <a href="bobs-auto-parts/order-form.php">Bobs Auto parts</a>
-              </li>
-              <li class="list-group-item">
-                <a href="price-list.php">Bobs Auto parts Price List</a>
-              </li>
-              <li class="list-group-item">
-                <a href="fibonacci-sequence.php">Fibonacci Sequence</a>
-              </li>
-              <li class="list-group-item">
-                <a href="caesar-shift.php">Caesar Shift</a>
-              </li>
-              <li class="list-group-item">
-                <a href="iac-consulting/index.php">iAC Consulting</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-
-</html>

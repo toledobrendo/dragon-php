@@ -1,3 +1,7 @@
+<?php
+  require_once('message.php');
+  require_once('script.php');
+?>
 <html>
 
   <head>
@@ -13,29 +17,9 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <h1 class="card-title">PHP Exercises</h1>
-          <div class="col-6">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a href="hello-world.php">Hello World</a>
-              </li>
-              <li class="list-group-item">
-                <a href="bobs-auto-parts/order-form.php">Bobs Auto parts</a>
-              </li>
-              <li class="list-group-item">
-                <a href="price-list.php">Bobs Auto parts Price List</a>
-              </li>
-              <li class="list-group-item">
-                <a href="fibonacci-sequence.php">Fibonacci Sequence</a>
-              </li>
-              <li class="list-group-item">
-                <a href="caesar-shift.php">Caesar Shift</a>
-              </li>
-              <li class="list-group-item">
-                <a href="iac-consulting/index.php">iAC Consulting</a>
-              </li>
-            </ul>
-          </div>
+          <?php
+            echo $message;
+          ?>
         </div>
       </div>
     </div>
