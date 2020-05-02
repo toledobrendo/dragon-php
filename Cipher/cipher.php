@@ -51,9 +51,8 @@
 			{
 				$output = "";
 
-				$inputArr = str_split($message);
-				foreach ($inputArr as $char)
-					$output .= formula($char, $key);
+				for($ite =0; $ite<strlen($message); $ite++)
+					$output .= formula($message[$ite], $key);
 
 				return $output;
 			}
