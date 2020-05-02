@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <?php 
-// constant variables
-define('TIRE_PRICE', 100);
-define('OIL_PRICE', 50);
-define('SPARK_PRICE', 30);
-?>
-
-<?php 
 require_once('view-comp/header.php');
-require_once('model/Tires.php');
-require_once('model/Oil.php');
-require_once('model/Spark.php');
+require_once('script.php');
 ?>
 
 <h2 class="card-title">Bob's Auto Parts</h2>
@@ -21,10 +12,14 @@ echo '<p>Order Processed on ';
 echo date('H:i, jS F Y');
 echo '</p>';
 
-// from html
-$tireQty = $_POST['tireQty'];
-$oilQty = $_POST['oilQty'];
-$sparkQty = $_POST['sparkQty'];
+// from class
+$tires->__set('qty', $_POST['tireQty']);
+$oil->__set('qty', $_POST['oilQty']);
+$spark->__set('qty', $_POST['tireQty']);
+
+$tireQty = $tires->__get('qty');
+$oilQty = $oil->__get('qty');
+$sparkQty = $spark->__get('qty');
 $find = $_POST['find'];
 
 switch($find) {
@@ -62,9 +57,9 @@ if($totalQty != 0) {
 }
 
 echo '<br/><b><p>Prices:</b>';
-echo '<br/>Tires: '.TIRE_PRICE;
-echo '<br/>Oil: '.OIL_PRICE;
-echo '<br/>Spark Plug: '.SPARK_PRICE;
+echo '<br/>Tires: '.$tires->__get('price');
+echo '<br/>Oil: '.$oil->__get('price');
+echo '<br/>Spark Plug: '.$spark->__get('price');
 
 // NOTE: arithmetic operations expect a numerical value, but php attempts to do the operation regardless (expect a warning message in your webpage though)
 
@@ -74,12 +69,10 @@ echo '<br/>Spark Plug: '.SPARK_PRICE;
 // quantity
 echo '<br/><br/><b>Total Quantity</b>: '.$totalQty;
 
-
-
 // prices
-$tireAmt = TIRE_PRICE * $tireQty;
-$oilAmt = OIL_PRICE * $oilQty;
-$sparkAmt = SPARK_PRICE * $sparkQty;
+$tireAmt = $tires->__get('price') * $tireQty;
+$oilAmt = $oil->__get('price') * $oilQty;
+$sparkAmt = $spark->__get('price') * $sparkQty;
 
 // summary
 echo '<br/><b><p>Summary:</b>';

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <?php 
 require_once('view-comp/header.php');
-require_once('model/Tires.php');
-require_once('model/Oil.php');
-require_once('model/Spark.php');
+require_once('script.php');
 ?>
 
 <h3 class="card-title">Order Form</h3>
@@ -11,26 +9,20 @@ require_once('model/Spark.php');
 	<table class="table">
 		<thead>
 			<tr class="row">
-				<th class="col-5">Item</th>
-				<th class="col-4">Quantity</th>
+				<th class="col-6">Item</th>
+				<th class="col-6">Quantity</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php 
 
-			$tires = new Tires();
-			$oil = new Oil();
-			$spark = new Spark();
-
-			$products = array($tires, $oil, $spark);
-
 			foreach($products as $product) {
 				echo '<tr class="row">';
-				echo '<td class="col-5">'.$product->__get('name').'</td>';
-				echo '<td class="col-2">
+				echo '<td class="col-6">'.$product->__get('name').'</td>';
+				echo '<td class="col-3">
 				<input type="number" name="'.$product->__get('qtyId').'" value="0" maxlength="3" min="0" class="form-control">
 				</td>';
-				echo '<td class="col-2">'
+				echo '<td class="col-3">'
 				.$product->__get('price').
 				'</td>';
 				echo '</tr>';				
@@ -57,8 +49,8 @@ require_once('model/Spark.php');
 			?>
 
 			<tr class="row">
-				<td class="col-5">How did you find Bob's?</td>
-				<td class="col-4">
+				<td class="col-6">How did you find Bob's?</td>
+				<td class="col-6">
 					<select name="find" class="">
 						<option value="regular">I'm a regular customer</option>
 						<option value="tv">TV ads</option>
