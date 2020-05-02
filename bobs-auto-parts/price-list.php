@@ -77,6 +77,10 @@
                         echo '<li>' . $product . '</li>';
                     }
 
+                    foreach ($items as $item) {
+                        $item;
+                    }
+
                     //ksort($prices);// sort by key
                     asort($prices); // sort by value
                     echo '<br/>Item - Price:';
@@ -86,12 +90,12 @@
 
                     //access multidimensional array like this
                     echo '<br/><p>Accessing Multidimensional Array</p>';
-                    echo '<p>Item 2 Description: ' . $items[1]['Description'] . '</p>';
-                    echo '<p>Item 1 Price: ' . $items[0]['Price'] . '</p>';
-                    echo '<p>Item 3 Code: ' . $items[2]['Code'] . '</p>';
+                    echo '<p>Item 2 Description: ' . $item->Description . '</p>';
+                    echo '<p>Item 1 Price: ' . $item->Price . '</p>';
+                    echo '<p>Item 3 Code: ' . $item->Code . '</p>';
 
                     //call function here to compare prices - usort can be used to utilize custom sorting
-                    usort(($items), 'compareItems');
+                    //usort(($items), 'compareItems');
 
                     echo '<table class="table table-condensed">
                                 <thead>
