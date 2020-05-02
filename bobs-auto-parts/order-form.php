@@ -18,8 +18,6 @@
 
 					<?php 
 
-						$items = array($oil, $tires, $sparkplugs);
-
 						foreach($items as $item) {
 							echo '<tr class="row">';
 							echo '<td class="col-4">'.$item->__get('item').'</td>';

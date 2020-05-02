@@ -38,4 +38,6 @@
 				$sparkplugs->__set('price', 4);
 				$sparkplugs->__set('description', 'spark plugs');
 
+				$items = array($oil, $tires, $sparkplugs);
+
 			?>
