@@ -1,5 +1,7 @@
 <?php
 	require_once('view/header.php');
+	require_once('model/product.php');
+	require_once('model/order.php');
 ?>
 	<h3 class="card-title"> Order Form </h3>
 
@@ -15,13 +17,14 @@
 
 			<tbody>
 				<?php
-					$list = array(
-						array('item name' => 'Tires', 'input name' => 'tireQty', 'price' => 100),
-						array('item name' => 'Oil', 'input name' => 'oilQty', 'price' => 20),
-						array('item name' => 'Spark Plugs', 'input name' => 'sparkQty', 'price' => 50)
-					);
+					// $list = array(
+					// 	array('item name' => 'Tires', 'input name' => 'tireQty', 'price' => 100),
+					// 	array('item name' => 'Oil', 'input name' => 'oilQty', 'price' => 20),
+					// 	array('item name' => 'Spark Plugs', 'input name' => 'sparkQty', 'price' => 50)
+					// );
+					$orderForm = new Order();
 
-					foreach ($list as $item) {
+					foreach ($orderForm as $item) {
 						echo '<tr class="row">';
 						echo '<td class="col-4">'.$item['item name'].'</td>';
 						echo '<td class="col-4">'.$item['price'].'</td>';
