@@ -17,13 +17,13 @@
 
 			<tbody>
 				<?php
-					$orderForm = new ProductList();
+					$list = new ProductList();
 
-					foreach ($orderForm->products as $item) {
+					foreach ($list->products as $item) {
 						echo '<tr class="row">';
 						echo '<td class="col-4">'.$item->productName.'</td>';
 						echo '<td class="col-4">'.$item->productPrice.'</td>';
-						echo '<td class="col-4"> <input type="number" name="'.$item->productID.'" max="10" min="0" maxLength="3" class="form-control" value="'.$item->quantity.'"> </td>';
+						echo '<td class="col-4"> <input type="number" name="'.$item->productID.'QTY" max="10" min="0" maxLength="3" class="form-control" value='.$item->quantity.' required> </td>';
 						echo '</tr>';
 					}
 				?>

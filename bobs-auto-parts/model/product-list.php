@@ -12,14 +12,19 @@
       $this->products = array();
       //temporary list of products and prices
       $products_prices = [];
-      $products_prices['Tires'] = 100;
+      $products_prices['Tire'] = 100;
       $products_prices['Oil'] = 20;
-      $products_prices['Spark Plugs'] = 50;
+      $products_prices['Spark Plug'] = 50;
+      // $products_prices['Screw'] = 5;
+      // $products_prices['Chair'] = 2000;
+      // $products_prices['Radio'] = 5000;
+      // $products_prices['Mirror'] = 50;
       //add more products here
+      //this will affect all of the pages who implements product-list
 
       foreach ($products_prices as $name => $price) {
         $product = new Product();
-        $product->setProduct(trim(preg_replace('/\s+/', ' ', $name)), $name, $price);
+        $product->setProduct(trim(preg_replace('/\s+/', '', $name)), $name, $price);
         //pushes the object product to the array
         array_push($this->products, $product);
       }
@@ -29,17 +34,18 @@
       return count($products);
     }
 
-    public function setQuantity($qtyArray) {
-      $ite = 0;
-      foreach($qtyArray as $productID => $quantity) {
-        foreach ($products as $item) {
-          if($item->productID == $productID) {
-            $item->quantity = $quantity;
-            break;
-          }
-        }
-      }
-    }
+    //not yet needed
+    // public function setQuantity($qtyArray) {
+    //   $ite = 0;
+    //   foreach($qtyArray as $productID => $quantity) {
+    //     foreach ($products as $item) {
+    //       if($item->productID == $productID) {
+    //         $item->quantity = $quantity;
+    //         break;
+    //       }
+    //     }
+    //   }
+    // }
 
     public function __get($fieldName) {
       return $this->$fieldName;

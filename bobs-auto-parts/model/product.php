@@ -6,10 +6,10 @@
     private $quantity;
 
     public function __construct() {
-      $productID = "";
-      $productName = "";
-      $productPrice = 0;
-      $quantity = 0;
+      $this->productID = "";
+      $this->productName = "";
+      $this->productPrice = 0;
+      $this->quantity = 0;
     }
 
     public function __get($fieldName) {
