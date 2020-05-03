@@ -1,101 +1,95 @@
 <?php
 	require_once('view-comp/header.php');
+	require_once('objects/product-objects.php');
 ?>
 
 
-				<h1> Price List </h1>
+	<h1> Price List </h1>
 
-				<?php 
-					echo '<p><i>Available Products</i></p>';
-					$products = array('Tires', 'Oil', 'Spark Plugs');
+	<?php 
+		echo '<p><i>Available Products</i></p>';
+		$products = array($tires, $oil, $sparkplugs);
 
-					// sort($products); - normal sort
-					// rsort($products); - reverse sort
+		// sort($products); - normal sort
+		// rsort($products); - reverse sort
 
-					echo '<ul>';
+		echo '<ul>';
 
-						// for($ctr = 0; $ctr < count($products); $ctr++) {
-						// 	echo '<li>'.$products[$ctr].'</li>';
-						// }
+		// for($ctr = 0; $ctr < count($products); $ctr++) {
+		// 	echo '<li>'.$products[$ctr].'</li>';
+		// }
 
-						foreach($products as $product) {
-							echo '<li>'.$product.'</li>';
-						}
+		foreach($products as $product) {
+			echo '<li>'.$product->__get('item').'</li>';
+		}
 
-					echo '</ul>';
+		echo '</ul>';
 
-					$numbers = range(1, 10);
-					echo '<b>Range(1, 10):</b> ';
+		$numbers = range(1, 10);
+		echo '<b>Range(1, 10):</b> ';
 
-					foreach($numbers as $number) {
-						echo ' '.$number.' ';
+		foreach($numbers as $number) {
+			echo ' '.$number.' ';
+		}
+
+		echo'<br/>';
+
+		// ksort($prices); - key sort (asc)
+		// krsort($prices); - reverse key sort (desc)
+		// asort($prices); - value sort (asc)
+		// arsort($prices); - reverse value sort (desc)
+
+		echo '<br/><i>Tire Price:</i> '.$products[0]->__get('price').'<br/>';
+		echo '<i>Oil Price:</i> '.$products[1]->__get('price').'<br/>';
+		echo '<i>Spark Plug Price:</i> '.$products[2]->__get('price').'<br/>';
+
+
+		function compareItems($fir, $sec) { // ascending order
+
+			if($fir->__get('price') == $sec->__get('price')) {
+				return 0;
+			} else if($fir->__get('price') >= $sec->__get('price')) {
+				return 1;
+			} else {
+				return -1;
+			}
+
+		}
+
+		usort($products, 'compareItems');
+
+		echo '<br/>';
+		echo '<table class="table table-condensed">
+				<thead>
+					<tr class="row">
+						<th class="col-2"> Code </th>
+						<th class="col-2"> Description </th>
+						<th class="col-2"> Price </th>
+					</tr>
+				</thead>
+
+				<tbody>';
+
+					foreach($products as $product) {
+						
+						echo '<tr class="row">';
+
+						echo '<td class="col-2">'.$product->__get('code').'</td>';
+						echo '<td class="col-2">'.$product->__get('item').'</td>';
+						echo '<td class="col-2">'.$product->__get('price').'</td>';
+
+						echo '</tr>';
+
 					}
-
-					echo'<br/>';
-
-					$prices = array('Tires' => 100, 'Oil' => 10, 'Spark Plugs' => 4);
-
-					// ksort($prices); - key sort (asc)
-					// krsort($prices); - reverse key sort (desc)
-					// asort($prices); - value sort (asc)
-					// arsort($prices); - reverse value sort (desc)
-
-					echo '<br/><i>Tire Price:</i> '.$prices['Tires'].'<br/>';
-					echo '<i>Oil Price:</i> '.$prices['Oil'].'<br/>';
-					echo '<i>Spark Plug Price:</i> '.$prices['Spark Plugs'].'<br/>';
-
-					$items = array(
-								array('Code' => 'OIL', 'Description' => 'Oil', 'Price' => 10),
-								array('Code' => 'TIR', 'Description' => 'Tires', 'Price' => 100),
-								array('Code' => 'SPK', 'Description' => 'Spark Plugs', 'Price' => 4)
-							);
-
-					function compareItems($fir, $sec) { // ascending order
-
-						if($fir['Price'] == $sec['Price']) {
-							return 0;
-						} else if($fir['Price'] >= $sec['Price']) {
-							return 1;
-						} else {
-							return -1;
-						}
-
-					}
-
-					usort($items, 'compareItems');
-
-					echo '<br/>';
-					echo '<table class="table table-condensed">
-
-							<thead>
-								<tr class="row">
-									<th class="col-2"> Code </th>
-									<th class="col-2"> Description </th>
-									<th class="col-2"> Price </th>
-								</tr>
-							</thead>
-
-							<tbody>';
-
-							foreach($items as $item) {
-								echo '<tr class="row">';
-
-									foreach($item as $value) {
-										echo '<td class="col-2">'.$value.'</td>';
-									}
-
-								echo '</tr>';
-							}
 							
-					echo '</tbody>';
-					echo '</table>';
+		echo '</tbody>';
+		echo '</table>';
 
-					
-
-				?>
-			</div>
-		</div>
-	</div>
+	?>
+	
+</div>
+</div>
+</div>
 
 
 <?php

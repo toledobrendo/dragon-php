@@ -1,5 +1,6 @@
 <?php
 	require_once('view-comp/header.php');
+	require_once('objects/product-objects.php');
 ?>
 
 	<h3 class="card-title"> Order Form </h3>

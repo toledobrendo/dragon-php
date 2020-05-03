@@ -1,7 +1,7 @@
 <?php
 
 	class Product {
-		protected $item, $name, $price, $description, $quantity, $cost;
+		protected $item, $name, $price, $description, $quantity, $cost, $code;
 
 		public function __get($fieldName) {
 			return $this->$fieldName;
