@@ -1,7 +1,7 @@
 <?php
 	require_once('view/header.php');
 	require_once('model/product.php');
-	require_once('model/order.php');
+	require_once('model/product-list.php');
 ?>
 	<h3 class="card-title"> Order Form </h3>
 
@@ -17,7 +17,7 @@
 
 			<tbody>
 				<?php
-					$orderForm = new Order();
+					$orderForm = new ProductList();
 
 					foreach ($orderForm->products as $item) {
 						echo '<tr class="row">';
