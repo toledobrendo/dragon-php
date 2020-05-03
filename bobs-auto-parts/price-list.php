@@ -25,6 +25,13 @@
 
           echo '</p>Product 0: '.$products[0];
 
+					//sorting sort($array) ascending
+					sort($products);
+					//descending
+					rsort($products);
+
+
+
           //get list from index, use count() to know the index of the array
 					echo '<ul>';
 						for($ctr = 0; $ctr < count($products); $ctr++){
@@ -74,6 +81,17 @@
 					$prices['Clutch Disk'] = 250;
 					echo '<br/>Clutch Disk: '.$prices['Clutch Disk'];
 
+					//sorting by sorting the keys
+					ksort($prices);
+					//descending order
+					//krsort($prices);
+
+					//sorting by value is asort($array) ascending
+					asort($prices);
+					//descending
+					arsort($prices);
+
+
 					//doing a foreach loop echo listing all values only
 					//adding $itemDesc => will list out the keys
 					echo '<ul>';
@@ -81,6 +99,51 @@
 							echo '<li>'.$itemDesc.' - '.$price.'</li>';
 						}
 					echo '</ul>';
+
+					//creating an empty array
+					$empty = array();
+
+					//multi dimensional arrays
+					$items = 	array(
+						array('Code'=>'OIL','DESCRIPTION'=>'Oil','Price'=>10),
+						array('Code'=>'TIR','DESCRIPTION'=>'Tires','Price'=>100),
+						array('Code'=>'SPK','DESCRIPTION'=>'Spark Plugs','Price'=>5)
+					);
+
+					// accessing one element 'Tires'
+					echo '<p>'.$items[1]['DESCRIPTION'].'</p>';
+
+					function compareItems($fir, $sec){
+						if($fir['Price']==$sec['Price']){
+							return 0;
+						}else if($fir['Price']>$sec['Price']){
+							return 1;
+						}else{
+							return -1;//ascending, to descending change values of 1 and -1
+						}
+					}
+
+					// passing value of compareItems to usort
+					usort($items, 'compareItems');
+
+
+					echo '<table class = "table table-condensed">
+						<thead>
+							<tr>
+								<th>Code</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>';
+					foreach($items as $item){
+						echo '<tr>';
+						foreach($item as $field => $value){
+							echo '<td>'.$value.'</td>';
+						}
+						echo '</tr>';
+					}
+					echo '</table>';
+
 				?>
 				<!--end-->
 
