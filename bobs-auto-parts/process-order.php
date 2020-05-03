@@ -32,12 +32,37 @@
 					$tireQty = $_POST['tireQty'];
 					$oilQty = $_POST['oilQty'];
 					$sparkQty = $_POST['sparkQty'];
+					//dropbox selection, followed by switch statements
+					$find = $_POST['find'];
 
-          echo '<p>Your order is as follows</p>';
-					echo $tireQty.' tires<br/>';
-					//echo "$tireQty tires<br/>";
-					echo $oilQty.' bottles of oil<br/>';
-					echo $sparkQty.' spark plugs<br/><br/>';
+					//switch statement
+					switch($find){
+						//case value = ""
+						case 'regular':
+							echo 'Regular Customer';
+							break;
+						case 'tv':
+							echo 'From TV advertisement';
+							break;
+						case 'phone':
+							echo 'From Phone Directory';
+							break;
+						case 'mouth':
+							echo 'From Word of Mouth';
+							break;
+						default :
+							echo 'Unknown Customer';
+							break;
+					}
+
+					echo '<br/><br/>'; // skip a line
+
+					//moved to if statements below
+          // echo '<p>Your order is as follows</p>';
+					// echo $tireQty.' tires<br/>';
+					// //echo "$tireQty tires<br/>";
+					// echo $oilQty.' bottles of oil<br/>';
+					// echo $sparkQty.' spark plugs<br/><br/>';
 
 					echo '<p>Prices<br/>';
 					echo 'Tires: '.TIRE_PRICE.'<br/>';
@@ -45,8 +70,56 @@
 					echo 'Spark Plugs: '.SPARK_PRICE.'<br/><br/>';
 
 					// total
-					$totalQty = $tireQty + $oilQty + $sparkQty;
-					echo 'Total Quantity: '.$totalQty.'<br/';
+					$totalQty = @($tireQty + $oilQty + $sparkQty);
+
+					//if statements
+					if($totalQty == 0){
+						echo 'you did not order anything.<br/><br/>';
+					} else {
+
+						echo '<p>Your order is as follows</p>';
+						//if statements one line if (condition) echo 'something'; no else
+						if ($tireQty > 0)
+							echo $tireQty.' tires<br/>';
+						//echo "$tireQty tires<br/>";
+						if ($oilQty > 0)
+						echo $oilQty.' bottles of oil<br/>';
+						if ($sparkQty > 0)
+						echo $sparkQty.' spark plugs<br/><br/>';
+						echo '<br/>';
+					}
+
+					echo 'Total Quantity: '.$totalQty.'<br/>';
+
+					$tireAmount	= @($tireQty 	* TIRE_PRICE);
+					$oilAmount 	= @(oilQty		* OIL_PRICE);
+					$sparkAmount	= @($sparkQty	* SPARK_PRICE);
+													//type casting
+					$totalAmount = (float) ($tireAmount + $oilAmount + $sparkAmount);
+					echo 'Total Amount: '. $totalAmount. '<br/>';
+
+					$vatableAmount = $totalAmount / 1.12;
+					$vat = $totalAmount - $vatableAmount;
+
+					echo 'VATable Amount: '.$vatableAmount.'<br/>';
+					echo 'VAT: '.$vat.'<br/>';
+
+					echo 'Amount exceeded 500? '.($totalAmount > 500 ? 'Yes' : 'No').'<br/>';
+					// the use of is_string to test if the var is a string
+					echo 'is $totalAmount string? '.(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
+
+					//isset to test if var has been declared
+					echo 'is $totalAmount declared as a variable: '.(isset($totalAmount) ? 'Yes'	: 'No').'<br/>';
+					echo 'is $totalAmTwo declared as a variable: ' .(isset($totalAmTwo) ? 'Yes'	: 'No').'<br/>';
+
+					//unset to undeclare a variable
+					//unset(var);
+
+					//test if has a value
+					echo 'is $totalAmount empty: '.(empty($totalAmTwo) ? 'Yes' : 'No').'<br/>';// truthy falsie
+
+
+
         ?>
 
 				<!--end-->
