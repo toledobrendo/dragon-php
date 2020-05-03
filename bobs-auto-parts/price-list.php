@@ -8,7 +8,6 @@
 
 	<?php 
 		echo '<p><i>Available Products</i></p>';
-		$products = array($tires, $oil, $sparkplugs);
 
 		// sort($products); - normal sort
 		// rsort($products); - reverse sort
@@ -19,8 +18,8 @@
 		// 	echo '<li>'.$products[$ctr].'</li>';
 		// }
 
-		foreach($products as $product) {
-			echo '<li>'.$product->__get('item').'</li>';
+		foreach($items as $item) {
+			echo '<li>'.$item->__get('item').'</li>';
 		}
 
 		echo '</ul>';
@@ -39,9 +38,9 @@
 		// asort($prices); - value sort (asc)
 		// arsort($prices); - reverse value sort (desc)
 
-		echo '<br/><i>Tire Price:</i> '.$products[0]->__get('price').'<br/>';
-		echo '<i>Oil Price:</i> '.$products[1]->__get('price').'<br/>';
-		echo '<i>Spark Plug Price:</i> '.$products[2]->__get('price').'<br/>';
+		echo '<br/><i>Tire Price:</i> '.$items[0]->__get('price').'<br/>';
+		echo '<i>Oil Price:</i> '.$items[1]->__get('price').'<br/>';
+		echo '<i>Spark Plug Price:</i> '.$items[2]->__get('price').'<br/>';
 
 
 		function compareItems($fir, $sec) { // ascending order
@@ -70,13 +69,13 @@
 
 				<tbody>';
 
-					foreach($products as $product) {
+					foreach($items as $item) {
 						
 						echo '<tr class="row">';
 
-						echo '<td class="col-2">'.$product->__get('code').'</td>';
-						echo '<td class="col-2">'.$product->__get('item').'</td>';
-						echo '<td class="col-2">'.$product->__get('price').'</td>';
+						echo '<td class="col-2">'.$item->__get('code').'</td>';
+						echo '<td class="col-2">'.$item->__get('item').'</td>';
+						echo '<td class="col-2">'.$item->__get('price').'</td>';
 
 						echo '</tr>';
 
