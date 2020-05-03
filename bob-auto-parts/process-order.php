@@ -7,17 +7,26 @@
 
 <?php
   require_once('defaults/header.php');
-?>
+  require_once('Scripts/scripts.php');
 
+?>
+        
           <h3 class="card-title">Order Result</h3>
           <?php
             echo '<p>Order Processed at ';
             echo date ('H:i,jS F Y');
             echo '</p>';
 
-            $tireQty= $_POST['tireQty']? $_POST['tireQty'] : 0;
-            $oilQty= $_POST['oilQty']? $_POST['oilQty'] : 0;
-            $sparkQty= $_POST['sparkQty']? $_POST['sparkQty'] : 0;
+            $_POST['TiresQty']? $items[0]->__set('Qty',$_POST['TiresQty']) : $items[1]->__set('Qty',0);
+            $_POST['OilQty']? $items[1]->__set('Qty',$_POST['OilQty']) : $items[1]->__set('Qty',0);
+            $_POST['SparkPlugsQty']? $items[2]->__set('Qty',$_POST['SparkPlugsQty']) : $items[1]->__set('Qty',0);
+
+            $_POST['TiresQty']? $items[0]->__set('Qty',$_POST['TiresQty']) : $items[1]->__set('Qty',0);
+
+            $tireQty= $items[0]->__get('Qty');
+            $oilQty= $items[1]->__get('Qty');
+            $sparkQty= $items[2]->__get('Qty');
+
             $find= $_POST['find'];
 
             switch($find){
@@ -39,9 +48,11 @@
             }
 
             echo '<p>Prices<br/>';
-            echo 'Tires:'.TIRE_PRICE.'<br/>';
-            echo 'Oil:'.OIL_PRICE.'<br/>';
-            echo 'Spark Plugs: '.SPARK_PRICE.'<br/><br/>';
+            echo 'Tires:'.$items[0]->__get('price').'<br/>';
+            echo 'Oil:'.$items[1]->__get('price').'<br/>';
+            echo 'Spark Plugs: '.$items[2]->__get('price').'<br/><br/>';
+
+
 
             $totalQty=@($tireQty+$oilQty+$sparkQty);
 
@@ -56,9 +67,9 @@
 
               if($tireQty>0)
                 echo"$tireQty tires <br/>";
-              if($tireQty>0)
+              if($oilQty>0)
                 echo"$oilQty oil <br/>";
-              if($tireQty>0)
+              if($sparkQty>0)
                 echo"$sparkQty spark plugs <br/>";
 
             }

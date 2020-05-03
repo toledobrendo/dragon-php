@@ -1,3 +1,8 @@
+<?php
+  function isActive($page){
+    return strpos($_SERVER['REQUEST_URI'], $page);
+  }
+?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -12,10 +17,10 @@
       <div href="iAC Consulting.php" class="navbar-brand">iAC Consulting</div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item <?php if(isActive('iAC Consulting.php'))echo 'active';?>">
             <a class="nav-link" href="iAC Consulting.php">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php if(isActive('contact.php')) echo 'active';?>">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
         </ul>

@@ -1,5 +1,6 @@
   <?php
     require_once('defaults/header.php');
+    require_once('Scripts/scripts.php');
   ?>
             <h3 class="card-title"> ORDERFORM</h3>
             <form action="process-order.php" method="post">
@@ -12,11 +13,14 @@
                 </thead> -->
                 <tbody>
                   <?php
-                    $items = array(
-                        array('itemName' => 'Oil','name'=>'tireQty','price'=>100),
-                        array('itemName' => 'Tires','name'=>'oilQty','price'=>200),
-                        array('itemName' => 'Spark Plugs','name'=>'sparkQty','price'=>300)
-                      );
+  
+
+                  
+                  //   $items = array(
+                  //       array('itemName' => 'Oil','name'=>'tireQty','price'=>100),
+                  //       array('itemName' => 'Tires','name'=>'oilQty','price'=>200),
+                  //       array('itemName' => 'Spark Plugs','name'=>'sparkQty','price'=>300)
+                  // );
 
                      echo '<table class="table table-condensed">
                             <thead>
@@ -28,11 +32,11 @@
                             </thead>';
                     foreach ($items as $item) {
                         echo '<tr class="row">';
-                          echo '<td class="col-5">'.$item['itemName'].'</td>';
+                          echo '<td class="col-5">'.$item->__get('itemName').'</td>';
                           echo '<td class="col-4">
-                                   <input type="number" name="'.$item['name'].'" maxlength="3" min="0" max="10" class="form-control" /> 
+                                   <input type="number" name="'.$item->__get('name').'" maxlength="3" min="0" max="10" class="form-control" /> 
                                 </td>';
-                          echo '<td class="col-2">'.$item['price'].'</td>';
+                          echo '<td class="col-2">'.$item->__get('price').'</td>';
                         echo '</tr>';
                     }
                     echo '</table>';
