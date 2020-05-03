@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title> Hello World </title>
+	<title> Bob's Auto Parts </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet"
@@ -45,6 +45,40 @@
 					echo '<ul>';
 						for($ctr = 0; $ctr < count($products); $ctr++){
 							echo '<li>'.$products[$ctr].'</li>';
+						}
+					echo '</ul>';
+					//range(starting, how many steps, adding by) can be with 3 parameters
+					$numbers = range(1,10);
+					echo '<br/> range(1,10): ';
+					foreach($numbers as $number){
+						echo $number. ' ';
+					}
+					echo '<br/>';
+
+					$letters = range('a','z');
+					echo '<br/> range(\'a\',\'z\'): ';
+					foreach($letters as $letter){
+						echo $letter. ' ';
+					}
+					echo '<br/>';
+
+					//array as a hashmap $var = (key=>value, key=>value)
+					$prices = array('Tires'=>100,'Oil'=>20,'Spark Plugs'=>5,1000);
+
+					$prices['Tires']=120;
+					echo 'Tire price: '.$prices['Tires'];
+					//to print the 1000 without a value
+					echo '<br/>Without a value: '.$prices[0];
+
+					//to add a new key value to the array
+					$prices['Clutch Disk'] = 250;
+					echo '<br/>Clutch Disk: '.$prices['Clutch Disk'];
+
+					//doing a foreach loop echo listing all values only
+					//adding $itemDesc => will list out the keys
+					echo '<ul>';
+						foreach($prices as  $itemDesc => $price){
+							echo '<li>'.$itemDesc.' - '.$price.'</li>';
 						}
 					echo '</ul>';
 				?>
