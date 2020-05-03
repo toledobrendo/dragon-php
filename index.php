@@ -25,9 +25,17 @@
             <li class = "list-group-item">
               <a href = "bobs-auto-parts/order-form.php">"Bob's Auto Parts - Ordering"</a>
             </li>
+					</li>
+				</li>
+				<li class = "list-group-item">
+					<a href = "assignment h1/index.php">"Fibonacci"</a>
+				</li>
+					<li class = "list-group-item">
+						<a href = "bobs-auto-parts/price-list.php">"Bob's Auto Parts - Price List"</a>
+					</li>
           </ul>
         </div>
-				
+
 
 			</div>
 		</div>

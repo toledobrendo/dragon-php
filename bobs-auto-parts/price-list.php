@@ -16,16 +16,37 @@
 			<div class = "card-body">
 
 				<!--start-->
+				<h1>Price List</h1>
 				<?php
-					echo '<p>Products</p>';
+					echo '</p>Products</p>';
 
           //array of strings, how to access it
           $products = array('Tires','Oil','Spark Plugs');
 
           echo '</p>Product 0: '.$products[0];
 
-          //get list from index
-          
+          //get list from index, use count() to know the index of the array
+					echo '<ul>';
+						for($ctr = 0; $ctr < count($products); $ctr++){
+							echo '<li>'.$products[$ctr].'</li>';
+						}
+					echo '</ul>';
+
+					//foreach loop
+					echo '<ul>';
+						$ctr = 0;
+						foreach($products as &$product){
+							$product = $product.' - 1';
+							echo '<li>'.$ctr.' - '.$product.'</li>';
+							$ctr++;
+						}
+					echo '</ul>';
+					// need to add & to have pointer pass by reference to retain new value
+					echo '<ul>';
+						for($ctr = 0; $ctr < count($products); $ctr++){
+							echo '<li>'.$products[$ctr].'</li>';
+						}
+					echo '</ul>';
 				?>
 				<!--end-->
 
