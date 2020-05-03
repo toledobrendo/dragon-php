@@ -55,7 +55,7 @@
 
 		}
 
-		usort($products, 'compareItems');
+		usort($items, 'compareItems');
 
 		echo '<br/>';
 		echo '<table class="table table-condensed">
