@@ -1,8 +1,6 @@
 <?php
-  define('TIRE_PRICE',10);
-  define('OIL_PRICE',100);
-  define('SPARK_PRICE',1000);
   require_once('view-bob/header.php');
+  require_once('controller/productObjects.php');
  ?>
 
         <h1 class="card-title">Bob's Auto Parts</h1>
@@ -12,13 +10,14 @@
         echo date('H:i, jS F Y');
         echo '</p>';
 
-        $tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
-        $oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
-        $spQty = $_POST['spQty'] ? $_POST['spQty'] : 0;
-        $find = $_POST['find'];
-        $totalQty = @($tireQty +$oilQty + $spQty);
 
-        switch($find) {
+        $_POST['Tireqty'] ? $items[0]->__set('quantity', $_POST['Tireqty']) : $items[0]->__set('quantity', 0);
+		    $_POST['Oilqty'] ? $items[1]->__set('quantity', $_POST['Oilqty']) : $items[1]->__set('quantity', 0);
+		    $_POST['Sparkplugqty'] ? $items[2]->__set('quantity', $_POST['Sparkplugqty']) : $items[2]->__set('quantity', 0);
+		    $totalQty = $items[0]->__get('quantity') + $items[1]->__get('quantity') + $items[2]->__get('quantity');
+
+
+        switch($_POST['find']) {
              case 'regular':
                echo 'Regular Customer <br/>';
                break;
@@ -39,17 +38,15 @@
              echo 'You Did not order anything<br/><br/>';
            }else{
              echo "<p>Your order is as follows</p><br/>";
-             if($tireQty > 0){
-               echo $tireQty. ' tires<br/>';
-             }
-             if($oilQty > 0){
-               echo "$oilQty Oils<br/>";
-             }
-             if($spQty > 0){
-               echo "$spQty Spark plugs<br/><br/>";
-             }
+             if ($items[1]->__get('quantity') > 0) {
+          			echo $items[1]->__get('quantity'). ' <i>'.$items[1]->__get('description').'</i><br/>';}
+          	if ($items[0]->__get('quantity') > 0) {
+          			echo$items[0]->__get('quantity'). ' <i>'.$items[0]->__get('description').'</i><br/>';}
+            if ($items[2]->__get('quantity') > 0) {
+          			echo$items[2]->__get('quantity'). ' <i>'.$items[2]->__get('description').'</i><br/>';}
+          		}
 
-           }
+
 
 
 
@@ -62,11 +59,15 @@
 
         echo 'Total Quantity: '.$totalQty.'<br/><br/>';
 
+        $items[0]->totalCost();
+        $items[1]->totalCost();
+        $items[2]->totalCost();
+
         $tireAmount = @($tireQty * TIRE_PRICE);
         $oilAmount = @($oilQty * OIL_PRICE);
         $sparkAmount= @( $spQty * SPARK_PRICE);
 
-        $totalAmount = $tireAmount + $oilAmount + $sparkAmount;
+        $totalAmount = $tires->__get('cost') + $oil->__get('cost') + $sparkplugs->__get('cost');
 
         // $otherTotalAmount = &$totalAmount;
         // $otherTotalAmount += $oilAmount;
