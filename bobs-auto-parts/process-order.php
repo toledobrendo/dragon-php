@@ -1,19 +1,22 @@
 <?php
 require_once('dependency/header.php');
-define('TIRE_PRICE', 100);
-define('OIL_PRICE', 100);
-define('SPARK_PRICE', 100);
+require_once('models/product.php');
+require_once('objects/items.php');
 define('VAT_RATE', .12);
 define('VATABLE_RATE', 1.12);
+$totalPrice = 0;
 ?>
 <h3 class="card-title">Order Result</h3>
 <?php
 /* Get Data */
-$tireQty = $_POST['tireQty'];
-$oilQty = $_POST['oilQty'];
-$sparkQty = $_POST['sparkQty'];
+$_POST['tireQty'] ? $products[0]->__set('qty', $_POST['tireQty']) : $products[0]->__set('qty', 0);
+$_POST['oilQty'] ? $products[1]->__set('qty', $_POST['oilQty']) : $products[1]->__set('qty', 0);
+$_POST['sparkQty'] ? $products[2]->__set('qty', $_POST['sparkQty']) : $products[2]->__set('qty', 0);
 /* Process Data */
-$totalPrice = @(float) ($tireQty * TIRE_PRICE) + ($oilQty * OIL_PRICE) + ($sparkQty * SPARK_PRICE);
+foreach($products as $product){
+  $totalPrice += $product->computeCost();
+}
+// @(float) ($tireQty * TIRE_PRICE) + ($oilQty * OIL_PRICE) + ($sparkQty * SPARK_PRICE);
 $vatAble = @(float) $totalPrice / VATABLE_RATE;
 $vatAmnt = @(float) VAT_RATE * ($totalPrice / VATABLE_RATE);
 /* Print */
@@ -21,9 +24,9 @@ echo "<p>Order Processed at ";
 echo date("H:i, jS F Y");
 echo "</p>";
 echo "Your order is as follows<br><br>";
-echo "$tireQty tires.<br>";
-echo "$oilQty bottles of oil.<br>";
-echo "$sparkQty spark plugs.<br><br>";
+echo $products[0]->__get('qty')." tires.<br>";
+echo $products[1]->__get('qty')." bottles of oil.<br>";
+echo $products[2]->__get('qty')." spark plugs.<br><br>";
 echo "Vatable Amount: $vatAble<br>";
 echo "VAT Amount (12%): $vatAmnt<br>";
 echo 'Total Amount: ' . $totalPrice . '<br/><br/>';

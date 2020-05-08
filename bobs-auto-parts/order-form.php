@@ -1,4 +1,8 @@
-<?php require_once('dependency/header.php'); ?>
+<?php 
+require_once('dependency/header.php'); 
+require_once('models/product.php');
+require_once('objects/items.php')
+?>
 <h3 class="card-title">Order Form</h3>
 <form action="process-order.php" method="post">
     <table class="table">
@@ -12,28 +16,11 @@
         <tbody>
             <!-- Do things -->
             <?php
-            $products = array(
-                array(
-                    'Code' => 'tire',
-                    'Description' => 'Tires',
-                    'Price' => 10
-                ),
-                array(
-                    'Code' => 'oil',
-                    'Description' => 'Oil',
-                    'Price' => 10
-                ),
-                array(
-                    'Code' => 'spark',
-                    'Description' => 'Spark Plugs',
-                    'Price' => 10
-                )
-            );
             foreach ($products as $product) {
                 echo '<tr class="row">';
-                echo '<td class="col-5">' . $product['Description'] . '</td>';
-                echo '<td class="col-3">' . $product['Price'] . '</td>';
-                echo '<td class="col-4"><input type="number" name="' . $product['Code'] . 'Qty" maxlength="3" min="0" max="10" class="form-control"></td>';
+                echo '<td class="col-5">' . $product->__get('description') . '</td>';
+                echo '<td class="col-3">' . $product->__get('price') . '</td>';
+                echo '<td class="col-4"><input type="number" name="' . $product->__get('code') . 'Qty" maxlength="3" min="0" max="10" class="form-control"></td>';
                 echo '</tr>';
             }
             ?>
