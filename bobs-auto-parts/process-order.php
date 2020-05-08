@@ -6,13 +6,15 @@
             echo date("H:i, jS F Y");
             echo "<p>";
 
-            $tireProduct = new TireProduct();
-            $oilProduct = new OilProduct();
-            $sparkPlugProduct = new SparkPlugProduct();
+            $product = array(
+              new TireProduct(),
+              new OilProduct(),
+              new SparkPlugProduct()
+            );
 
-            $tireProduct->setProductQty($_POST['tireQty']);
-            $oilProduct->setProductQty($_POST['oilQty']);
-            $sparkPlugProduct->setProductQty($_POST['sparkPlugsQty']);
+            $product[0]->setProductQty($_POST['tireQty']);
+            $product[1]->setProductQty($_POST['oilQty']);
+            $product[2]->setProductQty($_POST['sparkPlugsQty']);
             $find = $_POST['find'];
 
             switch($find) {
@@ -28,23 +30,23 @@
             }
 
             echo "<p>Your order is as follows</p>";
-            echo $tireProduct->getProductQty()." tires<br/>";
-            echo $oilProduct->getProductQty()." bottle/s of oil<br/>";
-            echo $sparkPlugProduct->getProductQty()." number of spark plug/s<br/><br/>";
+            echo $product[0]->getProductQty()." tires<br/>";
+            echo $product[1]->getProductQty()." bottle/s of oil<br/>";
+            echo $product[2]->getProductQty()." number of spark plug/s<br/><br/>";
 
             echo "<p>Prices<br/>";
-            echo "Tires: ".$tireProduct->getProductPrice()."<br/>";
-            echo "Oil: ".$oilProduct->getProductPrice()."<br/>";
-            echo "Spark Plugs: ".$sparkPlugProduct->getProductPrice()."<br/><br/>";
+            echo "Tires: ".$product[0]->getProductPrice()."<br/>";
+            echo "Oil: ".$product[1]->getProductPrice()."<br/>";
+            echo "Spark Plugs: ".$product[2]->getProductPrice()."<br/><br/>";
 
-            $totalQty = $tireProduct->getProductQty() + $oilProduct->getProductQty() + $sparkPlugProduct->getProductQty();
+            $totalQty = $product[0]->getProductQty() + $product[1]->getProductQty() + $product[2]->getProductQty();
             echo "Total number of items: $totalQty<br/>";
             if ($totalQty == 0) {
               echo "You did not order anything.<br/><br/>";
             } else {
-              $tireAmount = $tireProduct->getProductQty() * $tireProduct->getProductPrice();
-              $oilAmount = $oilProduct->getProductQty() * $oilProduct->getProductPrice();
-              $sparkPlugsAmount = $sparkPlugProduct->getProductQty() * $sparkPlugProduct->getProductPrice();
+              $tireAmount = $product[0]->getProductQty() * $product[0]->getProductPrice();
+              $oilAmount = $product[1]->getProductQty() * $product[1]->getProductPrice();
+              $sparkPlugsAmount = $product[2]->getProductQty() * $product[2]->getProductPrice();
 
               //'@' suppresses the warnings that may be created from a command.
               $totalAmount = (float) @($tireAmount + $oilAmount + $sparkPlugsAmount);
