@@ -1,97 +1,68 @@
-<?php
-  define('TIRE_PRICE', 100);
-  define('OIL_PRICE', 50);
-  define('SPARK_PRICE', 30);
-?>
 <?php 
   require_once('view-comp/header.php');
+  require_once('model-comp/productClass.php');
+  require_once('model-comp/productListClass.php');
 ?>
           <h3 class="card-title">Order Result</h3>
           <?php
-            echo '<p>Order Processed at ';
+            $boughtList = new BobsProductList();
+            echo '<p><b>Order Processed at </b>';
             echo date('H:i, jS F Y');
             echo '</p>';
 
-            // PHP Comments
-            /**Multiline Comments
-              Wow**/
-
-            $tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
-            $oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
-            $sparkQty = $_POST['sparkQty'] ? $_POST['sparkQty'] : 0;
             $find = $_POST['find'];
 
             switch($find) {
               case 'regular':
-                echo 'Regular Customer';
+                echo '<b>Regular Customer</b>';
                 break;
               case 'tv':
-                echo 'From TV Advertising';
+                echo '<b>From TV Advertising<b>';
                 break;
               case 'phone':
-                echo 'From Phone Directory';
+                echo '<b>From Phone Directory<b>';
                 break;
               case 'mouth':
-                echo 'From Word of Mouth';
+                echo '<b>From Word of Mouth<b>';
                 break;
               default:
-                echo 'Unknown Customer';
+                echo '<b>Unknown Customer<b>';
                 break;
             }
 
-            echo '<br/><br/>';
-            echo '<p>Prices<br/>';
-            echo 'Tires: '.TIRE_PRICE.'<br/>';
-            echo 'Oil: '.OIL_PRICE.'<br/>';
-            echo 'Spark Plugs: '.SPARK_PRICE.'<br/><br/>';
+            echo '<hr>';
+            
+            $totalAmount = 0;
 
-            $totalQty = @($tireQty + $oilQty + $sparkQty);
+            echo '<table>';
+              foreach ($boughtList->products as $item) {
+                echo '<tr>';
+                echo '<td>'.$_POST[$item->productID.'QTY'].'</td>';
+                echo '<td><b>'.$item->productName.'(s)</b></td>';
+                echo '<td> @ '.round($item->productPrice, 2).'.00 </td>';
+                echo '</tr>';
+                $totalAmount += $item->productPrice * $_POST[$item->productID.'QTY'];
+              }
+            
+            echo '</table>';
 
-            if ($totalQty == 0) {
-              echo 'You didn\'t order anything. <br/> <br/>';
-            } else {
-              echo '<p>Your order is as follows</p>';
-              // echo $tireQty.' $tireQty tires<br/>';
-              if ($tireQty > 0)
-                echo "$tireQty tires<br/>";
-              if ($oilQty > 0)
-                echo $oilQty.' oil<br/>';
-              if ($sparkQty > 0)
-                echo $sparkQty.' spark plugs<br/>';
-              echo '<br/>';
-            }
-            echo 'Total Quantity: '.$totalQty.'<br/>';
-
-            $tireAmount = @($tireQty * TIRE_PRICE);
-            $oilAmount = @($oilQty * OIL_PRICE);
-            $sparkAmount = @($sparkQty * SPARK_PRICE);
-
-            $totalAmount = (float) $tireAmount;
-
-            $otherTotalAmount = &$totalAmount;
-            $otherTotalAmount += $oilAmount;
-            $totalAmount += $sparkAmount;
-
-            echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
-            echo 'Total Amount: '.$totalAmount.'<br/>';
+            echo '<br>';
 
             $vatableAmount = $totalAmount / 1.12;
             $vat = $totalAmount - $vatableAmount;
 
-            echo 'VATable Amount: '.$vatableAmount.'<br/>';
-            echo 'VAT: '.$vat.'<br/>';
+            echo '<table>';
+            echo '<tr><td><b>Total Amount: </b><td>';
+            echo '<td>'.round($totalAmount, 2).'.00</td></tr>';
+            echo '<tr><td><b>VATable Amount: </b><td>';
+            echo '<td>'.round($vatableAmount, 2).'</td></tr>';
+            echo '<tr><td><b>VAT: </b><td>';
+            echo '<td>'.round($vat, 2).'</td></tr>';
 
-            echo 'Amount exceeded 500? '.($totalAmount > 500 ? 'Yes' : 'No').'<br/><br/>';
+            echo '<tr><td><b>Amount exceeded 500? </b><td>';
+            echo '<td>'.($totalAmount > 500 ? 'Yes' : 'No').'</td></tr>';
+            echo '</table>';
 
-            echo 'Is $totalAmount string? '.(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
-
-            unset($totalAmount);
-
-            echo 'Is $totalAmount set? '.(isset($totalAmount) ? 'Yes' : 'No').'<br/>';
-
-            $totalAmountTwo = 0;
-            echo 'Is $totalAmountTwo set? '.(isset($totalAmountTwo) ? 'Yes' : 'No').'<br/>';
-            echo 'Is $totalAmountTwo empty? '.(empty($totalAmountTwo) ? 'Yes' : 'No').'<br/>';
           ?>
         </div>
         <div class="card-footer">

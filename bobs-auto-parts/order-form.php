@@ -1,5 +1,7 @@
 <?php 
   require_once('view-comp/header.php');
+  require_once('model-comp/productClass.php');
+  require_once('model-comp/productListClass.php');
 ?>
           <h3 class="card-title">Order Form</h3>
           <form action="process-order.php" method="post">
@@ -14,37 +16,16 @@
               <tbody>
 
                 <?php 
-                  $items = array(
-                        array('Code' => 'tireQty', 'Description' => 'Tires', 'Price' => 100),
-                        array('Code' => 'oilQty', 'Description' => 'Oil', 'Price' => 50),
-                        array('Code' => 'sparkQty', 'Description' => 'Spark Plugs', 'Price' => 30)
-                      );
-                  for($ite1= 0; $ite1 < count($items); $ite1++){
-                    
+                  $itemsList = new BobsProductList();
+
+                  foreach ($itemsList->products as $item) {
                       echo '<tr class="row">';
-                      echo '  <td class="col-5">'.$items[$ite1]['Description'].'</td>';
-                      echo '  <td class="col-3">'.$items[$ite1]['Price'].'</td>';
-                      echo '  <td class="col-4">';
-                      echo '   <input type="number" name="'.$items[$ite1]['Code'].'" maxlength="3" min="0" max="10" class="form-control"/>';
-                      echo '  </td>';
+                      echo '<td class="col-4">'.$item->productName.'</td>';
+                      echo '<td class="col-4">'.$item->productPrice.'</td>';
+                      echo '<td class="col-4"> <input type="number" name="'.$item->productID.'QTY" max="10" min="0" maxLength="3" class="form-control" placeholder=0 required> </td>';
                       echo '</tr>';
-                    
-                  }
+                    }
                 ?>
-
-
-               <!--  <tr class="row">
-                  <td class="col-5">Tires</td>
-                  <td class="col-4">
-                    <input type="number" name="tireQty" maxlength="3" min="0" max="10" class="form-control"/>
-                  </td>
-                </tr>
-                <tr class="row">
-                  <td class="col-5">Oil</td>
-                  <td class="col-4">
-                    <input type="number" name="oilQty" maxlength="3" min="0" max="10" class="form-control"/>
-                  </td>
-                </tr> -->
 
                 <!-- how -->
                  <tr class="row">
