@@ -1,3 +1,4 @@
+<?php require_once("model/Product.php") ?>
 <?php require_once("view-comp/header.php") ?>
           <h3 class="card-title">Order Form</h3>
           <form action="process-order.php" method="post">
@@ -12,17 +13,17 @@
               <tbody>
                 <?php
                   $products = array(
-                    array('itemName' => 'Tires', 'itemPrice' => 100, 'qtyCode' => 'tireQty'),
-                    array('itemName' => 'Oil', 'itemPrice' => 50, 'qtyCode' => 'oilQty'),
-                    array('itemName' => 'Spark Plugs', 'itemPrice' => 30, 'qtyCode' => 'sparkPlugsQty')
+                    new TireProduct(),
+                    new OilProduct(),
+                    new SparkPlugProduct()
                   );
 
                   foreach ($products as $product) {
                     echo '<tr class="row">';
-                    echo '  <td class="col-5">'.$product['itemName'].'</td>';
-                    echo '  <td class="col-4">Php '.$product['itemPrice'].'</td>';
+                    echo '  <td class="col-5">'.$product->getProductName().'</td>';
+                    echo '  <td class="col-4">Php '.$product->getProductPrice().'</td>';
                     echo '  <td class="col-3">';
-                    echo '    <input type="number" name="'.$product['qtyCode'].'" maxlength="3" min="0" max="10" class="form-control">';
+                    echo '    <input type="number" name="'.$product->getProductQty().'" maxlength="3" min="0" max="10" class="form-control">';
                     echo '  </td>';
                     echo '</tr>';
                   }

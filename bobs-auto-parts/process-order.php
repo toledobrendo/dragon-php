@@ -1,9 +1,4 @@
-<?php
- //defining constant variables.
- define('TIRE_PRICE', 100);
- define('OIL_PRICE', 50);
- define('SPARK_PRICE', 30);
- ?>
+<?php require_once("model/Product.php") ?>
 <?php require_once("view-comp/header.php") ?>
           <h3 class="card-title">Order Result</h3>
           <?php
@@ -11,9 +6,13 @@
             echo date("H:i, jS F Y");
             echo "<p>";
 
-            $tireQty = $_POST['tireQty'];
-            $oilQty = $_POST['oilQty'];
-            $sparkPlugsQty = $_POST['sparkPlugsQty'];
+            $tireProduct = new TireProduct();
+            $oilProduct = new OilProduct();
+            $sparkPlugProduct = new SparkPlugProduct();
+
+            $tireProduct->setProductQty($_POST['tireQty']);
+            $oilProduct->setProductQty($_POST['oilQty']);
+            $sparkPlugProduct->setProductQty($_POST['sparkPlugsQty']);
             $find = $_POST['find'];
 
             switch($find) {
@@ -29,23 +28,23 @@
             }
 
             echo "<p>Your order is as follows</p>";
-            echo $tireQty." tires<br/>";
-            echo "$oilQty bottle/s of oil<br/>";
-            echo "$sparkPlugsQty number of spark plug/s<br/><br/>";
+            echo $tireProduct->getProductQty()." tires<br/>";
+            echo $oilProduct->getProductQty()." bottle/s of oil<br/>";
+            echo $sparkPlugProduct->getProductQty()." number of spark plug/s<br/><br/>";
 
             echo "<p>Prices<br/>";
-            echo "Tires: ".TIRE_PRICE."<br/>";
-            echo "Oil: ".OIL_PRICE."<br/>";
-            echo "Spark Plugs: ".SPARK_PRICE."<br/><br/>";
+            echo "Tires: ".$tireProduct->getProductPrice()."<br/>";
+            echo "Oil: ".$oilProduct->getProductPrice()."<br/>";
+            echo "Spark Plugs: ".$sparkPlugProduct->getProductPrice()."<br/><br/>";
 
-            $totalQty = $tireQty + $oilQty + $sparkPlugsQty;
+            $totalQty = $tireProduct->getProductQty() + $oilProduct->getProductQty() + $sparkPlugProduct->getProductQty();
             echo "Total number of items: $totalQty<br/>";
             if ($totalQty == 0) {
               echo "You did not order anything.<br/><br/>";
             } else {
-              $tireAmount = $tireQty * TIRE_PRICE;
-              $oilAmount = $oilQty * OIL_PRICE;
-              $sparkPlugsAmount = $sparkPlugsQty * SPARK_PRICE;
+              $tireAmount = $tireProduct->getProductQty() * $tireProduct->getProductPrice();
+              $oilAmount = $oilProduct->getProductQty() * $oilProduct->getProductPrice();
+              $sparkPlugsAmount = $sparkPlugProduct->getProductQty() * $sparkPlugProduct->getProductPrice();
 
               //'@' suppresses the warnings that may be created from a command.
               $totalAmount = (float) @($tireAmount + $oilAmount + $sparkPlugsAmount);
