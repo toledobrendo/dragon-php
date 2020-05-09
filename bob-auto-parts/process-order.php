@@ -1,18 +1,22 @@
+<?php
+  require_once('defaults/header.php');
+  require_once('Scripts/scripts.php');
+  require_once('service/order-service.php');
+  require_once('exception/file-not-found-exception.php');
+?>
+
 <?php 
     // constant variables
     define('TIRE_PRICE', 100);
     define('OIL_PRICE', 50);
     define('SPARK_PRICE', 30);
 ?>
+          
 
-<?php
-  require_once('defaults/header.php');
-  require_once('Scripts/scripts.php');
-  require_once('service/order-service.php');
-?>
         
           <h3 class="card-title">Order Result</h3>
           <?php
+
             echo '<p>Order Processed at ';
             echo date ('H:i,jS F Y');
             echo '</p>';
@@ -85,27 +89,53 @@
             $otherTotalAmount += $oilAmount;
             $totalAmount += $sparkAmount;
 
-            $VAT = $totalAmount * 0.12;
-            $VATable = $totalAmount - $VAT;
-            $VATAmount = 0.12 * $VATable;
-            $Total = $VATAmount + $VATable;
+            $VAT_PERCENT = (float) getPercent();
+            function getPercent(){
 
-            echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
-            echo 'Total Amount:'.$totalAmount.'<br/>';
-            echo 'Amount exceeded 500?  '.($totalAmount > 500 ? 'Yes' :'No').'<br/>';
-            echo 'VATable Amount: '.($Total).'<br/>';
-            echo 'VAT Amount: '.($VATAmount).'<br/>';
+                    try{
+                      $file = @fopen(DOCUMENT_ROOT.'/dragon-php/bob-auto-parts/resource/properties.txt', 'rb');
+
+                       if(!$file){
+                        throw new FileNotFoundException ('No orders pending. Please try again later.',1);
+                       }else{
+
+                        while (!feof($file)) {
+                          $text = fgets($file,999);
+                          $text_part = explode('=', $text, 2);
+                          return $text_part[1]; 
+                        }
+
+                        fclose($file);
+                       }
+
+                    }catch(FileNotFoundException $fnfe){
+                      echo $fnfe->getMessage();
+                      echo $fnfe;
+                    }
+            }
+
+              $VAT = $totalAmount * $VAT_PERCENT;
+              $VATable = $totalAmount - $VAT;
+              $VATAmount = $VAT_PERCENT * $VATable;
+              $Total = $VATAmount + $VATable;
+              echo 'Vat%: '.$VAT_PERCENT.'<br/>';
+              echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
+              echo 'Total Amount:'.$totalAmount.'<br/>';
+              echo 'Amount exceeded 500?  '.($totalAmount > 500 ? 'Yes' :'No').'<br/>';
+              echo 'VATable Amount: '.($Total).'<br/>';
+              echo 'VAT Amount: '.($VATAmount).'<br/>';
 
 
-            echo 'is $totalAmount string? ' .(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
-            // unset($totalAmount);
-            echo 'is $totalAmount set?' .(isset($totalAmount)? 'Yes' : 'No').'<br/>';
-            
-            $totalAmountTwo = 0;
-            echo 'IS $totalAmountTwo set? '.(isset($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
-            echo 'IS $totalAmountTwo empty? '.(empty($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
+              echo 'is $totalAmount string? ' .(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
+              // unset($totalAmount);
+              echo 'is $totalAmount set?' .(isset($totalAmount)? 'Yes' : 'No').'<br/>';
+              
+              $totalAmountTwo = 0;
+              echo 'IS $totalAmountTwo set? '.(isset($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
+              echo 'IS $totalAmountTwo empty? '.(empty($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
 
-           saveOrder($tireQty,$oilQty,$sparkQty,$totalAmount);
+              saveOrder($tireQty,$oilQty,$sparkQty,$totalAmount);
+
 
           ?>
   			</div>

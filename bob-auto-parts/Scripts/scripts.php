@@ -30,9 +30,9 @@
                   $Oil->__set('name','OilQty');
                   $Sparkplugs->__set('name','SparkPlugsQty');
 
-                  $Tires->__set('price',200);
-                  $Oil->__set('price',100);
-                  $Sparkplugs->__set('price',300);
+                  $Tires->__set('price',100);
+                  $Oil->__set('price',50);
+                  $Sparkplugs->__set('price',30);
 
                   $items = array($Tires, $Oil, $Sparkplugs);
 

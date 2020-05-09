@@ -1,5 +1,5 @@
 <?php
-	 require_once('exception/file-not-found-exception.php');
+	require_once('exception/file-not-found-exception.php');
 	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT']);
 
 	function saveOrder($tireQty,$oilQty,$sparkQty,$totalAmount){
@@ -45,9 +45,9 @@
 				fclose($file);
 			 }
 
-		}catch(FileNotFoundException $e){
-			echo $e->getMessage();
-			echo $e;
+		}catch(FileNotFoundException $fnfe){
+			echo $fnfe->getMessage();
+			echo $fnfe;
 		}
 
 	}
