@@ -8,7 +8,7 @@
 <?php
   require_once('defaults/header.php');
   require_once('Scripts/scripts.php');
-
+  require_once('service/order-service.php');
 ?>
         
           <h3 class="card-title">Order Result</h3>
@@ -98,12 +98,14 @@
 
 
             echo 'is $totalAmount string? ' .(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
-            unset($totalAmount);
+            // unset($totalAmount);
             echo 'is $totalAmount set?' .(isset($totalAmount)? 'Yes' : 'No').'<br/>';
             
             $totalAmountTwo = 0;
             echo 'IS $totalAmountTwo set? '.(isset($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
             echo 'IS $totalAmountTwo empty? '.(empty($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
+
+           saveOrder($tireQty,$oilQty,$sparkQty,$totalAmount);
 
           ?>
   			</div>
