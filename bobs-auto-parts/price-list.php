@@ -124,8 +124,9 @@ foreach($products as $product) {
 	echo '<td>'.$product->__get('price').'</td>';
 	echo '</tr>';
 }
-
 echo '</table>';
+
+echo '<a href="../index.php" class="btn btn-danger">Back to index</a>';
 ?>	
 
 <?php 

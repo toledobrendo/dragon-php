@@ -20,11 +20,15 @@
 							</li>
 							<!-- item -->
 							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Bobs Auto Parts</a>
+								<a href="bobs-auto-parts/order-form.php">Bob's Auto Parts</a>
 							</li>
 							<!-- item -->
 							<li class="list-group-item">
-								<a href="bobs-auto-parts/price-list.php">Bobs Auto Parts - Price List</a>
+								<a href="bobs-auto-parts/price-list.php">Bob's - Price List</a>
+							</li>
+							<!-- item -->
+							<li class="list-group-item">
+								<a href="bobs-auto-parts/view-orders.php">Bob's - Order List</a>
 							</li>
 							<!-- item -->
 							<li class="list-group-item">

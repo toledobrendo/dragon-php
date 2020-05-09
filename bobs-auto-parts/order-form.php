@@ -65,10 +65,11 @@ require_once('script.php');
 					<button type="submit" class="btn btn-primary float-right">Submit</button>
 				</td>
 			</tr>
-
 		</tbody>
 	</table>
 </form>
+
+<a href="../index.php" class="btn btn-danger">Back to index</a>
 
 <?php 
 require_once('view-comp/footer.php');

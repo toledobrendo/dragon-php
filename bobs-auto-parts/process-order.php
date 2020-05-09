@@ -2,6 +2,7 @@
 <?php 
 require_once('view-comp/header.php');
 require_once('script.php');
+require_once('service/order-service.php');
 ?>
 
 <h2 class="card-title">Bob's Auto Parts</h2>
@@ -99,9 +100,14 @@ echo '<br/>Is $totalPrice string? '.(is_string($totalPrice) ? 'Yes' : 'No');
 echo '<br/>Is %totalPrice set? '.(isset($totalPrice) ? 'Yes' : 'No');
 // a value of 0 is still empty
 echo '<br/>Is %totalPrice empty? '.(empty($totalPrice) ? 'Yes' : 'No');
+
+// call save-to-txt function
+saveOrder($tireQty, $oilQty, $sparkQty, $totalPrice);
+
 ?>
 <hr>
 <a href="order-form.php" class="btn btn-danger">Go back</a>
+<a href="../index.php" class="btn btn-danger">Back to index</a>
 
 <?php 
 require_once('view-comp/footer.php');
