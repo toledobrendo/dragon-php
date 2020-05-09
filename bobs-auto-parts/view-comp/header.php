@@ -1,8 +1,9 @@
 <?php
-    require_once 'service/tracker-service.php';
+require_once 'service/tracker-service.php';
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">

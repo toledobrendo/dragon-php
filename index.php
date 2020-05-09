@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -31,6 +32,9 @@
                         </li>
                         <li class="list-group-item">
                             <a href="iac-consulting/index.php">iAC Consulting</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="bobs-auto-parts/view-orders.php">Bob's Auto Parts - View Orders</a>
                         </li>
                     </ul>
                 </div>
