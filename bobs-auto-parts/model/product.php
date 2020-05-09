@@ -12,6 +12,10 @@
       $this->quantity = 0;
     }
 
+    public function __set($fieldName, $fieldValue) {
+      $this->$fieldName = $fieldValue;
+    }
+
     public function __get($fieldName) {
       return $this->$fieldName;
     }

@@ -3,6 +3,11 @@
 	require_once('model/product.php');
 	require_once('model/product-list.php');
 	require_once('service/order-service.php');
+	require_once('exception/file-not-found.php');
+	require_once('service/data-extraction.php');
+
+	define("PROPERTIES_FILE", $_SERVER['DOCUMENT_ROOT']."/dragon/dragon-php/bobs-auto-parts/resource/properties.txt");
+	define("VAT_PERCENT", getValueFromFile(PROPERTIES_FILE, "VAT_PERCENT"))
 ?>
 	<h1 class="card-title"> Bob's Auto Parts </h1>
 	<br>
@@ -36,33 +41,31 @@
 	echo '<p>Your order is as folows</p>';
 	$total = 0;
 	foreach ($list->products as $item) {
-			echo $_POST[$item->productID.'QTY'];
+			$quantity = $_POST[$item->productID.'QTY'];
+			$item->quantity = $quantity; //im not sure if this will actually save the actual product
+			echo $quantity;
 			echo ' '.$item->productName.'(s) @ ';
 			echo $item->productPrice.' each<br/>';
 
 			$total += $item->productPrice * $_POST[$item->productID.'QTY'];
 	}
 	echo '<br>';
-	// echo $tireQty.' tires.<br/>';
-	// echo "$oilQty bottles of oil.<br/>";
-	// echo "$sparkQty spark plugs.<br/></br>";
 
-	//$total = (TIRE_PRICE * $tireQty) + (OIL_PRICE * $oilQty) + (SPARK_PRICE * $sparkQty);
-	if($total == 0) {
-		$vatable = 0;
-		$vat = 0;
-	} else {
-		$vatable = $total / 1.12;
+	$vatable = 0;
+	$vat = 0;
+	if($total != 0 && VAT_PERCENT != 0) {
+		$vatable = $total / (1 + VAT_PERCENT);
 		$vat = $total - $vatable;
 	}
 
 	echo "VATable Amount: $vatable <br/>";
-	echo "VAT Amount (12%): $vat <br/>";
+	echo "VAT Amount (".VAT_PERCENT."): $vat <br/>";
 	echo "Total Amount: $total <br/>";
 
 	echo "<br>Amount exceeded 500 but less than 1000? ".(500 < $total ? ($total < 1000 ? 'yes': 'no') : 'no').'<br><br>';
 
-	saveOrder();
+	//gonna save the list
+	saveOrder($list);
 	?>
 
 	<br>

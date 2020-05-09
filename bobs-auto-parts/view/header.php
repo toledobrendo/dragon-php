@@ -26,6 +26,9 @@
         <li class="nav-item <?php if(isActive('order-form.php')) echo 'active'; ?>">
           <a class="nav-link" href="order-form.php">Order Form</a>
         </li>
+        <li class="nav-item <?php if(isActive('view-orders.php')) echo 'active'; ?>">
+          <a class="nav-link" href="view/view-orders.php">View Orders</a>
+        </li>
       </ul>
     </div>
   </div>
