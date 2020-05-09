@@ -2,6 +2,7 @@
   require_once('view-comp/header.php');
   require_once('model-comp/productClass.php');
   require_once('model-comp/productListClass.php');
+  require_once('service-comp/order-service.php');
 ?>
           <h3 class="card-title">Order Result</h3>
           <?php
@@ -33,6 +34,9 @@
             echo '<hr>';
             
             $totalAmount = 0;
+            $tireQty = 0;
+            $oilQty = 0;
+            $sparkQty = 0;
 
             echo '<table>';
               foreach ($boughtList->products as $item) {
@@ -46,7 +50,11 @@
             
             echo '</table>';
 
-            echo '<br>';
+            saveOrder($boughtList, $totalAmount);
+
+            echo '<hr>';
+
+            getOrders();
 
             $vatableAmount = $totalAmount / 1.12;
             $vat = $totalAmount - $vatableAmount;
