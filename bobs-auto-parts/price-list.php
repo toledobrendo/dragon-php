@@ -3,7 +3,6 @@
 	require_once('objects/product-objects.php');
 ?>
 
-
 	<h1> Price List </h1>
 
 	<?php 

@@ -1,6 +1,7 @@
 <?php
 	require_once('view-comp/header.php');
 	require_once('objects/product-objects.php');
+	require_once('service/order-service.php');
 ?>
 
 	<h1 class="card-title"> Bob's Auto Parts </h1>
@@ -90,6 +91,8 @@
 
 		// echo '<i>Is $totalAmountTwo empty? </i>';
 		// echo empty($totalAmount) ? '<i>Yes</i><br/>' : '<i>No</i><br/>';
+
+		saveOrder($tires->__get('quantity'), $oil->__get('quantity'), $sparkplugs->__get('quantity'), $totalAmount);
 
 	?>
 

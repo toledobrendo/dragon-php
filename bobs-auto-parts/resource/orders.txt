@@ -1,0 +1,2 @@
+16:53, 9th May 2020	1 tires	2 oil	3 spark plugs	PHP 132
+16:54, 9th May 2020	2 tires	3 oil	4 spark plugs	PHP 246
