@@ -11,3 +11,5 @@ What's new this week?
   > view-orders.php
 - "Back to index" buttons on Bob's pages
 - Exceptions
+- HW4: VAT amount from file reading
+  > properties.txt
