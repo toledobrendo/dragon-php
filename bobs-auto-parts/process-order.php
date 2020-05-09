@@ -15,7 +15,7 @@ echo '</p>';
 // from class
 $tires->__set('qty', $_POST['tireQty']);
 $oil->__set('qty', $_POST['oilQty']);
-$spark->__set('qty', $_POST['tireQty']);
+$spark->__set('qty', $_POST['sparkQty']);
 
 $tireQty = $tires->__get('qty');
 $oilQty = $oil->__get('qty');
