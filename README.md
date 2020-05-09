@@ -10,3 +10,4 @@ What's new?
   
   > view-orders.php
 - "Back to index" buttons on Bob's pages
+- Exceptions
