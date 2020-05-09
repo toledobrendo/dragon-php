@@ -4,6 +4,6 @@
 
 ***Latest Additions in this branch push:***
 - File manipulation
-***_- VAT Percentage Assignment (Process Order reading from a file resource)_***
+- ***_VAT Percentage Assignment (Process Order reading from a file resource)_***
 - View Order Button in Process Order page
 - modified Back Buttons to redirect to previous page
