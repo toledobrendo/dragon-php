@@ -1,6 +1,3 @@
-16:52, 9th May 2020	3-tires	2-oil	1-spark plugs	$430
-16:52, 9th May 2020	6-tires	3-oil	4-spark plugs	$870
-16:56, 9th May 2020	6-tires	3-oil	4-spark plugs	$870
-17:26, 9th May 2020	0-tires	0-oil	0-spark plugs	$0
-17:27, 9th May 2020	0-tires	0-oil	0-spark plugs	$0
-17:27, 9th May 2020	0-tires	0-oil	0-spark plugs	$0
+20:28, 9th May 2020	1-tires	1-oil	1-spark plugs	$180
+20:28, 9th May 2020	1-tires	1-oil	1-spark plugs	$180
+20:28, 9th May 2020	1-tires	1-oil	1-spark plugs	$180

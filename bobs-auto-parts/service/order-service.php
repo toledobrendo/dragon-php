@@ -1,5 +1,7 @@
 <?php 
 
+require_once('exception/file-not-found-exception.php');
+
 // repo directory
 define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
 
@@ -34,16 +36,40 @@ function saveOrder($tireQty, $oilQty, $sparkQty, $totalAmt) {
 }
 
 function getOrder() {
-	$file = @fopen(DOCUMENT_ROOT.'/dragon-php/bobs-auto-parts/resource/orders.txt', 'rb'); // recommended to always use 'b' along with other file modes
+	try {
+		$file = @fopen(DOCUMENT_ROOT.'/dragon-php/bobs-auto-parts/resource/orders.txt', 'rb'); // recommended to always use 'b' along with other file modes
+
+		if(!$file) {
+			throw new FileNotFoundException('File is missing or corrupt.');
+		} else {
+			while(!feof($file)) { // eof = end of file
+				$order = fgets($file, 999); // 2nd param is the limit that php will read
+				echo $order.'<br/>';
+			}
+		}
+		// close file
+		fclose($file);
+	} catch(FileNotFoundException $fnfe) {
+		echo $fnfe->getMessage();
+	} catch(Exception $e) {
+		echo $e->getMessage();
+	}
+}
+
+function getVATPercent() {
+	$file = @fopen(DOCUMENT_ROOT.'/dragon-php/bobs-auto-parts/resource/properties.txt', 'rb');
 
 	if(!$file) {
-		echo '<p><strong>No orders pending. Please try again later.</strong></p>';
+		throw new FileNotFoundException('File is missing or corrupt.');
 	} else {
+		
 		while(!feof($file)) { // eof = end of file
-			$order = fgets($file, 999); // 2nd param is the limit that php will read
-			echo $order.'<br/>';
+			$VAT_string = fgets($file, 999); // 2nd param is the limit that php will read
+			$VAT_string_array = explode('=', $VAT_string, 2);
+			return (float)$VAT_string_array[1];
 		}
 	}
+	fclose($file);
 }
 
  ?>

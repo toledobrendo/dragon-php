@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <?php 
 require_once('view-comp/header.php');
 require_once('script.php');
@@ -80,8 +80,10 @@ echo '<br/><b><p>Summary:</b>';
 $subtotalPrice = $tireAmt + $oilAmt + $sparkAmt;
 
 // VAT
-$VATableAmt = $subtotalPrice / 1.12;
-$VAT = 0.12 * $VATableAmt;
+
+$VATPercent = getVATPercent();
+$VATableAmt = $subtotalPrice / (1 + $VATPercent);
+$VAT = $VATPercent * $VATableAmt;
 $totalPrice = $VATableAmt + $VAT;
 
 echo '<br/>VATable Amount: '.$VATableAmt;
