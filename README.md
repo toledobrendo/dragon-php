@@ -1,7 +1,7 @@
 SEG22 - dragon-php
 JM Mandigma
 
-What's new?
+What's new this week?
 - README.md
 - File writing
   > order-service.php
