@@ -1,7 +1,9 @@
 <?php
   require_once 'view-comp/title.php';
   $title = 'Order Form';
+
   require_once 'view-comp/header.php';
+  require_once 'data/products.php'
 ?>
 <h3 class="card-title">Order Form</h3>
 <form action="process-order.php" method="post">
@@ -15,17 +17,12 @@
     </thead>
     <tbody>
       <?php
-        $products = array(
-          'tires' => array('desc' => 'Tires', 'price' => 150, 'quantity' => 0),
-          'oil' => array('desc' => 'Oil', 'price' => 10, 'quantity' => 0),
-          'sparkplugs' => array('desc' => 'Spark Plugs', 'price' => 5, 'quantity' => 0));
-
-        foreach ($products as $code => $data) {
+        foreach($products as $code => $data) {
           echo '<tr class="row">';
-          echo '<td class="col-4">'.$data['desc'].'</td>';
-          echo '<td class="col-4">'.$data['price'].'</td>';
+          echo '<td class="col-4">'.$data->name.'</td>';
+          echo '<td class="col-4">'.$data->price.'</td>';
           echo '<td class="col-4">';
-          echo '<input class="form-control" type="number" name="'.$code.'" min="0" value="'.$data['quantity'].'" required>';
+          echo '<input class="form-control" type="number" name="'.$code.'" min="0" value="'.$data->quantity.'" required>';
           echo "</td></tr>";
         }
       ?>
