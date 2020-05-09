@@ -4,6 +4,7 @@
 	define('SPARK_PRICE', 30);
 
 	require_once('view-comp/header.php');
+	require_once('service/order-service.php');
 ?>
 
 <h3 class="card-title">Order Result</h3>
@@ -47,11 +48,13 @@
 
 						echo 'Total Quantity: '. $totalQty. '<br/><br/>';
 
-						echo '<br>VATable Amount: Php ' . $vatable . '</p>';
+						echo '<br/>VATable Amount: Php ' . $vatable . '</p>';
 						echo 'VAT Amount (12%): Php ' . $vat . '</p>';
 						echo 'Total: Php '. $totalAmount.'</p>';
 
 						echo 'Amount exceeded 500 but less than 1000? '. @($totalAmount > 500 && totalAmount < 1000 ? 'Yes':'No'). '<br/>';
+
+						saveOrder($tireQty, $oilQty, $sparkQty, $totalAmount);
 
 						?>
 					</div>
