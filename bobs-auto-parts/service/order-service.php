@@ -1,5 +1,5 @@
 <?php
-	require_once('../exception/file-not-found-exception.php');
+	require_once('exception/file-not-found-exception.php');
 ?>
 
 <?php 
@@ -23,10 +23,10 @@
 		if (!$file){
 			echo '<p><strong>Your order could not be processed at this time. Please try again later.</strong></p>';
 		} else {
-			flock($file, LOCK_EX);
+			flock($file, LOCK_EX); 
 			//writing
 			fwrite($file, $outputString, strlen($outputString));
-			flock($file, LOCK_UN);
+			flock($file, LOCK_UN); 
 			fclose($file);
 		}
 	}
@@ -37,7 +37,7 @@
 			$file = @ fopen(DOCUMENT_ROOT.'/dragon-php/bobs-auto-parts/resource/orders.txt', 'rb');
 
 			if (!$file) {
-				throw new FileNotFoundException('No orders pending.', 1);
+				throw new FileNotFoundException('<font color=red><strong>Order File does not exist.</strong></font>', 1);
 			} else {
 			//reading line by line
 				while(!feof($file)){

@@ -5,6 +5,7 @@
 
 	require_once('view-comp/header.php');
 	require_once('service/order-service.php');
+	require_once('service/vat-service.php');
 ?>
 
 <h3 class="card-title">Order Result</h3>
@@ -39,17 +40,21 @@
 						$oilAmount = @($oilQty * OIL_PRICE);
 						$sparkAmount = @($sparkQty * SPARK_PRICE);
 
-						//type casting
-						$totalAmount = (float) $tireAmount + $oilAmount + $sparkAmount;
-						$vatable = $totalAmount/1.12;
-						$vat = 0.12 * $vatable;
 
-						$totalAmount = $vat + $vatable ;
+						getVat(); //constant variable is in service/vat-service.php
+
+						//type casting
+						@$vatAmount = VAT_PERCENT * 100;
+						@$totalAmount = (float) $tireAmount + $oilAmount + $sparkAmount;
+						@$vatable = $totalAmount/(VAT_PERCENT+1);
+						@$vat = VAT_PERCENT * $vatable;
+
+						@$totalAmount = $vat + $vatable ;
 
 						echo 'Total Quantity: '. $totalQty. '<br/><br/>';
 
 						echo '<br/>VATable Amount: Php ' . $vatable . '</p>';
-						echo 'VAT Amount (12%): Php ' . $vat . '</p>';
+						echo 'VAT Amount ('. $vatAmount.'%): Php ' . $vat . '</p>';
 						echo 'Total: Php '. $totalAmount.'</p>';
 
 						echo 'Amount exceeded 500 but less than 1000? '. @($totalAmount > 500 && totalAmount < 1000 ? 'Yes':'No'). '<br/>';
