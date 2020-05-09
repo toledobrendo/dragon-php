@@ -2,6 +2,7 @@
 	require_once('view/header.php');
 	require_once('model/product.php');
 	require_once('model/product-list.php');
+	require_once('service/order-service.php');
 ?>
 	<h1 class="card-title"> Bob's Auto Parts </h1>
 	<br>
@@ -60,6 +61,8 @@
 	echo "Total Amount: $total <br/>";
 
 	echo "<br>Amount exceeded 500 but less than 1000? ".(500 < $total ? ($total < 1000 ? 'yes': 'no') : 'no').'<br><br>';
+
+	saveOrder();
 	?>
 
 	<br>
