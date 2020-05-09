@@ -8,3 +8,4 @@
 - View Order Button in Process Order page
 - modified Back Buttons to redirect to previous page
 - added View Order to index.php
+- exception handling lesson
