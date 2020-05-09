@@ -57,19 +57,25 @@ function getOrder() {
 }
 
 function getVATPercent() {
-	$file = @fopen(DOCUMENT_ROOT.'/dragon-php/bobs-auto-parts/resource/properties.txt', 'rb');
+	try {
+		$file = @fopen(DOCUMENT_ROOT.'/dragon-php/bobs-auto-parts/resource/properties.txt', 'rb');
 
-	if(!$file) {
-		throw new FileNotFoundException('File is missing or corrupt.');
-	} else {
-		
-		while(!feof($file)) { // eof = end of file
-			$VAT_string = fgets($file, 999); // 2nd param is the limit that php will read
-			$VAT_string_array = explode('=', $VAT_string, 2);
-			return (float)$VAT_string_array[1];
+		if(!$file) {
+			throw new FileNotFoundException('File is missing or corrupt.');
+		} else {
+			
+			while(!feof($file)) { // eof = end of file
+				$VAT_string = fgets($file, 999); // 2nd param is the limit that php will read
+				$VAT_string_array = explode('=', $VAT_string, 2);
+				return (float)$VAT_string_array[1];
+			}
 		}
+		fclose($file);
+	} catch(FileNotFoundException $fnfe) {
+		echo $fnfe->getMessage();
+	} catch(Exception $e) {
+		echo $e->getMessage();
 	}
-	fclose($file);
 }
 
  ?>
