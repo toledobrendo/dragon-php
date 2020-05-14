@@ -2,6 +2,7 @@
     require_once('view/header.php');
     require_once('model/product-declarations.php');
     require_once('service/computations.php');
+    require_once('service/order-service.php'); 
 ?>
 
     <h3 class="card-title">Order Result</h3>
@@ -75,6 +76,9 @@
         echo 'Total Amount: '.$totalAmount.'<br/>';
 
         echo '<br/>Amount exceeded 500 but less than 1000? '.($totalAmount > 500 && $totalAmount <1000 ? 'Yes' : 'No').'<br/>';
+        
+        saveOrder($tires->quantity, $oil->quantity, $sparksPlug->quantity, $totalAmount); 
+
     ?>
 
 

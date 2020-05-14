@@ -1,5 +1,7 @@
 <?php
     require_once('view/header.php');
+    require_once('service/order-service.php');
+    
 ?>
 
 <html>
@@ -26,6 +28,10 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
+            <h1>Order List</h1>
+            <?php
+                getOrders(); 
+            ?>
           
         </div>
       </div>

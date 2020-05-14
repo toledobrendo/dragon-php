@@ -28,6 +28,10 @@
                 </li>
                 
                 <li class="list-group-item">
+                    <a href="bobs-auto-parts/view-orders.php"\>Bob's Auto Parts - Order List</a>
+                </li>
+                
+                <li class="list-group-item">
                     <a href="HW1-FibonacciSequence/Pages/fibonacci.php">Fibonacci Sequence</a>
                 </li>
                 
