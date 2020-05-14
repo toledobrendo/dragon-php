@@ -63,4 +63,32 @@
             echo $e; 
         } 
     }
+
+    function getVATPercent(){
+        
+        try{
+            @$file = fopen(DOCUMENT_ROOT.'/dragon-php/HW4-VATPercent/resource/properties.txt', 'rb'); 
+        
+            if(!$file){
+                throw new FileNotFoundException('No exisiting VAT percent value.'); 
+            }
+                
+            else{
+
+                while(!feof($file)){
+                    $vatPercent = fgets($file, 999); 
+                    $vatArr = explode("=", $vatPercent); 
+                    return $vatArr[1]; 
+
+                }; 
+            }
+
+            fclose($file); 
+        }
+        
+        catch(FileNotFoundException $e){
+            echo $e->getMessage(); 
+            echo $e; 
+        } 
+    }
 ?>

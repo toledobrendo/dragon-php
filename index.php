@@ -38,6 +38,13 @@
                 <li class="list-group-item">
                     <a href="HW2-CaesarShift/Pages/caesar-cipher.php">Caesar Shift</a>
                 </li>
+                <li class="list-group-item">
+                    <a href="HW3-OrderFormClasses/order-form.php">Order From Classes</a>
+                </li>
+                
+                <li class="list-group-item">
+                    <a href="HW4-VATPercent/order-form.php">VAT Percentage (fr. flat file)</a>
+                </li>
                 
                 <li class="list-group-item">
                     <a href="iac-consulting/">iACADEMY Consulting</a>
