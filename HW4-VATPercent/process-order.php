@@ -71,7 +71,7 @@
         $vatable = @computeVatableAmount($totalAmount); 
         $vat = @computeVatAmount($vatable); 
         $total = $vatable + $vat; 
-
+        
         echo 'VATable Amount: '.$vatable.'<br/>'; 
         echo 'VAT Amount (12%): '.$vat.'<br/>'; 
         echo 'Total Amount: '.$total.'<br/>';

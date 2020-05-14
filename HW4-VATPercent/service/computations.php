@@ -1,5 +1,6 @@
 <?php
-    require_once('resource/properties.txt'); 
+    require_once('order-service.php');
+
     function computeTotalOrderQuantity(&$tiresQty, &$oilQty, &$sparksPlugQty){
         $totalQty = $tiresQty + $oilQty + $sparksPlugQty;
         return $totalQty; 

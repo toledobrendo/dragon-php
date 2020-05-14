@@ -65,7 +65,6 @@
     }
 
     function getVATPercent(){
-        
         try{
             @$file = fopen(DOCUMENT_ROOT.'/dragon-php/HW4-VATPercent/resource/properties.txt', 'rb'); 
         
@@ -77,10 +76,9 @@
 
                 while(!feof($file)){
                     $vatPercent = fgets($file, 999); 
-                    $vatArr = explode("=", $vatPercent); 
+                    $vatArr = explode("=", $vatPercent);
                     return $vatArr[1]; 
-
-                }; 
+                }
             }
 
             fclose($file); 
