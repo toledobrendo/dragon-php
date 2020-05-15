@@ -51,19 +51,19 @@
   }
   echo 'Total Quantity: '.$totalQty.'<br/>';
 
-  $basePrice = 0;
+  $grossAmount = 0;
 
   foreach ($products as $code => $data) {
-    $basePrice += $data->quantity * $data->price;
+    $grossAmount += $data->quantity * $data->price;
   }
 
-  echo "Base Price: $basePrice<br/>";
+  echo "Gross Amount: $grossAmount<br/>";
 
-  $vat = $basePrice * .12;
+  $vatableAmount = $grossAmount * 1.12;
+  echo "VATABLE Amount: $vatableAmount<br/>";
+
+  $vat = $totalPrice - $vatableAmount;
   echo "VAT: $vat<br/>";
-
-  $totalPrice = $basePrice + $vat;
-  echo "Total Price: $totalPrice<br/>";
 
   saveOrder(
     $products['tires']->quantity,
