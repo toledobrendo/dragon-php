@@ -33,6 +33,11 @@
     $person->setAge(15);
 
     echo '<br/>'.$person->name.' is'.$person->getAge().'yr(s) old';
+
+
+    $person->address = 'Makati City';
+
+    echo '<br/>'.$person->name.'Lives in'.$person->address;
 ?>
           
 

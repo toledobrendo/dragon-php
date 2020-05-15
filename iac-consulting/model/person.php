@@ -13,8 +13,8 @@
     }
 
 
-    function setAge(&$age){
-      return $this->age;
+    function setAge($age){
+      $this->age = $age;
     }
 
 
@@ -39,7 +39,7 @@
 
 
 
-    
+
 
     public function introduce(){
         echo '<p>This is '.$this->name;
