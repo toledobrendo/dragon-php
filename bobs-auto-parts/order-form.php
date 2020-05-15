@@ -16,6 +16,7 @@
                         </thead>
                         <tbody>
                             <?php
+                                // Note: Class variables should be in camelCase. Code, Description and Price are undeclared in product.php
                                 $productOil = new Product();
                                 $productOil->Code = "OIL";
                                 $productOil->Description = "Oil";
