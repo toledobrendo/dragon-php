@@ -15,12 +15,41 @@
                 <tr class="row">
                   <th class="col-5">Items</th>
                   <th class="col-4">Quantity</th>
+                  <th class="col-2">Price</th>
+
 
                 </tr>
               </thead>
               <tbody>
 
-                What kind of wheel is always 
+                <?php
+                  $products = array(array('desc' => 'Tires', 'name' => 'tireQty','price' => 100 ),
+                                    array('desc' => 'Oil', 'name' => 'oilQty','price' => 200 ),
+                                    array('desc' => 'Spark Plugs', 'name' => 'sparkeQty','price' => 300 ));
+
+
+                  foreach ($products as $product) {
+                      echo '<tr class="row">
+                        <td class="col-5"> '.$product['desc'].'</td>
+                        <td class="col-2"> '.$product['price'].'</td>
+                        <td class="col-4">
+                            <input type="text" name=""'.$product['name'].'" maxlength="3" class="form-control"/>
+                        </td>
+
+
+                      </tr>';
+                  }
+
+                ?>
+
+
+
+
+
+
+
+                <!-- MEETING 4 UPDATE-COMMENTED/DELETED THIS PART -->
+                <!-- What kind of wheel is always 
                 <tr class="row">
                   <td class="col-5"> Tires</td>
                   <td class="col-4">
@@ -44,7 +73,7 @@
                   <td class="col-4">
                     <input type="text" name="sparkeQty" maxlength="3" min="0" max="10" class="form-control">
                   </td>
-                </tr>
+                </tr> -->
 
 
                 <!-- //NEW CODE AREA:1 modified:4/26=================== -->

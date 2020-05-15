@@ -15,8 +15,21 @@
           <div class="col-6">
             <ul class="list-group">
               <li class="list-group-item">
-                <a href="hello-world.php">Hello World from the inside quarantined area</a>
+                <a href="hello-world.php">Hello World </a>
               </li>
+
+              <li class="list-group-item">
+                <a href="bobs-auto-parts/order-form.php">Bob's Auto Parts-Ordering</a>
+              </li>
+
+              <li class="list-group-item">
+                <a href="bobs-auto-parts/price-list.php">Bob's Auto Parts-Ordering - Price List</a>
+              </li>
+
+               <li class="list-group-item">
+                <a href="iac-consulting">iAC consulting</a>
+              </li>
+
             </ul>
           </div>
         </div>
