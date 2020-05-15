@@ -1,3 +1,4 @@
+<!-- Note: You can reduce indention on the body -->
 <?php require_once("model/Product.php") ?>
 <?php require_once("view-comp/header.php") ?>
           <h3 class="card-title">Order Result</h3>
