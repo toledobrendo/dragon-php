@@ -1,6 +1,8 @@
 <?php
 
   class Person{
+    public static $IS_HUMAN = true;
+
     public $name;
     protected $age;
     private $address;
@@ -13,7 +15,7 @@
     }
 
 
-    function setAge($age){
+    public function setAge($age){
       $this->age = $age;
     }
 
@@ -29,7 +31,12 @@
 
 
     public function __get($fieldName){
-      return $this->$fieldName;
+      if($fieldName !== 'address'){
+        return $this->$fieldName;
+      }else{
+        return 'Access DENIED';
+      }
+      
     }
 
 
@@ -45,9 +52,8 @@
         echo '<p>This is '.$this->name;
       }
 
-
-
-
+    public final function incrementAge(){
+      $this->age +=1;
 
     }
 
@@ -55,6 +61,5 @@
 
 
 
-
- 
+    }
 ?>

@@ -3,6 +3,8 @@
   require_once ('script.php');
   require_once('message.php');
   require_once('model/person.php');
+  require_once('model/employee.php');
+  require_once('model/delivery-man.php');
   require_once('service/index-service.php');
   require_once('view-comp/header.php');
 
@@ -38,6 +40,24 @@
     $person->address = 'Makati City';
 
     echo '<br/>'.$person->name.'Lives in'.$person->address;
+
+    echo '<br/>Is a person human?'.(Person::$IS_HUMAN ? 'Yep' : 'Nope');
+
+    $employee =  new Employee();
+    $employee->name = 'Peter Griffin';
+    $employee->age = 30;
+    $employee->incrementAge();
+
+
+    echo '<br/>'.$employee->name.' is '.$employee->getAge().' yr(s) old';
+    $employee->company = 'iACADEMY';
+
+    echo '<br/>'.$employee->name.' works at '.$employee->company;
+    $employee->introduce();
+
+    $grabDriver = new DeliveryMan();
+    $grabDriver->moveTo('Quezon City');
+
 ?>
           
 
