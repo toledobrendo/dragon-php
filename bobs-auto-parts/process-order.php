@@ -2,9 +2,12 @@
 require_once('dependency/header.php');
 require_once('models/product.php');
 require_once('objects/items.php');
-define('VAT_RATE', .12);
-define('VATABLE_RATE', 1.12);
-$totalPrice = 0;
+require_once('util/vat-service.php');
+/*
+Inside the process_order.php script, load the value of VAT_PERCENT into a constant.
+*/
+
+define('VAT_RATE', getVatRate());
 ?>
 <h3 class="card-title">Order Result</h3>
 <?php
@@ -13,12 +16,13 @@ $_POST['tireQty'] ? $products[0]->__set('qty', $_POST['tireQty']) : $products[0]
 $_POST['oilQty'] ? $products[1]->__set('qty', $_POST['oilQty']) : $products[1]->__set('qty', 0);
 $_POST['sparkQty'] ? $products[2]->__set('qty', $_POST['sparkQty']) : $products[2]->__set('qty', 0);
 /* Process Data */
+$totalPrice = 0;
 foreach($products as $product){
   $totalPrice += $product->computeCost();
 }
 // @(float) ($tireQty * TIRE_PRICE) + ($oilQty * OIL_PRICE) + ($sparkQty * SPARK_PRICE);
-$vatAble = @(float) $totalPrice / VATABLE_RATE;
-$vatAmnt = @(float) VAT_RATE * ($totalPrice / VATABLE_RATE);
+$vatAble = $totalPrice / (1 + VAT_RATE);
+$vatAmnt = $vatAble * VAT_RATE;
 /* Print */
 echo "<p>Order Processed at ";
 echo date("H:i, jS F Y");
