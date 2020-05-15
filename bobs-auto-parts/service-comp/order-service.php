@@ -16,15 +16,12 @@
 			$ctr=1;
 			foreach ($boughtList->products as $item) {	
 				if($ctr!=3){
-					$printFile .= $_POST[$item->productID.'QTY']."\t".$item->productName.'(s), '."\t";
+					$printFile .= $_POST[$item->productID.'QTY']." ".$item->productName.'(s), '."\t";
 				}else{
-					$printFile .= $_POST[$item->productID.'QTY']."\t".$item->productName.'(s). '."\t";
+					$printFile .= $_POST[$item->productID.'QTY']." ".$item->productName.'(s). '."\n";
 				}	
 				$ctr++;	
             }
-
-
-            $printFile .= "\n";
 
             flock($fileLoc, LOCK_EX);
             fwrite($fileLoc, $printFile, strlen($printFile));

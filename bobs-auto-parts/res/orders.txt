@@ -1,4 +1,1 @@
-14:11, 15th May 2020, 	1000.00, 	5	Tire(s), 	10	Oil(s), 	6	Spark Plug(s). 	
-14:12, 15th May 2020, 	1000.00, 	5	Tire(s), 	10	Oil(s), 	6	Spark Plug(s). 	
-14:12, 15th May 2020, 	1000.00, 	5	Tire(s), 	10	Oil(s), 	6	Spark Plug(s). 	
-14:12, 15th May 2020, 	1700.00, 	10	Tire(s), 	10	Oil(s), 	10	Spark Plug(s). 	
+14:16, 15th May 2020, 	1700.00, 	10 Tire(s), 	10 Oil(s), 	10 Spark Plug(s). 
