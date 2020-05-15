@@ -5,15 +5,15 @@
   require_once('exception/file-not-found-exception.php');
 ?>
 
-<?php 
+<?php
     // constant variables
     define('TIRE_PRICE', 100);
     define('OIL_PRICE', 50);
     define('SPARK_PRICE', 30);
 ?>
-          
 
-        
+
+
           <h3 class="card-title">Order Result</h3>
           <?php
 
@@ -52,6 +52,7 @@
             }
 
             echo '<p>Prices<br/>';
+            // Note: $items->price would work as well
             echo 'Tires:'.$items[0]->__get('price').'<br/>';
             echo 'Oil:'.$items[1]->__get('price').'<br/>';
             echo 'Spark Plugs: '.$items[2]->__get('price').'<br/><br/>';
@@ -82,13 +83,14 @@
             $tireAmount = @($tireQty * TIRE_PRICE);
             $oilAmount = @($oilQty * OIL_PRICE);
             $sparkAmount = @($sparkQty * SPARK_PRICE);
-            
+
             $totalAmount=(float) $tireAmount;
 
             $otherTotalAmount = &$totalAmount;
             $otherTotalAmount += $oilAmount;
             $totalAmount += $sparkAmount;
 
+            // Note: should be $vatPercent
             $VAT_PERCENT = (float) getPercent();
             function getPercent(){
 
@@ -102,7 +104,7 @@
                         while (!feof($file)) {
                           $text = fgets($file,999);
                           $text_part = explode('=', $text, 2);
-                          return $text_part[1]; 
+                          return $text_part[1];
                         }
 
                         fclose($file);
@@ -129,7 +131,7 @@
               echo 'is $totalAmount string? ' .(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
               // unset($totalAmount);
               echo 'is $totalAmount set?' .(isset($totalAmount)? 'Yes' : 'No').'<br/>';
-              
+
               $totalAmountTwo = 0;
               echo 'IS $totalAmountTwo set? '.(isset($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
               echo 'IS $totalAmountTwo empty? '.(empty($totalAmountTwo) ? 'Yes' :  'No' ).'<br/>';
@@ -144,7 +146,7 @@
         </div>
   		</div>
   	</div>
- 
+
   <?php
     require_once('defaults/footer.php');
   ?>
