@@ -1,4 +1,5 @@
 <?php
+  // Note: indent code inside the php tags
 require_once('dependency/header.php');
 require_once('models/product.php');
 require_once('objects/items.php');

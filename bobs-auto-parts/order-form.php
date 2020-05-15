@@ -1,5 +1,5 @@
-<?php 
-require_once('dependency/header.php'); 
+<?php
+require_once('dependency/header.php');
 require_once('models/product.php');
 require_once('objects/items.php')
 ?>
@@ -17,6 +17,7 @@ require_once('objects/items.php')
             <!-- Do things -->
             <?php
             foreach ($products as $product) {
+                // Note: $product->description would work as well
                 echo '<tr class="row">';
                 echo '<td class="col-5">' . $product->__get('description') . '</td>';
                 echo '<td class="col-3">' . $product->__get('price') . '</td>';
