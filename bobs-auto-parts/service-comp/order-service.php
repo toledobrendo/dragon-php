@@ -5,7 +5,7 @@
 	function saveOrder($boughtList,$total){
 
 		$outFile = date('H:i, jS F Y').', '."\t";
-		$printFile = date('H:i, jS F Y').', '."\t";
+		$printFile = date('H:i, jS F Y').', '."\t".$total.'.00, '."\t";
 
 		$fileLoc = @ fopen(DOCUMENT_ROOT.'/dragon-php/bobs-auto-parts/res/orders.txt', 'ab');
 
@@ -24,7 +24,7 @@
             }
 
 
-            $printFile.=$total."\n";
+            $printFile .= "\n";
 
             flock($fileLoc, LOCK_EX);
             fwrite($fileLoc, $printFile, strlen($printFile));
