@@ -13,6 +13,7 @@
 	<br>
 	<h3 class="card-title"> Order Results </h3>
 
+<!-- Note: Better to indent php code -->
 	<?php
 	$list = new ProductList();
 
