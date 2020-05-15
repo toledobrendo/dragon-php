@@ -4,6 +4,7 @@
 
   require_once 'view-comp/header.php';
   require_once 'data/products.php';
+  require_once 'service/order-service.php';
 ?>
 
 <h3 class="card-title">Order Result</h3>
@@ -63,6 +64,12 @@
 
   $totalPrice = $basePrice + $vat;
   echo "Total Price: $totalPrice<br/>";
+
+  saveOrder(
+    $products['tires']->quantity,
+    $products['oil']->quantity,
+    $products['sparkplugs']->quantity,
+    $totalPrice);
 ?>
 </div>
 <div class="card-footer">
