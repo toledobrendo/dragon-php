@@ -17,9 +17,10 @@
 
 				<tbody>
 
-					<?php 
+					<?php
 
 						foreach($items as $item) {
+							// Note: $item->item would work as well
 							echo '<tr class="row">';
 							echo '<td class="col-4">'.$item->__get('item').'</td>';
 							echo '<td class="col-3">'.$item->__get('price').'</td>';
@@ -28,11 +29,11 @@
 						}
 
 					?>
-			
+
 					<tr class="row">
 						<th class="col-4"> How did you find Bob's </th>
 							<td class="col-3"> </td>
-							<td class="col-5"> 
+							<td class="col-5">
 							<select name="find" class="custom-select">
 								<option value="regular"> I am a regular customer </option>
 								<option value="tv"> TV advertising </option>
@@ -40,7 +41,7 @@
 								<option value="word"> Word of Mouth </option>
 							</select>
 						</td>
-					</tr>	
+					</tr>
 
 					<tr class="row">
 						<td class="col-6"> <a href="freight-cost.php" class="btn btn-secondary float-left"> Freight Cost </a>
