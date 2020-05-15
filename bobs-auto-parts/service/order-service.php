@@ -1,7 +1,9 @@
 <?php
-  require_once('exception/file-not-found-exception.php');
+  require_once 'exception/file-not-found-exception.php';
 
-  define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
+  if(!defined('DOCUMENT_ROOT')) {
+    define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
+  }
 
   function saveOrder($tireQty, $oilQty, $sparkQty, $totalAmount) {
     $date = date('H:i, jS F Y');

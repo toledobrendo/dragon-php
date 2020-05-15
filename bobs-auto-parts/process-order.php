@@ -5,6 +5,7 @@
   require_once 'view-comp/header.php';
   require_once 'data/products.php';
   require_once 'service/order-service.php';
+  require_once 'service/vat-service.php';
 ?>
 
 <h3 class="card-title">Order Result</h3>
@@ -59,17 +60,17 @@
 
   echo "Gross Amount: $grossAmount<br/>";
 
-  $vatableAmount = $grossAmount * 1.12;
-  echo "VATABLE Amount: $vatableAmount<br/>";
+  $vatableAmount = number_format($grossAmount / (1 + getVAT()), 2, '.', '');
+  echo "VATable Amount: $vatableAmount<br/>";
 
-  $vat = $totalPrice - $vatableAmount;
+  $vat = $grossAmount - $vatableAmount;
   echo "VAT: $vat<br/>";
 
   saveOrder(
     $products['tires']->quantity,
     $products['oil']->quantity,
     $products['sparkplugs']->quantity,
-    $totalPrice);
+    $grossAmount);
 ?>
 </div>
 <div class="card-footer">
