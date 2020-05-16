@@ -26,8 +26,12 @@
                 <a href="bobs-auto-parts/price-list.php">Bob's Auto Parts-Ordering - Price List</a>
               </li>
 
-               <li class="list-group-item">
+              <li class="list-group-item">
                 <a href="iac-consulting">iAC consulting</a>
+              </li>
+
+              <li class="list-group-item">
+                <a href="bobs-auto-parts/view-orders.php">Bob's Auto Parts-Ordering - Order List</a>
               </li>
 
             </ul>

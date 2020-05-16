@@ -1,4 +1,6 @@
 <?php
+  require_once('service/order-service.php');
+
   define('TIRE_PRICE', 100);
   define('OIL_PRICE',50);
   define('SPARK_PRICE',30);
@@ -142,16 +144,21 @@
 
            echo 'is $totalAmount string? ' .(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
 
+
+           unset($totalAmount);
+
+
            unset($totalAmount); //deletes variable/s
 
            echo 'is $totalAmount set? ' .(isset($totalAmount)? 'Yes' : 'No').'<br/>';
 
-           $totalAmountTwo = 1;
+           $totalAmountTwo = 0;
 
            echo 'is $totalAmountTwo set? ' .(isset($totalAmountTwo)? 'Yes' : 'No').'<br/>';
            echo 'is $totalAmountTwo empty? ' .(empty($totalAmountTwo)?'Yes' : 'No').'<br/>';
 
 
+           saveOrder($tireQty, $oilQty, $sparkeQty, $totalAmount);
 
 
            ?>
