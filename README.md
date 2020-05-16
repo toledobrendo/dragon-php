@@ -12,3 +12,4 @@
 
 ## Commit Messages
 - 51f67d2: reworked Bob's auto parts with notes given
+- fc26a6c: changed variable names for remaining required lines
