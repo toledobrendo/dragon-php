@@ -11,4 +11,4 @@
 - declared variables and added setters and getters in product class
 
 ## Commit Messages
-- 
+- 51f67d2: reworked Bob's auto parts with notes given
