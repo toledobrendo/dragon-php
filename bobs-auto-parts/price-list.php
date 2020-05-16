@@ -9,19 +9,19 @@
                     $prices = array('Tires' => 100, 'Oil' => 10, 'Spark Plugs' => 4);
 
                     $productOil = new Product();
-                    $productOil->Code = "OIL";
-                    $productOil->Description = "Oil";
-                    $productOil->Price = 50;
+                    $productOil->code = "OIL";
+                    $productOil->description = "Oil";
+                    $productOil->price = 50;
 
                     $productTire = new Product();
-                    $productTire->Code = "TIR";
-                    $productTire->Description = "Tires";
-                    $productTire->Price = 100;
+                    $productTire->code = "TIR";
+                    $productTire->description = "Tires";
+                    $productTire->price = 100;
 
                     $productSpark = new Product();
-                    $productSpark->Code = "SPK";
-                    $productSpark->Description = "Spark Plugs";
-                    $productSpark->Price = 30;
+                    $productSpark->code = "SPK";
+                    $productSpark->description = "Spark Plugs";
+                    $productSpark->price = 30;
 
                     $items = array($productOil, $productTire, $productSpark);
 
