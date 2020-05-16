@@ -22,3 +22,8 @@ INSERT INTO author (name) VALUES
 INSERT INTO book (title, isbn, author_id) VALUES 
 	('Java for Professional Developers', '0-0672-31697-8', 1),
 	('A Game of Thrones', '1-141-5143123-5', 2);
+
+
+ALTER TABLE book ADD COLUMN image_src VARCHAR(255);
+UPDATE book SET img_src = 'http://localhost/dragon-php/dragon-php/book-catalog/images/book1.jpg' WHERE id = 1;
+UPDATE book SET img_src = 'http://localhost/dragon-php/dragon-php/book-catalog/images/book2.jpg' WHERE id = 2;

@@ -42,6 +42,9 @@
 						<li class="list-group-item"> 
 							<a href="iac-consulting\index.php"> iAC Consulting - Index </a>
 						</li>
+						<li class="list-group-item"> 
+							<a href="book-catalog\index.php"> Book Catalog - Index </a>
+						</li>
 					</ul>
 				</div>
 			</div>
