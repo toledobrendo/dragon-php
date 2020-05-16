@@ -27,6 +27,9 @@
               <li class="list-group-item">
                 <a href="Cipher/cipher.php">Ceasar Cipher</a>
               </li>
+              <li class="list-group-item">
+                <a href="book-catalog/index.php">Book Catalog</a>
+              </li>
               
               </li>
             </ul>
