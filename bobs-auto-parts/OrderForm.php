@@ -1,4 +1,3 @@
-<!-- Note: filenames should be in "this-format.php" or "this_format.php" -->
 <?php
 require_once('view-bob/header.php');
 require_once('controller/productObjects.php');
@@ -20,7 +19,6 @@ require_once('controller/productObjects.php');
               </thead>
               <tbody>';
               foreach($items as $item) {
-                    // Note: $item->item would work as well
       							echo '<tr class="row">';
       							echo '<td class="col-4">'.$item->__get('item').'</td>';
       							echo '<td class="col-3">'.$item->__get('price').'</td>';
@@ -28,7 +26,6 @@ require_once('controller/productObjects.php');
       							echo '</tr>';
       						}
 
-        // Note: This could be put outside the php tag.
         echo '<tr class="row">
               <td class = "col-4">How did you find Bobs</td>
               <td class="col-3"></td>
