@@ -28,7 +28,7 @@
 				throw new Exception('Error: Could not connect to database.'. $dbError, 1);
 			}
 			
-			$query = 'SELECT author.name as author_name, book.title, book.isbn 
+			$query = 'SELECT author.name as author_name, book.title, book.isbn, book.pic_url 
 				FROM book 
 				INNER JOIN author 
 					ON author.id = book.author_id 
@@ -53,7 +53,8 @@
 					<div class="card-body">
 						<h6><?php echo $row['title']?></h6>
 						<p>
-							By: <?php echo $row['author_name']?>
+						<img src="<?php echo $row['pic_url']?>" width="125" height="200">
+							By: <?php echo $row['author_name']?> <br>
 							<?php echo $row['isbn']?>
 						</p>
 					</div>
