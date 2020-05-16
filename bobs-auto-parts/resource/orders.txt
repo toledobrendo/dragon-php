@@ -1,2 +1,3 @@
 14:20, 9th May 2020	4 tires	4 oil	0 spark plugs	$600
 14:23, 9th May 2020	6 tires	0 oil	0 spark plugs	$600
+14:29, 9th May 2020	0 tires	2 oil	0 spark plugs	$100
