@@ -23,5 +23,5 @@ VALUES
 
 INSERT INTO book (img_dir,title, isbn, author_id)
 VALUES
-  ('https://i.imgur.com/oOWZmBe','Java for Professional Developers', '0-672-316123-8', 1),
-  ('https://i.imgur.com/G9NByWj','A Game of Thrones', '1-141-5143123-5', 2);
+  ('https://i.imgur.com/G9NByWj.jpg','Java for Professional Developers', '0-672-316123-8', 1),
+  ('https://i.imgur.com/oOWZmBe.jpg','A Game of Thrones', '1-141-5143123-5', 2);
