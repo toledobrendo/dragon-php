@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
-require_once('view-comp/header.php');
-require_once('script.php');
+	require_once('view-comp/header.php');
+	require_once('script.php');
 ?>
 
 <h3 class="card-title">Order Form</h3>
@@ -15,37 +15,35 @@ require_once('script.php');
 		</thead>
 		<tbody>
 			<?php 
+				foreach($products as $product) {
+					echo '<tr class="row">';
+					echo '<td class="col-6">'.$product->__get('name').'</td>';
+					echo '<td class="col-3">
+					<input type="number" name="'.$product->__get('qtyId').'" value="0" maxlength="3" min="0" class="form-control">
+					</td>';
+					echo '<td class="col-3">'
+					.$product->__get('price').
+					'</td>';
+					echo '</tr>';				
+				}
 
-			foreach($products as $product) {
-				echo '<tr class="row">';
-				echo '<td class="col-6">'.$product->__get('name').'</td>';
-				echo '<td class="col-3">
-				<input type="number" name="'.$product->__get('qtyId').'" value="0" maxlength="3" min="0" class="form-control">
-				</td>';
-				echo '<td class="col-3">'
-				.$product->__get('price').
-				'</td>';
-				echo '</tr>';				
-			}
+				// $items = array(
+				// 	array('Description' => 'Tires', 'Price' => 100, 'QtyID' => 'tireQty'),
+				// 	array('Description' => 'Oil', 'Price' => 50, 'QtyID' => 'oilQty'),
+				// 	array('Description' => 'Spark Plugs', 'Price' => 30, 'QtyID' => 'sparkQty')
+				// );
 
-			// $items = array(
-			// 	array('Description' => 'Tires', 'Price' => 100, 'QtyID' => 'tireQty'),
-			// 	array('Description' => 'Oil', 'Price' => 50, 'QtyID' => 'oilQty'),
-			// 	array('Description' => 'Spark Plugs', 'Price' => 30, 'QtyID' => 'sparkQty')
-			// );
-
-			// foreach($items as $item) {
-			// 	echo '<tr class="row">';
-			// 	echo '<td class="col-5">'.$item['Description'].'</td>';
-			// 	echo '<td class="col-2">
-			// 	<input type="number" name="'.$item['QtyID'].'" value="0" maxlength="3" min="0" class="form-control">
-			// 	</td>';
-			// 	echo '<td class="col-2">'
-			// 	.$item['Price'].
-			// 	'</td>';
-			// 	echo '</tr>';
-			// }
-
+				// foreach($items as $item) {
+				// 	echo '<tr class="row">';
+				// 	echo '<td class="col-5">'.$item['Description'].'</td>';
+				// 	echo '<td class="col-2">
+				// 	<input type="number" name="'.$item['QtyID'].'" value="0" maxlength="3" min="0" class="form-control">
+				// 	</td>';
+				// 	echo '<td class="col-2">'
+				// 	.$item['Price'].
+				// 	'</td>';
+				// 	echo '</tr>';
+				// }
 			?>
 
 			<tr class="row">
@@ -72,5 +70,5 @@ require_once('script.php');
 <a href="../index.php" class="btn btn-danger">Back to index</a>
 
 <?php 
-require_once('view-comp/footer.php');
+	require_once('view-comp/footer.php');
 ?>
