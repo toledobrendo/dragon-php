@@ -1,15 +1,18 @@
 # fabul-branch
 
 ## Summary
-- reworked VAT Percentage assignment to comply with notes given by professor. Adds gitignore file
+- added this session's lessons:
+	- mySQL integration
+	- mySQL queries
+	
+- added today's assessment
 
 ## Adds the Following
-- gitignore file
+- [book-catalog](book-catalog/)
+- [cover art images](book-catalog/resource)
 
 ## Reworks the Following
-- changes variable names to camelCasing
-- declared variables and added setters and getters in product class
+- none
 
 ## Commit Messages
-- 51f67d2: reworked Bob's auto parts with notes given
-- fc26a6c: changed variable names for remaining required lines
+- 
