@@ -1,6 +1,9 @@
 <?php
   require_once('view-bob/header.php');
   require_once('controller/productObjects.php');
+  require_once('service/vat.php');
+
+  define('VatAmount' ,getVat());
  ?>
 
         <h1 class="card-title">Bob's Auto Parts</h1>
@@ -63,9 +66,7 @@
         $items[1]->totalCost();
         $items[2]->totalCost();
 
-        $tireAmount = @($tireQty * TIRE_PRICE);
-        $oilAmount = @($oilQty * OIL_PRICE);
-        $sparkAmount= @( $spQty * SPARK_PRICE);
+
 
         $totalAmount = $tires->__get('cost') + $oil->__get('cost') + $sparkplugs->__get('cost');
 
@@ -73,18 +74,22 @@
         // $otherTotalAmount += $oilAmount;
         // $totalAmount += $sparkAmount;
 
-        $VATableAmount = $totalAmount / 1.12;
-        $VatAmount = .12 * $VATableAmount;
+        $VATableAmount = $totalAmount / (1 + VatAmount);
+        $VatAmount = VatAmount * $VATableAmount;
         // echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
         $TotalAmount = $VatAmount + $VATableAmount;
 
         echo 'VaTable Amount: '.$VATableAmount.'<br/>';
-        echo 'VAT Amount(12%): '.$VatAmount.'<br/>';
+        echo 'VAT Amount('.VatAmount.'%): '.$VatAmount.'<br/>';
          echo 'Total Amount: '.$TotalAmount.'<br/>';
 
          echo 'Amount exceeded 500? '.($TotalAmount > 500 ? 'Yes' : 'No').'<br/><br/>';
+         saveOrder($tires->__get('quantity'), $oil->__get('quantity'), $sparkplugs->__get('quantity'), $TotalAmount);
+
+
          ?>
          <button type="submit" class="btn btn-primary" onclick="window.location.href = 'OrderForm.php';"><i class="fas fa-arrow-left"></i> Go Back</button>
+
          <?php
          require_once('view-bob/footer.php');
           ?>

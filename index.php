@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
     crossorigin="anonymous">
-
+    <title>PHP Template</title>
 </head>
 <body>
   <div class="container">
@@ -31,6 +31,9 @@
           </li>
           <li class="list-group-item">
             <a href="iac-consulting/index.php">iac-consulting</a>
+          </li>
+          <li class="list-group-item">
+                <a href="bobs-auto-parts/view-orders.php">Bob's Auto Parts - Order List</a>
           </li>
         </ul>
       </div>

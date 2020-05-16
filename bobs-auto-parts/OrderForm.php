@@ -46,7 +46,7 @@ require_once('controller/productObjects.php');
                   <a href="freight-cost.php" class="btn btn-secondary float-left" >Freight Cost</a>
                 </td>
                 <td class="col-3"></td>
-                <td class="col-5">
+                <td class="col-5" >
                 <button type="submit" class="btn btn-primary float-right">Submit</button>
                 </td>
               </tr>
