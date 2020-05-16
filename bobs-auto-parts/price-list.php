@@ -90,9 +90,9 @@
 
                     //access multidimensional array like this
                     echo '<br/><p>Accessing Multidimensional Array</p>';
-                    echo '<p>Item 2 Description: ' . $item->Description . '</p>';
-                    echo '<p>Item 1 Price: ' . $item->Price . '</p>';
-                    echo '<p>Item 3 Code: ' . $item->Code . '</p>';
+                    echo '<p>Item 2 Description: ' . $item->description . '</p>';
+                    echo '<p>Item 1 Price: ' . $item->price . '</p>';
+                    echo '<p>Item 3 Code: ' . $item->code . '</p>';
 
                     //call function here to compare prices - usort can be used to utilize custom sorting
                     //usort(($items), 'compareItems');

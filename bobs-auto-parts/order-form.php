@@ -37,10 +37,10 @@
                                 echo '<tr class="row">';
 
                                 foreach ($items as $item) {
-                                    echo '<td class="col-5">' . $item->Description . '</td>';
-                                    echo '<td class="col-3">' . $item->Price . '</td>';
+                                    echo '<td class="col-5">' . $item->description . '</td>';
+                                    echo '<td class="col-3">' . $item->price . '</td>';
                                     echo '<td class="col-4">';
-                                    echo '<input type="number" class="form-control" name="' . $item->Code . '" maxlength="3" min="0" />';
+                                    echo '<input type="number" class="form-control" name="' . $item->code . '" maxlength="3" min="0" />';
                                     echo '</td>';
                                 }
                                 echo '</tr>';
