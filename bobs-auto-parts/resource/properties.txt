@@ -1,0 +1,1 @@
+VAT_PERCENT=1.12

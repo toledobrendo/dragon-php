@@ -23,6 +23,9 @@
                 <a href="bobs-auto-parts/order-form.php">Bobs Auto parts</a>
               </li>
               <li class="list-group-item">
+                <a href="bobs-auto-parts/view-orders.php">View Orders</a>
+              </li>
+              <li class="list-group-item">
                 <a href="price-list.php">Bobs Auto parts Price List</a>
               </li>
               <li class="list-group-item">

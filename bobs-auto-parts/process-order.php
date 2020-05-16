@@ -1,5 +1,6 @@
-<?php require_once("model/Product.php") ?>
+<?php require_once("service/Product.php") ?>
 <?php require_once("view-comp/header.php") ?>
+<?php require_once("service/order-service.php") ?>
           <h3 class="card-title">Order Result</h3>
           <?php
             echo "<p>Order Processed at ";
@@ -57,16 +58,40 @@
 
               echo "Amount exceed 500? ".($totalAmount > 500 ? "Yes" : "No")."<br/><br/>";
 
-              $vatableAmount = $totalAmount / 1.12;
+              @ define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
+
+              $VAT_VALUE = "";
+
+              $file = @ fopen(DOCUMENT_ROOT."/dragon-php/bobs-auto-parts/resource/properties.txt", "rb");
+              while(!feof($file)) {
+                $property = fgets($file, 999);
+                if ($property != "") {
+                  $text = $property;
+                }
+              };
+
+              for ($index=0; $index < strlen($text); $index++) {
+                if(is_numeric($text[$index]) || $text[$index] == "."){
+                  $VAT_VALUE = $VAT_VALUE.$text[$index];
+                }
+              }
+
+              echo "<p>VAT_VALUE = ".$VAT_VALUE."</p>";
+
+              $vatableAmount = $totalAmount / $VAT_VALUE;
               $valueAddedTax = $totalAmount - $vatableAmount;
               echo "VAT: Php $valueAddedTax<br/>";
               echo "VATable Amount: Php $vatableAmount<br/>";
+
+              saveOrder($product[0]->getProductQty(), $product[1]->getProductPrice(), $product[2]->getProductQty(), $totalAmount);
 
               echo 'Is $totalAmount string?'.(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
               echo 'Is $totalAmount set?'.(isset($totalAmount) ? 'Yes' : 'No').'<br/>';
               unset($totalAmount);
               echo 'Is $totalAmount set?'.(isset($totalAmount) ? 'Yes' : 'No').'<br/>';
             }
+
+            fclose($file);
 
           ?>
         </div>
