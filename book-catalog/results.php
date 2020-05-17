@@ -39,13 +39,13 @@
 				for($ctr = 0; $ctr < $resultCnt; $ctr++){
 					$row = $result->fetch_assoc();
 ?>
-					<div class="card col-4 mx-1">
+					<div class="card col-5 mx-1">
 						<div class="card-body">
 							<div class="row">
-								<div class="col-6">
+								<div class="col-5">
 									<img width="150px" height="200px" src="<?php echo $row['img_dir']; ?>">
 								</div>				
-								<div class="col-6">
+								<div class="col-4">
 									<h6><?php echo $row['title']; ?></h6>
 									<p>
 										By: <?php echo $row['author_name']; ?>
