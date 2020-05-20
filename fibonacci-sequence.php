@@ -30,7 +30,7 @@
 
 				<?php
 
-					$num = $_POST['num'];
+					$num = $_POST['num']; // Note: Insert a suppress warning in this line.
 
 					echo '<p> Sequence Length: '.$num.'<br/>';
 				  	
