@@ -32,7 +32,7 @@
 								<td>
 									<?php
 										$number = 0; //initial value before button click
-										$btnsubmit = @(($_POST['show']));
+										$btnsubmit = @(($_POST['show'])); //Note: Observe camel case on variable names
 
 										if (isset($btnsubmit)) {
 											$number = $_POST['seqlength']; //value after click, value changes depending on user input
