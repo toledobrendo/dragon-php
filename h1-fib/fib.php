@@ -24,7 +24,7 @@
             <!-- Get Length of the sequence -->
             <p class="card-text">Series Length:
               <?php
-              @$seqLength = (int) $_POST['seqLength']; //Surpress warnings becasue why not
+              @$seqLength = (int) $_POST['seqLength']; //Surpress warnings becasue why not. Note: Good choice on this.
               ?></p>
             <!-- Compute for the sequence -->
             <div class="d-flex align-content-between flex-wrap">
