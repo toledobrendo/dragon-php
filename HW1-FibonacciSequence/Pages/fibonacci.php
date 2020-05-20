@@ -48,6 +48,7 @@
                 <table class="table">
                     <tbody>
                         <?php
+//                          Note: Great design on this one
                             $num1 = 0;
                             $num2 = 1;
                             
