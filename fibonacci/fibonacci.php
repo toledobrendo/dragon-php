@@ -19,7 +19,7 @@
           <input type="number" name="length" min="0" maxLength="3" class="form-control">
           <button type="submit" class="btn btn-primary float-right" > Submit </button>
         </form>
-
+            <!--Note: Observe proper indention-->
 				<?php
           $length = @($_POST['length']);
 
