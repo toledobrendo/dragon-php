@@ -29,6 +29,7 @@
 			</form>
 
 				<?php
+//                  Note: Good job on this
 					$fiboLength = @($_POST['fibo-length']) ? $_POST['fibo-length'] : 0;
 					echo 'Sequence Length: ' .$fiboLength. '</br>';
 
