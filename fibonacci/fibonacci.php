@@ -18,7 +18,7 @@
 
 					<div class="d-flex align-content-between flex-wrap">
 						<?php
-							$seqLength = (int)$_POST['seqLength'] ? $_POST['seqLength'] : 0;
+							$seqLength = (int)$_POST['seqLength'] ? $_POST['seqLength'] : 0; // Note: Insert a suppress warning operator in this line.
 							$prev = 0;
 							$next = 1;
 							$sum = 0;
