@@ -27,6 +27,9 @@
           'Please try again later. '.$dbError, 1);
       }
 
+      // save to db: 'http://localhost/dragon-php/book-catalog/image/manila.jpg'
+      // save to db: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1562726234l/13496.jpg'
+
       $query = 'SELECT author.name as author_name, book.title, book.isbn
         FROM book
         INNER JOIN author

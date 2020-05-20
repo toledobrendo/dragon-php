@@ -30,6 +30,9 @@
               <li class="list-group-item">
                 <a href="bobs-auto-parts/view-orders.php">Bob's Auto Parts - Order List</a>
               </li>
+              <li class="list-group-item">
+                <a href="book-catalog/index.php">Book Catalog</a>
+              </li>
             </ul>
           </div>
         </div>

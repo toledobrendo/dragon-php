@@ -24,3 +24,6 @@ INSERT INTO book (title, isbn, author_id)
 VALUES
   ('Java for Professional Developers', '0-672-316123-8', 1),
   ('A Game of Thrones', '1-141-5143123-5', 2);
+
+ALTER TABLE book ADD COLUMN pic_url VARCHAR(255);
+UPDATE book SET pic_url = '/url.png' WHERE id = 1;
