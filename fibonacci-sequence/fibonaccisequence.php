@@ -15,6 +15,7 @@
   	<div class="container">
   		<div class="card">
   			<div class="card-body">
+<!--        Note: Observe proper indention and follow this naming convention for filenames (fibonacci-sequence.php)-->
          <form action="fibonaccisequence.php" method="post">
               <h1>Fibonacci Sequence</h1>
               <br>
