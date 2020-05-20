@@ -20,7 +20,8 @@
         <h3 class = "card title">Fibonacci Results</h3>
 
         <?php
-
+            // Note: Observe proper indention. Folder names must be in this format (assignment-h1).
+            // Button to go back missing, there were dead ends.
 					//for every total do this and the following
 					$fibNum = $_POST['fibNum'];
 
