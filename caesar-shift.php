@@ -28,7 +28,8 @@
 				<button type="submit" class="btn btn-primary float-left"> ENCRYPT MESSAGE </button> <br/> <br/> <br/>
 
 				<?php
-
+                    // Note: Initially have warnings all over the place
+                    // Empty key yields a warning
 					$key = $_POST['key'];
 
 					$message = strtoupper($_POST['message']);
