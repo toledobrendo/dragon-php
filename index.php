@@ -32,6 +32,10 @@
                 </li>
                 
                 <li class="list-group-item">
+                    <a href="iac-consulting/">iACADEMY Consulting</a>
+                </li>
+                
+                <li class="list-group-item">
                     <a href="book-catalog/index.php"\>Book Catalog</a>
                 </li>
                 
@@ -51,8 +55,10 @@
                 </li>
                 
                 <li class="list-group-item">
-                    <a href="iac-consulting/">iACADEMY Consulting</a>
+                    <a href="HW5-BookThumbnail/index.php">Book Thumbnail</a>
                 </li>
+                
+                
             </ul>
           </div>
         </div>
