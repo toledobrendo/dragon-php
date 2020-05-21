@@ -44,6 +44,7 @@
                             </tr>
                             <tr class="row">
                                 <?php
+                                    // Note: "Hello World" with 3 as key should yield "KHOOR ZRUOG" but yields "KHOOR ZAAAA"
                                     if (isset($_POST['submit'])) {
                                         $message = $_POST['message'] ? $_POST['message'] : 0;
                                         //make message an array
