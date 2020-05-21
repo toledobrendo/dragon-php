@@ -32,6 +32,10 @@
                 </li>
                 
                 <li class="list-group-item">
+                    <a href="book-catalog/index.php"\>Book Catalog</a>
+                </li>
+                
+                <li class="list-group-item">
                     <a href="HW1-FibonacciSequence/Pages/fibonacci.php">Fibonacci Sequence</a>
                 </li>
                 
