@@ -17,38 +17,37 @@
 				<h3 class="card-title"> Sequence Length </h3>
         <form action="fibonacci.php" method="POST">
           <input type="number" name="length" min="0" maxLength="3" class="form-control">
-          <button type="submit" class="btn btn-primary float-right" > Submit </button>
+        	<button type="submit" class="btn btn-primary float-right" > Submit </button>
         </form>
             <!--Note: Observe proper indention-->
-				<?php
-          $length = @($_POST['length']);
+						<?php
+							$length = @($_POST['length']);
 
-          if(!empty($length)) {
-            echo '<p> Series length: '.$length;
-            $fibo1 = 0;
-            $fibo2 = 1;
-            echo "<table width=1000px>";
-            echo "<tr>";
-            for($ite = 1; $ite <= $length; $ite+=1)
-            {
-              if($ite == 1) {
-                echo "<td>".$fibo1."</td>";
-              } else if ($ite == 2) {
-                echo "<td>".$fibo2."</td>";
-              } else {
-                $fibo3 = $fibo1 + $fibo2;
-                echo "<td>".$fibo3."</td>";
-                $fibo1 = $fibo2;
-                $fibo2 = $fibo3;
-              }
-              if(($ite%10) == 0) {
-                echo '</tr>';
-                echo "<tr >";
-              }
-            }
-            echo '</tr>';
-          }
-				?>
+							if(!empty($length)) {
+								echo '<p> Series length: '.$length;
+								$fibo1 = 0;
+								$fibo2 = 1;
+								echo "<table width=1000px>";
+								echo "<tr>";
+								for($ite = 1; $ite <= $length; $ite+=1) {
+									if($ite == 1) {
+									  echo "<td>".$fibo1."</td>";
+									} else if ($ite == 2) {
+									  echo "<td>".$fibo2."</td>";
+									} else {
+									  $fibo3 = $fibo1 + $fibo2;
+									  echo "<td>".$fibo3."</td>";
+									  $fibo1 = $fibo2;
+									  $fibo2 = $fibo3;
+									}
+									if(($ite%10) == 0) {
+									  echo '</tr>';
+									  echo "<tr >";
+									}
+								}
+								echo '</tr>';
+							}
+						?>
 			</div>
 		</div>
 	</div>
