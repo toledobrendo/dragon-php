@@ -41,7 +41,7 @@
     <div class="card col-4 mx-3">
       <div class="card-body">
         <div class="col-5">
-          <?php echo '<img src="'.$row['pic_url'].'" class="img-thumbnail img-fluid w-100 h-200 float-left mx-1 ">'; ?>
+          <?php echo '<img src="'.$row['pic_url'].'" class="img-thumbnail img-fluid float-left mx-1 " style="width: 100px; height: 150px;">'; ?>
         </div>
         <div class="col-12">
           <h6><?php echo $row['title']; ?></h6>
