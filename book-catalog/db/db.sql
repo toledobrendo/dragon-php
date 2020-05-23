@@ -36,3 +36,7 @@ WHERE isbn = '0-123-1234567-1';
 UPDATE books 
 SET pic_resource = 'http://localhost/dragon-php/book-catalog/images/game-of-thrones-book.png'
 WHERE isbn = '0-123-1234567-2'; 
+
+ALTER TABLE author 
+ADD CONSTRAINT un_author_name
+UNIQUE(name); 
