@@ -6,3 +6,9 @@ What's new this week?
 	> author-add.php
 
 	> process-author-add.php
+
+- Logs, IP logging
+	> log-service.php
+
+- HW6: Add Book (Book Catalog)
+	> Still adds duplicate author names / book titles

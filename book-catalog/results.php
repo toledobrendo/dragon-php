@@ -1,4 +1,7 @@
-<?php require_once('view-comp/header.php') ?>
+<?php 
+	require_once('view-comp/header.php');
+	require_once('service/log-service.php');
+ ?>
 
 <?php 
 	define('FIELDS', array(
@@ -41,6 +44,13 @@
  				WHERE '.FIELDS[$searchType].' LIKE \'%'.$searchTerm.'%\';';
  				// LIKE is case insensitive
 
+ 			// log (with its own function)
+ 			logMessage($query);
+
+ 			// log (without its own function)
+ 			// $documentRoot = $_SERVER['DOCUMENT_ROOT'];
+ 			// error_log($query, 3, $documentRoot.'../../apache/logs/info.txt');
+
  			// execute
  			$result = $db->query($query);
  			$resultCount = $result->num_rows;
@@ -51,7 +61,7 @@
  			echo '<div class="row">';
  			for($ctr = 0; $ctr < $resultCount; $ctr++) {
  				// fetch assoc takes the following result for manipulation, then the next, and so on
- 				$row = $result->fetch_assoc();
+ 				$row = $result->fetchassoc();
  				//echo $row['author_name'].'<br/>';
  	 ?>
 
