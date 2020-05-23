@@ -37,6 +37,8 @@
 								</td>
 
 								<?php
+                                    // Note: Variables should be in camelCase
+                                    // Empty key input yields a warning
 									$btnsubmit = @(($_POST['show']));
 
 									if (isset($btnsubmit)) {
