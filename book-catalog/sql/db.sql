@@ -25,4 +25,4 @@ ALTER TABLE book ADD COLUMN img_url VARCHAR(255);
 UPDATE book SET img_url = 'http://localhost/dragon-php/book-catalog/images/AGameOfThrones.jpg' WHERE id = 2;
 UPDATE book SET img_url = 'http://localhost/dragon-php/book-catalog/images/javabook.jpg' WHERE id = 1;
 
-
+ALTER TABLE  author ADD CONSTRAINT un_author_name UNIQUE (name);
