@@ -7,6 +7,10 @@ What's new this week?
 
 	> process-author-add.php
 
+	> book-add.php
+
+	> process-book-add.php
+
 - Logs, IP logging
 	> log-service.php
 
