@@ -32,7 +32,7 @@
 		    $result = $db->query($getAuthorIdQuery);
 		    $resultCount = $result->num_rows;
 
-		    // author does not exist in rhe db
+		    // author does not exist in the db
 		    if($resultCount == 0) {
 
 		    	// add new author into the author table
@@ -61,6 +61,7 @@
 		    $result = $db->query($getBookIdQuery);
 		    $resultCount = $result->num_rows;
 
+		    // book does not exist in the db
 		    if($resultCount == 0) {
 
 				// add the new book onto the database
