@@ -14,7 +14,7 @@
         if (!$searchType || !$searchTerm) {
             throw new Exception('You have not entered search details. Please go back and try again', 0);
         }
-        @$db = new mysqli('192.168.2.39:3306', 'user', 'asd123', 'php_lesson_db');
+        @$db = new mysqli('192.168.2.73:3306', 'user', 'asd123', 'php_lesson_db');
         $dberror = mysqli_connect_errno();
 
         if ($dberror) {
@@ -26,6 +26,8 @@
              INNER JOIN author
              ON book.author_id = author.id
              WHERE ' . FIELDS[$searchType] . ' LIKE \'%' . $searchTerm . '%\';';
+
+        logMessage($query);
 
         $result = $db->query($query);
 
@@ -56,5 +58,4 @@
     }
     ?>
 </div>
-
 <?php require_once 'view-comp/footer.php' ?>

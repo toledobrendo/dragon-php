@@ -55,12 +55,8 @@
                                         echo '<td class="col-12">RESULT: ';
                                         for ($i = 0; $i < count($message); $i++) {
                                             for ($j = 0; $j < $key; $j++) {
-                                                //if needle is found
-                                                if (array_search('Z', $message)) {
-                                                    $message[$i] = 'A';
-                                                } else {
+                                                    // modified code to comply with Note given
                                                     $message[$i]++;
-                                                }
                                             }
                                         }
 
