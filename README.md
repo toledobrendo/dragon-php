@@ -5,4 +5,4 @@ What's new this week?
 - MySQL DB Connection
 	> book-catalog
 
-- HW4: Images in Book Catalog search results
+- HW5: Images in Book Catalog search results
