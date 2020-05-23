@@ -14,6 +14,7 @@
   </head>
   <body>
     <!-- hello-world.php or hello_world.php -->
+    <!-- Note: Observe proper indention -->
     <div class="container">
       <div class="card">
         <div class="card-body">
