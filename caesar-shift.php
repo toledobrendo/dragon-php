@@ -30,7 +30,7 @@
 				<?php
                     // Note: Initially have warnings all over the place
                     // Empty key yields a warning
-					$key = $_POST['key'];
+					$key = @ $_POST['key']; // added supress warning
 
 					$message = strtoupper($_POST['message']);
 

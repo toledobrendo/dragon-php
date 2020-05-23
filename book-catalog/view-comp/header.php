@@ -24,6 +24,10 @@
 					<li class="nav-item <?php if(isActive('index.php')) echo 'active'; ?>">
 						<a class="nav-link" href="index.php">Book Search</a>
 					</li>
+					<li class="nav-item <?php if(isActive('index.php')) echo 'active'; ?>">
+						<a class="nav-link" href="index.php">Add Author</a>
+					</li>
+				</ul>
 	</div>
 
 	<div class="container">
