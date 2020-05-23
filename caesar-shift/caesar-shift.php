@@ -25,6 +25,8 @@
           <button type="submit" class="btn btn-primary" > Submit </button>
         </form>
 				<?php
+          // Note: Empty key input yields a warning
+          // Observe proper indention
           $message = @($_POST['message']);
           $key = @($_POST['key']);
 
