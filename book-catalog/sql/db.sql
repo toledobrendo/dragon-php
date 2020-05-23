@@ -28,4 +28,4 @@ VALUES
 
 ALTER TABLE book ADD COLUMN pic_url VARCHAR(255);
 UPDATE book SET pic_url = 'http://localhost/dragon-php/book-catalog/images/java_for_professional_developers.jpg' WHERE id = 1;
-UPDATE book SET pic_url = 'http://localhost/dragon-php/book-catalog/images/game_of_thrones.jpg' WHERE id = 2;
+UPDATE book SET pic_url = 'http://localhost/dragon-php/book-catalog/images/game_of_thrones' WHERE id = 2;

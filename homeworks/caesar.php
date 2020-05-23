@@ -15,13 +15,13 @@
 						<div class="row">
 							<p>Message</p>
 							<tr>
-								<input type="text" name="message" min="1" class="form-control"/>
+								<input type="text" name="message" min="1" class="form-control" required="" />
 							</tr>
 							<br>
 							<br>
 							<p>Key</p>
 							<tr>
-								<input type="number" name="key" min="1" class="form-control"/>
+								<input type="number" name="key" min="1" class="form-control" required="" />
 							</tr>
 							<br>
 							<br>
