@@ -15,18 +15,38 @@
   			if($dbError){
   				throw new Exception("DB CONNECTION ERROR");
   			}else{
-          $insertQuery = 'INSERT INTO author(name)
-              values '.$_POST['authorName'].'
-              WHERE NOT EXIST(
-                SELECT name FROM author WHERE name = '.$_POST['authorName'].'
-                )' ;
-          $result = $db->query($insertQuery);
-          echo $result;
-          if ($result) {
-            echo $db->affected_rows." author inserted to db.";
-          } else {
-            throw new Exception('ERROR: Author was not added db.');
+          $selectAuthor = 'SELECT name from author WHERE name="'.$authorName.'"';
+          $result = $db->query($selectAuthor);
+          $resultCnt = $result->num_rows;
+
+          if($resultCnt<1){
+            $insert = 'INSERT INTO author (name) values (?)';
+            $stmnt = $db->prepare($insert);
+            $stmnt->bind_param("s", $authorName);
+            $stmnt->execute();
+
+            if(!$stmnt){
+              throw new Exception('ERROR: Author was not added db.');
+            }else {
+              echo $db->affected_rows." author inserted to db.";
+            }
           }
+          else{
+            throw new Exception('Author already exists.');
+          }
+          $stmnt->close();
+          // $insertQuery = 'INSERT INTO author(name)
+          //     values '.$_POST['authorName'].'
+          //     WHERE NOT EXIST(
+          //       SELECT name FROM author WHERE name = '.$_POST['authorName'].'
+          //       )' ;
+          // $result = $db->query($insertQuery);
+          // echo $result;
+          // if ($result) {
+          //   echo $db->affected_rows." author inserted to db.";
+          // } else {
+          //   throw new Exception('ERROR: Author was not added db.');
+          // }
         }
       }
     } catch (Exception $e) {

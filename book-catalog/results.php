@@ -1,10 +1,13 @@
-<?php require_once('view-comp/header.php') ?>
+<?php
+	require_once('view-comp/header.php');
+	require_once('service/log-service.php');
+?>
 <div class="card-header">
 	Book Results
 </div>
 <div class="card-body">
-	
-<?php 
+
+<?php
 	define('FIELDS',array(
 		'author' => 'author.name',
 		'img_dir' => 'book.img_dir',
@@ -23,11 +26,13 @@
 			if($dbError){
 				throw new Exception("DB CONNECTION ERROR");
 			}else{
-				$selectQuery = 'SELECT author.name as author_name, book.img_dir, book.title,book.isbn 
-					FROM book 
+				$selectQuery = 'SELECT author.name as author_name, book.img_dir, book.title,book.isbn
+					FROM book
 					INNER JOIN author
 						ON author.id = book.author_id
 					WHERE '.FIELDS[$searchType].' LIKE \'%'.$searchTerm.'%\';';
+
+				logMessage($selectQuery);
 
 				$result = $db->query($selectQuery);
 				$resultCnt = $result->num_rows;
@@ -44,7 +49,7 @@
 							<div class="row">
 								<div class="col-5">
 									<img width="150px" height="200px" src="<?php echo $row['img_dir']; ?>">
-								</div>				
+								</div>
 								<div class="col-4">
 									<h6><?php echo $row['title']; ?></h6>
 									<p>
@@ -53,10 +58,10 @@
 										ISBN: <?php echo $row['isbn']; ?>
 									</p>
 								</div>
-							</div>	
+							</div>
 						</div>
 					</div>
-	<?php  
+	<?php
 				}
 			}
 		}
@@ -65,7 +70,7 @@
 		echo $e->getMessage();
 	}
 	?>
-	
+
 	<br>
 	<a class="btn btn-secondary my-2" href="index.php">BACK</a>
 </div>
