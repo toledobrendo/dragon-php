@@ -34,6 +34,7 @@
 					<?php
 					echo "Result: ";
 
+					// Note: Empty key input yields a warning
 					if(isset($_POST['submit'])){
 						$result = ""; 
 
