@@ -25,7 +25,7 @@
                 <a href="bob-auto-parts/order-form.php">Bob's Auto Parts</a>
               </li>
               <li class="list-group-item">
-                <a href="fibonacci-sequence/fibonaccisequence.php">Fibonacci Sequence</a>
+                <a href="fibonacci-sequence/fibonacci-sequence.php">Fibonacci Sequence</a>
               </li>
               <li class="list-group-item">
                 <a href="bob-auto-parts/price-list.php">Bob's Auto Parts - Price List</a>
