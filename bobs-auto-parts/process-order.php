@@ -1,6 +1,9 @@
 <?php 
 	require_once('view-comp/bobs-header.php');
-	require_once('objects/objects.php')
+	require_once('objects/objects.php');
+	require_once('services/vat_service.php');
+
+	define('VAT_AMOUNT', getVatRate());
 ?>
 
 <h1 class="card-title"> Bob's Auto Parts </h1>
@@ -64,8 +67,8 @@
 		// echo 'Oil: PHP '.$oilAmount.'<br/>';
 		// echo 'Spark Plugs: PHP '.$sparkAmount.'<br/><br/>';
 
-		$vatable = $totalAmount / 1.12;
-		$vat = $vatable * 0.12;
+		$vatable = $totalAmount / (1 + VAT_AMOUNT);
+		$vat = $vatable * VAT_AMOUNT;
 		$total = $vat + $vatable;
 
 		echo '<b>VATable Amount:</b> PHP '.$vatable.'<br/>';
