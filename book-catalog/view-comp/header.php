@@ -22,8 +22,8 @@
 				<li class="nav-item <?php if(isActive('index.php')) echo 'active'; ?>">
 					<a href="index.php" class="nav-link">Book Search</a>
 				</li>
-				<li class="nav-item <?php if(isActive('index.php')) echo 'active'; ?>">
-					<a href="index.php" class="nav-link">Add Author</a>
+				<li class="nav-item <?php if(isActive('author-add.php')) echo 'active'; ?>">
+					<a href="author-add.php" class="nav-link">Add Author</a>
 				</li>
 			</ul>
 		</div>
@@ -31,5 +31,3 @@
 	<!-- body -->
 	<div class="container">
 		<div class="card my-3">
-			<div class="card-header">Search Book</div>
-			<div class="card-body">

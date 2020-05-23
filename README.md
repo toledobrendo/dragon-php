@@ -2,7 +2,7 @@ SEG22 - dragon-php
 JM Mandigma
 
 What's new this week?
-- MySQL DB Connection
-	> book-catalog
+- Prepared Statements
+	> author-add.php
 
-- HW5: Images in Book Catalog search results
+	> process-author-add.php
