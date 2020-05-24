@@ -38,6 +38,8 @@
             //close query
             $stmtAuthor->close();
 
+            //close db connection
+            mysqli_close($db);
         } catch (Exception $e) {
             error_log($e->getMessage());
             echo $e->getMessage();

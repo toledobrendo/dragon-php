@@ -6,7 +6,7 @@
     <form action="process-author-add.php" method="POST">
         <div class="form-group">
             <label for="authorName">Author Name</label>
-            <input type="text" name="authorName" id="authorName" class="form-control" placeholder="Author Name" />
+            <input type="text" name="authorName" id="authorName" class="form-control" placeholder="Author Name" required />
         </div>
         <div>
             <button type="submit" class="btn btn-primary">SUBMIT</button>

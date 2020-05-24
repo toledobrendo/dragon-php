@@ -1,6 +1,6 @@
 <?php
-    require_once 'service/tracker-service.php';
-    require_once 'service/log-service.php';
+require_once 'service/tracker-service.php';
+require_once 'service/log-service.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
                     <a href="author-add.php" class="nav-link">Add Author</a>
                 </li>
                 <li class="nav-item <?php if (isActive('book-add.php')) echo 'active'; ?>">
-                    <a href="book-add.php" class="nav-link">Book Search</a>
+                    <a href="book-add.php" class="nav-link">Add Book</a>
                 </li>
             </ul>
         </div>

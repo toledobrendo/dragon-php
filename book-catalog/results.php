@@ -24,7 +24,7 @@
         $query = 'SELECT image, author.name AS author_name, book.title, book.isbn
              FROM book
              INNER JOIN author
-             ON book.author_id = author.id
+             ON book.author_name = author.name
              WHERE ' . FIELDS[$searchType] . ' LIKE \'%' . $searchTerm . '%\';';
 
         logMessage($query);
@@ -52,6 +52,8 @@
             </div>
     <?php
         }
+
+        mysqli_close($db);
     } catch (Exception $e) {
         echo $e->getMessage();
         echo '<br/><a href="javascript:history.go(-1)" class="btn btn-secondary my-3">GO BACK</a>';
