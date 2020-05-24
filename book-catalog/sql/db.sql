@@ -4,18 +4,20 @@ USE php_lesson_db;
 
 CREATE TABLE IF NOT EXISTS author (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255) NOT NULL,
+    UNIQUE KEY unique_name (name)
 );
 
 ALTER TABLE `author` ADD INDEX( `name`);
 
 CREATE TABLE IF NOT EXISTS book (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255),
-    isbn VARCHAR(255),
-    author_name VARCHAR(255),
-    image VARCHAR(255),
-    FOREIGN KEY (author_name) REFERENCES author(name)
+    title VARCHAR(255) NOT NULL,
+    isbn VARCHAR(255) NOT NULL,
+    author_name VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    FOREIGN KEY (author_name) REFERENCES author(name),
+    UNIQUE KEY unique_title (title)
 );
 
 ALTER TABLE book ADD image varchar(255) AFTER isbn

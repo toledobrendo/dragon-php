@@ -9,7 +9,6 @@
     $searchType = $_POST['searchType'];
     $searchTerm = $_POST['searchTerm'];
 
-
     try {
         if (!$searchType || !$searchTerm) {
             throw new Exception('You have not entered search details. Please go back and try again', 0);
@@ -22,12 +21,10 @@
         }
 
         $query = 'SELECT image, author.name AS author_name, book.title, book.isbn
-             FROM book
-             INNER JOIN author
-             ON book.author_name = author.name
-             WHERE ' . FIELDS[$searchType] . ' LIKE \'%' . $searchTerm . '%\';';
-
-        logMessage($query);
+            FROM book
+            INNER JOIN author
+            ON book.author_name = author.name
+            WHERE ' . FIELDS[$searchType] . ' LIKE \'%' . $searchTerm . '%\';';
 
         $result = $db->query($query);
 
@@ -52,6 +49,8 @@
             </div>
     <?php
         }
+
+        $result->close();
 
         mysqli_close($db);
     } catch (Exception $e) {

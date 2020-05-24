@@ -1,6 +1,6 @@
 <?php require_once 'view-comp/header.php'; ?>
 <div class="card-header">
-    <h3 class="card-title">Result:</h3>
+    <h3 class="card-title">Add Book Result:</h3>
 </div>
 <div class="card-body">
     <?php
@@ -21,48 +21,72 @@
                 throw new Exception('Error: could not connect to database. Please try again later.' . ' ' . $dberror, 1);
             }
 
-            $queryAuthor = 'INSERT INTO author (name) VALUES (?)';
-            $stmtAuthor = $db->prepare($queryAuthor);
-            $stmtAuthor->bind_param("s", $authorName);
-            $stmtAuthor->execute();
+            //start of author block
+            //check for author duplicates
+            $queryAuthorDuplicate = 'SELECT name AS author_name FROM author WHERE name = ?';
+            $stmtAuthorDuplicate = $db->prepare($queryAuthorDuplicate);
+            $stmtAuthorDuplicate->bind_param("s", $authorName);
+            $stmtAuthorDuplicate->execute();
+            $authorDuplicateResult = $stmtAuthorDuplicate->fetch();
+            logMessage($authorDuplicateResult);
 
-            $authorAffectedRows = $stmtAuthor->affected_rows;
-            if($authorAffectedRows>0){
-                echo $authorAffectedRows." author inserted into database.";
+            if ($authorDuplicateResult == $authorName) {
+                echo 'Author: ' . $authorName . " found. Inserting Book.";
             } else {
-                throw new Exception('Error: the author was not added.');
+                $queryAuthor = 'INSERT INTO author (name) VALUES (?)';
+                logMessage($queryAuthor);
+
+                $stmtAuthor = $db->prepare($queryAuthor);
+                $stmtAuthor->bind_param("s", $authorName);
+
+                $stmtAuthor->execute();
+
+                $authorAffectedRows = $stmtAuthor->affected_rows;
+
+                if($authorAffectedRows>0){
+                    echo $authorAffectedRows." author inserted into database.";
+                } else {
+                    throw new Exception('Error: the author was not added.');
+                }
+                $stmtAuthor->close();
             }
+            $stmtAuthorDuplicate->close();
+            //end of author block
 
-            $queryBookAuthor = 'SELECT name as author_name FROM author WHERE name = "'.$authorName.'"';
+            //start of book block
+            $queryBookDuplicate = 'SELECT title FROM book WHERE title = ?';
+            logMessage($queryBookDuplicate);
 
-            $authorResult = $db->query($queryBookAuthor);
-            $stmtAuthorName = $authorResult->fetch_assoc();
+            $stmtBookDuplicate = $db->prepare($queryBookDuplicate);
+            $stmtBookDuplicate->bind_param("s", $bookTitle);
+            $stmtBookDuplicate->execute();
+            $bookDuplicateResult = $stmtBookDuplicate->fetch();
 
-            $queryBook = 'INSERT INTO book (title, isbn, author_name, image) VALUES (?,?,?,?)';
-
-            logMessage($queryAuthor);
-            logMessage($queryBookAuthor);
-            logMessage($queryBook);
-
-            $stmtBook = $db->prepare($queryBook);
-            $stmtBook->bind_param("ssss", $bookTitle, $isbn, $stmtAuthorName['author_name'], $coverImage);
-
-            $stmtBook->execute();
-
-
-            $bookAffectedRows = $stmtBook->affected_rows;
-            if($bookAffectedRows>0){
-                echo $bookAffectedRows." book inserted into database.";
+            if ($bookDuplicateResult == $bookTitle) {
+                echo 'Book: ' . $bookTitle . " is already in database.";
             } else {
-                throw new Exception('Error: the book was not added.');
-            }
+                $queryBook = 'INSERT INTO book (title, isbn, author_name, image) VALUES (?,?,?,?)';
+                logMessage($queryBook);
 
-            $stmtAuthor->close();
-            $stmtBook->close();
+                $stmtBook = $db->prepare($queryBook);
+                $stmtBook->bind_param("ssss", $bookTitle, $isbn, $authorName, $coverImage);
+                $stmtBook->execute();
+
+                $bookAffectedRows = $stmtBook->affected_rows;
+                if($bookAffectedRows>0){
+                    echo $bookAffectedRows." book inserted into database.";
+                } else {
+                    throw new Exception('Error: the book was not added.');
+                }
+                $stmtBook->close();
+            }
+            $stmtBookDuplicate->close();
+            //end of book block
 
             mysqli_close($db);
         } catch (Exception $e) {
             echo $e->getMessage();
+            error_log($e->getMessage());
             echo '<br/><a href="javascript:history.go(-1)" class="btn btn-secondary my-3">GO BACK</a>';
         }
     ?>

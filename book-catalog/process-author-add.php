@@ -18,21 +18,32 @@
                 throw new Exception('Error: could not connect to database. Please try again later.' . ' ' . $dberror, 1);
             }
 
+            $queryDuplicate = 'SELECT name FROM author WHERE name = ?';
             $queryAuthor = 'INSERT INTO author (name) VALUES (?)';
             logMessage($queryAuthor);
 
             //prepare and bind query
+            $stmtDuplicate = $db->prepare($queryDuplicate);
             $stmtAuthor = $db->prepare($queryAuthor);
+
+            $stmtDuplicate->bind_param("s", $authorName);
             $stmtAuthor->bind_param("s", $authorName);
 
             //execute query
-            $stmtAuthor->execute();
+            $stmtDuplicate->execute();
+            $duplicateResult = $stmtDuplicate->fetch();
 
-            $affectedRows = $stmtAuthor->affected_rows;
-            if($affectedRows>0){
-                echo $affectedRows . " author inserted into database.";
+            if($duplicateResult==$authorName){
+                echo 'Author: '.$authorName. " is already in database.";
             } else {
-                throw new Exception('Error: the author was not added.');
+                $stmtAuthor->execute();
+
+                $affectedRows = $stmtAuthor->affected_rows;
+                if ($affectedRows > 0) {
+                    echo $affectedRows . " author inserted into database.";
+                } else {
+                    throw new Exception('Error: the author was not added.');
+                }
             }
 
             //close query
