@@ -8,6 +8,10 @@
 
 	define("PROPERTIES_FILE", $_SERVER['DOCUMENT_ROOT']."/dragon/dragon-php/bobs-auto-parts/resource/properties.txt");
 	define("VAT_PERCENT", getValueFromFile(PROPERTIES_FILE, "VAT_PERCENT"))
+
+    // Warning: feof() expects parameter 1 to be resource, boolean given in C:\xampp\htdocs\dragon-php\bobs-auto-parts\service\data-extraction.php on line 4
+    //
+    // Warning: fgets() expects parameter 1 to be resource, boolean given in C:\xampp\htdocs\dragon-php\bobs-auto-parts\service\data-extraction.php on line 5
 ?>
 	<h1 class="card-title"> Bob's Auto Parts </h1>
 	<br>
