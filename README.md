@@ -5,8 +5,7 @@
 
 ## Reworks the Following
 - reworked Book Catalog:
-   * remade author and book tables to have *UNIQUE* values
-   * [Add Book Process](book-catalog/process-book-add.php) and [Add Author Process](book-catalog/process-author-add.php) now check for duplicates
+   * closed `$stmtDuplicate` query on [Add Author Process](book-catalog/process-author-add.php)
 
 ## Removed the Following
 - none

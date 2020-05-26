@@ -45,6 +45,7 @@
                     throw new Exception('Error: the author was not added.');
                 }
             }
+            $stmtDuplicate->close();
 
             //close query
             $stmtAuthor->close();
