@@ -15,6 +15,7 @@
 	$tires->__set('description', 'tires');
 	$tires->__set('code', 'TIR');
 
+	// Note: Should be in camelCase
 	$sparkplugs = new Product();
 	$sparkplugs->__set('item', "Spark Plugs");
 	$sparkplugs->__set('name', "sparkQty");
