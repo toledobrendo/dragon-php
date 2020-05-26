@@ -12,6 +12,7 @@
               </thead>
               <tbody>
                 <?php
+                  // This could be in a separate php script
                   $products = array(
                     new TireProduct(),
                     new OilProduct(),
