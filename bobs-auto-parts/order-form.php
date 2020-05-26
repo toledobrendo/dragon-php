@@ -17,6 +17,7 @@
                         <tbody>
                             <?php
                                 // Note: Class variables should be in camelCase. Code, Description and Price are undeclared in product.php
+                                // Note: These objects should be discoverable in process-order.php
                                 $productOil = new Product();
                                 $productOil->code = "OIL";
                                 $productOil->description = "Oil";

@@ -3,3 +3,4 @@
 18:27 9th May 2020	 Tires: 8	 Oil: 7	 Spark Plugs: 9	 Total Price: $1420	 VAT Amount: 0.12
 14:29 16th May 2020	 Tires: 0	 Oil: 0	 Spark Plugs: 0	 Total Price: $0	 VAT Amount: 0.12
 14:30 16th May 2020	 Tires: 3	 Oil: 2	 Spark Plugs: 4	 Total Price: $520	 VAT Amount: 0.12
+21:57 26th May 2020	 Tires: 2	 Oil: 1	 Spark Plugs: 3	 Total Price: $340	 VAT Amount: 0.12
