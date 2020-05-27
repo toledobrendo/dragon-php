@@ -16,14 +16,13 @@
 	$tires->__set('description', 'tires');
 	$tires->__set('code', 'TIR');
 
-	// Note: Must be in camelCase
-	$sparkplugs = new Product();
-	$sparkplugs->__set('item', "Spark Plugs");
-	$sparkplugs->__set('name', "sparkQty");
-	$sparkplugs->__set('price', 4);
-	$sparkplugs->__set('description', 'spark plugs');
-	$sparkplugs->__set('code', 'SPK');
+	$sparkPlugs = new Product();
+	$sparkPlugs->__set('item', "Spark Plugs");
+	$sparkPlugs->__set('name', "sparkQty");
+	$sparkPlugs->__set('price', 4);
+	$sparkPlugs->__set('description', 'spark plugs');
+	$sparkPlugs->__set('code', 'SPK');
 
-	$items = array($oil, $tires, $sparkplugs);
+	$items = array($oil, $tires, $sparkPlugs);
 
 ?>
