@@ -1,3 +1,4 @@
+<!-- Note: File name should be in "this-format.php" or "this_format.php" -->
 <!DOCTYPE html>
 <html>
 <head>
