@@ -7,6 +7,8 @@
 <form action="process-order.php" method="post">
 
 <?php
+
+  // Note: These objects should be discoverable in process-order.php
   $tires = new Product();
   $tires->name = 'Tires';
   $tires->price = 100;
