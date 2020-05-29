@@ -1,4 +1,5 @@
 <?php 
+	require_once("service/log-service.php");
 	require_once("view-comp/header.php");
 ?>
 
@@ -35,6 +36,7 @@
 					WHERE '. FIELDS[$searchType] .' LIKE \'%'.$searchTerm.'%\';';
  
 			// echo $query;
+			logMessage($query);
 
 			$result = $db->query($query);
 

@@ -32,9 +32,9 @@
         // }
 
         //Query by prepared statements
-        $query = 'INSERT INTO author (name) values (?,?)';
+        $query = 'INSERT INTO author (name) values (?)';
         $stmt = $db->prepare($query);
-        $stmt->bind_param("is", 1000, $authorName);
+        $stmt->bind_param("s", $authorName);
         $stmt->execute();
 
         $affected_rows = $stmt->affected_rows;
@@ -46,6 +46,7 @@
 
         $stmt->close();
       } catch (Exception $e){
+        // error_log($e->getMessage());
           echo $e->getMessage();
       }    
     ?>
