@@ -46,7 +46,7 @@
 							</tr>
 						</tbody>
 					</table>
-				</form> 
+				</form>
 			</div>
 		</div>
 	</div>

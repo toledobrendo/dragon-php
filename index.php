@@ -18,7 +18,7 @@
 							<a href="hello-world.php">Hello World</a>
 						</li>
 						<li class="list-group-item">
-							<a href="bobs-auto-parts/order-form.php">Hello World</a>
+							<a href="bobs-auto-parts/order-form.php">Bob's auto parts - Ordering</a>
 						</li>
 
 					</ul>
