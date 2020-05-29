@@ -37,17 +37,17 @@
 
 		    	// add new author into the author table
 			    $addAuthorQuery = 'INSERT INTO author (name) values (?)';
-			    $authorstmt = $db->prepare($addAuthorQuery);
-			    $authorstmt->bind_param("s", $authorName);
-			    $authorstmt->execute();
+			    $authorStmt = $db->prepare($addAuthorQuery);
+			    $authorStmt->bind_param("s", $authorName);
+			    $authorStmt->execute();
 
 			    // echo the result to the user
-			    $authorAffectedRows = $authorstmt->affected_rows;
+			    $authorAffectedRows = $authorStmt->affected_rows;
 			    if ($authorAffectedRows < 0) {
 			      throw new Exception('Error: The author was not added.');
 			    }
 
-			    $authorstmt->close();
+			    $authorStmt->close();
 
 			    // get the id of the author that was newly inserted
 		    	$getAuthorIdQuery = 'SELECT id FROM author WHERE name = "'.$authorName.'"';
@@ -66,19 +66,19 @@
 
 				// add the new book onto the database
 				$addBookQuery = 'INSERT INTO book (title, author_id, isbn, image_src) values (?, ?, ?, ?)';
-				$bookstmt = $db->prepare($addBookQuery);
-				$bookstmt->bind_param("siss", $bookTitle, $row['id'], $isbn, $imageURL);
-				$bookstmt->execute();
+				$bookStmt = $db->prepare($addBookQuery);
+				$bookStmt->bind_param("siss", $bookTitle, $row['id'], $isbn, $imageURL);
+				$bookStmt->execute();
 
 				// echo the result of this to the user
-				$bookAffectedRows = $bookstmt->affected_rows;
+				$bookAffectedRows = $bookStmt->affected_rows;
 				if ($bookAffectedRows > 0) {
 					echo $bookAffectedRows." book was successfully inserted into the database.";
 				} else {
 					 throw new Exception('Error: The book was not added.');
 				}
 
-				$bookstmt->close();
+				$bookStmt->close();
 
 			} else {
 				throw new Exception('Unable to add book. The book you entered is already in the database.');
