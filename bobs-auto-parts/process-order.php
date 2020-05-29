@@ -1,6 +1,7 @@
 <?php
     require_once 'view-comp/header.php';
     require_once 'service/save-order.php';
+    require_once 'model/product.php';
 ?>
                 <h3 class="card-title">Order Result</h3>
                     <?php
@@ -12,6 +13,25 @@
                         $oilQty = $_POST['OIL']?$_POST['OIL'] :0;
                         $sparkQty = $_POST['SPK']?$_POST['SPK'] :0;
                         $totalQty = $tireQty + $oilQty + $sparkQty;
+
+                        //object declaration block
+                        $productOil = new Product();
+                        $productOil->code = "OIL";
+                        $productOil->description = "Oil";
+                        $productOil->price = 50;
+
+                        $productTire = new Product();
+                        $productTire->code = "TIR";
+                        $productTire->description = "Tires";
+                        $productTire->price = 100;
+
+                        $productSpark = new Product();
+                        $productSpark->code = "SPK";
+                        $productSpark->description = "Spark Plugs";
+                        $productSpark->price = 30;
+
+                        $items = array($productOil, $productTire, $productSpark);
+                        //end of object declaration block
 
                         $find = $_POST['find'];
 
