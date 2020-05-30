@@ -1,4 +1,10 @@
-<!doctype html>
+<?php
+  session_start();
+
+  if (!isset($_SESSION['username'])) {
+    header('Location: login.php?error=Unauthorized access');
+  }
+?>
 <html lang="en">
   <head>
     <title>Title</title>
@@ -8,26 +14,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/login.css"/>
   </head>
   <body>
-    <form class="form-signin" action="process-login.php" method="POST">
-      <h4>Please sign-in</h4>
-      <input type="text" id="username" name="username" class="form-control"
-        placeholder="Username" required autofocus/>
-      <input type="password" id="password" name="password" class="form-control"
-        placeholder="Password" required/>
-      <?php if (isset($_GET['error'])) { ?>
-        <div class="alert alert-danger">
-          <?php echo $_GET['error']; ?>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                Hello <?php echo $_SESSION['username']; ?>. <a href="process-logout.php">Logout</a>?
+            </div>
         </div>
-      <?php } ?>
-      <div class="row">
-        <a class="btn btn-lg btn-success btn-block col-6" href="register.php">Register</a>
-        <button class="btn btn-lg btn-primary col-6" type="submit">Log In</button>
-      </div>
-    </form>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
