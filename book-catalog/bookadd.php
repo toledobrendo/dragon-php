@@ -22,7 +22,7 @@
 		</div>
 		<div class="form-group">
 			<label for="imageURL">Enter Image URL</label>
-			<input id="imageURL" name="imageurl" type="text" class="form-control" required/>
+			<input id="imageURL" name="url" type="text" class="form-control" required/>
 		</div>
 
 		<div>
