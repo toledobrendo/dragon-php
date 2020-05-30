@@ -2,17 +2,16 @@ SEG22 - dragon-php
 JM Mandigma
 
 What's new this week?
-- Prepared Statements
-	> author-add.php
+- Authentication
+	> login.php
 
-	> process-author-add.php
+	> process-login.php
 
-	> book-add.php
+	> process-logout.php
 
-	> process-book-add.php
+	> register.php
 
-- Logs, IP logging
-	> log-service.php
+	> process-register.php
 
 - HW6: Add Book (Book Catalog)
 	> Still adds duplicate author names / book titles
