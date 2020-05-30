@@ -1,0 +1,8 @@
+17:07 30th May 2020----------
+>> 1		Tire		@ 100 Php each
+>> 2		Oil		@ 20 Php each
+>> 3		Spark Plug		@ 50 Php each
+17:07 30th May 2020----------
+>> 4		Tire		@ 100 Php each
+>> 2		Oil		@ 20 Php each
+>> 1		Spark Plug		@ 50 Php each

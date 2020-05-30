@@ -3,7 +3,7 @@
   Add Book
 </div>
 <div class="card-body">
-  <form action="process-author-add.php" method="post">
+  <form action="process-book-add.php" method="post">
     <div class="form-group">
       <label for="bookTitle">Book Title</label>
       <input id="bookTitle" name="bookTitle" class="form-control" type="text"/>

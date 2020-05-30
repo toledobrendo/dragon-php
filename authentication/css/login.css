@@ -1,0 +1,10 @@
+.form-signin {
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin input {
+  margin-bottom: 10px;
+}

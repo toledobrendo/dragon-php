@@ -20,7 +20,7 @@
 
       // 127.0.0.1 = localhost
       //3306 = mysql
-      @ $db = new mysqli('127.0.0.1:3306', 'student', 'b00kcatal0g', 'php_lesson_db');
+      @ $db = new mysqli('127.0.0.1:3306', 'student', '123qwe', 'php_lesson_db');
 
       //Checking if there are errors in connecting to database
       $dbError = mysqli_connect_errno();

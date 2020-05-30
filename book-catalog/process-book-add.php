@@ -11,40 +11,71 @@
     $picURL = $_POST['pic_url'];
 
     try{
-      if (!$bookTitle || !$authorName || !$isbn || $picURL) {
+      if (!$bookTitle || !$authorName || !$isbn || !$picURL) {
         throw new Exception('Book details are not complete. Please try again.');
       }
 
-      @ $db = new mysqli('127.0.0.1:3306', 'student', 'b00kcatal0g', 'php_lesson_db');
+      @ $db = new mysqli('127.0.0.1:3306', 'student', '123qwe', 'php_lesson_db');
 
       $dbError = mysqli_connect_errno();
       if ($dbError) {
         throw new Exception('Error: Could not connect to database. Please try again later.');
       }
 
-      //First check if author is legit
-      $selectQuery = 'SELECT name as author_name
-        FROM author';
+      //Making sure there will be no SQL injection
+      $bookTitle = $db->real_escape_string($bookTitle);
+      $authorName = $db->real_escape_string($authorName);
+      $isbn = $db->real_escape_string($isbn);
+      $picURL = $db->real_escape_string($picURL);
 
-      //If legit, then proceed with adding. Else, error.
+      $authorID = 0; //Should be overriden later
 
-      // $authorName = $db->real_escape_string($authorName);
+      //First check if author exist in table
+      //Select the author's name in the author table
+      $selectAuthorQuery = 'select * from author where name = ?';
+      $selectAuthorStmnt = $db->prepare($selectAuthorQuery);
+      $selectAuthorStmnt->bind_param('s', $authorName);
+      $selectAuthorStmnt->execute();
+      $authorExistResult = $selectAuthorStmnt->get_result();
+
+      $authorResultCount = $authorExistResult->num_rows;
+      if ($authorResultCount > 0) {
+        //If already exists, get authorID
+        $authorRow = $authorExistResult->fetch_assoc();
+        $authorID = $authorRow['id'];
+      } else {
+        //else, add author then get authorID
+        $addAuthorQuery = 'insert into author (name) values (?)';
+        $addAuthorstmt = $db->prepare($addAuthorQuery);
+        $addAuthorstmt->bind_param("s", $authorName);
+        $addAuthorstmt->execute();
+        $addAuthorstmt->close();
+
+        //select the author again for the id
+        $reselectAuthorStmnt = $db->prepare($selectAuthorQuery);
+        $reselectAuthorStmnt->bind_param('s', $authorName);
+        $reselectAuthorStmnt->execute();
+        $authorExistResult = $selectAuthorStmnt->get_result();
+
+        $authorRow = $authorExistResult->fetch_assoc();
+        $authorID = $authorRow['id'];
+        $reselectAuthorStmnt->close();
+      }
+      $selectAuthorStmnt->close();
 
       // Query by prepared statements
-      $query = 'insert into author (name) values (?)';
-      $stmt = $db->prepare($query);
-      $stmt->bind_param("s", $authorName);
-      $stmt->execute();
+      $addBookQuery = 'insert into book (title, isbn, author_id, pic_url) values (?, ?, ?, ?)';
+      $addBookStmt = $db->prepare($addBookQuery);
+      $addBookStmt->bind_param("ssis", $bookTitle, $isbn, $authorID, $picURL);
+      $addBookStmt->execute();
 
-      $affectedRows = $stmt->affected_rows;
+      $affectedRows = $addBookStmt->affected_rows;
       if ($affectedRows > 0) {
-        echo $affectedRows." author inserted into the database.";
+        echo $affectedRows." book inserted into the database.";
       } else {
-        throw new Exception('Error: The author was not added.');
-
+        throw new Exception('Error: The book was not added.');
       }
-
-      $stmt->close();
+      $addBookStmt->close();
 
     } catch (Exception $e) {
       echo $e->getMessage();
@@ -52,6 +83,6 @@
   ?>
 </div>
 <div class="card-footer">
-  <a class="btn btn-secondary" href="author-add.php">Back</a>
+  <a class="btn btn-secondary" href="book-add.php">Back</a>
 </div>
 <?php require_once('view/footer.php'); ?>
