@@ -33,6 +33,9 @@
               <li class="list-group-item">
                 <a href="book-catalog/index.php">Book Catalog</a>
               </li>
+              <li class="list-group-item">
+                <a href="authentication/index.php">Authentication</a>
+              </li>
             </ul>
           </div>
         </div>

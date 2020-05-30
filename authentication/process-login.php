@@ -22,7 +22,9 @@
 
     $query = 'select * from user_info where username = ? and password = ? and active = ?';
     $stmt = $db->prepare($query);
-    $stmt->bind_param('ssi', $username, $password, $isActive);
+
+    $hashedPassword = hash('sha512', $password);
+    $stmt->bind_param('ssi', $username, $hashedPassword, $isActive);
     $stmt->execute();
     $result = $stmt->get_result();
 
