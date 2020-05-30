@@ -1,5 +1,4 @@
 <?php
-// Try to maintain a consistent naming convention
 require_once('view-bob/header.php');
 require_once('controller/productObjects.php');
  ?>

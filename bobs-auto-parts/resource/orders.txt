@@ -56,5 +56,3 @@
 08:29, 16th May 2020	2 tires	3 oil	1 spark plugs	PHP 1230
 08:29, 16th May 2020	0 tires	0 oil	0 spark plugs	PHP 0
 08:29, 16th May 2020	0 tires	0 oil	0 spark plugs	PHP 0
-22:10, 26th May 2020	2 tires	3 oil	1 spark plugs	PHP 1230
-22:10, 26th May 2020	2 tires	3 oil	1 spark plugs	PHP 1230
