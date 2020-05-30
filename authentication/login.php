@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <?php
-	// change to HTTPS 
+	// change to HTTPS (more secure, slower)
 	if($_SERVER['HTTPS'] != 'on') {
 		header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 		exit;
 	}
+
+	// back to HTTP
+	// if($_SERVER['HTTPS'] == 'on') {
+	// 	header('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+	// 	exit;
+	// }
  ?>
 <html>
 	<head>

@@ -22,7 +22,9 @@
 		// search if the login credentials exist in db
 		$query = 'SELECT * FROM user_info WHERE username = ? AND password = ?';
 		$stmt = $db->prepare($query);
-		$stmt->bind_param("ss", $username, $password);
+		$hashPassword = hash('sha512', $password);
+		//$isActive = true;
+		$stmt->bind_param("ss", $username, $hashPassword);
 		$stmt->execute();
 
 		$result = $stmt->get_result();

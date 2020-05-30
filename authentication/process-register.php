@@ -32,9 +32,12 @@
 				 				throw new Exception('Could not connect to database. Try again. Error '.$dbError, 1);
 				 			}
 
-				 			$query = "INSERT INTO user_info (username, password) VALUES (?,?)";
+				 			$query = "INSERT INTO user_info (username, password, isActive) VALUES (?,?,?)";
 				 			$stmt = $db->prepare($query);
-				 			$stmt->bind_param("ss", $username, $password);
+				 			
+				 			$hashPassword = hash('sha512', $password);
+				 			$isActive = true;
+				 			$stmt->bind_param("ssi", $username, $hashPassword, $isActive);
 				 			$stmt->execute();
 
 				 			echo "You've successfully registered a new account";

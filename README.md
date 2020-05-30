@@ -14,3 +14,5 @@ What's new this week?
 	> process-register.php
 
 - HTTPS
+
+- Hashing (password)
