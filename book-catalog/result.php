@@ -1,4 +1,5 @@
 <?php
+	require_once('services/log-service.php');
 	require_once('view-comp/header.php');
 
 	define('FIELDS', array(
@@ -37,6 +38,8 @@
 				INNER JOIN author
 				ON author.id = book.author_id
 				WHERE '.FIELDS[$searchType].' like \'%'.$searchTerm.'%\';';
+
+			logMessage($query);
 
 			$result = $db->query($query);
 			$resultCount = $result->num_rows;

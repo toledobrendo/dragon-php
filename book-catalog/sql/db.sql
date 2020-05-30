@@ -34,3 +34,5 @@ UPDATE book SET image_src = 'http://localhost/dragon-php/book-catalog/images/boo
 UPDATE book SET image_src = 'http://localhost/dragon-php/book-catalog/images/book3.jpg' WHERE id = 3;
 UPDATE book SET image_src = 'http://localhost/dragon-php/book-catalog/images/book4.png' WHERE id = 4;
 UPDATE book SET image_src = 'http://localhost/dragon-php/book-catalog/images/book5.jpg' WHERE id = 5;
+
+ALTER TABLE author ADD CONSTRAINT un_author_name UNIQUE (name);
