@@ -14,6 +14,3 @@ What's new this week?
 	> process-register.php
 
 - HTTPS
-
-- HW6: Add Book (Book Catalog)
-	> Still adds duplicate author names / book titles
