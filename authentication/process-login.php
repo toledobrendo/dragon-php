@@ -14,13 +14,13 @@
       if ($dbError) {
         throw new Exception('Connection Error');
       } else {
-        $selectUser = 'SELECT FROM user_info WHERE username = ? and password = ?';
+        $selectUser = 'SELECT * FROM user_info WHERE username = ? and password = ?';
         $stmt = $db->prepare($selectUser);
         $stmt->bind_param('ss', $username, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 
-        if($Result->fetch_assoc()){
+        if($result->fetch_assoc()){
           $_SESSION['username'] = $username;
           header('Location: index.php');
         } else {

@@ -4,6 +4,10 @@
   if (!isset($_SESSION['username'])) {
     header('Location: login.php?error=Unauthorized access');
   }
+  if(@ $_SERVER['HTTPS'] == 'on'){
+    header('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+    exit;
+  }
 ?>
 <html lang="en">
   <head>

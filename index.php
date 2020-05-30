@@ -31,7 +31,7 @@
                 <a href="book-catalog/index.php">Book Catalog</a>
               </li>
               <li class="list-group-item">
-                <a href="authentication/login.php">Authentication</a>
+                <a href="authentication/index.php">Authentication</a>
               </li>
 
               </li>

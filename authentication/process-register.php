@@ -33,7 +33,8 @@
                 } else {
                   $insertUser = 'INSERT INTO user_info (username, password) VALUES (?,?)';
                   $stmt = $db->prepare($insertUser);
-                  $stmt->bind_param('ss', $username,$password);
+                  $hashedPasswrd = hash('sha512',$password);
+                  $stmt->bind_param('ss', $username,$hashedPasswrd);
                   $stmt->execute();
 
                   echo 'Registration Successful!';
