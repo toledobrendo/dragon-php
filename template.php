@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-body">
                 <?php
-                    echo '<p>Hello World</p>';
+                    // add content here
                 ?>
             </div>
         </div>

@@ -1,4 +1,7 @@
-<?php require_once 'view-comp/header.php'; ?>
+<?php
+    require_once 'view-comp/header.php';
+    require_once 'resource/db-properties.php';
+?>
 <div class="card-header">
     <h3 class="card-title">Add Author Result:</h3>
 </div>
@@ -11,7 +14,7 @@
                 throw new Exception('You have not entered an author name. Please go back and try again', 0);
             }
 
-            @$db = new mysqli('192.168.2.73:3306', 'user', 'asd123', 'php_lesson_db');
+            @$db = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
             $dberror = mysqli_connect_errno();
 
             if ($dberror) {
