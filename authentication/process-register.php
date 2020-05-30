@@ -10,48 +10,43 @@
 	<body>
 		<div class="container">
 			<div class="card">
+				<div class="card-header">
+					<h6>Register</h6>
+				</div>
 				<div class="card-body">
-					<h1 class="card-title">PHP Exercises</h1>
-					<div class="col-6">
-						<ul class="list-group">
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="hello-world.php">Hello World</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Bob's Auto Parts</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/price-list.php">Bob's - Price List</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/view-orders.php">Bob's - Order List</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="fibonacci-sequence/fibonacci-sequence.php">Fibonacci Sequence</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="caesar-shift/caesar-shift.php">Caesar Shift</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="iac-consulting/index.php">iAC Consulting</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="book-catalog/index.php">Book Catalog</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="authentication/login.php">Authentication</a>
-							</li>
-						</ul>
-					</div>
+					<?php 
+						$username = $_POST['username'];
+						$password = $_POST['password'];
+
+						try {
+							if(!$username || !$password) {
+								throw new Exception('Input is not complete');
+							}
+
+							@ $db = new mysqli('127.0.0.1:3306', 'user', '123qwe', 'php_lesson_db');
+
+							
+
+							$dbError = mysqli_connect_errno();
+				 			if ($dbError) {
+				 				throw new Exception('Could not connect to database. Try again. Error '.$dbError, 1);
+				 			}
+
+				 			$query = "INSERT INTO user_info (username, password) VALUES (?,?)";
+				 			$stmt = $db->prepare($query);
+				 			$stmt->bind_param("ss", $username, $password);
+				 			$stmt->execute();
+
+				 			echo "You've successfully registered a new account";
+				 			
+				 			$stmt->close();
+						} catch(Exception $e) {
+							echo $e->getMessage();
+						};
+					 ?>	
+				</div>
+				<div class="card-footer">
+					<a href="login.php" class="btn btn-secondary">Back to Login</a>
 				</div>
 			</div>
 		</div>

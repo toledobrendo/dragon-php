@@ -61,7 +61,7 @@
  			echo '<div class="row">';
  			for($ctr = 0; $ctr < $resultCount; $ctr++) {
  				// fetch assoc takes the following result for manipulation, then the next, and so on
- 				$row = $result->fetchassoc();
+ 				$row = $result->fetch_assoc();
  				//echo $row['author_name'].'<br/>';
  	 ?>
 

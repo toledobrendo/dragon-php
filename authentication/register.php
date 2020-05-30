@@ -10,48 +10,24 @@
 	<body>
 		<div class="container">
 			<div class="card">
+				<div class="card-header">
+					<h6>Register</h6>
+				</div>
 				<div class="card-body">
-					<h1 class="card-title">PHP Exercises</h1>
-					<div class="col-6">
-						<ul class="list-group">
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="hello-world.php">Hello World</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Bob's Auto Parts</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/price-list.php">Bob's - Price List</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/view-orders.php">Bob's - Order List</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="fibonacci-sequence/fibonacci-sequence.php">Fibonacci Sequence</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="caesar-shift/caesar-shift.php">Caesar Shift</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="iac-consulting/index.php">iAC Consulting</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="book-catalog/index.php">Book Catalog</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="authentication/login.php">Authentication</a>
-							</li>
-						</ul>
-					</div>
+					<form action="process-register.php" method="POST">
+						<div class="form-group">
+							<label for="username">Username</label>
+							<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus/>
+						</div>
+						<div class="form-group">
+							<label for="username">Password</label>
+							<input type="password" name="password" id="password" class="form-control" placeholder="Password" required/>
+						</div>
+						<div class="form-group">
+							<a href="login.php" class="btn btn-secondary">Back to Login</a>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

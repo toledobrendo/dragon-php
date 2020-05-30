@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php 
+	session_start();
+	if(!isset($_SESSION['username'])) {
+		header('Location: login.php?error=Unauthorized access');
+	}
+ ?>
+
 <html>
 	<head>
 		<title></title>
@@ -11,47 +18,10 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-body">
-					<h1 class="card-title">PHP Exercises</h1>
-					<div class="col-6">
-						<ul class="list-group">
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="hello-world.php">Hello World</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/order-form.php">Bob's Auto Parts</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/price-list.php">Bob's - Price List</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="bobs-auto-parts/view-orders.php">Bob's - Order List</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="fibonacci-sequence/fibonacci-sequence.php">Fibonacci Sequence</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="caesar-shift/caesar-shift.php">Caesar Shift</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="iac-consulting/index.php">iAC Consulting</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="book-catalog/index.php">Book Catalog</a>
-							</li>
-							<!-- item -->
-							<li class="list-group-item">
-								<a href="authentication/login.php">Authentication</a>
-							</li>
-						</ul>
-					</div>
+					<?php 
+						echo 'Hello '.$_SESSION['username'];
+					 ?>	
+					 <a href="process-logout.php" class="btn btn-danger">Logout</a>
 				</div>
 			</div>
 		</div>
