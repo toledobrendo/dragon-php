@@ -37,6 +37,9 @@ if (!$database->connect_error) {
 </head>
 
 <body>
+  <!-- Nav -->
+  <?php include "templates/menu.php" ?>
+  <!-- Body -->
   <div class="container">
     <div class="card">
       <div class="card-header">

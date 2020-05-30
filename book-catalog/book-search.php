@@ -12,6 +12,9 @@
 </head>
 
 <body>
+  <!-- Nav -->
+  <?php include "templates/menu.php" ?>
+  <!-- Main Content -->
   <div class="container">
     <div class="card">
       <div class="card-header">
