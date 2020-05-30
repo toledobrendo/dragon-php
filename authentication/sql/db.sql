@@ -3,3 +3,5 @@ CREATE TABLE IF NOT EXISTS user_info (
   username VARCHAR(255),
   password VARCHAR(255)
 );
+
+ALTER TABLE user_info ADD COLUMN active BOOLEAN;

@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   require_once('resources/db-properties.php');
 
   $username = $_POST['username'];
@@ -16,18 +18,21 @@
       throw new Exception('Could not connect to the database.');
     }
 
-    $query = 'select * from user_info where username = ? and password = ?';
+    $isActive = true;
+
+    $query = 'select * from user_info where username = ? and password = ? and active = ?';
     $stmt = $db->prepare($query);
-    $stmt->bind_param('ss', $username, $password);
+    $stmt->bind_param('ssi', $username, $password, $isActive);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->fetch_assoc()) {
+      $_SESSION['username'] = $username;
       header('Location: index.php');
     } else {
       throw new Exception('Incorrect credentials');
     }
   } catch(Exception $e) {
-    echo $e->getMessage();
+    header('Location: login.php?error='.$e->getMessage());
   }
 ?>
