@@ -6,37 +6,28 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous">
-    <title>PHP Template</title>
   </head>
   <body>
     <div class="container">
       <div class="card">
+        <div class="card-header">
+          <h6>Register</h6>
+        </div>
         <div class="card-body">
-          <h1 class="card-title">PHP Exercises</h1>
-          <div class="col-6">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a href="hello-world.php">Hello World</a>
-              </li>
-              <li class="list-group-item">
-                <a href="bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering</a>
-              </li>
-              <li class="list-group-item">
-                <a href="fibonacci/fibonacci.php">Fibonacci Sequence</a>
-              </li>
-              <li class="list-group-item">
-                <a href="Cipher/cipher.php">Ceasar Cipher</a>
-              </li>
-              <li class="list-group-item">
-                <a href="book-catalog/index.php">Book Catalog</a>
-              </li>
-              <li class="list-group-item">
-                <a href="authentication/login.php">Authentication</a>
-              </li>
-
-              </li>
-            </ul>
-          </div>
+          <form action="process-register.php" method="POST">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input class="form-control" type="text" id="username" name="username" placeholder="Username" required autofocus>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <a href="login.php" class="btn btn-secondary">Back</a>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
