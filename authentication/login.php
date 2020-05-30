@@ -15,6 +15,12 @@
 		<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
 		<input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
 
+		<?php if(isset($_GET['error'])) { ?>
+			<div class = "alert alert-danger">
+			<?php echo $_GET['error']; ?>
+			</div>
+		<?php } ?>
+
 		<div class="row">
 			<a class="btn btn-lg btn-success btn-block col-6" href="register.php">Register</a>
 			<button class="btn btn-lg btn-primary col-6" type="submit">Log In</button>

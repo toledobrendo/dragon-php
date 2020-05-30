@@ -2,6 +2,8 @@
 
 	require_once('resources/db-properties.php');
 
+	session_start();
+
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
@@ -27,6 +29,7 @@
 		$result = $stmt->get_result();
 
 		if($result->fetch_assoc()) {
+			$_SESSION['username'] = $username;
 			header('Location: index.php');
 		} else {
 			throw new Exception ('Invalid credentials.');
@@ -35,7 +38,7 @@
 		$stmt->close();
 
 	} catch(Exception $e) {
-		echo $e->getMessage();
+		header('Location: login.php?error='.$e->getMessage());
 	}
 
 ?>
