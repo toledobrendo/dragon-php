@@ -20,6 +20,9 @@
 						<li class="list-group-item">
 							<a href="bobs-auto-parts/order-form.php">Bob's auto parts - Ordering</a>
 						</li>
+						<li class="list-group-item">
+							<a href="fibonacci.php">Fibonacci</a>
+						</li>
 
 					</ul>
 				</div>
