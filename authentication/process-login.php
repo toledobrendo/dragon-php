@@ -28,6 +28,6 @@
     }
 
   } catch(Exception $e){
-    echo $e->getMessage();
+    header('Location: login.php?error=' .$e->getMessage());
   }
 ?>

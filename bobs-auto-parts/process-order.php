@@ -13,8 +13,8 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h3 class="card-title">Order Result</h3>	
-				<?php 
+				<h3 class="card-title">Order Result</h3>
+				<?php
 					echo '<p> Order Processed at ';
 					echo date('H:i, jS, F Y');
 					echo '</p>';
@@ -28,10 +28,33 @@
 					$oilQty = $_POST['oilQty'];
 					$sparkQty = $_POST['sparkQty'];
 
+					//Process VAT and VAT axmount
+						//define prices
+						define("tirePrice", 100);
+						define("oilPrice", 100);
+						define("sparkPrice", 100);
+
+						$totalAmount = (tirePrice * $tireQty) + (oilPrice * $oilQty) + (sparkPrice * $sparkQty);
+						$VAT = .12 * $totalAmount;
+						$totalVATABLE = $totalAmount - $VAT;
+
+					//DISPLAY
 					echo '<p> Your order is as follows</p>';
 					echo "$tireQty tires.<br/>";
 					echo "$oilQty bottles of oil.<br/>";
-					echo "$sparkQty spark plugs.<br/>";
+					echo "$sparkQty spark plugs.<br/><br/><br/>	";
+
+					echo "VATABLE Amount: $totalVATABLE </br>";
+					echo "VAT amount (12%): $VAT</br>	";
+					echo "Total Amount: $totalAmount</br>	";
+
+					echo "Amount exceeded 500 but less than 1000? ";
+					if($totalAmount > 500 && $totalAmount < 1000){
+							echo "Yes";
+					} else {
+						echo "No";
+					}
+
 				 ?>
 			</div>
 		</div>

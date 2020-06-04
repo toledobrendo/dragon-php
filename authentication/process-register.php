@@ -21,21 +21,20 @@
           try{
             if(!$username || !$password){
               throw new Exception('Input is not complete');
+            } else {
+              @$db = new mysqli('127.0.0.1:3306','student','123','php_lesson_db');
+              $dbError = mysqli_connect_errno();
+              if($dbError){
+                throw new Exception('Could not connect to database. Error: ' .$dbError);
+              } else {
+                $query = 'INSERT INTO user_info (username,password) VALUES (?,?)';
+                $stmt = $db->prepare($query);
+                $stmt->bind_param('ss', $username, $password);
+                $stmt->execute();
+                echo 'You successfully registered a new account';
+                $stmt->close();
+              }
             }
-            @$db = new mysqli('127.0.0.1:3306','student','123',`php_lesson_db`);
-
-            $dbError = mysqli_connect_errno();
-            if($dbError){
-              throw new Exception('Could not connect to database. Error: ' .$dbError);
-            }
-
-            $query = 'INSERT INTO user_info (username,password) VALUES (?,?)';
-            $stmt = $db->prepare($query);
-            $stmt->bind_param('ss', $username, $password);
-            $stmt->execute();
-            echo 'You successfully registered a new account';
-            $stmt->close();
-
           } catch (Exception $e){
             echo $e->getMessage();
           }
