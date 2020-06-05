@@ -25,13 +25,16 @@
                 <a href="order-form.php">Bob's Auto Parts - Order Form</a>
               </li>
               <li class="list-group-item">
-                <a href="fibonacci-sequence.php">h1_fibonacci</a>
+                <a href="../h1_fibonacci">h1_fibonacci</a>
               </li>
               <li class="list-group-item">
-                <a href="caesar-shift.php">h2_caesar_shift</a>
+                <a href="../h2_caesar_shift">h2_caesar_shift</a>
               </li>
               <li class="list-group-item">
                 <a href="../iac_consulting">iac_consulting</a>
+              </li>
+              <li class="list-group-item">
+                <a href="../h3_order_form_classes">h3_order_form_classes</a>
               </li>
             </ul>
           </div>

@@ -29,11 +29,7 @@
         </div>
 
         <?php
-        //Class
-        class Product
-        {
-          
-        }
+
         //Variables from order-form.php
           $tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
           $oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
