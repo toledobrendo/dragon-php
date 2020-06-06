@@ -61,6 +61,7 @@
 		$items[1]->computeCost();
 		$items[2]->computeCost();
 
+		// Notice: Undefined variable: sparkplugs in C:\xampp\htdocs\dragon-php\bobs-auto-parts\process-order.php on line 64
 		$totalAmount = $tires->__get('cost') + $oil->__get('cost') + $sparkplugs->__get('cost');
 		// echo '<i>Cost Breakdown</i><br/>';
 		// echo 'Tires: PHP '.$tireAmount.'<br/>';
