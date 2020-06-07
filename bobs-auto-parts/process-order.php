@@ -57,12 +57,12 @@
 
 		echo '<br/><b>Total Quantity:</b> '.$totalQty.'<br/><br/>';
 
-		$items[0]->computeCost();
 		$items[1]->computeCost();
+		$items[0]->computeCost();
 		$items[2]->computeCost();
 
 		// Notice: Undefined variable: sparkplugs in C:\xampp\htdocs\dragon-php\bobs-auto-parts\process-order.php on line 64
-		$totalAmount = $tires->__get('cost') + $oil->__get('cost') + $sparkplugs->__get('cost');
+		$totalAmount = $items[1]->__get('cost') + $items[0]->__get('cost') + $items[2]->__get('cost');
 		// echo '<i>Cost Breakdown</i><br/>';
 		// echo 'Tires: PHP '.$tireAmount.'<br/>';
 		// echo 'Oil: PHP '.$oilAmount.'<br/>';
@@ -95,7 +95,7 @@
 		// echo '<i>Is $totalAmountTwo empty? </i>';
 		// echo empty($totalAmount) ? '<i>Yes</i><br/>' : '<i>No</i><br/>';
 
-		saveOrder($tires->__get('quantity'), $oil->__get('quantity'), $sparkplugs->__get('quantity'), $totalAmount);
+		saveOrder($items[1]->__get('quantity'), $items[0]->__get('quantity'), $items[2]->__get('quantity'), $totalAmount);
 
 	?>
 

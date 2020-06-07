@@ -65,7 +65,7 @@
 		    if($resultCount == 0) {
 
 				// add the new book onto the database
-				$addBookQuery = 'INSERT INTO book (title, author_id, isbn, image_src) values (?, ?, ?, ?)';
+				$addBookQuery = 'INSERT INTO book (title, author_id, isbn, img_src) values (?, ?, ?, ?)';
 				$bookStmt = $db->prepare($addBookQuery);
 				$bookStmt->bind_param("siss", $bookTitle, $row['id'], $isbn, $imageURL);
 				$bookStmt->execute();

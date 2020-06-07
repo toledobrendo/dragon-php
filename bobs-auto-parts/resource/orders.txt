@@ -32,3 +32,15 @@
 09:22, 10th May 2020	1 tires	2 oil	3 spark plugs	PHP 132
 09:22, 10th May 2020	1 tires	2 oil	3 spark plugs	PHP 132
 09:22, 10th May 2020	1 tires	2 oil	3 spark plugs	PHP 132
+15:03, 7th June 2020	3 tires	2 oil	4 spark plugs	PHP 246
+15:03, 7th June 2020	3 tires	2 oil	4 spark plugs	PHP 246
+15:04, 7th June 2020	2 tires	10 oil	3 spark plugs	PHP 1032
+15:04, 7th June 2020	2 tires	10 oil	3 spark plugs	PHP 1032
+15:06, 7th June 2020	2 tires	3 oil	4 spark plugs	PHP 246
+15:06, 7th June 2020	2 tires	3 oil	4 spark plugs	PHP 246
+15:09, 7th June 2020	10 tires	4 oil	2 spark plugs	PHP 1048
+15:09, 7th June 2020	10 tires	4 oil	2 spark plugs	PHP 1048
+15:10, 7th June 2020	6 tires	3 oil	5 spark plugs	PHP 650
+15:10, 7th June 2020	6 tires	3 oil	5 spark plugs	PHP 650
+15:10, 7th June 2020	6 tires	3 oil	5 spark plugs	PHP 650
+15:10, 7th June 2020	6 tires	3 oil	5 spark plugs	PHP 650

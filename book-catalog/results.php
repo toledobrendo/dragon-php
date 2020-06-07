@@ -33,7 +33,7 @@
 				throw new Exception('Error: Could not connect to database. Please try again later. '.$dbError, 1);
 			}
 
-			$query = 'SELECT author.name as author_name, book.title, book.isbn, book.image_src
+			$query = 'SELECT author.name as author_name, book.title, book.isbn, book.img_src
 				FROM book
 				INNER JOIN author
 				ON author.id = book.author_id
@@ -62,7 +62,7 @@
 					<div class="card-body">
 							<div class="row">
 								<div class="col-4" style="display: inline-block; padding-right: 15px;">
-									<img style="width: 100; height: 150;" src=<?php echo $row['image_src']; ?>>
+									<img style="width: 100; height: 150;" src=<?php echo $row['img_src']; ?>>
 								</div>
 
 								<div class="col-8" style="display: inline-block; padding-left: 25px;">
