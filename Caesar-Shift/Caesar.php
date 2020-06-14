@@ -1,6 +1,6 @@
-<<?php
-$text = $_POST['Message'];
-$key = $_POST['Key'];
+<?php
+@$text = $_POST['Message'];
+@$key = $_POST['Key'];
  ?>
 <html>
 <head>
@@ -19,7 +19,7 @@ $key = $_POST['Key'];
     <div class="card">
       <div class="card-body">
         <h1>Caesar Shift</h1>
-        <form action="Homework2.php" method="POST">
+        <form action="Caesar.php" method="POST">
         <p>Message:</p>
         <input type="text"name="Message" class="form-control" value="<?php echo $text ?>">
         <br>
@@ -30,8 +30,8 @@ $key = $_POST['Key'];
         </form>
         <?php
 
-            $text = $_POST['Message'];
-            $key = $_POST['Key'];
+            @$text = $_POST['Message'];
+            @$key = $_POST['Key'];
           function encrypt($text, $key)
           {
               $result = "";
