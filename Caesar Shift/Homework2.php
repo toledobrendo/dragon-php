@@ -1,4 +1,5 @@
 <<?php
+// Note: Notice: Undefined index: Message in C:\xampp\htdocs\dragon-php\Caesar Shift\Homework2.php on line 2
 $text = $_POST['Message'];
 $key = $_POST['Key'];
  ?>
