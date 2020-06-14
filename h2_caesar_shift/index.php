@@ -18,9 +18,14 @@
       <div class="card-body">
         <div>
           <p> Message </p>
+<<<<<<< HEAD
           <!--Note: h2_caesar_shift/caesar-shift.php is missing-->
           <!--Changed the missing action to the index itself instead-->
           <form action="index.php" method="post">
+=======
+            <!--Note: h2_caesar_shift/caesar-shift.php is missing-->
+          <form action="caesar-shift.php" method="post">
+>>>>>>> e18b68530d0268a8ca17d5201079aedd94648224
             <input type="text" name="message" class="form-control"/>
           </div>
 
