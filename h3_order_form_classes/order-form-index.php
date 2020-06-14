@@ -14,6 +14,7 @@
             </thead>
             <tbody>
               <tr class="row">
+                <!-- Note: Array of products missing in this page -->
                 <td class="col-5">Tires </td>
 								<td class="col-7"><input type="number" name="tireQty" maxlength="3" min="0" max="10" class="form-control"/> </td>
 							</tr>
