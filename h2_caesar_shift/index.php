@@ -18,7 +18,9 @@
       <div class="card-body">
         <div>
           <p> Message </p>
-          <form action="caesar-shift.php" method="post">
+          <!--Note: h2_caesar_shift/caesar-shift.php is missing-->
+          <!--Changed the missing action to the index itself instead-->
+          <form action="index.php" method="post">
             <input type="text" name="message" class="form-control"/>
           </div>
 
@@ -59,8 +61,9 @@
 
       </div>
     </div>
+    <!--Changed the go back button to RESET instead-->
     <div class="card-footer">
-      <a class="btn btn-info" href="index.php">Go Back</a>
+      <a class="btn btn-info" href="index.php">RESET</a>
     </div>
   </div>
 
