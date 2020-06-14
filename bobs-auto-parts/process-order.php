@@ -3,6 +3,7 @@
   require_once('controller/productObjects.php');
   require_once('service/vat.php');
 
+  // Note: Constants should be in THIS_FORMAT
   define('VatAmount' ,getVat());
  ?>
 
