@@ -25,6 +25,10 @@
             <a class="nav-link" href="index.php">Book Search</a>
           </li>
 
+          <li class="nav-item <?php if(isActive('author-add.php')) echo 'active'; ?>">
+            <a class="nav-link" href="index.php">Add author</a>
+          </li>
+
 
         </ul>
       </div>

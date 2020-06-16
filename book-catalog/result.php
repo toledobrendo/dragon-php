@@ -68,4 +68,4 @@
   <br/>
   <a class="btn btn-secondary" href="index.php">Go Back</a>
 </div>
-<?php require_once('view-comp/footer.php');?>
+<?php require_once('view-comp/footer.php');?>git add 
