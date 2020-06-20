@@ -1,6 +1,16 @@
 <?php
-$inputraw = $_POST['input'];
-$keyraw = (int)$_POST['key'];
+if(isset($_POST['input'])) {
+  $inputraw = $_POST['input'];
+} else {
+  $inputraw = "";
+}
+
+if(isset($_POST['key'])) {
+  $keyraw = $_POST['key'];
+} else {
+  $keyraw = 0;
+}
+
 ?>
 <html>
   <head>
@@ -48,23 +58,23 @@ $keyraw = (int)$_POST['key'];
               <tr class="row">
                 <td class="col">
                   <input type="text" class="form-control" name="output" value="<?php
-                  // Note: Initial visit has warnings displayed.
-                  // Empty key value is not handled with proper output or a warning
-                  if($_POST['input'] && $_POST['key']) {
-                    $input = strtolower($_POST['input']);
-                    $key = (int)$_POST['key'] % 26;
+                  if(isset($_POST['input']) && isset($_POST['key'])) {
+                    $inputraw = strtolower($_POST['input']);
+                    $keyraw = (int)$_POST['key'] % 26;
                     $output = "";
-                    for($i = 0; $i < strlen($input); $i++) {
-                      if(ctype_alpha($input[$i])) {
-                        $val = chr(ord($input[$i]) + $key);
+                    for($i = 0; $i < strlen($inputraw); $i++) {
+                      if(ctype_alpha($inputraw[$i])) {
+                        $val = chr(ord($inputraw[$i]) + $keyraw);
                         $val = (ord($val) > 122) ? chr(ord($val) - 26) : $val;
                         $val = (ord($val) < 97) ? chr(ord($val) + 26) : $val;
                         $output .= $val;
                       } else {
-                        $output .= $input[$i];
+                        $output .= $inputraw[$i];
                       }
                     }
                     echo $output;
+                  } else {
+                    echo "";
                   }
                   ?>" readonly>
                 </td>
