@@ -48,6 +48,8 @@ $keyraw = (int)$_POST['key'];
               <tr class="row">
                 <td class="col">
                   <input type="text" class="form-control" name="output" value="<?php
+                  // Note: Initial visit has warnings displayed.
+                  // Empty key value is not handled with proper output or a warning
                   if($_POST['input'] && $_POST['key']) {
                     $input = strtolower($_POST['input']);
                     $key = (int)$_POST['key'] % 26;
