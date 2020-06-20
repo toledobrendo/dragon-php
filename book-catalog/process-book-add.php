@@ -36,6 +36,7 @@
 	        // }
 
  			// author query
+			// Note: What if author already exists?
 	        $authorQuery = 'INSERT INTO author (name) VALUES (?)';
  			$authorStmt = $db->prepare($authorQuery);
  			$authorStmt->bind_param("s", $authorName);
