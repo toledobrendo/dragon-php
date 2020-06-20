@@ -35,6 +35,7 @@ require_once('service/log-service.php'); ?>
         // }
 
         //query by prepared statements
+        //Note: What if author already exists?
         $query= 'insert into author(name) values(?)';
         $stmt =  $db->prepare($query);
         $stmt->bind_param("s",$authorName);
