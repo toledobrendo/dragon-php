@@ -31,17 +31,19 @@
       // $authorName = $db->real_escape_string($authorName);
 
       // Query by prepared statements
-      $query = 'insert into author (name) values (?)';
+      $query = $query =
+         'INSERT INTO author (name)
+         SELECT * FROM (SELECT ? AS name) AS temp
+         WHERE NOT EXISTS (SELECT name FROM author WHERE name=?)LIMIT 1';
       $stmt = $db->prepare($query);
-      $stmt->bind_param("s", $authorName);
+      $stmt->bind_param("ss", $authorName, $authorName);
       $stmt->execute();
 
       $affectedRows = $stmt->affected_rows;
       if ($affectedRows > 0) {
-        echo $affectedRows." author inserted into the database.";
+        echo $affectedRows." Author successfully added into the database.";
       } else {
-        throw new Exception('Error: The author was not added.');
-
+        throw new Exception('Author already exists.');
       }
 
       $stmt->close();
