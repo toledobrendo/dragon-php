@@ -41,24 +41,24 @@ define('FIELDS', array(
       echo "<div class='row'>";
 
       for ($ctr = 0; $ctr < $resultCount; $ctr++) {
-            $row = $result->fetch_assoc();
+        $row = $result->fetch_assoc();
     ?>
-      <div class="card col-6">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <img src="<?php echo $row['thumbnail']; ?>" width="200px" alt="">
-            </div>
-            <div class="col">
-              <h6><?php echo $row['title']; ?></h6>
-              <p>
-                By: <?php echo $row['author_name']; ?><br/>
-                <?php echo $row['isbn']; ?>
-              </p>
+        <div class="card col-6">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <img src="<?php echo $row['thumbnail']; ?>" width="200px" alt="">
+              </div>
+              <div class="col">
+                <h6><?php echo $row['title']; ?></h6>
+                <p>
+                  By: <?php echo $row['author_name']; ?><br/>
+                  <?php echo $row['isbn']; ?>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
   <?php
       }
     }
