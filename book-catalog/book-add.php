@@ -36,6 +36,7 @@ if (!empty($_POST)) {
       $insertNewAuthor->execute();
       $insertNewAuthor->close();
       //Book
+      //Note: These linesare similar to line 23. Reposition them outside the if statement to prevent duplicate code. 
       $insertNewBook = $database->prepare($insertNewBookQuery);
       $insertNewBook->bind_param('sss',$bookTitle,$bookIsbnCode,$bookImgUrl);
       $bookTitle = $_POST['bookTitle'];
