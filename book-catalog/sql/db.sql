@@ -22,3 +22,8 @@ INSERT INTO author (name) VALUES
 INSERT INTO book (title, isbn, author_id) VALUES
   ('Java for Professional Developers', '0-672-316123-8', 1),
   ('A Game of Thrones', '1-141-5143123-5', 2);
+
+ALTER TABLE book ADD COLUMN thumbnail VARCHAR(255);
+
+UPDATE book SET thumbnail='https://images-na.ssl-images-amazon.com/images/I/41F6QB7SWFL._SX382_BO1,204,203,200_.jpg' WHERE id=1;
+UPDATE book SET thumbnail='http://img3.wikia.nocookie.net/__cb20130302001049/iceandfire/images/b/b6/Game_of_thrones.jpeg' WHERE id=2;

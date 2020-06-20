@@ -27,7 +27,7 @@ define('FIELDS', array(
           'Please try again later. '.$dbError, 1);
       }
 
-      $query = "SELECT author.name AS author_name, book.title, book.isbn
+      $query = "SELECT author.name AS author_name, book.title, book.isbn, book.thumbnail
       FROM book INNER JOIN author ON author.id = book.author_id
       WHERE ".FIELDS[$searchType]." LIKE '%".$searchTerm."%';";
 
@@ -38,16 +38,25 @@ define('FIELDS', array(
       echo "<p>Result for ".$searchType." : ".$searchTerm;
       echo "<p>Number of books found: ".$resultCount;
 
+      echo "<div class='row'>";
+
       for ($ctr = 0; $ctr < $resultCount; $ctr++) {
             $row = $result->fetch_assoc();
     ?>
-      <div class="card col-4">
+      <div class="card col-6">
         <div class="card-body">
-            <h6><?php echo $row['title']; ?></h6>
-            <p>
-              By: <?php echo $row['author_name']; ?><br/>
-              <?php echo $row['isbn']; ?>
-            </p>
+          <div class="row">
+            <div class="col">
+              <img src="<?php echo $row['thumbnail']; ?>" width="200px" alt="">
+            </div>
+            <div class="col">
+              <h6><?php echo $row['title']; ?></h6>
+              <p>
+                By: <?php echo $row['author_name']; ?><br/>
+                <?php echo $row['isbn']; ?>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
   <?php
@@ -57,6 +66,8 @@ define('FIELDS', array(
     echo $e->getMessage();
   }
   ?>
+  </div>
+  <br>
   <a class="btn btn-secondary" href="index.php">Go Back</a>
 </div>
 <?php require_once './view-comp/footer.php'; ?>
