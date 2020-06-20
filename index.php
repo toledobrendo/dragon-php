@@ -25,13 +25,22 @@
                 <a href="./bobs-auto-parts/price-list.php">Bob's Auto Parts - Price List</a>
               </li>
               <li class="list-group-item">
-                <a href="bobs-auto-parts/view-orders.php">Bob's Auto Parts - Order List</a>
+                <a href="./bobs-auto-parts/view-orders.php">Bob's Auto Parts - Order List</a>
               </li>
               <li class="list-group-item">
                 <a href="./fibonacci.php">Fibonacci Sequence</a>
               </li>
               <li class="list-group-item">
                 <a href="./caesar-shift.php">Caesar Shift</a>
+              </li>
+              <li class="list-group-item">
+                <a href="./book-catalog/index.php">Book Catalog - Book Search</a>
+              </li>
+              <li class="list-group-item">
+                <a href="./book-catalog/author-add.php">Book Catalog - Add Author</a>
+              </li>
+              <li class="list-group-item">
+                <a href="./book-catalog/book-add.php">Book Catalog - Add Book</a>
               </li>
             </ul>
 
