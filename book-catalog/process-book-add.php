@@ -51,4 +51,7 @@
     }
   ?>
 </div>
+<div class="card-footer">
+  <a class="btn btn-secondary" href="book-add.php">Back</a>
+</div>
 <?php require_once './view-comp/footer.php'; ?>
