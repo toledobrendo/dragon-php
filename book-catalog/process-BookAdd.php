@@ -25,6 +25,7 @@
       if ($dbError) {
         throw new Exception('Error: Could not connect to database. Please try again later.');
       }
+      //Note: Observe proper indention
 
 		    $query = "SELECT id FROM author WHERE name = ?";
 				$stmt = $db->prepare($query);
