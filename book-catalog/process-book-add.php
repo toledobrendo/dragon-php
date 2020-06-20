@@ -37,6 +37,7 @@
 			//Query by Prep Statement
 
 			//insert author to db
+			//Note: What if author name already exists?
 			$authorQuery = 'insert into author(name) values (?)';
 
 			$authorStmt = $db->prepare($authorQuery);
