@@ -1,0 +1,24 @@
+17:03, 15th June 2020	45	4	4	$600
+17:03, 15th June 2020	45	4	4	$600
+00:07, 16th June 2020	4	4	4	$600
+22:47, 16th June 2020	4	4	4	$600
+22:53, 17th June 2020	4	4	4	$600
+23:04, 17th June 2020	 tires	 oils	spark plugs	$600
+00:58, 18th June 2020	 tires	 oils	spark plugs	$600
+01:44, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:45, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:45, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:46, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:46, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:48, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:50, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:51, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:51, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:51, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+01:51, 18th June 2020	2 tires	2 oils	2spark plugs	$600
+21:12, 22nd June 2020	2 tires	2 oils	7spark plugs	$600
+21:14, 22nd June 2020	2 tires	2 oils	7spark plugs	$600
+21:14, 22nd June 2020	2 tires	2 oils	7spark plugs	$600
+21:16, 22nd June 2020	2 tires	2 oils	7spark plugs	$600
+21:16, 22nd June 2020	2 tires	2 oils	7spark plugs	$600
+21:17, 22nd June 2020	2 tires	2 oils	7spark plugs	$600

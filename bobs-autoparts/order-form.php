@@ -1,15 +1,28 @@
+<?php
+	// array of product objects
+	require_once('data/product.php');
+
+	$partsArray = array(
+			array('id' => 'tir', 'name' => 'Tire', 'price' => 10),
+			array('id' => 'oil', 'name' => 'Oil', 'price' => 100),
+			array('id' => 'skp', 'name' => 'Spark Plug', 'price' => 5)
+		);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Template</title>
+	<title>Bob's Auto Parts - Order Form</title>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<?php require_once('view-comp/head-links.php'); ?>
+	
 </head>
 <body>
+	<?php
+		require_once('view-comp/nav.php');
+	?>
+
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
@@ -19,43 +32,53 @@
 					<table class="table">
 						<thead class="thead-dark">
 							<tr>
-								<th>Item</th>
+								<th>Item Code</th>
+								<th>Price</th>
 								<th>Quantity</th>
 							</tr>
 							
 						</thead>
 
 						<tbody>
-							<tr>
-								<td>Tires</td>
-								<td>
-									<input class="form-control" type="number" name="tireQty">
-								</td>
-							</tr>
 
-							<tr>
-								<td>Oil</td>
-								<td>
-									<input class="form-control" type="number" name="oilQty">
-								</td>
-							</tr>
+							<?php
+								foreach ($partsObject as $part) {
+									echo '<tr>';
 
-							<tr>
-								<td>Sparkplug</td>
-								<td>
-									<input class="form-control" type="number" name="sparkplugQty">
-								</td>
-							</tr>
+									echo '<td>';
+									echo $part->name;
+									echo '</td>';
+
+									echo '<td>';
+									echo $part->price;
+									echo '</td>';
+
+									echo '<td>';									
+									echo '<input class="form-control" min="0" type="number" name="' . $part->id . 'Qty' . '">';
+									echo '</td>';
+
+									echo '</tr>';
+								}
+
+							?>
+							
 						</tbody>
 					</table>
 
-					<button class="btn btn-info" type="submit">Submit</button>
+					<button class="btn btn-info float-right" type="submit">Submit</button>
 				</form>
-
 				
 			</div>
 		</div>
 	</div>
+
+	<?php
+		require_once('view-comp/footer.php');
+	?>
+
+	<?php
+		require_once('view-comp/dependencies.php');
+	?>
 	
 </body>
 </html>

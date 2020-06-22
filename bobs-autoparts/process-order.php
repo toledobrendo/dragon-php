@@ -1,40 +1,97 @@
+<?php 
+	// array of product objects
+	require_once('data/product.php');
+	require_once('service/order-service.php');
+
+	function getVatPercent() {
+		$propertiesFile = fopen($_SERVER['DOCUMENT_ROOT'] . '/dragon-php/bobs-autoparts/resource/properties.txt', 'rb');
+
+		if(!$propertiesFile) {
+			$vatPercent = 0;
+		} else {
+
+			while(!feof($propertiesFile)) {
+				$line = fgets($propertiesFile, 999);
+				$vatPercent = str_replace("VAT_PERCENT=", "", $line);
+				
+			}
+		}
+
+		return $vatPercent;
+	}
+
+	define('VAT_PERCENT', getVatPercent());
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Result</title>
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<title>Thank you for your purchase.</title>
 
 	<style type="text/css">
 		.wrapper {
 			padding: 20px;
 		}
 	</style>
+
+	<?php require_once('view-comp/head-links.php'); ?>
 </head>
 <body>
+	<?php
+		require_once('view-comp/nav.php');
+	?>
+
 	<div class="wrapper">
 		<div class="container">
-		<?php
-		echo '<h2>Order Processed at ';
-		echo date('H:i, jS F Y');
-		echo '</h2>';
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title"></h3>
+						<?php
+							echo '<h2>Order Processed at ';
+							echo date('H:i, jS F Y');
+							echo '</h2>';
 
-		$tireQty = $_POST['tireQty'];
-		$oilQty = $_POST['oilQty'];
-		$sparkplugQty = $_POST['sparkplugQty'];
+							$tirQty = $_POST['tirQty'];
+							$oilQty = $_POST['oilQty'];
+							$skpQty = $_POST['skpQty'];
 
-		echo '<h5>Your order is:<br></h5>';
-		echo $tireQty. '<span> tires/s.</span><br>';
-		echo $oilQty. '<span> oil/s.</span><br>';
-		echo $sparkplugQty. '<span> sparkplug/s.</span><br>';
+							$total = 600;
+							
+							$VAT_PERCENT = 
+							$VATpercent = VAT_PERCENT;
+							$VATable = $total / (1 + $VATpercent);
+							$VAT = $VATable * $VATpercent;
+
+							echo '<h5>Your order is:<br></h5>';
+							echo $tirQty. '<span> '. $partsObject[0]->name . '/s</span><br>';
+							echo $oilQty. '<span> '. $partsObject[1]->name . '/s</span><br>';
+							echo $skpQty. '<span> '. $partsObject[2]->name . '/s</span><br>';
+							echo '<br>';
+
+							
+							echo '<br>VATable Amount: ' . $VATable;
+							echo '<br>VAT Amount: ' . $VAT;
+							echo '<br>Total Amount: ' . $total;
+							echo '<br><br>Amount greater than 500 but less than 1000?: ';
+								echo ($total > 500 && $total < 1000) ? 'YES' : 'NO'; 
+							echo '<p><br></p>';
+
+							saveOrder($tirQty, $oilQty, $skpQty, $total);
+						?>
+
+						<a class="btn btn-primary" href="order-form.php" role="button">Back to home.</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php
+		require_once('view-comp/footer.php');
 	?>
-	</div>
-	</div>
-	
+
+	<?php
+		require_once('view-comp/dependencies.php');
+	?>
 	
 </body>
 </html>
