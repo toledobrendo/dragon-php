@@ -2,11 +2,11 @@
 	// array of product objects
 	require_once('data/product.php');
 
-	$partsArray = array(
-			array('id' => 'tir', 'name' => 'Tire', 'price' => 10),
-			array('id' => 'oil', 'name' => 'Oil', 'price' => 100),
-			array('id' => 'skp', 'name' => 'Spark Plug', 'price' => 5)
-		);
+	// $partsArray = array(
+	// 		array('id' => 'tir', 'name' => 'Tire', 'price' => 10),
+	// 		array('id' => 'oil', 'name' => 'Oil', 'price' => 100),
+	// 		array('id' => 'skp', 'name' => 'Spark Plug', 'price' => 5)
+	// 	);
 
 ?>
 
