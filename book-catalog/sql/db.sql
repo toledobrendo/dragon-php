@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS author (
   name VARCHAR(255)
 );
 
+
 CREATE TABLE IF NOT EXISTS book (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255),
@@ -15,12 +16,20 @@ CREATE TABLE IF NOT EXISTS book (
   FOREIGN KEY (author_id) REFERENCES author(id)
 );
 
+
+
 INSERT INTO author (name)
+
+
 VALUES
   ('Michael Morgan'),
   ('George RR Martin');
 
+
+
 INSERT INTO book (title, isbn, author_id)
+
+
 VALUES
   ('Java for Professional Developers', '0-672-316123-8', 1),
   ('A Game of Thrones', '1-141-5143123-5', 2);
