@@ -23,8 +23,8 @@
 
 
     public function __construct(){
-
       echo '<p>Person Constructed';
+
     }
 
 
@@ -33,9 +33,13 @@
     public function __get($fieldName){
       if($fieldName !== 'address'){
         return $this->$fieldName;
+
+
       }else{
         return 'Access DENIED';
       }
+
+      
       
     }
 
