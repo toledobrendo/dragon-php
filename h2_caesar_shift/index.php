@@ -19,6 +19,7 @@
         <div>
           <p> Message </p>
           <!--Note: h2_caesar_shift/caesar-shift.php is missing-->
+          <!--Note: hello world encrypts to ifmmpUxpsme. Include space handling-->
           <!--Changed the missing action to the index itself instead-->
           <form action="index.php" method="post">
             <input type="text" name="message" class="form-control"/>
