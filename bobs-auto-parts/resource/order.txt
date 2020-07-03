@@ -1,0 +1,4 @@
+22:29, 27th June 2020	1 Tire	2 Oil	3 Spark	 ₱600
+0:41, 28th June 2020	1 Tire	2 Oil	3 Spark	 ₱600
+1:15, 28th June 2020	4 Tire	1 Oil	3 Spark	 ₱800
+8:52, 1st July 2020	3 Tire	2 Oil	2 Spark	 ₱700
