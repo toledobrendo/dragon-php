@@ -1,9 +1,14 @@
-<?php require_once('view-comp/header.php'); ?>
+<?php
+require_once('view-comp/header.php');
+?>
+
 <div class="card-header">
   Search Book
 </div>
 <div class="card-body">
   <form action="results.php" method="post">
+
+   <!--  search menu -->
     <div class="form-group">
       <label for="searchType">Choose Search Type</label>
       <select class="form-control" id="searchType" name="searchType">
@@ -12,14 +17,23 @@
         <option value="isbn">ISBN</option>
       </select>
     </div>
+
+    <!-- term menu -->
     <div class="form-group">
       <label for="searchTerm">Search Term</label>
       <input type="text" id="searchTerm" name="searchTerm"
         class="form-control" placeholder="Search Term"/>
     </div>
+
+    <!-- button -->
     <div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary"><a href="result.php"></a>Submit</button>
     </div>
+
+
   </form>
 </div>
-<?php require_once('view-comp/footer.php'); ?>
+
+<?php
+require_once('view-comp/footer.php');
+?>
