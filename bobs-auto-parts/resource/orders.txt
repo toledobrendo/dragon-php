@@ -1,0 +1,12 @@
+09:41, 8th July 2020	10 tires	20 oil	0 spark plugs	$
+09:41, 8th July 2020	10 tires	20 oil	0 spark plugs	$
+09:42, 8th July 2020	10 tires	20 oil	0 spark plugs	$
+09:42, 8th July 2020	10 tires	20 oil	0 spark plugs	$
+09:47, 8th July 2020	10 tires	20 oil	0 spark plugs	$
+09:47, 8th July 2020	10 tires	20 oil	0 spark plugs	$
+09:50, 8th July 2020	10 tires	20 oil	0 spark plugs	$
+09:50, 8th July 2020	10 tires	20 oil	0 spark plugs	$
+09:52, 8th July 2020	10 tires	20 oil	30 spark plugs	$
+09:52, 8th July 2020	10 tires	20 oil	30 spark plugs	$
+09:54, 8th July 2020	10 tires	20 oil	30 spark plugs	$
+09:54, 8th July 2020	10 tires	20 oil	30 spark plugs	$
