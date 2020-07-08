@@ -1,57 +1,66 @@
-<html>
-
-<head>
-	<title> Order Form </title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-
-<body>
-
-	<div class="container">
-		<div class ="card">
-			<div class="card-body">
+<?php
+	require_once('view-comp/header.php');
+?>
+			
 				<h3 class="card-title"> Order Form </h3>
+				<form action="process-order.php" method="post">
+				<table class="table">
+				<thead>
+					<tr class="row">
+						<td class="col-5"><b>Item</b></td>
+						<td class="col-4"><b>Price</b></td>
+						<th class="col-2"><b>Quantity</b></th>
+					
+					</tr>
+				</thead>
 
-				<form action="process-order.php" method="POST">
-					<table class="table">
-						<thead>
-							<tr class="row">
-								<th class="col-6"> Item </th>
-								<th class="col-6"> Quantity </th>
-							</tr>
-						</thead>
+				<tbody>
+					<?php
+						$products=array(
+							array('desc'=>'Tires','name' =>'tireQty', 'price'=>100),
+							array('desc'=>'Oil','name' =>'oilQty','price'=>50),
+							array('desc'=>'Spark Plugs','name' =>'sparkQty','price'=>30),
 
-						<tbody>
-							<tr class="row">
-								<th class="col-6"> Tires </th>
-								<th class="col-6"> <input type="number" name="tireQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
+						);
+							foreach ($products as $product) {
+								echo '<tr class="row">
+								<td class="col-5">'.$product[
+								'desc'].'</td>
 
-							<tr class="row">
-								<th class="col-6"> Oil </th>
-								<th class="col-6"> <input type="number" name="oilQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
+								<td class="col-2">'.$product['price'].'</td>
+								<td class="col-4">
+									<input type="text" name="'.$product['name'].'" maxlengths"3" class="form-control">
+								</td>
+								
+								</tr>';
+								}
+						?>
 
-							<tr class="row">
-								<th class="col-6"> Spark Plugs </th>
-								<th class="col-6"> <input type="number" name="sparkQty" max="10" min="0" maxLength="3" class="form-control"> </th>
-							</tr>
-
-							<tr class="row">
-								<td colspan="2" class="col-12"> <button type="submit" class="btn btn-primary float-right" > SUBMIT </button> </td>
+					<tr class="row">
+								<th class="col-5">How did you find Bob's?</th>
+								<td class="col-7" colspan="2">
+									<select name="find" class="custom-select">
+									<option value="regular">I'm a regular costumer</option>
+									<option value="tv-advertising">TV Advertising</option>	
+									<option value="phone-directory">Phone Directory</option>
+									<option value="word-of-mouth">Word of Mouth</option>
+									</select>
+								</td>
 							</tr>
 						</tbody>
+						<tfoot>
+							<tr class="row">
+								<td colspan="3" class="col-12"> 
+								<button type="submit" class="btn btn-primary float-right" > 
+								SUBMIT </button> &nbsp
+								<a href="/dragon-php/bobs-auto-parts/freight-cost.php" class="btn btn-secondary float-right">Freight cost</a>
+								</td>
+							</tr>
+						</tfoot>
 					</table>
 				</form>
-			</div>
-		</div>
-	</div>
-
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-
-</html>
+				
+<?php
+	require_once('view-comp/footer.php');
+?>
+			

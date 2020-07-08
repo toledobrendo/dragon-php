@@ -12,15 +12,37 @@
 	<div class="container">
 		<div class ="card">
 			<div class="card-body">
-				<h1 class="card-title"> PHP Excercises </h1>
+				<h1 class="card-title"> PHP Requirements </h1>
 				<div class="col-6">
 					<ul class="list-group">
-						<li class="list-group-item"> 
-							<a href="hello-world.php"> Hello World </a>
+						<li class="list-group-item">
+							<a href="/dragon-php/template.php"> Template </a>
 						</li>
 						<li class="list-group-item"> 
-							<a href="bobs-auto-parts\order-form.php"> Order Form </a>
+							<a href="/dragon-php/hello-world.php"> Hello World </a>
 						</li>
+						<li class="list-group-item"> 
+							<a href="/dragon-php/bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering </a>
+						</li>
+						<li class="list-group-item">
+							<a href="/dragon-php/bobs-auto-parts/freight-cost.php">Bob's Auto Parts- Freight List</a>
+						</li>
+						<li class="list-group-item">
+							<a href="/dragon-php/bobs-auto-parts/price-list.php">Bob's Auto Parts- Price List</a>
+						</li>
+						<li class="list-group-item">
+							<a href="/dragon-php/iac-consulting/index.php"> iAC Consulting</a>
+						</li>
+						<li class="list-group-item">
+							<a href="/dragon-php/bobs-auto-parts/view-orders.php"> Order List
+						</li>
+						<li class="list-group-item">
+							<a href="/dragon-php/book-catalog.php">Book Catalog</a>
+						</li>
+						<li class="list-group-item">
+							<a href="/dragon-php/index-assignments.php">Assignments 1-6</a>
+						</li>
+
 					</ul>
 				</div>
 			</div>
