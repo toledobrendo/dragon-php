@@ -1,0 +1,69 @@
+<?php
+	/*if wala supress warning lang kailangan
+	  pwede mawala
+
+	include('message.php');
+	
+	//may cause of fatal warning kung wala
+	require('script.php');
+ 
+	*/
+	require_once('script.php');
+	require_once('message.php');
+	require_once('model/person.php');
+	require_once('model/employee.php');
+	require_once('model/delivery-man.php');
+	require_once('service/index-service.php');
+	require_once('view-comp/header.php');
+	
+?>
+
+<?php
+
+		echo @ $message;
+		echo $_SERVER['REQUEST_URI'];
+		$isValid=false;
+
+		$baseNumber=5;
+		raiseToTwo($baseNumber);
+		
+		echo '<br/>Raised to two: '.$baseNumber;
+				 
+		$person = new person();
+		$person->name ='Juan';
+
+		echo '<br/>Hello '.$person->name.'!';
+		$person->introduce();
+
+		$person-> setAge(15);
+		echo '<br/>'.$person->name. ' is '.$person-> getAge().' yr(s) old';
+
+		$person-> address = 'Makati City';
+		echo '<br/>'.$person-> name. ' lives in '.$person-> address;
+
+		//double colon accessing static functions
+		echo '<br/> Is a person human? '.(Person::$IS_HUMAN?'Yep' : 'Nope');
+
+		$employee= new Employee();
+		$employee->name ='Pedro';
+		$employee->age = 30;
+		$employee->incrementAge();
+		echo '<br/>'.$employee->name. ' is '.$employee-> getAge().' yr(s) old';
+		$employee->company='iACADEMY';
+		echo '<br/>'.$employee->name.' works at '.$employee->company;
+		$employee->introduce();
+
+		$grabDriver = new DeliveryMan();
+		$grabDriver->moveTo('Quezon City');
+?>
+
+<?php
+	if($isValid) {?> 
+	<strong>This is valid. </strong>
+	
+	<?php } ?>
+	<?php
+	
+	require_once('view-comp/footer.php'); 
+?>
+				
