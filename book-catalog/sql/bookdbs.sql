@@ -2,7 +2,6 @@ CREATE DATABASE bookdb;
 
 USE bookdb;
 
-DROP TABLE IF EXISTS author();
 
 CREATE TABLE IF NOT EXISTS author (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -15,7 +14,6 @@ CREATE TABLE IF NOT EXISTS book (
   title VARCHAR(255),
   isbn VARCHAR(255),
   author_id INT(6) UNSIGNED,
-  -- imgSrc VARCHAR(255),
   FOREIGN KEY (author_id) REFERENCES author(id)
 );
 
@@ -28,9 +26,9 @@ VALUES
 
 
 
-INSERT INTO book (title, isbn, author_id,imgSrc) VALUES
-  ('Java for Professional Developers', '0-672-316123-8', 1,'image/javaDev.jpg'),
-  ('A Game of Thrones', '1-141-5143123-5', 2,'image/GoT.jpg');
+INSERT INTO book (title, isbn, author_id) VALUES
+  ('Java for Professional Developers', '0-672-316123-8', 1),
+  ('A Game of Thrones', '1-141-5143123-5', 2);
 
 
   
