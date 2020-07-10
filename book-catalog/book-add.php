@@ -25,8 +25,8 @@
 
 
 
-			<label for="bookCover">Book Cover Image URL</label>
-			<input id="bookCover" name="bookCover" class="form-control" type="text" />
+			<label for="imgSrc">Book Cover Image URL</label>
+			<input id="imgSrc" name="imgSrc" class="form-control" type="text" />
 
 		</div>
 
