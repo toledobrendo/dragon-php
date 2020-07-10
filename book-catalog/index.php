@@ -6,7 +6,7 @@ require_once('view-comp/header.php');
   Search Book
 </div>
 <div class="card-body">
-  <form action="results.php" method="post">
+  <form action="result.php" method="post">
 
    <!--  search menu -->
     <div class="form-group">
