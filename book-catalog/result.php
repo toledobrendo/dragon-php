@@ -59,7 +59,10 @@
           ?>
             <div class="card col-4 text-center">
               <div class="card-body">
-                <img src="<?php echo $row['imgSrc']; ?>" alt="photo" height="320px" width="240px">
+
+                <img src="<?php echo $row['imgSrc']; ?>" alt="photo" height="320px" width="240px" 
+                style="margin-top: 10px;" alt="<?php echo $row['title']; ?>" >
+
                 <h6><?php echo $row['title'];?></h6>
                 <p>
                   By: <?php echo  $row['author_name'];?> <br/>
