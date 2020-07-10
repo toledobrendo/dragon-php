@@ -30,6 +30,9 @@
 						<li class="list-group-item">
 							<a href="/dragon-php/assignments/book-catalog/index.php"> Assignment 5: Book Thumbnail </a>
 						</li>
+						<li class="list-group-item">
+							<a href="/dragon-php/assignments/book-catalog2.0/index.php"> Assignment 6: Add Book </a>
+						</li>
 					</ul>
 				</div>
 			</div>
