@@ -18,14 +18,17 @@
 						<li class="list-group-item">
 							<a href="/dragon-php/assignments/fibbonacci-sequence.php"> Assignment 1: Fibbonacci Sequence </a>
 						</li>
-						<li class="list-group-item"> 
+						<li class="list-group-item">
 							<a href="/dragon-php/assignments/caesars-cipher-shift.php"> Assignment 2: Caesar's Cipher Shift </a>
 						</li>
-						<li class="list-group-item"> 
+						<li class="list-group-item">
 							<a href="/dragon-php/assignments/order-form-classes/order-form.php"> Assignment 3: Order Form Classes </a>
 						</li>
-						<li class="list-group-item"> 
+						<li class="list-group-item">
 							<a href="/dragon-php/assignments/vat-percent/order-form.php"> Assignment 4: VAT Percent </a>
+						</li>
+						<li class="list-group-item">
+							<a href="/dragon-php/assignments/book-catalog/index.php"> Assignment 5: Book Thumbnail </a>
 						</li>
 					</ul>
 				</div>
