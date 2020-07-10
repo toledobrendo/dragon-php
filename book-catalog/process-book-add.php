@@ -9,14 +9,14 @@
 		$bookTitle = $_POST['bookTitle'];
 		$authorName = $_POST['authorName'];
 		$isbn = $_POST['isbn'];
-		$bookCover = $_POST['bookCover'];
+		$img_src = $_POST['img_src'];
 
 		try {
 			if (!$authorName || !$bookTitle || !$isbn || !$bookCover) {
 				throw new Exception('Error: Please fill up every information.');
 			}
 
-			@ $db = new mysqli('localhost', 'root', '', 'bookdb');
+			@ $db = new mysqli('localhost', 'root', '', 'bookdbs');
 
 
 			$dbError = mysqli_connect_errno();
@@ -35,7 +35,7 @@
 			$bookQuery = 'insert into book(title, isbn, image_src) values (?,?,?) ';
 
 			$bookStmt = $db->prepare($bookQuery);
-			$bookStmt->bind_param("sss", $bookTitle, $isbn, $bookCover);
+			$bookStmt->bind_param("sss", $bookTitle, $isbn, $img_src);
 			$bookStmt->execute();
 			$bookStmt->close();
 

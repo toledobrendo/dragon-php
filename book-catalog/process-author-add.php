@@ -18,7 +18,7 @@
 		        throw new Exception('Author details not complete. Please try again.');
 		      }
 
-		      @ $db = new mysqli('127.0.0.1:3306', 'student', '123qwe', 'bookdb');
+		      @ $db = new mysqli('127.0.0.1:3306', 'student', '123qwe', 'bookdbs');
 
 		      $dbError = mysqli_connect_errno();
 		      if ($dbError) {
