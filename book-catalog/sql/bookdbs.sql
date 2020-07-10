@@ -1,6 +1,6 @@
-CREATE DATABASE bookdb;
+CREATE DATABASE bookdbs;
 
-USE bookdb;
+USE bookdbs;
 
 
 CREATE TABLE IF NOT EXISTS author (
@@ -23,12 +23,15 @@ INSERT INTO author (name)
 VALUES
   ('Michael Morgan'),
   ('George RR Martin');
+  ('Kentaro Miura');
 
 
 
 INSERT INTO book (title, isbn, author_id) VALUES
   ('Java for Professional Developers', '0-672-316123-8', 1),
   ('A Game of Thrones', '1-141-5143123-5', 2);
+  ('Berserk Vol 1', '3-9781593070205-1', 3);
+
 
 
   
