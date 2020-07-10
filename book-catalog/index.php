@@ -27,7 +27,7 @@ require_once('view-comp/header.php');
 
     <!-- button -->
     <div>
-      <button type="submit" class="btn btn-primary"><a href="result.php"></a>Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 
 
