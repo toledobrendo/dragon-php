@@ -27,7 +27,7 @@
             }
 
             // 127.0.0.1 = localhost
-             @ $db = new mysqli('localhost', 'root', '', 'php_lesson_db');
+             @ $db = new mysqli('localhost', 'root', '', 'bookLesson');
 
             $dbError = mysqli_connect_errno();
             if ($dbError) {

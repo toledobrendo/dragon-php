@@ -1,6 +1,6 @@
-CREATE DATABASE php_lesson_db;
+CREATE DATABASE bookLesson;
 
-USE php_lesson_db;
+USE bookLesson;
 
 CREATE TABLE IF NOT EXISTS author (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -20,8 +20,6 @@ CREATE TABLE IF NOT EXISTS book (
 
 
 INSERT INTO author (name)
-
-
 VALUES
   ('Michael Morgan'),
   ('George RR Martin');
