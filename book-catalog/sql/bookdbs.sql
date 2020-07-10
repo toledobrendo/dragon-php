@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS book (
 INSERT INTO author (name)
 VALUES
   ('Michael Morgan'),
-  ('George RR Martin');
+  ('George RR Martin'),
   ('Kentaro Miura');
 
 
