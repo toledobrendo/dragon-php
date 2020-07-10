@@ -42,13 +42,13 @@
             FROM book
             INNER JOIN author
                 ON author.id = book.author_id
-            WHERE '.FIELDS[$searchType].' LIKE \'%'.$searchTerm.'%\';';
+            WHERE '.FIELDS[$searchType].' like \'%'.$searchTerm.'%\';';
 
           logMessage($query);
 
           $result = $db->query($query);
 
-          $resultCount = $result->num_rows;
+          $resultCount = $result -> num_rows;
 
           echo '<p>Result for '.$searchType.' : '.$searchTerm.'</br>';
           echo 'Number of books found: '.$resultCount;
