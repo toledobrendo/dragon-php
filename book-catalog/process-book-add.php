@@ -16,7 +16,7 @@
 				throw new Exception('Error: Please fill up every information.');
 			}
 
-			@ $db = new mysqli('localhost', 'root', '', 'bookLesson');
+			@ $db = new mysqli('localhost', 'root', '', 'bookdb');
 
 
 			$dbError = mysqli_connect_errno();
