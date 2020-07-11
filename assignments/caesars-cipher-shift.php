@@ -25,6 +25,7 @@
             <div>
 
              <?php
+                // Note: Spaces were not handled. "hello world", 1 key yields "IFMMQXQSME"
                 @$message = $_GET['message'];
                 $message = @$_GET['message'];
                 $key = @$_GET['key'];

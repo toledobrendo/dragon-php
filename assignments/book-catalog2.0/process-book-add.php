@@ -41,6 +41,7 @@
             // assigning the newly-created author id to a variable
             $authorId = $row['id'];
 
+            // Note: This is my comment from another code.
             // Note: This line can be placed outside the if statement to prevent duplicate code.
             $query = 'insert into book (img_url, title, isbn, author_id) values (?, ?, ?, ?)';
             $stmt = $db->prepare($query);

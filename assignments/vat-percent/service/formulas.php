@@ -16,6 +16,7 @@
 	}
 
 	 function computeVatableAmount(&$totalAmount){
+		// Note: VAT percent is hard coded rather than extracted from properties.txt
         $vatableAmount = $totalAmount / 1.12; 
         return $vatableAmount; 
     }
