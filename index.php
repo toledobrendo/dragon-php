@@ -18,10 +18,10 @@
 						<li class="list-group-item">
 							<a href="/dragon-php/template.php"> Template </a>
 						</li>
-						<li class="list-group-item"> 
+						<li class="list-group-item">
 							<a href="/dragon-php/hello-world.php"> Hello World </a>
 						</li>
-						<li class="list-group-item"> 
+						<li class="list-group-item">
 							<a href="/dragon-php/bobs-auto-parts/order-form.php">Bob's Auto Parts - Ordering </a>
 						</li>
 						<li class="list-group-item">
@@ -37,7 +37,7 @@
 							<a href="/dragon-php/bobs-auto-parts/view-orders.php"> Order List
 						</li>
 						<li class="list-group-item">
-							<a href="/dragon-php/book-catalog.php">Book Catalog</a>
+							<a href="/dragon-php/assignments/book-catalog2.0/index.php">Book Catalog</a>
 						</li>
 						<li class="list-group-item">
 							<a href="/dragon-php/index-assignments.php">Assignments 1-6</a>
