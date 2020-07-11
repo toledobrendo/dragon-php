@@ -25,6 +25,7 @@
 			}		
 
 
+			// Note: What if author name already exists? Would result to duplicates.
 			$authorQuery = 'insert into author(name) values (?)';
 
 			$authorStmt = $db->prepare($authorQuery);

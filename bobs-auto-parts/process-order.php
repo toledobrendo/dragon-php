@@ -122,6 +122,7 @@
            echo "VAT Amount: " .$vat . '<br/>';**/
 
 
+           // Note: External VAT value missing
            //VAT AREA PART 2-CHOSEN
            $vatableAmount = $totalAmount / 1.12;
            $vat = $totalAmount - $vatableAmount;

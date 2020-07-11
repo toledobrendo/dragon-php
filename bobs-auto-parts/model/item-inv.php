@@ -5,6 +5,7 @@
 	define('SPARK_PRICE', 5);
 	
 
+	// Note: These objects are not used in process-order.php and order-form.php
 	$tire = new Product();
 	$oil = new Product();
 	$sparkPlugs = new Product();
