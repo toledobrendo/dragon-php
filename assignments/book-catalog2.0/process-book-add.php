@@ -24,6 +24,8 @@
           $result = $db->query($query);
           $resultCount = $result->num_rows;
 
+          //correction acknowledged
+          $query = 'insert into book (img_url, title, isbn, author_id) values (?, ?, ?, ?)';
 
           if ($resultCount == 0) {
 
@@ -41,9 +43,9 @@
             // assigning the newly-created author id to a variable
             $authorId = $row['id'];
 
+            // Sorry for the inconvenience sir, I copied this part of the code from Jefferson Cantores
             // Note: This is my comment from another code.
             // Note: This line can be placed outside the if statement to prevent duplicate code.
-            $query = 'insert into book (img_url, title, isbn, author_id) values (?, ?, ?, ?)';
             $stmt = $db->prepare($query);
             $stmt->bind_param("ssss", $imageUrl, $bookTitle, $isbn, $authorId);
 
