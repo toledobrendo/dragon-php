@@ -1,11 +1,11 @@
 <?php
 	require_once('view-comp/header.php');
 ?>
-			
+
 				<h1>Price List</h1>
-				
+
 					<?php
-					
+
 					echo '</p> Products </p>';
 
 					$products = array('Tires','Oil','Spark Plugs');
@@ -17,11 +17,11 @@
 
 
 					echo '<ul>';
-					for ($ctr=0; $ctr < count($products); $ctr++) { 
+					for ($ctr=0; $ctr < count($products); $ctr++) {
 						echo '<li>'.$products[$ctr];
 					}
 					echo '</ul>';
-					
+
 
 					echo '<ul>'; //can't track index
 					//unless use of counter
@@ -35,7 +35,7 @@
 					echo'</ul>';
 
 					echo '<ul>';
-					for ($ctr=0; $ctr < count($products); $ctr++) { 
+					for ($ctr=0; $ctr < count($products); $ctr++) {
 						echo '<li>'.$products[$ctr];
 					}
 					echo '</ul>';
@@ -57,15 +57,15 @@
 
 					echo '</br>Tire Price: '.$prices['Tires'];
 
-					echo '</br>Sparkplugs Price: '.$prices['Oil']; 
+					echo '</br>Sparkplugs Price: '.$prices['Oil'];
 
 					echo '</br>Fourth Price: '.$prices[0]; 	 //not a good practice
 
 					$prices['Clutch Disk'] = 250;
 
-					
 
-					
+
+
 					//krsort($prices);
 
 					/*by value
@@ -80,7 +80,7 @@
 					foreach ($prices as $itemDesc=> $price) {
 						echo '<li>'.$itemDesc.' - '.$price.'</li>';
 					}
-					echo '</ul>'; 
+					echo '</ul>';
 
 					$empty= array();
 
@@ -103,7 +103,7 @@
 					}
 					echo '<p>'.$items[1]['Description'];
 					usort($items, 'compareItems');
-					
+
 
 					echo '<table class="table table-condensed">
 						<thead>
@@ -122,7 +122,7 @@
 					echo '</table>';
 
 				?>
-				
+
 <?php
 	require_once('view-comp/footer.php');
 ?>

@@ -14,3 +14,17 @@
 16:37, 8th July 2020	2 tires	3 oil	5 spark plugs	$500
 16:37, 8th July 2020	0 tires	0 oil	0 spark plugs	$0
 19:02, 11th July 2020	1 tires	2 oil	3 spark plugs	$290
+15:15, 13th July 2020	1 tires	2 oil	3 spark plugs	$290
+15:23, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:31, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:31, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:32, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:32, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:32, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:42, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:42, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:46, 13th July 2020	0 tires	0 oil	0 spark plugs	$0
+15:46, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:47, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
+15:51, 13th July 2020	0 tires	0 oil	0 spark plugs	$0
+15:52, 13th July 2020	5 tires	1 oil	1 spark plugs	$580
