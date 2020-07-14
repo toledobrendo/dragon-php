@@ -25,6 +25,10 @@
           $resultCount = $result->num_rows;
 
           //correction acknowledged
+          // Note: This code would not work.
+          // Place this after the if statement on line 35.
+          // Also include the code block on lines 55 to 63.
+          // This is to adhere to a coding practice of DRY (Don't Repeat Yourself).
           $query = 'insert into book (img_url, title, isbn, author_id) values (?, ?, ?, ?)';
           $stmt = $db->prepare($query);
           $stmt->bind_param("ssss", $imageUrl, $bookTitle, $isbn, $authorId);
