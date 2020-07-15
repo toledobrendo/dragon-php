@@ -29,6 +29,11 @@
           $tireQty = $_POST['tireQty'];
           $oilQty = $_POST['oilQty'];
           $plugQty = $_POST['plugQty'];
+
+          echo '<br>Your order is as follows: <br>';
+          echo $tireQty. ' tires<br>';
+          echo $oilQty. ' cans of oil<br>';
+          echo $plugQty. ' spark plugs';
         ?>
 
         <br>
