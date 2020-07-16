@@ -25,17 +25,16 @@
           $resultCount = $result->num_rows;
 
           //correction acknowledged
-          // Note: This code would not work.
-          // Place this after the if statement on line 35.
+          // Place this after the if statement on line 35. - oks na sir
           // Also include the code block on lines 55 to 63.
           // This is to adhere to a coding practice of DRY (Don't Repeat Yourself).
-          $query = 'insert into book (img_url, title, isbn, author_id) values (?, ?, ?, ?)';
-          $stmt = $db->prepare($query);
-          $stmt->bind_param("ssss", $imageUrl, $bookTitle, $isbn, $authorId);
-
-          $stmt->execute();
-
           if ($resultCount == 0) {
+
+            $query = 'insert into book (img_url, title, isbn, author_id) values (?, ?, ?, ?)';
+            $stmt = $db->prepare($query);
+            $stmt->bind_param("ssss", $imageUrl, $bookTitle, $isbn, $authorId);
+
+            $stmt->execute();
 
             $query = 'insert into author (name) values (?)';
             $stmt = $db->prepare($query);
@@ -43,15 +42,12 @@
 
             $stmt->execute();
 
-
             $query = 'select id from author where name = \''.$authorName.'\'';
             $result = $db->query($query);
             $row = $result -> fetch_assoc();
 
             // assigning the newly-created author id to a variable
             $authorId = $row['id'];
-
-
 
             @ $affectedRows = $stmt->$affected_rows;
 
@@ -68,7 +64,6 @@
             $result = $db->query($query);
             $row = $result -> fetch_assoc();
 
-            // assigning the newly-created author id to a variable
             $authorId = $row['id'];
 
             $query = 'insert into book (img_url, title, isbn, author_id) values (?, ?, ?, ?)';
