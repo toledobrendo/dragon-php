@@ -10,7 +10,8 @@
   <title>Process Order</title>
 </head>
 
-
+<!-- Note: Needed array of product of object -->
+<!-- Note: Needed VAT percent from an external properties file -->
 <body>
   <div class="container">
     <div class ="card">

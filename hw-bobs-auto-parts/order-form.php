@@ -11,6 +11,8 @@
 </head>
 
 
+<!-- Note: Needed separate header and footer -->
+<!-- Note: Needed array of product objects -->
 <body>
   <div class="container">
     <div class ="card">
