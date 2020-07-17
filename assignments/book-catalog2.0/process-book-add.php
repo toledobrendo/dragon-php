@@ -30,6 +30,7 @@
           // This is to adhere to a coding practice of DRY (Don't Repeat Yourself).
           if ($resultCount == 0) {
 
+            // Note: Nope, not here. Also include the code that will make sense after this.
             $query = 'insert into book (img_url, title, isbn, author_id) values (?, ?, ?, ?)';
             $stmt = $db->prepare($query);
             $stmt->bind_param("ssss", $imageUrl, $bookTitle, $isbn, $authorId);
@@ -49,6 +50,7 @@
             // assigning the newly-created author id to a variable
             $authorId = $row['id'];
 
+            // Clue: Should we be tracking if the author was added? Or was it the book?
             @ $affectedRows = $stmt->$affected_rows;
 
             if ($affectedRows > 0) {
@@ -72,6 +74,7 @@
 
             $stmt->execute();
 
+            // Clue: This code below feels really similar to line 54
             @ $affectedRows = $stmt->$affected_rows;
 
             if ($affectedRows > 0) {
@@ -82,6 +85,8 @@
 
             $stmt->close();
           }
+
+          // Clue: Any code placed here will be executed regardless author id exists or not.
 
         } catch (Exception $e) {
           echo $e->getMessage();
