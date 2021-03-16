@@ -11,7 +11,7 @@
 		<div class="card">
 			<div class="card-body">
 				<?php 
-					echo 'Hello World wow'
+					echo 'Hello World wow';
 				?>
 			</div>
 		</div>

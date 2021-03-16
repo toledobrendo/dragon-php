@@ -27,7 +27,7 @@
 						Wow**/
 
 					//declaring the variables
-					// gets the data from the form submitted
+					//gets the data from the form submitted
 					//@ suppresses warning, making them not seen
 					$tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
 					$oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
@@ -58,7 +58,7 @@
 							break;
 					}
 
-					echo '<p>Prices<br/>';
+					echo '<p>Prices:<br/>';
 					echo 'Tires: '.TIRE_PRICE.'<br/>';
 					echo 'Oil: '.OIL_PRICE.'<br/>';
 					echo 'Sparks Plugs: '.SPARK_PRICE.'<br/><br/>';
@@ -80,8 +80,9 @@
 					$tireAmount = @($tireQty * TIRE_PRICE);
 					$oilAmount = @($oilQty * OIL_PRICE);
 					$sparkAmount = @($sparkQty * SPARK_PRICE);
+
 					$totalAmount = @((float) ($tireAmount + $oilAmount + $sparkAmount));
-					$otherTotalAmount = &$totalAmount;
+					$otherTotalAmount = &$totalAmount; //pointer to reference in $totalAmount
 					$otherTotalAmount += $oilAmount;
 
 					$vatableAmount = @((float)($totalAmount / 1.12));

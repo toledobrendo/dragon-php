@@ -30,13 +30,12 @@
 								$distance += 50;
 							}
 
-							for ($distance=300; $distance <= 500; $distance+50) { 
+							for ($distance=300; $distance <= 500; $distance+=50) { 
 								echo 
 								'<tr class="row">
 									<td class="col-3">'.$distance.' Meters</td>
 									<td class="col-3">'.($distance / 10).'</td>
 								</tr>';
-								$distance += 50;
 							}
 
 							$distance = 550;
