@@ -1,5 +1,6 @@
 <?php
 	require_once('view-comp/header.php');
+	require_once('script.php');
 ?>
 				<h3 class="card-title">Order Form</h3>
 				<form action="process-order.php" method="POST">
@@ -33,33 +34,43 @@
 							
 							<?php
 								
-								$items = array(
-			        				array('itemName' => 'Oil', 'qty' => 'oilQty', 'price' => 50),
-			        				array('itemName' => 'Tires', 'qty' => 'tireQty', 'price' => 100),
-			        				array('itemName' => 'Spark Plugs', 'qty' => 'sparkQty', 'price' => 30)
-			        			);
+								// $items = array(
+			     //    				array('itemName' => 'Oil', 'qty' => 'oilQty', 'price' => 50),
+			     //    				array('itemName' => 'Tires', 'qty' => 'tireQty', 'price' => 100),
+			     //    				array('itemName' => 'Spark Plugs', 'qty' => 'sparkQty', 'price' => 30)
+			     //    			);
 
-			        			function compareItems($first, $second){
-						        	if($first['price'] == $second['price']){
+						  //       foreach ($items as $item) {
+						  //       	echo '<tr class = "row">
+						  //       		<td class="col-5">'.$item['itemName'].'</td>
+						  //       		<td class="col-3">'.$item['price'].'</td>
+						  //       		<td class="col-4">
+						  //       			<input type="number" name="'.$item['qty'].'" maxlength="3" min="0" class="form-control">
+						  //       		</td>
+						  //       	</tr>';
+						  //       }
+
+								function compareItems($first, $second){
+						        	if($first->price == $second->price){
 						        		return 0;
-						        	} else if($first['price'] > $second['price']){
+						        	} else if($first->price > $second->price){
 						        		return -1;
 						        	} else{
 						        		return 1;
 						        	}
 						        }
-						        usort($items, 'compareItems');
+						        usort($products, 'compareItems');
 
-						        foreach ($items as $item) {
+						        foreach($products as $product) {
 						        	echo '<tr class = "row">
-						        		<td class="col-5">'.$item['itemName'].'</td>
-						        		<td class="col-3">'.$item['price'].'</td>
+						        		<td class="col-5">'.$product->itemName.'</td>
+						        		<td class="col-3">'.$product->price.'</td>
 						        		<td class="col-4">
-						        			<input type="number" name="'.$item['qty'].'" maxlength="3" min="0" class="form-control">
+						        			<input type="number" name="'.$product->qty.'" maxlength="3" min="0" class="form-control">
 						        		</td>
 						        	</tr>';
 						        }
-						       
+				       
 							?>
 
 							<tr class="row">

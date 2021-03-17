@@ -1,11 +1,6 @@
 <?php
-	define('TIRE_PRICE', 100);
-	define('OIL_PRICE', 50);
-	define('SPARK_PRICE', 30);
-?>
-
-<?php
 	require_once('view-comp/header.php');
+	require_once('script.php');
 ?>
 				<h3 class="card-title">Order Results</h3>
 				<?php 
@@ -20,10 +15,10 @@
 					//declaring the variables
 					//gets the data from the form submitted
 					//@ suppresses warning, making them not seen
-					$tireQty = $_POST['tireQty'] ? $_POST['tireQty'] : 0;
-					$oilQty = $_POST['oilQty'] ? $_POST['oilQty'] : 0;
-					$sparkQty = $_POST['sparkQty'] ? $_POST['sparkQty'] : 0;
-					$totalQty = @($tireQty + $oilQty + $sparkQty);
+					$tires->qty = $_POST['tireQty'];
+					$oil->qty = $_POST['oilQty'];
+					$sparkPlug->qty = $_POST['sparkQty'];
+					$totalQty = @($tires->qty + $oil->qty + $sparkPlug->qty);
 
 					$find = $_POST['find'];
 
@@ -50,31 +45,31 @@
 					}
 
 					echo '<p>Prices:<br/>';
-					echo 'Tires: '.TIRE_PRICE.'<br/>';
-					echo 'Oil: '.OIL_PRICE.'<br/>';
-					echo 'Sparks Plugs: '.SPARK_PRICE.'<br/><br/>';
+					echo 'Tires: '. $tires->price .'<br/>';
+					echo 'Oil: '. $oil->price .'<br/>';
+					echo 'Sparks Plugs: '. $sparkPlug->price .'<br/><br/>';
 
 					if($totalQty == 0){
 						echo 'You did not order anything! <br/><br/>';
 					} else {
 						echo '<p>Your order is as follows</p>';
-						if($tireQty > 0)
-							echo "$tireQty tires<br/>";
-						if($oilQty > 0)
-							echo "$oilQty oil<br/>";
-						if($sparkQty > 0)
-							echo "$sparkQty spark plugs<br/>";
+						if($tires->qty > 0)
+							echo "$tires->qty tires<br/>";
+						if($oil->qty > 0)
+							echo "$oil->qty oil<br/>";
+						if($sparkPlug->qty > 0)
+							echo "$sparkPlug->qty spark plugs<br/>";
 						//different way of display
 						//echo $tireQty.' $tireQty tires<br/>';
 					}
 
-					$tireAmount = @($tireQty * TIRE_PRICE);
-					$oilAmount = @($oilQty * OIL_PRICE);
-					$sparkAmount = @($sparkQty * SPARK_PRICE);
+					$tireAmount = @($tires->qty * $tires->price);
+					$oilAmount = @($oil->qty * $oil->price);
+					$sparkAmount = @($sparkPlug->qty * $sparkPlug->price);
 
 					$totalAmount = @((float) ($tireAmount + $oilAmount + $sparkAmount));
-					$otherTotalAmount = &$totalAmount; //pointer to reference in $totalAmount
-					$otherTotalAmount += $oilAmount;
+					$otherTotalAmount = &$totalAmount; //pointer to reference and directly change $totalAmount
+					//$otherTotalAmount += $oilAmount;
 
 					$vatableAmount = @((float)($totalAmount / 1.12));
 					$vatAmount = @((float)($vatableAmount * 0.12));
