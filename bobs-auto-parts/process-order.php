@@ -1,9 +1,13 @@
 <?php
 	require_once('view-comp/header.php');
 	require_once('script.php');
+	require_once('service/order-service.php');
+	require_once('exception/file-not-found-exception.php');
+	define('VAT_PERCENT', textToFloatVAT());
 ?>
 				<h3 class="card-title">Order Results</h3>
-				<?php 
+				<?php
+					echo VAT_PERCENT;
 					echo '<p>Order Processed at ';
 					echo date('H:i, jS F Y');
 					echo '</p>';
@@ -71,19 +75,22 @@
 					$otherTotalAmount = &$totalAmount; //pointer to reference and directly change $totalAmount
 					//$otherTotalAmount += $oilAmount;
 
-					$vatableAmount = @((float)($totalAmount / 1.12));
-					$vatAmount = @((float)($vatableAmount * 0.12));
+					$vatableAmount = @((float)($totalAmount / (1 + VAT_PERCENT)));
+					$vatAmount = @((float)($vatableAmount * VAT_PERCENT));
 					
 					echo 'Total Quantity: '.$totalQty.'<br/>';
 					echo 'VATABLE Amount: '.$vatableAmount.'<br/>';
 					echo 'VAT Amount(12%): '.$vatAmount.'<br/>';
 					echo 'Total Amount: '.$totalAmount.'<br/>';
 					echo 'Other Total Amount: '.$otherTotalAmount.'<br/>';
-					echo 'Amount Exceeded 500 but less than 1000? '.($totalAmount > 500 && $totalAmount < 1000 ? 'Yes' : 'No').'<br/><br/>';
+					echo 'Amount Exceeded 500 but less than 1000? '
+					. ($totalAmount > 500 && $totalAmount < 1000 ? 'Yes' : 'No')
+					. '<br/><br/>';
 
 					echo 'Is $totalAmount String? '.(is_string($totalAmount) ? 'Yes' : 'No').'<br/>';
 
-					unset($totalAmount);
+					//unset($totalAmount);
+					
 					//checks if the variable has a value set to it
 					echo 'Is $totalAmount set? '.(isset($totalAmount) ? 'Yes' : 'No').'<br/>';
 
@@ -91,12 +98,15 @@
 					echo 'Is $totalAmountTwo set? '.(isset($totalAmountTwo) ? 'Yes' : 'No').'<br/>';
 					//if 0 or "" it will show 'Yes'
 					echo 'Is $totalAmountTwo empty? '.(empty($totalAmountTwo) ? 'Yes' : 'No').'<br/>';
+
+					saveOrder($tires->qty, $oil->qty, $sparkPlug->qty, $totalAmount);
+					//getOrders();
 				?>
 				<tr class="row">
 					<td colspan="2" class="col-12">
 						<a href="order-form.php" class="btn btn-danger float-right">Go Back</a>
 					</td>
-				</tr>	
+				</tr>
 			</div>
 		</div>
 	</div>
