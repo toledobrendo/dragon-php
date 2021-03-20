@@ -50,9 +50,12 @@
 	$grabDriver = new DeliveryMan();
 	$grabDriver->MoveTo('Quezon City');
 ?>
+<a href="../index.php" class="btn btn-danger float-right">Go Back</a>
+
 <?php if($isValid) { ?>
 	<strong>This is valid.</strong>
 <?php } ?>
+
 <?php
 	require_once('view-comp/footer.php')
 ?>

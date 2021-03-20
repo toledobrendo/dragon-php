@@ -93,7 +93,7 @@
 				while(!feof($file)){
 					$vat = fgets($file, 999);
 					$vatArray = explode("=", $vat);
-					$vatArray[1]+=0;
+					$vatArray[1]+=0; //php has auto-casting, this turns it into a float (0.12)
 				}
 				return $vatArray[1];
 			}

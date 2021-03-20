@@ -46,10 +46,6 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
-	</div>
-</div>
-
 <?php
 	require_once('view-comp/footer.php');
 ?>

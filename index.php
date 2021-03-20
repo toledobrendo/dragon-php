@@ -34,6 +34,9 @@
 						<li class="list-group-item">
 							<a href="iac-consulting/">iAC Consulting</a>
 						</li>
+						<li class="list-group-item">
+							<a href="book-catalog/">Book Catalog</a>
+						</li>
 					</ul>
 				</div>
 			</div>

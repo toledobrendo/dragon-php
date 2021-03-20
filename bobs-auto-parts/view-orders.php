@@ -11,10 +11,6 @@
 						<a href="../index.php" class="btn btn-danger float-right">Go Back</a>
 					</td>
 				</tr>
-			</div>
-		</div>
-	</div>
-
 <?php
 	require_once('view-comp/footer.php');
 ?>

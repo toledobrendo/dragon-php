@@ -1,0 +1,7 @@
+.book-img {
+	height: 200px;
+	width: 150px;
+	margin-right: 10px;
+	float: left;
+	display: inline-block;
+}

@@ -94,10 +94,6 @@
 						</tbody>
 					</table>
 				</form>
-			</div>
-		</div>
-	</div>
-
 <?php
 	require_once('view-comp/footer.php');
 ?>
