@@ -25,3 +25,5 @@ INSERT INTO book (pic_url, title, isbn, author_id)
 VALUES
 	('http://localhost/dragon-php/book-catalog/images/java_for_devs.jpg', 'Java for Professional Developers', '0-672-316123-8', 1),
 	('http://localhost/dragon-php/book-catalog/images/game_of_thrones.jpg', 'A Game of Thrones', '1-141-5143123-5', 2);
+
+ALTER TABLE author ADD CONSTRAINT un_author_name UNIQUE (name);
